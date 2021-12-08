@@ -1,7 +1,5 @@
+import React, { FC } from "react";
 
-
-export const Probando = () =>{
-    return (
-        <h1>Hello Group</h1>
-    )
-}
+export const Probando: FC = () => {
+  return <h1>Hello Group</h1>;
+};
