@@ -3,40 +3,44 @@ const { DataTypes } = require("sequelize");
 // Luego le injectamos la conexion a sequelize.
 module.exports = (sequelize) => {
   // defino el modelo
-  sequelize.define("Product", {
-    name: {
-      type: DataTypes.STRING,
-      allowNull: false,
+  sequelize.define(
+    "Product",
+    {
+      name: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
+      description: {
+        type: DataTypes.TEXT,
+        allowNull: false,
+      },
+      salePrice: {
+        type: DataTypes.DECIMAL,
+        allowNull: false,
+      },
+      stock: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+      },
+      img: {
+        type: DataTypes.ARRAY({ type: DataTypes.STRING }),
+        validate: {
+          isUrl: true,
+        },
+      },
+      discount: {
+        type: DataTypes.INTEGER,
+        defaultValue: 0,
+        validate: {
+          min: 0,
+          max: 100,
+        },
+      },
+      purchasePrice: {
+        type: DataTypes.DECIMAL,
+        allowNull: false,
+      },
     },
-    description: {
-      type: DataTypes.TEXT,
-      allowNull: false,
-    },
-    salePrice: {
-      type: DataTypes.DECIMAL,
-      allowNull: false,
-    },
-    stock: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-    },
-    img: {
-      type: DataTypes.STRING,
-      validate: {
-        isUrl: true
-      }
-    },
-    discount: {
-      type: DataTypes.INTEGER,
-      defaultValue: 0,
-      validate: {
-        min:0,
-        max: 100
-      }
-    },
-    purchasePrice: {
-      type: DataTypes.DECIMAL,
-      allowNull: false
-    }
-  },{timestamps: false});
+    { timestamps: false }
+  );
 };

@@ -1,8 +1,11 @@
 const express = require("express");
 const router = express.Router();
+const { Product } = require("../db/db");
 
-router.get("/", (req, res) => {
-  res.json({ masagge: "todos los productos" });
+router.get("/", async (req, res) => {
+  const productsDB = await Product.findAll();
+
+  res.json(productsDB);
 });
 
 module.exports = router;
