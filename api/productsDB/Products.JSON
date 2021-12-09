@@ -11,7 +11,7 @@
         "purchasePrice":400,
         "rating":0,
         "stock": 5,
-        "Discount":0
+        "discount":0
 
         
     },
@@ -26,7 +26,7 @@
         "purchasePrice":150,
         "rating":0,
         "stock": 5,
-        "Discount":0
+        "discount":0
         
     },
 
@@ -42,7 +42,7 @@
         "purchasePrice":20,
         "rating":0,
         "stock": 5,
-        "Discount":0
+        "discount":0
         
     },
 
@@ -57,7 +57,7 @@
         "purchasePrice":70,
         "rating":0,
         "stock": 5,
-        "Discount":0
+        "discount":0
         
     },
 
@@ -73,7 +73,7 @@
         "purchasePrice":10,
         "rating":0,
         "stock": 5,
-        "Discount":0
+        "discount":0
         
     },
 
@@ -88,7 +88,7 @@
         "purchasePrice":600,
         "rating":0,
         "stock": 5,
-        "Discount":0
+        "discount":0
         
     },
 
@@ -104,7 +104,7 @@
         "purchasePrice":700,
         "rating":0,
         "stock": 5,
-        "Discount":0
+        "discount":0
         
     },
 
@@ -120,7 +120,7 @@
         "purchasePrice":30,
         "rating":0,
         "stock": 5,
-        "Discount":0
+        "discount":0
         
     },
 
@@ -136,7 +136,7 @@
         "purchasePrice":7,
         "rating":0,
         "stock": 5,
-        "Discount":0
+        "discount":0
         
     },
 
@@ -152,7 +152,7 @@
         "purchasePrice":10,
         "rating":0,
         "stock": 5,
-        "Discount":0
+        "discount":0
         
     }
     
