@@ -1,9 +1,13 @@
 const { Product } = require("../db/db");
 
 const getProductsAll = async (req, res) => {
-  const productsDB = await Product.findAll();
+  try {
+    const productsDB = await Product.findAll();
 
-  res.json(productsDB);
+    productsDB.length ? res.send(200).json(productsDB) : res.sendStatus(404);
+  } catch (e) {
+    console.log(e);
+  }
 };
 
 module.exports = getProductsAll;
