@@ -1,0 +1,7 @@
+Este componente puede recibir 3 props opcionales
+                                                
+*  content           = contenido del botón      
+*  color             = color de letra
+*  backgroundColor   = color de fondo
+
+default-> "Button", "white" y "#20200" respectivamente.
