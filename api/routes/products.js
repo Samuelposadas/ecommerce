@@ -1,12 +1,11 @@
 const express = require("express");
+const getProductsAll = require("../controllers/products");
 const router = express.Router();
 const { findProductById } = require("../controllers/products");
 
-router.get("/", (req, res) => {
-  res.json({ masagge: "todos los productos" });
 
-  router.get("/:id", findProductById);
-});
+router.get("/", getProductsAll);
+
 
 module.exports = router;
 

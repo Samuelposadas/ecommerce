@@ -23,7 +23,8 @@ module.exports = (sequelize) => {
         allowNull: false,
       },
       img: {
-        type: DataTypes.STRING,
+
+        type: DataTypes.ARRAY({ type: DataTypes.STRING }),
         validate: {
           isUrl: true,
         },
