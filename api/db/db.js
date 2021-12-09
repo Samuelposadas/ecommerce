@@ -54,6 +54,9 @@ Product.belongsTo(Supplier); //Muchos productos pertenecen a un proveedor
 Type_User.hasMany(User); // Un tipo de usuario puede pertenecer a multiples usuarios
 User.belongsTo(Type_User); //Múltiples usuarios pueden tener un tipo
 
+User.hasMany(Order); //Un usuario puede tener múltiples ordenes
+Order.hasMany(User); // Multiples ordenes pueden pertenecer a un usuario
+
 // Order, Order_Detail
 
 
