@@ -1,4 +1,5 @@
 import React, { FC } from "react";
+import { useState } from "react";
 import styled from "styled-components";
 import {
   AiOutlineAppstore,
@@ -19,6 +20,10 @@ const Categories: Array<string> = [
   "Wearable Tech",
   "Sale",
 ];
+
+type Props = {
+  open: boolean;
+};
 
 const Container = styled.div`
   height: 50px;
@@ -106,7 +111,7 @@ const MobileWrapper = styled.div`
   }
 `;
 
-const MobileDropdown = styled.ul`
+const MobileDropdown = styled.ul<Props>`
   display: none;
 
   @media screen and (max-width: 768px) {
@@ -116,6 +121,38 @@ const MobileDropdown = styled.ul`
     grid-template-rows: repeat(10, 28%);
     margin-left: -40.7px;
     margin-top: 0px;
+    position: relative;
+    -o-transition-property: all;
+    transition-duration: 2s;
+    transition-timing-function: linear;
+    transition-delay: 1s;
+    z-index: -1;
+
+    animation: ${({ open }) => (open ? "box 1.9s ease" : "box1 1.9s ease")};
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+
+    @keyframes box {
+      from {
+        height: 0;
+        top: -250%;
+      }
+      to {
+        height: 226px;
+        top: 0;
+      }
+    }
+
+    @keyframes box1 {
+      from {
+        height: 226px;
+        top: 0;
+      }
+      to {
+        height: 0px;
+        top: -250%;
+      }
+    }
   }
 `;
 const MobileDropdownItem = styled.li`
@@ -130,10 +167,12 @@ const MobileDropdownItem = styled.li`
 `;
 
 const Navbar: FC = () => {
+  const [showMobileMenu, setShowMobileMenu] = useState(false);
+
   return (
     <Container>
       <MobileWrapper>
-        <MobileIconOne>
+        <MobileIconOne onClick={() => setShowMobileMenu(!showMobileMenu)}>
           <GoThreeBars />
         </MobileIconOne>
         <MobileIcon>
@@ -164,11 +203,15 @@ const Navbar: FC = () => {
       <Banner>
         Shop early for the best selection of holiday favorites. Shop now.
       </Banner>
-      <MobileDropdown>
-        {Categories.map((item, id) => (
-          <MobileDropdownItem key={id}>{item}</MobileDropdownItem>
-        ))}
-      </MobileDropdown>
+      {showMobileMenu ? (
+        <MobileDropdown open={showMobileMenu}>
+          {Categories.map((item, id) => (
+            <MobileDropdownItem key={id}>{item}</MobileDropdownItem>
+          ))}
+        </MobileDropdown>
+      ) : (
+        <Space />
+      )}
     </Container>
   );
 };
