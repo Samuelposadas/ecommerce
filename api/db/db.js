@@ -9,6 +9,7 @@ const modelOrder = require("../models/Order");
 const modelOrderDetail = require("../models/Order_Detail");
 const { DB_USER, DB_PASSWORD, DB_HOST } = process.env;
 
+
 const sequelize = new Sequelize(
   `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/ecommerce`,
   {
@@ -53,7 +54,7 @@ Product.belongsTo(Supplier); //Muchos productos pertenecen a un proveedor
 Type_User.hasMany(User); // Un tipo de usuario puede pertenecer a multiples usuarios
 User.belongsTo(Type_User); //Múltiples usuarios pueden tener un tipo
 
-
+// Order, Order_Detail
 
 
 module.exports = {
