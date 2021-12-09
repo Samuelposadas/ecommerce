@@ -1,4 +1,5 @@
 import React, { FC, useState } from "react";
+import { InputStyled, ButtonStyled } from "./styles";
 
 const Searchbar: FC = () => {
   const [input, setInput] = useState("");
@@ -7,22 +8,22 @@ const Searchbar: FC = () => {
     setInput(e.target.value);
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLButtonElement>) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setInput("");
   };
 
   return (
     <div>
-      <input
-        type="text"
-        value={input}
-        placeholder="Search.."
-        onChange={handleInputChange}
-      />
-      <button type="submit" onSubmit={handleSubmit}>
-        buscar
-      </button>
+      <form onSubmit={handleSubmit}>
+        <InputStyled
+          type="text"
+          value={input}
+          placeholder="Search.."
+          onChange={handleInputChange}
+        />
+        <ButtonStyled> Search </ButtonStyled>
+      </form>
     </div>
   );
 };
