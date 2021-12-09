@@ -1,23 +1,17 @@
-import React from "react";
-import { FC } from "react";
+import React, { FC } from "react";
+import { iPropsCard } from "../../types/propsCard";
+
 import { Container, Title, Price, Rating, StyledLink } from "./styles";
 import StarIcon from "@mui/icons-material/Star";
 
-interface Props {
-  img: string;
-  title: string;
-  price: number;
-  rating: number;
-}
-
-const Card: FC<Props> = (props) => {
+const Card: FC<iPropsCard> = ({ image, name, price, rating }) => {
   return (
     <StyledLink to="/">
       <Container>
-        <img src={props.img} alt="image not found" />
-        <Title>{props.title}</Title>
-        <Price>${props.price}</Price>
-        <Rating>{Array(Math.round(props.rating)).fill(<StarIcon />, 0)}</Rating>
+        <img src={image} alt="image not found" />
+        <Title>{name}</Title>
+        <Price>${price}</Price>
+        <Rating>{Array(Math.round(rating)).fill(<StarIcon />, 0)}</Rating>
       </Container>
     </StyledLink>
   );
