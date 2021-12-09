@@ -26,14 +26,6 @@ module.exports = (sequelize) => {
         isUrl: true
       }
     },
-    rating: {
-      type: DataTypes.INTEGER,
-      defaultValue: 0,
-      validate: {
-        min:0,
-        max: 5
-      }
-    },
     discount: {
       type: DataTypes.INTEGER,
       defaultValue: 0,
