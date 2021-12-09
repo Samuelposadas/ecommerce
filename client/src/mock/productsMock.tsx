@@ -10,6 +10,7 @@ export const productsMock: iProducts = [
     image:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXbrNbCXVCrwNms8AqfgLi-3inXDfV45ya1Q&usqp=CAU",
     rating: 5,
+    category: "mobile",
   },
   {
     id: 2,
@@ -20,6 +21,7 @@ export const productsMock: iProducts = [
     image:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXbrNbCXVCrwNms8AqfgLi-3inXDfV45ya1Q&usqp=CAU",
     rating: 2,
+    category: "mobile",
   },
   {
     id: 3,
@@ -30,6 +32,7 @@ export const productsMock: iProducts = [
     image:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXbrNbCXVCrwNms8AqfgLi-3inXDfV45ya1Q&usqp=CAU",
     rating: 3,
+    category: "computers",
   },
   {
     id: 4,
@@ -40,6 +43,7 @@ export const productsMock: iProducts = [
     image:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXbrNbCXVCrwNms8AqfgLi-3inXDfV45ya1Q&usqp=CAU",
     rating: 3,
+    category: "hardware",
   },
   {
     id: 5,
@@ -50,6 +54,7 @@ export const productsMock: iProducts = [
     image:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXbrNbCXVCrwNms8AqfgLi-3inXDfV45ya1Q&usqp=CAU",
     rating: 5,
+    category: "hardware",
   },
   {
     id: 6,
@@ -60,6 +65,7 @@ export const productsMock: iProducts = [
     image:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXbrNbCXVCrwNms8AqfgLi-3inXDfV45ya1Q&usqp=CAU",
     rating: 4,
+    category: "t.v",
   },
   {
     id: 7,
@@ -70,6 +76,7 @@ export const productsMock: iProducts = [
     image:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXbrNbCXVCrwNms8AqfgLi-3inXDfV45ya1Q&usqp=CAU",
     rating: 5,
+    category: "camera",
   },
   {
     id: 8,
@@ -80,6 +87,7 @@ export const productsMock: iProducts = [
     image:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXbrNbCXVCrwNms8AqfgLi-3inXDfV45ya1Q&usqp=CAU",
     rating: 1,
+    category: "hardware",
   },
   {
     id: 9,
@@ -91,15 +99,17 @@ export const productsMock: iProducts = [
     image:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXbrNbCXVCrwNms8AqfgLi-3inXDfV45ya1Q&usqp=CAU",
     rating: 5,
+    category: "computers",
   },
   {
     id: 10,
-    name: "Tablets samsung",
+    name: "Tablet samsung",
     description: "tablets for children",
     price: 1500,
     stock: 2,
     image:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXbrNbCXVCrwNms8AqfgLi-3inXDfV45ya1Q&usqp=CAU",
     rating: 1,
+    category: "tablets",
   },
 ];

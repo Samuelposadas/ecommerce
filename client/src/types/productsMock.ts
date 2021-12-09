@@ -6,6 +6,7 @@ export interface iProduct {
   stock: number;
   image: string;
   rating: number;
+  category: string;
 }
 
 export type iProducts = Array<iProduct>;
