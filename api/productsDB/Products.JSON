@@ -1,0 +1,161 @@
+[
+    {
+        "name":"Notebook Latitude",
+        "description": "Laptop para juegos Dell Latitude Business Windows 10 Intel Core i5 16GB Ram 2TB SSD",
+        "salePrice":700,
+        "img": 
+            [
+                "https://i.ebayimg.com/images/g/De0AAOSwHIRgsaTu/s-l1600.png",
+                "https://i.ebayimg.com/images/g/MJUAAOSwPvlgZNxQ/s-l1600.png"
+            ],
+        "purchasePrice":400,
+        "rating":0,
+        "stock": 5,
+        "discount":0
+
+        
+    },
+
+    {
+        "name":"Notebook Chuwi",
+        "description": "Computadora Laptop Chuwi Intel N4020 Windows 10 PC 2.8Ghz 4GB 128GB 11.6in HD Wi-fi",
+        "salePrice":300,
+        "img": [
+            "https://i.ebayimg.com/images/g/eIMAAOSwILVhkhCm/s-l1600.jpg",
+            "https://i.ebayimg.com/images/g/itIAAOSw0WBhUWHf/s-l1600.jpg"],
+        "purchasePrice":150,
+        "rating":0,
+        "stock": 5,
+        "discount":0
+        
+    },
+
+    
+    {
+        "name":"Auriculares Bluetooth",
+        "description": "Los Auriculares con Cancelación Activa Del Ruido vankyo Auriculares Inalámbrico Bluetooth C751 Nuevo Y En Caja",
+        "salePrice":30,
+        "img": [
+            "https://i.ebayimg.com/images/g/digAAOSwaXlhre44/s-l1600.jpg",
+            "https://i.ebayimg.com/images/g/8isAAOSwPUthre5A/s-l1600.jpg"
+        ],
+        "purchasePrice":20,
+        "rating":0,
+        "stock": 5,
+        "discount":0
+        
+    },
+
+    {
+        "name":"Beats by Dr. Dre | Solo 3 Inalámbrico On-Ear Headphones Rosa Oro",
+        "description": "Auriculares inalambricos bluetooth, color rosa",
+        "salePrice":100,
+        "img": [
+            "https://i.ebayimg.com/images/g/dYIAAOSw1~BhsVwu/s-l1600.jpg",
+            "https://i.ebayimg.com/images/g/eZAAAOSw5nNhsVwt/s-l1600.jpg"
+        ],
+        "purchasePrice":70,
+        "rating":0,
+        "stock": 5,
+        "discount":0
+        
+    },
+
+    
+    {
+        "name":"Teclado PC multicolor",
+        "description": "UK Teclado Para Juegos mecánico 60% sentir RGB Retroiluminado Ultra-compacto para jugadores de PC",
+        "salePrice":30,
+        "img": [
+            "https://i.ebayimg.com/images/g/hR8AAOSwkfxhpKtf/s-l1600.jpg",
+            "https://i.ebayimg.com/images/g/P9cAAOSwIJNhpKsY/s-l1600.jpg"
+        ],
+        "purchasePrice":10,
+        "rating":0,
+        "stock": 5,
+        "discount":0
+        
+    },
+
+    
+    {
+        "name":"CPU PC Gamer ",
+        "description": "Cyberpowerpc Gamer Xtreme VR PC para juegos, Intel Core I5-11400F 2.6Ghz, 8GB DDR4, G",
+        "salePrice":1000,
+        "img": [
+            "https://i.ebayimg.com/images/g/w68AAOSwFzRhq5Qo/s-l1600.jpg",
+            "https://i.ebayimg.com/images/g/w68AAOSwFzRhq5Qo/s-l1600.jpg"],
+        "purchasePrice":600,
+        "rating":0,
+        "stock": 5,
+        "discount":0
+        
+    },
+
+    
+    {
+        "name":"PC GAMER 360",
+        "description": "Cyberpowerpc Gamer Master GMA1394A Juegos Pc",
+        "salePrice":1000,
+        "img": [
+            "https://i.ebayimg.com/images/g/-Z8AAOSwz3xhsTEV/s-l1600.jpg",
+            "https://i.ebayimg.com/images/g/jOEAAOSwGnphsTDz/s-l1600.jpg"
+        ],
+        "purchasePrice":700,
+        "rating":0,
+        "stock": 5,
+        "discount":0
+        
+    },
+
+    
+    {
+        "name":"Teclado gamer inalambrico",
+        "description": "Teclado para Juegos RGB LED Luz Retroiluminado Gamer Teclado USB con Cable Silencioso Silencioso",
+        "salePrice":100,
+        "img": [
+            "https://i.ebayimg.com/images/g/PhoAAOSwq1NeVEPM/s-l1600.jpg",
+            "https://i.ebayimg.com/images/g/mz4AAOSwheBeTddK/s-l1600.jpg"
+        ],
+        "purchasePrice":30,
+        "rating":0,
+        "stock": 5,
+        "discount":0
+        
+    },
+
+    
+    {
+        "name":"Mouse inalambrico Gamer",
+        "description": "Ratón Juego Láser LED RGB con cable USB Óptico Juego Mouse para PC Computadora Computadora portáti",
+        "salePrice":15,
+        "img": [
+            "https://i.ebayimg.com/images/g/yvkAAOSwBHFhryIa/s-l1600.jpg",
+            "https://i.ebayimg.com/images/g/NeQAAOSwbM9hryIa/s-l1600.jpg"
+        ],
+        "purchasePrice":7,
+        "rating":0,
+        "stock": 5,
+        "discount":0
+        
+    },
+
+    
+    {
+        "name":"Mouse inalambrico gamer T66",
+        "description": "T66 con retroiluminación RGB de nido de abeja ratones ligero 2.4GHz Ratón Inalámbrico Recargable",
+        "salePrice":25,
+        "img": [
+            "https://i.ebayimg.com/images/g/EqQAAOSwCYBhrxhz/s-l1600.jpg",
+            "https://i.ebayimg.com/images/g/uCsAAOSwByBhrxh0/s-l1600.jpg"
+        ],
+        "purchasePrice":10,
+        "rating":0,
+        "stock": 5,
+        "discount":0
+        
+    }
+    
+
+
+]
