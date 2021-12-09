@@ -1,4 +1,3 @@
-
 const { Product } = require("../db/db");
 
 const getProductsAll = async (req, res) => {
@@ -10,10 +9,6 @@ const getProductsAll = async (req, res) => {
     console.log(e);
   }
 };
-
-module.exports = getProductsAll;
-
-const Product = require("../models/Product");
 
 const findProductById = async (req, res) => {
   try {
@@ -29,5 +24,4 @@ const findProductById = async (req, res) => {
   }
 };
 
-module.exports = { findProductById };
-
+module.exports = { findProductById, getProductsAll };
