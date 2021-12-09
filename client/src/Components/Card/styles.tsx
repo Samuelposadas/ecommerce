@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const Container = styled.div`
   background-color: white;
@@ -10,7 +11,7 @@ export const Container = styled.div`
   box-shadow: 0 2px 2px rgba(0, e, e, 0.2);
   overflow: hidden;
   margin: 20px;
-  transition: all 0.25;
+  transition: all 600ms ease;
   &:hover {
     transform: translateY(-15px);
     box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
@@ -30,6 +31,7 @@ export const Title = styled.p`
   margin-top: 0;
   margin-bottom: 10px;
   margin-left: 10px;
+  color: black;
 `;
 
 export const Price = styled.p`
@@ -45,4 +47,9 @@ export const Rating = styled.div`
   display: flex;
   flex-direction: row;
   margin-left: 10px;
+  color: black;
+`;
+
+export const StyledLink = styled(Link)`
+  text-decoration: none;
 `;
