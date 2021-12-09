@@ -24,10 +24,20 @@ const Container = styled.div`
   height: 50px;
   background-color: #2b2929;
 `;
+const Banner = styled.div`
+  height: 45px;
+  background-color: #c53131e8;
+  color: #e9e0e0ee;
+  font-size: 12px;
+  font-weight: 500;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+`;
 const Wrapper = styled.div`
   height: 50px;
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: auto minmax(800px, auto) auto;
 
   @media screen and (max-width: 768px) {
     display: none;
@@ -36,9 +46,10 @@ const Wrapper = styled.div`
 const Space = styled.div``;
 const Menu = styled.ul`
   font-size: 10px;
+  font-weight: 500;
   color: #e9e0e0ee;
   display: grid;
-  grid-template-columns: repeat(16, auto);
+  grid-template-columns: repeat(14, auto);
   grid-gap: 0.9rem;
   justify-items: center;
   align-items: center;
@@ -54,7 +65,7 @@ const MenuItem = styled.li`
   list-style-type: none;
   cursor: pointer;
 `;
-const MobileIcon = styled.div`
+const MobileIconOne = styled.div`
   display: none;
 
   @media screen and (max-width: 768px) {
@@ -69,6 +80,21 @@ const MobileIcon = styled.div`
     }
   }
 `;
+const MobileIcon = styled.div`
+  display: none;
+
+  @media screen and (max-width: 768px) {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+
+    svg {
+      fill: #e9e0e0ee;
+      font-size: 26px;
+      cursor: pointer;
+    }
+  }
+`;
 
 const MobileWrapper = styled.div`
   display: none;
@@ -80,13 +106,36 @@ const MobileWrapper = styled.div`
   }
 `;
 
+const MobileDropdown = styled.ul`
+  display: none;
+
+  @media screen and (max-width: 768px) {
+    display: grid;
+    gap: 0.1rem;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(10, 28%);
+    margin-left: -40.7px;
+    margin-top: 0px;
+  }
+`;
+const MobileDropdownItem = styled.li`
+  background-color: #2b2929;
+  color: #e9e0e0ee;
+  list-style-type: none;
+  cursor: pointer;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
 const Navbar: FC = () => {
   return (
     <Container>
       <MobileWrapper>
-        <MobileIcon>
+        <MobileIconOne>
           <GoThreeBars />
-        </MobileIcon>
+        </MobileIconOne>
         <MobileIcon>
           <AiOutlineAppstore />
         </MobileIcon>
@@ -112,6 +161,14 @@ const Navbar: FC = () => {
         </Menu>
         <Space />
       </Wrapper>
+      <Banner>
+        Shop early for the best selection of holiday favorites. Shop now.
+      </Banner>
+      <MobileDropdown>
+        {Categories.map((item, id) => (
+          <MobileDropdownItem key={id}>{item}</MobileDropdownItem>
+        ))}
+      </MobileDropdown>
     </Container>
   );
 };
