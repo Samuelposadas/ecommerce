@@ -7,7 +7,7 @@ const Searchbar: FC = () => {
     setInput(e.target.value);
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLInputElement>) => {
+  const handleSubmit = (e: React.FormEvent<HTMLButtonElement>) => {
     e.preventDefault();
     setInput("");
   };
@@ -20,9 +20,9 @@ const Searchbar: FC = () => {
         placeholder="Search.."
         onChange={handleInputChange}
       />
-      <input type="submit" onSubmit={handleSubmit}>
+      <button type="submit" onSubmit={handleSubmit}>
         buscar
-      </input>
+      </button>
     </div>
   );
 };
