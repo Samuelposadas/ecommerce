@@ -12,8 +12,8 @@ module.exports = (sequelize) => {
       type: DataTypes.TEXT,
       allowNull: false,
     },
-    price: {
-      type: DataTypes.DOUBLE,
+    salePrice: {
+      type: DataTypes.DECIMAL,
       allowNull: false,
     },
     stock: {
@@ -22,9 +22,21 @@ module.exports = (sequelize) => {
     },
     img: {
       type: DataTypes.STRING,
+      validate: {
+        isUrl: true
+      }
     },
-    rating: {
-      type: DataTypes.DOUBLE,
+    discount: {
+      type: DataTypes.INTEGER,
+      defaultValue: 0,
+      validate: {
+        min:0,
+        max: 100
+      }
     },
-  });
+    purchasePrice: {
+      type: DataTypes.DECIMAL,
+      allowNull: false
+    }
+  },{timestamps: false});
 };
