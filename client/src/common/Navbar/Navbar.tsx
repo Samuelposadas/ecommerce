@@ -6,7 +6,7 @@ import {
   AiOutlineSearch,
   AiOutlineShopping,
 } from "react-icons/ai";
-import { GoThreeBars } from "react-icons/go";
+import { GoGrabber, GoThreeBars, GoX } from "react-icons/go";
 
 const Categories: Array<string> = [
   "Shop All",
@@ -173,7 +173,7 @@ const Navbar: FC = () => {
     <Container>
       <MobileWrapper>
         <MobileIconOne onClick={() => setShowMobileMenu(!showMobileMenu)}>
-          <GoThreeBars />
+          {showMobileMenu ? <GoX /> : <GoThreeBars />}
         </MobileIconOne>
         <MobileIcon>
           <AiOutlineAppstore />
