@@ -9,8 +9,8 @@ import Navbar from "../common/Navbar/Navbar";
 const Router: FC = () => {
   return (
     <BrowserRouter>
-      <Navbar />
       <Routes>
+        <Route path="/home" element={<Navbar />} />
         <Route path="/home" element={<Home />} />
         <Route path="*" element={<Navigate to="/home" />} />
       </Routes>
