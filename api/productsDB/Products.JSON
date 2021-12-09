@@ -8,7 +8,11 @@
                 "https://i.ebayimg.com/images/g/De0AAOSwHIRgsaTu/s-l1600.png",
                 "https://i.ebayimg.com/images/g/MJUAAOSwPvlgZNxQ/s-l1600.png"
             ],
-        "purchasePrice":400
+        "purchasePrice":400,
+        "rating":0,
+        "stock": 5,
+        "Discount":0
+
         
     },
 
@@ -19,7 +23,10 @@
         "img": [
             "https://i.ebayimg.com/images/g/eIMAAOSwILVhkhCm/s-l1600.jpg",
             "https://i.ebayimg.com/images/g/itIAAOSw0WBhUWHf/s-l1600.jpg"],
-        "purchasePrice":150
+        "purchasePrice":150,
+        "rating":0,
+        "stock": 5,
+        "Discount":0
         
     },
 
@@ -32,7 +39,10 @@
             "https://i.ebayimg.com/images/g/digAAOSwaXlhre44/s-l1600.jpg",
             "https://i.ebayimg.com/images/g/8isAAOSwPUthre5A/s-l1600.jpg"
         ],
-        "purchasePrice":20
+        "purchasePrice":20,
+        "rating":0,
+        "stock": 5,
+        "Discount":0
         
     },
 
@@ -44,7 +54,10 @@
             "https://i.ebayimg.com/images/g/dYIAAOSw1~BhsVwu/s-l1600.jpg",
             "https://i.ebayimg.com/images/g/eZAAAOSw5nNhsVwt/s-l1600.jpg"
         ],
-        "purchasePrice":70
+        "purchasePrice":70,
+        "rating":0,
+        "stock": 5,
+        "Discount":0
         
     },
 
@@ -57,7 +70,10 @@
             "https://i.ebayimg.com/images/g/hR8AAOSwkfxhpKtf/s-l1600.jpg",
             "https://i.ebayimg.com/images/g/P9cAAOSwIJNhpKsY/s-l1600.jpg"
         ],
-        "purchasePrice":10
+        "purchasePrice":10,
+        "rating":0,
+        "stock": 5,
+        "Discount":0
         
     },
 
@@ -69,7 +85,10 @@
         "img": [
             "https://i.ebayimg.com/images/g/w68AAOSwFzRhq5Qo/s-l1600.jpg",
             "https://i.ebayimg.com/images/g/w68AAOSwFzRhq5Qo/s-l1600.jpg"],
-        "purchasePrice":600
+        "purchasePrice":600,
+        "rating":0,
+        "stock": 5,
+        "Discount":0
         
     },
 
@@ -82,7 +101,10 @@
             "https://i.ebayimg.com/images/g/-Z8AAOSwz3xhsTEV/s-l1600.jpg",
             "https://i.ebayimg.com/images/g/jOEAAOSwGnphsTDz/s-l1600.jpg"
         ],
-        "purchasePrice":700
+        "purchasePrice":700,
+        "rating":0,
+        "stock": 5,
+        "Discount":0
         
     },
 
@@ -95,7 +117,10 @@
             "https://i.ebayimg.com/images/g/PhoAAOSwq1NeVEPM/s-l1600.jpg",
             "https://i.ebayimg.com/images/g/mz4AAOSwheBeTddK/s-l1600.jpg"
         ],
-        "purchasePrice":30
+        "purchasePrice":30,
+        "rating":0,
+        "stock": 5,
+        "Discount":0
         
     },
 
@@ -108,7 +133,10 @@
             "https://i.ebayimg.com/images/g/yvkAAOSwBHFhryIa/s-l1600.jpg",
             "https://i.ebayimg.com/images/g/NeQAAOSwbM9hryIa/s-l1600.jpg"
         ],
-        "purchasePrice":7
+        "purchasePrice":7,
+        "rating":0,
+        "stock": 5,
+        "Discount":0
         
     },
 
@@ -121,7 +149,10 @@
             "https://i.ebayimg.com/images/g/EqQAAOSwCYBhrxhz/s-l1600.jpg",
             "https://i.ebayimg.com/images/g/uCsAAOSwByBhrxh0/s-l1600.jpg"
         ],
-        "purchasePrice":10
+        "purchasePrice":10,
+        "rating":0,
+        "stock": 5,
+        "Discount":0
         
     }
     
