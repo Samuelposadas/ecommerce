@@ -11,3 +11,19 @@ export const Btn = styled.div`
   box-shadow: 1px 1px 5px 1px black;
   font-weight: bold;
 `;
+
+export const ButtonDetail = styled.button`
+  background-color: ${({ backgroundColor }) => backgroundColor || "#202020"};
+  color: ${({ color }) => color || "white"};
+  width: 300px;
+  height: 40px;
+  font-size: 17px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 3px;
+  font-weight: bold;
+  &:hover {
+    cursor: pointer;
+    box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
+  }
+`;
