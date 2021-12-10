@@ -51,18 +51,23 @@ const productController = {
       discount,
       purchasePrice,
     } = req.body;
-    console.log(name);
     try {
-      const newProduct = await Product.create({
-        name,
-        description,
-        salePrice,
-        stock,
-        img,
-        discount,
-        purchasePrice,
+      const [product, created] = await Product.findOrCreate({
+        where: { name },
+        defaults: {
+          description,
+          salePrice,
+          stock,
+          img,
+          discount,
+          purchasePrice,
+        },
       });
-      res.json(newProduct);
+      if (created) {
+        res.send("product created");
+      } else {
+        res.send("this product is already created");
+      }
     } catch (error) {
       console.error(error);
       res.status(500).send(error);
