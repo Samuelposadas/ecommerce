@@ -1,7 +1,7 @@
 const initialState = {
   product: {},
   allProdcuts: [],
-  copyAllProdcuts: [],
+  copyAllProducts: [],
   allCategories: [],
   filterProducts: [],
 };
