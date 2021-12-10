@@ -54,8 +54,8 @@ const Menu = styled.ul`
   font-weight: 500;
   color: #e9e0e0ee;
   display: grid;
-  grid-template-columns: repeat(14, auto);
-  grid-gap: 0.9rem;
+  grid-template-columns: repeat(14, minmax(10px, auto));
+  grid-gap: 1rem;
   justify-items: center;
   align-items: center;
 `;
@@ -116,7 +116,7 @@ const MobileDropdown = styled.ul<iMobileDropdown>`
 
   @media screen and (max-width: 768px) {
     display: grid;
-    gap: 0.05rem;
+    gap: 0.1rem;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(10, 28%);
     margin-left: -40.7px;
