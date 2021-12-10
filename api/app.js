@@ -7,6 +7,7 @@ dotenv.config();
 
 const productsRouter = require("./routes/products");
 const usersRouter = require("./routes/products");
+const supplierRouter = require("./routes/suppliers");
 
 const app = express();
 
@@ -18,6 +19,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
 app.use("/products", productsRouter);
+app.use("/suppliers", supplierRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res) {
