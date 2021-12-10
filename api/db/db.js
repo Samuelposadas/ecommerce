@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-const { Sequelize } = require("sequelize");
+const { Sequelize, Op } = require("sequelize");
 const modelProduct = require("../models/Product");
 const modelCategory = require("../models/Category");
 const modelSupplier = require("../models/Supplier");
@@ -102,4 +102,5 @@ Order.belongsTo(Type_Order, { foreignKey: "id_Type_Order" });
 module.exports = {
   ...sequelize.models, // para poder importar los modelos así: const { Product, User } = require('./db.js');
   sequelize: sequelize, // para importart la conexión { conn } = require('./db.js');
+  Op, // para poder importar los operadores tales como ilike en las consultas a la database
 };
