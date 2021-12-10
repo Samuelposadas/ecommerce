@@ -10,7 +10,8 @@ export const Container = styled.div`
   border-radius: 8px;
   box-shadow: 0 2px 2px rgba(0, e, e, 0.2);
   overflow: hidden;
-  margin: 20px;
+  margin-top: 70px;
+  z-index: -2;
   transition: all 600ms ease;
   &:hover {
     transform: translateY(-15px);
