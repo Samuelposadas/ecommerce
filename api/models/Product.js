@@ -15,7 +15,7 @@ module.exports = (sequelize) => {
         allowNull: false,
       },
       salePrice: {
-        type: DataTypes.DECIMAL,
+        type: DataTypes.REAL,
         allowNull: false,
       },
       stock: {
@@ -38,7 +38,7 @@ module.exports = (sequelize) => {
         },
       },
       purchasePrice: {
-        type: DataTypes.DECIMAL,
+        type: DataTypes.REAL,
         allowNull: false,
       },
     },
