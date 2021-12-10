@@ -1,7 +1,8 @@
 const { Product, Op, Category } = require("../db/db");
 
 const productController = {
-  getProductsAll: async (req, res) => {
+  getProductsAll: async (req, res, next) => {
+    const PRODUCTS_PER_PAGE = 3;
     const { category } = req.query;
     if (category) {
       const products = await Product.findAll({ include: Category });
@@ -25,15 +26,25 @@ const productController = {
       }
     }
     try {
-      const productsDB = await Product.findAll();
-
-      productsDB.length ? res.json(productsDB) : res.sendStatus(404);
-    } catch (e) {
-      console.log(e);
+      const page = req.query.page ? parseInt(req.query.page) : 0;
+      const query = {
+        offset: page * PRODUCTS_PER_PAGE,
+        limit: PRODUCTS_PER_PAGE,
+      };
+      const { count, rows } = await Product.findAndCountAll(query);
+      console.log(count);
+      console.log(rows.map((p) => p.toJSON()));
+      const response = {
+        totalPages: Math.ceil(count / PRODUCTS_PER_PAGE),
+        products: [...rows],
+      };
+      res.json(rows.length ? response : { message: "No products found" });
+    } catch (error) {
+      next(error);
     }
   },
 
-  findProductById: async (req, res) => {
+  findProductById: async (req, res, next) => {
     try {
       const { id } = req.params;
       console.log(id);
@@ -44,7 +55,7 @@ const productController = {
         res.status(404).json({ mesagge: "producto no encontrado" });
       }
     } catch (error) {
-      console.error(error);
+      next(error);
     }
   },
 
