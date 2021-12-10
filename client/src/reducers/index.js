@@ -1,6 +1,6 @@
 const initialState = {
   product: {},
-  allProdcuts: [],
+  allProducts: [],
   copyAllProducts: [],
   allCategories: [],
   filterProducts: [],
