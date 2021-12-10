@@ -83,23 +83,26 @@ const productController = {
       img,
       discount,
       purchasePrice,
-      categories, // Attention !! categories is an array of ID.
+      categories,
     } = req.body;
-
     try {
-      const newProduct = await Product.create({
-        name,
-        description,
-        salePrice,
-        stock,
-        img,
-        discount,
-        purchasePrice,
+      const [product, created] = await Product.findOrCreate({
+        where: { name },
+        defaults: {
+          description,
+          salePrice,
+          stock,
+          img,
+          discount,
+          purchasePrice,
+        },
       });
-      // add the categories to the products
-      newProduct.addCategories(categories);
-
-      res.json(newProduct);
+      if (created) {
+        product.addCategories(categories);
+        res.json(product);
+      } else {
+        res.send("this product is already created");
+      }
     } catch (error) {
       console.error(error);
       res.status(500).send(error);
