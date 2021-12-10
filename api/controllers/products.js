@@ -40,6 +40,34 @@ const productController = {
       next(error);
     }
   },
+
+  createProduct: async (req, res) => {
+    const {
+      name,
+      description,
+      salePrice,
+      stock,
+      img,
+      discount,
+      purchasePrice,
+    } = req.body;
+    console.log(name);
+    try {
+      const newProduct = await Product.create({
+        name,
+        description,
+        salePrice,
+        stock,
+        img,
+        discount,
+        purchasePrice,
+      });
+      res.json(newProduct);
+    } catch (error) {
+      console.error(error);
+      res.status(500).send(error);
+    }
+  },
 };
 
 module.exports = { productController };
