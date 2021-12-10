@@ -1,8 +1,30 @@
-const { Product, Op } = require("../db/db");
+const { Product, Op, Category } = require("../db/db");
 
 const productController = {
   getProductsAll: async (req, res, next) => {
     const PRODUCTS_PER_PAGE = 3;
+    const { category } = req.query;
+    if (category) {
+      const products = await Product.findAll({ include: Category });
+
+      try {
+        const productsByCategoty = products.filter((product) => {
+          if (product.Categories.length) {
+            for (let i = 0; i < product.Categories.length; i++) {
+              if (product.Categories[i].name === category) {
+                return product;
+              }
+            }
+          }
+        });
+
+        productsByCategoty.length
+          ? res.json(productsByCategoty)
+          : res.json({ messege: "No products found" });
+      } catch (e) {
+        console.log(e);
+      }
+    }
     try {
       const page = req.query.page ? parseInt(req.query.page) : 0;
       const query = {
@@ -61,6 +83,7 @@ const productController = {
       img,
       discount,
       purchasePrice,
+      categories,
     } = req.body;
     try {
       const [product, created] = await Product.findOrCreate({
@@ -75,7 +98,8 @@ const productController = {
         },
       });
       if (created) {
-        res.send("product created");
+        product.addCategories(categories);
+        res.json(product);
       } else {
         res.send("this product is already created");
       }
