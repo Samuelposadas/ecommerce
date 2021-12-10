@@ -6,7 +6,8 @@ import {
   AiOutlineSearch,
   AiOutlineShopping,
 } from "react-icons/ai";
-import { GoGrabber, GoThreeBars, GoX } from "react-icons/go";
+import { GoThreeBars, GoX } from "react-icons/go";
+import { iMobileDropdown } from "../../types/propsNavbar";
 
 const Categories: Array<string> = [
   "Shop All",
@@ -20,10 +21,6 @@ const Categories: Array<string> = [
   "Wearable Tech",
   "Sale",
 ];
-
-type Props = {
-  open: boolean;
-};
 
 const Container = styled.div`
   height: 50px;
@@ -42,7 +39,10 @@ const Banner = styled.div`
 const Wrapper = styled.div`
   height: 50px;
   display: grid;
-  grid-template-columns: auto minmax(800px, auto) auto;
+  grid-template-columns: minmax(1px, auto) minmax(750px, auto) minmax(
+      40px,
+      auto
+    );
 
   @media screen and (max-width: 768px) {
     display: none;
@@ -111,24 +111,24 @@ const MobileWrapper = styled.div`
   }
 `;
 
-const MobileDropdown = styled.ul<Props>`
+const MobileDropdown = styled.ul<iMobileDropdown>`
   display: none;
 
   @media screen and (max-width: 768px) {
     display: grid;
-    gap: 0.1rem;
+    gap: 0.05rem;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(10, 28%);
     margin-left: -40.7px;
     margin-top: 0px;
     position: relative;
     -o-transition-property: all;
-    transition-duration: 2s;
+    transition-duration: 10s;
     transition-timing-function: linear;
-    transition-delay: 1s;
+    transition-delay: 10s;
     z-index: -1;
 
-    animation: ${({ open }) => (open ? "box 1.9s ease" : "box1 1.9s ease")};
+    animation: ${({ open }) => (open ? "box 1.2s ease" : "box1 1.2s ease")};
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
 
