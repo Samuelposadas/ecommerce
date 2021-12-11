@@ -8,4 +8,8 @@ router.route("/search").get(productController.searchProducts);
 
 router.route("/create").post(productController.createProduct);
 
+router
+  .route("/categories/change")
+  .put(productController.addOrRemoveCategoryProduct);
+
 module.exports = router;
