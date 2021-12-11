@@ -5,7 +5,6 @@ const dataSuppliers = require("../productsDB/Suppliers.json");
 
 //funcion para hacer un get y traerse todos los productos
 const incomeProductDB = async () => {
-  await Category.bulkCreate(categories);
   dataProducts.forEach(async (elementProduct) => {
     const product = await Product.create({
       name: elementProduct.name,
@@ -16,9 +15,16 @@ const incomeProductDB = async () => {
       rating: elementProduct.rating,
       stock: elementProduct.stock,
       discount: elementProduct.discount,
+      id_Supplier: elementProduct.supplier,
     });
-    await product.setCategories([1, 2]);
+    elementProduct.Categories.map((el) => {
+      product.addCategory(el);
+    });
   });
+};
+
+const incomeCategory = async () => {
+  await Category.bulkCreate(categories);
 };
 
 const incomeSuppliers = async () => {
@@ -32,6 +38,7 @@ const incomeSuppliers = async () => {
 };
 
 module.exports = {
+  incomeCategory,
   incomeProductDB,
   incomeSuppliers,
 };
