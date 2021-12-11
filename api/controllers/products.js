@@ -60,17 +60,19 @@ const productController = {
   },
 
   searchProducts: async (req, res, next) => {
-    try {
-      const { name } = req.query;
-      const condition = name
-        ? { where: { name: { [Op.iLike]: `%${name}%` } } }
-        : {};
-      condition.attributes = { exclude: ["description"] };
-      const products = await Product.findAll(condition);
-      console.log(products.map((p) => p.toJSON()));
-      res.json(products.length ? products : "No products found");
-    } catch (error) {
-      next(error);
+    const { name } = req.query;
+    if (name) {
+      try {
+        const condition = name
+          ? { where: { name: { [Op.iLike]: `%${name}%` } } }
+          : {};
+        condition.attributes = { exclude: ["description"] };
+        const products = await Product.findAll(condition);
+        console.log(products.map((p) => p.toJSON()));
+        res.json(products.length ? products : "No products found");
+      } catch (error) {
+        next(error);
+      }
     }
   },
 
