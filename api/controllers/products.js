@@ -1,6 +1,7 @@
 const { Product, Op, Category, User, Supplier } = require("../db/db");
 
 const getProductsAll = async (req, res) => {
+  
   let { category, orderPrice, page } = req.query;
 
   //variable para mandar a paginar
@@ -9,6 +10,7 @@ const getProductsAll = async (req, res) => {
   //Valores por defecto si no vienen por query
   page = page ? page : 1;
   orderPrice = orderPrice ? orderPrice : "ASC";
+  
   const PRODUCTS_PER_PAGE = 10;
 
   if (category) {
@@ -21,7 +23,7 @@ const getProductsAll = async (req, res) => {
         ],
         order: [["salePrice", orderPrice]],
       });
-      // order: [["salePrice", orderPrice]]
+      
       //Filtrado de productos por ID de la categoría
       const productsByCategory = products.filter((product) => {
         if (product.Categories.length) {
@@ -39,7 +41,6 @@ const getProductsAll = async (req, res) => {
   } else {
     try {
       //Datos con todas las categorías
-
       const dataProducts = await Product.findAll({
         attributes: { exclude: ["id_Supplier"] },
         include: [
