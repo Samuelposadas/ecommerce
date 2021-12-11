@@ -20,6 +20,7 @@ module.exports = {
   rules: {
     indent: ["error", 2],
     "linebreak-style": 0,
+    "react/prop-types": ["off"],
     quotes: ["error", "double"],
     semi: ["error", "always"],
   },

@@ -3,15 +3,18 @@ import { productsMock } from "../../mock/productsMock";
 
 //components
 import Card from "../../Components/Card/Card";
+import Navbar from "../../common/Navbar/Navbar";
+import Footer from "../../common/Footer/Footer";
 
 const Home: FC = () => {
   return (
-    <div>
-      <h1>this is a Home Page</h1>
+    <>
+      <Navbar />
       {productsMock?.map((product) => (
         <Card key={product.id} {...product} />
       ))}
-    </div>
+      <Footer />
+    </>
   );
 };
 

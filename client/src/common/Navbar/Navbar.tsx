@@ -39,8 +39,8 @@ const Banner = styled.div`
 const Wrapper = styled.div`
   height: 50px;
   display: grid;
-  grid-template-columns: minmax(1px, auto) minmax(750px, auto) minmax(
-      40px,
+  grid-template-columns: minmax(0px, auto) minmax(800px, auto) minmax(
+      30px,
       auto
     );
 
@@ -51,11 +51,11 @@ const Wrapper = styled.div`
 const Space = styled.div``;
 const Menu = styled.ul`
   font-size: 10px;
-  font-weight: 500;
+  font-weight: 610;
   color: #e9e0e0ee;
   display: grid;
-  grid-template-columns: repeat(14, auto);
-  grid-gap: 0.9rem;
+  grid-template-columns: repeat(15, minmax(10px, auto));
+  grid-gap: 1rem;
   justify-items: center;
   align-items: center;
 `;
@@ -69,6 +69,7 @@ const LogoContainer = styled.div`
 const MenuItem = styled.li`
   list-style-type: none;
   cursor: pointer;
+  width: max-content;
 `;
 const MobileIconOne = styled.div`
   display: none;
@@ -116,7 +117,7 @@ const MobileDropdown = styled.ul<iMobileDropdown>`
 
   @media screen and (max-width: 768px) {
     display: grid;
-    gap: 0.05rem;
+    gap: 0rem;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(10, 28%);
     margin-left: -40.7px;
@@ -126,7 +127,7 @@ const MobileDropdown = styled.ul<iMobileDropdown>`
     transition-duration: 10s;
     transition-timing-function: linear;
     transition-delay: 10s;
-    z-index: -1;
+    z-index: 1;
 
     animation: ${({ open }) => (open ? "box 1.2s ease" : "box1 1.2s ease")};
     animation-iteration-count: 1;
@@ -156,6 +157,8 @@ const MobileDropdown = styled.ul<iMobileDropdown>`
   }
 `;
 const MobileDropdownItem = styled.li`
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
   background-color: #2b2929;
   color: #e9e0e0ee;
   list-style-type: none;
