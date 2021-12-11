@@ -116,6 +116,7 @@ const productController = {
     }
   },
 
+
   addOrRemoveCategoryProduct: async (req, res) => {
     const { idProduct, idCategories, action } = req.body;
     try {
@@ -130,6 +131,38 @@ const productController = {
       }
     } catch (error) {
       console.log(error);
+
+  updateProduct: async (req, res) => {
+    const { id } = req.params;
+    const {
+      name,
+      description,
+      salePrice,
+      stock,
+      img,
+      discount,
+      purchasePrice,
+      categories,
+    } = req.body;
+    try {
+      const product = await Product.findByPk(id);
+      if (!product) {
+        res.status(400).send("Product not found");
+      }
+      const update = {};
+      if (name) update.name = name;
+      if (description) update.description = description;
+      if (salePrice) update.salePrice = salePrice;
+      if (stock) update.stock = stock;
+      if (img) update.img = img;
+      if (discount) update.discount = discount;
+      if (purchasePrice) update.purchasePrice = purchasePrice;
+      if (categories) update.categories = categories;
+      const updateProduct = await product.update(update);
+      res.json(updateProduct);
+    } catch (error) {
+      console.error(error);
+
       res.status(500).send(error);
     }
   },
