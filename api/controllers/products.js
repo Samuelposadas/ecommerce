@@ -116,6 +116,24 @@ const productController = {
     }
   },
 
+  addOrRemoveCategoryProduct: async (req, res) => {
+    const { idProduct, idCategories, action } = req.body;
+    try {
+      const product = await Product.findByPk(idProduct);
+      if (action === "add") {
+        await product.addCategories(idCategories);
+        res.send("Categories were added successfully");
+      }
+      if (action === "remove") {
+        await product.removeCategories(idCategories);
+        res.send("Categories were removed correctly");
+      }
+    } catch (error) {
+      console.log(error);
+      res.status(500).send(error);
+    }
+  },
+
   updateProduct: async (req, res) => {
     const { id } = req.params;
     const {
@@ -146,7 +164,6 @@ const productController = {
       res.json(updateProduct);
     } catch (error) {
       console.error(error);
-      res.status(500).send(error);
     }
   },
 };
