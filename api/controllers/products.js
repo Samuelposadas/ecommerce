@@ -1,7 +1,6 @@
 const { Product, Op, Category, User } = require("../db/db");
 
-
-const getProductsAll = async(req, res) => {
+const getProductsAll = async (req, res) => {
   const PRODUCTS_PER_PAGE = 10;
   const { category } = req.query;
   if (category) {
@@ -41,13 +40,12 @@ const getProductsAll = async(req, res) => {
       };
       res.json(rows.length ? response : { message: "No products found" });
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
   }
-}
+};
 
-
-const findProductById = async(req, res) => {
+const findProductById = async (req, res) => {
   try {
     const { id } = req.params;
     const data = await Product.findOne({
@@ -65,12 +63,11 @@ const findProductById = async(req, res) => {
   } catch (error) {
     console.log(error);
   }
-}
+};
 
-
-const searchProducts = async(req, res) => {
+const searchProducts = async (req, res) => {
   const { name } = req.query;
-  if(name){
+  if (name) {
     try {
       const condition = name
         ? { where: { name: { [Op.iLike]: `%${name}%` } } }
@@ -81,14 +78,12 @@ const searchProducts = async(req, res) => {
     } catch (error) {
       console.log(error);
     }
-  }else{
-    res.send("No se encontraron coincidencias")
+  } else {
+    res.send("No se encontraron coincidencias");
   }
-}
+};
 
-
-
-const createProduct = async(req, res) => {
+const createProduct = async (req, res) => {
   const {
     name,
     description,
@@ -121,11 +116,9 @@ const createProduct = async(req, res) => {
     console.error(error);
     res.status(500).send(error);
   }
-}
+};
 
-
-
-const addOrRemoveCategoryProduct = async(req, res) => {
+const addOrRemoveCategoryProduct = async (req, res) => {
   const { idProduct, idCategories, action } = req.body;
   try {
     const product = await Product.findByPk(idProduct);
@@ -141,10 +134,9 @@ const addOrRemoveCategoryProduct = async(req, res) => {
     console.log(error);
     res.status(500).send(error);
   }
-}
+};
 
-
-const updateProduct = async(req, res) => {
+const updateProduct = async (req, res) => {
   const { id } = req.params;
   const {
     name,
@@ -175,8 +167,7 @@ const updateProduct = async(req, res) => {
   } catch (error) {
     console.error(error);
   }
-}
-
+};
 
 module.exports = {
   getProductsAll,
@@ -184,4 +175,5 @@ module.exports = {
   searchProducts,
   createProduct,
   addOrRemoveCategoryProduct,
-  updateProduct };
+  updateProduct,
+};
