@@ -3,9 +3,9 @@ const router = express.Router();
 const { postSupplier, getSuppliers, deleteSupplier } = require("../controllers/suppliers");
 
 
-router.post("/", postSupplier);
+router.post("/add", postSupplier);
 router.get("/", getSuppliers);
-router.delete("/:id", deleteSupplier);
+router.delete("/delete/:id", deleteSupplier);
 
 
 module.exports = router;
