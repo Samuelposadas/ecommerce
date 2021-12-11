@@ -116,7 +116,6 @@ const productController = {
     }
   },
 
-
   addOrRemoveCategoryProduct: async (req, res) => {
     const { idProduct, idCategories, action } = req.body;
     try {
@@ -131,6 +130,9 @@ const productController = {
       }
     } catch (error) {
       console.log(error);
+      res.status(500).send(error);
+    }
+  },
 
   updateProduct: async (req, res) => {
     const { id } = req.params;
@@ -162,8 +164,6 @@ const productController = {
       res.json(updateProduct);
     } catch (error) {
       console.error(error);
-
-      res.status(500).send(error);
     }
   },
 };
