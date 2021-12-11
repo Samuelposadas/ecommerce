@@ -1,18 +1,16 @@
 [
-
-    {
-        "name":"Notebook Latitude",
-        "description": "Laptop para juegos Dell Latitude Business Windows 10 Intel Core i5 16GB Ram 2TB SSD",
-        "salePrice":700,
-        "img":  
-            [
-                "https://i.ebayimg.com/images/g/De0AAOSwHIRgsaTu/s-l1600.png",
-                "https://i.ebayimg.com/images/g/MJUAAOSwPvlgZNxQ/s-l1600.png"
-            ],
-        "purchasePrice":400,
-        "rating":0,
-        "stock": 5,
-        "discount":0
+  {
+    "name": "Notebook Latitude",
+    "description": "Laptop para juegos Dell Latitude Business Windows 10 Intel Core i5 16GB Ram 2TB SSD",
+    "salePrice": 700,
+    "img": [
+      "https://i.ebayimg.com/images/g/De0AAOSwHIRgsaTu/s-l1600.png",
+      "https://i.ebayimg.com/images/g/MJUAAOSwPvlgZNxQ/s-l1600.png"
+    ],
+    "purchasePrice": 400,
+    "rating": 0,
+    "stock": 5,
+    "discount": 0
   },
 
   {
@@ -112,9 +110,21 @@
     "stock": 5,
     "discount": 0
   },
-
   {
-    "name": "Mouse inalambrico Gamer",
+    "name": "Mouse inalambrico gamer T66",
+    "description": "T66 con retroiluminación RGB de nido de abeja ratones ligero 2.4GHz Ratón Inalámbrico Recargable",
+    "salePrice": 25,
+    "img": [
+      "https://i.ebayimg.com/images/g/EqQAAOSwCYBhrxhz/s-l1600.jpg",
+      "https://i.ebayimg.com/images/g/uCsAAOSwByBhrxh0/s-l1600.jpg"
+    ],
+    "purchasePrice": 10,
+    "rating": 0,
+    "stock": 5,
+    "discount": 0
+  },
+  {
+    "name": "producto 11",
     "description": "Ratón Juego Láser LED RGB con cable USB Óptico Juego Mouse para PC Computadora Computadora portáti",
     "salePrice": 15,
     "img": [
@@ -126,16 +136,249 @@
     "stock": 5,
     "discount": 0
   },
-
   {
-    "name": "Mouse inalambrico gamer T66",
-    "description": "T66 con retroiluminación RGB de nido de abeja ratones ligero 2.4GHz Ratón Inalámbrico Recargable",
-    "salePrice": 25,
+    "name": "producto 12",
+    "description": "Ratón Juego Láser LED RGB con cable USB Óptico Juego Mouse para PC Computadora Computadora portáti",
+    "salePrice": 15,
     "img": [
-      "https://i.ebayimg.com/images/g/EqQAAOSwCYBhrxhz/s-l1600.jpg",
-      "https://i.ebayimg.com/images/g/uCsAAOSwByBhrxh0/s-l1600.jpg"
+      "https://i.ebayimg.com/images/g/yvkAAOSwBHFhryIa/s-l1600.jpg",
+      "https://i.ebayimg.com/images/g/NeQAAOSwbM9hryIa/s-l1600.jpg"
     ],
-    "purchasePrice": 10,
+    "purchasePrice": 7,
+    "rating": 0,
+    "stock": 5,
+    "discount": 0
+  },
+  {
+    "name": "producto 13",
+    "description": "Ratón Juego Láser LED RGB con cable USB Óptico Juego Mouse para PC Computadora Computadora portáti",
+    "salePrice": 15,
+    "img": [
+      "https://i.ebayimg.com/images/g/yvkAAOSwBHFhryIa/s-l1600.jpg",
+      "https://i.ebayimg.com/images/g/NeQAAOSwbM9hryIa/s-l1600.jpg"
+    ],
+    "purchasePrice": 7,
+    "rating": 0,
+    "stock": 5,
+    "discount": 0
+  },
+  {
+    "name": "producto 14",
+    "description": "Ratón Juego Láser LED RGB con cable USB Óptico Juego Mouse para PC Computadora Computadora portáti",
+    "salePrice": 15,
+    "img": [
+      "https://i.ebayimg.com/images/g/yvkAAOSwBHFhryIa/s-l1600.jpg",
+      "https://i.ebayimg.com/images/g/NeQAAOSwbM9hryIa/s-l1600.jpg"
+    ],
+    "purchasePrice": 7,
+    "rating": 0,
+    "stock": 5,
+    "discount": 0
+  },
+  {
+    "name": "producto 15",
+    "description": "Ratón Juego Láser LED RGB con cable USB Óptico Juego Mouse para PC Computadora Computadora portáti",
+    "salePrice": 15,
+    "img": [
+      "https://i.ebayimg.com/images/g/yvkAAOSwBHFhryIa/s-l1600.jpg",
+      "https://i.ebayimg.com/images/g/NeQAAOSwbM9hryIa/s-l1600.jpg"
+    ],
+    "purchasePrice": 7,
+    "rating": 0,
+    "stock": 5,
+    "discount": 0
+  },
+  {
+    "name": "producto 16",
+    "description": "Ratón Juego Láser LED RGB con cable USB Óptico Juego Mouse para PC Computadora Computadora portáti",
+    "salePrice": 15,
+    "img": [
+      "https://i.ebayimg.com/images/g/yvkAAOSwBHFhryIa/s-l1600.jpg",
+      "https://i.ebayimg.com/images/g/NeQAAOSwbM9hryIa/s-l1600.jpg"
+    ],
+    "purchasePrice": 7,
+    "rating": 0,
+    "stock": 5,
+    "discount": 0
+  },
+  {
+    "name": "producto 17",
+    "description": "Ratón Juego Láser LED RGB con cable USB Óptico Juego Mouse para PC Computadora Computadora portáti",
+    "salePrice": 15,
+    "img": [
+      "https://i.ebayimg.com/images/g/yvkAAOSwBHFhryIa/s-l1600.jpg",
+      "https://i.ebayimg.com/images/g/NeQAAOSwbM9hryIa/s-l1600.jpg"
+    ],
+    "purchasePrice": 7,
+    "rating": 0,
+    "stock": 5,
+    "discount": 0
+  },
+  {
+    "name": "producto 18",
+    "description": "Ratón Juego Láser LED RGB con cable USB Óptico Juego Mouse para PC Computadora Computadora portáti",
+    "salePrice": 15,
+    "img": [
+      "https://i.ebayimg.com/images/g/yvkAAOSwBHFhryIa/s-l1600.jpg",
+      "https://i.ebayimg.com/images/g/NeQAAOSwbM9hryIa/s-l1600.jpg"
+    ],
+    "purchasePrice": 7,
+    "rating": 0,
+    "stock": 5,
+    "discount": 0
+  },
+  {
+    "name": "producto 19",
+    "description": "Ratón Juego Láser LED RGB con cable USB Óptico Juego Mouse para PC Computadora Computadora portáti",
+    "salePrice": 15,
+    "img": [
+      "https://i.ebayimg.com/images/g/yvkAAOSwBHFhryIa/s-l1600.jpg",
+      "https://i.ebayimg.com/images/g/NeQAAOSwbM9hryIa/s-l1600.jpg"
+    ],
+    "purchasePrice": 7,
+    "rating": 0,
+    "stock": 5,
+    "discount": 0
+  },
+  {
+    "name": "producto 20",
+    "description": "Ratón Juego Láser LED RGB con cable USB Óptico Juego Mouse para PC Computadora Computadora portáti",
+    "salePrice": 15,
+    "img": [
+      "https://i.ebayimg.com/images/g/yvkAAOSwBHFhryIa/s-l1600.jpg",
+      "https://i.ebayimg.com/images/g/NeQAAOSwbM9hryIa/s-l1600.jpg"
+    ],
+    "purchasePrice": 7,
+    "rating": 0,
+    "stock": 5,
+    "discount": 0
+  },
+  {
+    "name": "producto 21",
+    "description": "Ratón Juego Láser LED RGB con cable USB Óptico Juego Mouse para PC Computadora Computadora portáti",
+    "salePrice": 15,
+    "img": [
+      "https://i.ebayimg.com/images/g/yvkAAOSwBHFhryIa/s-l1600.jpg",
+      "https://i.ebayimg.com/images/g/NeQAAOSwbM9hryIa/s-l1600.jpg"
+    ],
+    "purchasePrice": 7,
+    "rating": 0,
+    "stock": 5,
+    "discount": 0
+  },
+  {
+    "name": "producto 22",
+    "description": "Ratón Juego Láser LED RGB con cable USB Óptico Juego Mouse para PC Computadora Computadora portáti",
+    "salePrice": 15,
+    "img": [
+      "https://i.ebayimg.com/images/g/yvkAAOSwBHFhryIa/s-l1600.jpg",
+      "https://i.ebayimg.com/images/g/NeQAAOSwbM9hryIa/s-l1600.jpg"
+    ],
+    "purchasePrice": 7,
+    "rating": 0,
+    "stock": 5,
+    "discount": 0
+  },
+  {
+    "name": "producto 23",
+    "description": "Ratón Juego Láser LED RGB con cable USB Óptico Juego Mouse para PC Computadora Computadora portáti",
+    "salePrice": 15,
+    "img": [
+      "https://i.ebayimg.com/images/g/yvkAAOSwBHFhryIa/s-l1600.jpg",
+      "https://i.ebayimg.com/images/g/NeQAAOSwbM9hryIa/s-l1600.jpg"
+    ],
+    "purchasePrice": 7,
+    "rating": 0,
+    "stock": 5,
+    "discount": 0
+  },
+  {
+    "name": "producto 24",
+    "description": "Ratón Juego Láser LED RGB con cable USB Óptico Juego Mouse para PC Computadora Computadora portáti",
+    "salePrice": 15,
+    "img": [
+      "https://i.ebayimg.com/images/g/yvkAAOSwBHFhryIa/s-l1600.jpg",
+      "https://i.ebayimg.com/images/g/NeQAAOSwbM9hryIa/s-l1600.jpg"
+    ],
+    "purchasePrice": 7,
+    "rating": 0,
+    "stock": 5,
+    "discount": 0
+  },
+  {
+    "name": "producto 25",
+    "description": "Ratón Juego Láser LED RGB con cable USB Óptico Juego Mouse para PC Computadora Computadora portáti",
+    "salePrice": 15,
+    "img": [
+      "https://i.ebayimg.com/images/g/yvkAAOSwBHFhryIa/s-l1600.jpg",
+      "https://i.ebayimg.com/images/g/NeQAAOSwbM9hryIa/s-l1600.jpg"
+    ],
+    "purchasePrice": 7,
+    "rating": 0,
+    "stock": 5,
+    "discount": 0
+  },
+  {
+    "name": "producto 26",
+    "description": "Ratón Juego Láser LED RGB con cable USB Óptico Juego Mouse para PC Computadora Computadora portáti",
+    "salePrice": 15,
+    "img": [
+      "https://i.ebayimg.com/images/g/yvkAAOSwBHFhryIa/s-l1600.jpg",
+      "https://i.ebayimg.com/images/g/NeQAAOSwbM9hryIa/s-l1600.jpg"
+    ],
+    "purchasePrice": 7,
+    "rating": 0,
+    "stock": 5,
+    "discount": 0
+  },
+  {
+    "name": "producto 27",
+    "description": "Ratón Juego Láser LED RGB con cable USB Óptico Juego Mouse para PC Computadora Computadora portáti",
+    "salePrice": 15,
+    "img": [
+      "https://i.ebayimg.com/images/g/yvkAAOSwBHFhryIa/s-l1600.jpg",
+      "https://i.ebayimg.com/images/g/NeQAAOSwbM9hryIa/s-l1600.jpg"
+    ],
+    "purchasePrice": 7,
+    "rating": 0,
+    "stock": 5,
+    "discount": 0
+  },
+  {
+    "name": "producto 28",
+    "description": "Ratón Juego Láser LED RGB con cable USB Óptico Juego Mouse para PC Computadora Computadora portáti",
+    "salePrice": 15,
+    "img": [
+      "https://i.ebayimg.com/images/g/yvkAAOSwBHFhryIa/s-l1600.jpg",
+      "https://i.ebayimg.com/images/g/NeQAAOSwbM9hryIa/s-l1600.jpg"
+    ],
+    "purchasePrice": 7,
+    "rating": 0,
+    "stock": 5,
+    "discount": 0
+  },
+  {
+    "name": "producto 29",
+    "description": "Ratón Juego Láser LED RGB con cable USB Óptico Juego Mouse para PC Computadora Computadora portáti",
+    "salePrice": 15,
+    "img": [
+      "https://i.ebayimg.com/images/g/yvkAAOSwBHFhryIa/s-l1600.jpg",
+      "https://i.ebayimg.com/images/g/NeQAAOSwbM9hryIa/s-l1600.jpg"
+    ],
+    "purchasePrice": 7,
+    "rating": 0,
+    "stock": 5,
+    "discount": 0
+  },
+  {
+    "name": "producto 30",
+    "description": "Ratón Juego Láser LED RGB con cable USB Óptico Juego Mouse para PC Computadora Computadora portáti",
+    "salePrice": 15,
+    "img": [
+      "https://i.ebayimg.com/images/g/yvkAAOSwBHFhryIa/s-l1600.jpg",
+      "https://i.ebayimg.com/images/g/NeQAAOSwbM9hryIa/s-l1600.jpg"
+    ],
+    "purchasePrice": 7,
     "rating": 0,
     "stock": 5,
     "discount": 0

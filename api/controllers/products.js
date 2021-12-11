@@ -1,8 +1,8 @@
-const { Product, Op, Category } = require("../db/db");
+const { Product, Op, Category, User } = require("../db/db");
 
 const productController = {
   getProductsAll: async (req, res, next) => {
-    const PRODUCTS_PER_PAGE = 3;
+    const PRODUCTS_PER_PAGE = 10;
     const { category } = req.query;
     if (category) {
       const products = await Product.findAll({ include: Category });
@@ -24,31 +24,39 @@ const productController = {
       } catch (e) {
         console.log(e);
       }
-    }
-    try {
-      const page = req.query.page ? parseInt(req.query.page) : 0;
-      const query = {
-        offset: page * PRODUCTS_PER_PAGE,
-        limit: PRODUCTS_PER_PAGE,
-      };
-      const { count, rows } = await Product.findAndCountAll(query);
-      console.log(count);
-      console.log(rows.map((p) => p.toJSON()));
-      const response = {
-        totalPages: Math.ceil(count / PRODUCTS_PER_PAGE),
-        products: [...rows],
-      };
-      res.json(rows.length ? response : { message: "No products found" });
-    } catch (error) {
-      next(error);
+    } else {
+      try {
+        const page = req.query.page ? parseInt(req.query.page) : 0;
+        const query = {
+          offset: page * PRODUCTS_PER_PAGE,
+          limit: PRODUCTS_PER_PAGE,
+        };
+        query.attributes = ["id", "name", "img", "salePrice"];
+        const { count, rows } = await Product.findAndCountAll(query);
+        console.log(count);
+        console.log(rows.map((p) => p.toJSON()));
+        const response = {
+          count,
+          totalPages: Math.ceil(count / PRODUCTS_PER_PAGE),
+          products: [...rows],
+        };
+        res.json(rows.length ? response : { message: "No products found" });
+      } catch (error) {
+        next(error);
+      }
     }
   },
 
   findProductById: async (req, res, next) => {
     try {
       const { id } = req.params;
-      console.log(id);
-      const data = await Product.findByPk(id);
+      const data = await Product.findOne({
+        where: { id },
+        include: [
+          { model: Category, through: { attributes: [] } },
+          { model: User, through: { attributes: [] } },
+        ],
+      });
       if (data) {
         res.status(201).json(data);
       } else {
@@ -65,10 +73,9 @@ const productController = {
       const condition = name
         ? { where: { name: { [Op.iLike]: `%${name}%` } } }
         : {};
-      condition.attributes = { exclude: ["description"] };
+      condition.attributes = ["id", "name", "img", "salePrice"];
       const products = await Product.findAll(condition);
-      console.log(products.map((p) => p.toJSON()));
-      res.json(products.length ? products : "No products found");
+      res.json(products.length ? products : { message: "No products found" });
     } catch (error) {
       next(error);
     }
