@@ -91,10 +91,15 @@ const searchProducts = async (req, res) => {
   const { name } = req.query;
   if (name) {
     try {
-      const condition = name
-        ? { where: { name: { [Op.iLike]: `%${name}%` } } }
-        : {};
-      condition.attributes = ["id", "name", "img", "salePrice"];
+      const condition = {
+        where: { name: { [Op.iLike]: `%${name}%` } },
+        attributes: { exclude: ["id_Supplier"] },
+        include: [
+          { model: Category },
+          { model: Supplier, attributes: ["name"] },
+        ],
+        // order: [["salePrice", orderPrice]],
+      };
       const products = await Product.findAll(condition);
       res.json(products.length ? products : { message: "No products found" });
     } catch (error) {
