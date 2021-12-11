@@ -4,6 +4,7 @@ const cookieParser = require("cookie-parser");
 const logger = require("morgan");
 const dotenv = require("dotenv");
 dotenv.config();
+var cors = require("cors");
 
 const productsRouter = require("./routes/products");
 const usersRouter = require("./routes/products");
@@ -11,7 +12,7 @@ const supplierRouter = require("./routes/suppliers");
 const categoryRouter = require("./routes/categories");
 
 const app = express();
-
+app.use(cors());
 // view engine setup
 
 app.use(logger("dev"));
