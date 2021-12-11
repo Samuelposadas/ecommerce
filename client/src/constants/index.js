@@ -1,5 +1,6 @@
-export const SET_PRODUCT = "set_product";
-export const SET_ALL_PRODUCTS = "set_all_products";
-export const SET_COPY_ALL_PRODUCTS = "set_copy_all_products";
-export const SET__ALL_CATEGORIES = "set_all_categories";
-export const SET_FILTER_PRODUCTS = "set_filter_products";
+export const SET_PRODUCT = "SET_PRODUCT";
+export const SET_ALL_PRODUCTS = "SET_ALL_PRODUCTS";
+export const SET_COPY_ALL_PRODUCTS = "SET_COPY_ALL_PRODUCTS";
+export const SET__ALL_CATEGORIES = "SET__ALL_CATEGORIES";
+export const SET_FILTER_PRODUCTS = "SET_FILTER_PRODUCTS";
+export const GET_PRODUCT_BY_NAME = "GET_PRODUCT_BY_NAME";
