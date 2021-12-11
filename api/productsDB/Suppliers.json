@@ -1,0 +1,50 @@
+[
+    {
+        "name":"Intel",
+
+        "phone": "123342445",
+
+        "email": "samuelposadas@gmail.com"
+    },
+
+    {
+        "name":"Microsoft",
+
+        "phone": "123123123",
+
+        "email": "gonzalofleitas@gmail.com"
+    },
+
+    {
+        "name":"HP",
+
+        "phone": "12345678",
+
+        "email": "agus2324@gmail.com"
+    },
+
+    {
+        "name":"Motorolla",
+
+        "phone": "13457675",
+
+        "email": "Edwin1212@gmail.com"
+    },
+
+    {
+        "name":"Asus",
+
+        "phone": "22233455",
+
+        "email": "Fran1111@gmail.com"
+    },
+
+    {
+        "name":"NVIDIA",
+
+        "phone": "233344555",
+
+        "email": "nico3331@gmail.com"
+    }
+
+]
