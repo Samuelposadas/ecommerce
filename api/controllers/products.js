@@ -1,7 +1,6 @@
 const { Product, Op, Category, User, Supplier } = require("../db/db");
 
 const getProductsAll = async (req, res) => {
-  
   let { category, orderPrice, page } = req.query;
 
   //variable para mandar a paginar
@@ -10,7 +9,7 @@ const getProductsAll = async (req, res) => {
   //Valores por defecto si no vienen por query
   page = page ? page : 1;
   orderPrice = orderPrice ? orderPrice : "ASC";
-  
+
   const PRODUCTS_PER_PAGE = 10;
 
   if (category) {
@@ -23,7 +22,7 @@ const getProductsAll = async (req, res) => {
         ],
         order: [["salePrice", orderPrice]],
       });
-      
+
       //Filtrado de productos por ID de la categoría
       const productsByCategory = products.filter((product) => {
         if (product.Categories.length) {
@@ -111,11 +110,13 @@ const createProduct = async (req, res) => {
     name,
     description,
     salePrice,
-    stock,
-    img,
-    discount,
     purchasePrice,
-    categories,
+    img,
+    rating,
+    stock,
+    discount,
+    Categories,
+    supplier,
   } = req.body;
   try {
     const [product, created] = await Product.findOrCreate({
@@ -123,14 +124,16 @@ const createProduct = async (req, res) => {
       defaults: {
         description,
         salePrice,
-        stock,
         img,
-        discount,
         purchasePrice,
+        rating,
+        stock,
+        discount,
       },
     });
     if (created) {
-      product.addCategories(categories);
+      product.addCategories(Categories);
+      product.setSupplier(supplier);
       res.json(product);
     } else {
       res.send("this product is already created");
