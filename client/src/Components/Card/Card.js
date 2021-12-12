@@ -59,9 +59,9 @@ export const StyledLink = styled(Link)`
   text-decoration: none;
 `;
 
-const Card = ({ img, name, salePrice, rating }) => {
+const Card = ({ img, name, salePrice, rating, id }) => {
   return (
-    <StyledLink to="/">
+    <StyledLink to={`/products/${id}`}>
       <Container>
         <Image src={img[0]} alt="image not found" />
         <Title>{name}</Title>
