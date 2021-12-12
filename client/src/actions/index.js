@@ -5,12 +5,9 @@ import {
   POST_PRODUCT,
   SET_PRODUCT_DETAIL,
   URL_BASE_PRODUCTS,
-
   GET_SUPPLIERS,
   GET_ALL_CATEGORIES,
-
   TOTAL_PAGES,
-
 } from "../constants";
 import { actionGenerator, reqGetAxios } from "./metodos";
 
@@ -73,7 +70,7 @@ export const postProducts = (payload) => {
 export const getSuppliers = () => {
   return async function (dispatch) {
     try {
-      const getSupplier = await axios.get("http://localhost:3001/suppliers/");
+      const getSupplier = await axios.get("http://localhost:3001/suppliers");
       return dispatch({
         type: GET_SUPPLIERS,
         payload: getSupplier.data,
@@ -87,7 +84,7 @@ export const getSuppliers = () => {
 export const getAllCategories = () => {
   return async function (dispatch) {
     try {
-      const categories = await axios.get("http://localhost:3001/categories/");
+      const categories = await axios.get("http://localhost:3001/categories");
       return dispatch({
         type: GET_ALL_CATEGORIES,
         payload: categories.data,

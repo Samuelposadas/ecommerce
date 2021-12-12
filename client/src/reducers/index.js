@@ -3,13 +3,10 @@ import {
   GET_PRODUCT_BY_NAME,
   GET_ALL_PRODUCTS,
   SET_PRODUCT_DETAIL,
-
   POST_PRODUCT,
   GET_SUPPLIERS,
   GET_ALL_CATEGORIES,
-
   TOTAL_PAGES,
-
 } from "../constants";
 
 const initialState = {
@@ -23,7 +20,6 @@ const initialState = {
   allSuppliers: [],
 
   totalPages: 1,
-
 };
 
 export const reducer = (state = initialState, { type, payload }) => {
@@ -58,12 +54,12 @@ export const reducer = (state = initialState, { type, payload }) => {
     case GET_SUPPLIERS:
       return {
         ...state,
-        allSuppliers: action.payload,
+        allSuppliers: payload,
       };
     case GET_ALL_CATEGORIES:
       return {
         ...state,
-        allCategories: action.payload,
+        allCategories: payload,
       };
     default:
       return state;
