@@ -3,9 +3,13 @@ import {
   GET_PRODUCT_BY_NAME,
   GET_ALL_PRODUCTS,
   SET_PRODUCT_DETAIL,
+
   POST_PRODUCT,
   GET_SUPPLIERS,
   GET_ALL_CATEGORIES,
+
+  TOTAL_PAGES,
+
 } from "../constants";
 
 const initialState = {
@@ -15,26 +19,35 @@ const initialState = {
   copyAllProducts: [],
   allCategories: [],
   filterProducts: [],
+
   allSuppliers: [],
+
+  totalPages: 1,
+
 };
 
-export const reducer = (state = initialState, action) => {
-  switch (action.type) {
+export const reducer = (state = initialState, { type, payload }) => {
+  switch (type) {
     case GET_PRODUCT_BY_NAME:
       return {
         ...state,
-        renderProducts: action.payload,
+        renderProducts: payload,
       };
 
     case GET_ALL_PRODUCTS:
       return {
         ...state,
-        allProducts: action.payload,
+        allProducts: payload,
       };
     case SET_PRODUCT_DETAIL:
       return {
         ...state,
-        productDetail: action.payload,
+        productDetail: payload,
+      };
+    case TOTAL_PAGES:
+      return {
+        ...state,
+        totalPages: payload,
       };
 
     case POST_PRODUCT:
