@@ -1,48 +1,70 @@
-const { Product, Op, Category, User } = require("../db/db");
+const { Product, Op, Category, User, Supplier } = require("../db/db");
 
 const getProductsAll = async (req, res) => {
-  const PRODUCTS_PER_PAGE = 10;
-  const { category } = req.query;
-  if (category) {
-    const products = await Product.findAll({ include: Category });
+  let { category, orderPrice, page } = req.query;
 
+  //variable para mandar a paginar
+  let resultData;
+
+  //Valores por defecto si no vienen por query
+  page = page ? page : 1;
+  orderPrice = orderPrice ? orderPrice : "ASC";
+
+  const PRODUCTS_PER_PAGE = 10;
+
+  if (category) {
     try {
-      const productsByCategoty = products.filter((product) => {
+      const products = await Product.findAll({
+        attributes: { exclude: ["id_Supplier"] },
+        include: [
+          { model: Category },
+          { model: Supplier, attributes: ["name"] },
+        ],
+        order: [["salePrice", orderPrice]],
+      });
+
+      //Filtrado de productos por ID de la categoría
+      const productsByCategory = products.filter((product) => {
         if (product.Categories.length) {
           for (let i = 0; i < product.Categories.length; i++) {
-            if (product.Categories[i].name === category) {
+            if (product.Categories[i].id === +category) {
               return product;
             }
           }
         }
       });
-      productsByCategoty.length
-        ? res.json(productsByCategoty)
-        : res.json({ messege: "No products found" });
-    } catch (e) {
-      console.log(e);
+      resultData = [...productsByCategory];
+    } catch (error) {
+      console.log(error);
     }
   } else {
     try {
-      const page = req.query.page ? parseInt(req.query.page) : 0;
-      const query = {
-        offset: page * PRODUCTS_PER_PAGE,
-        limit: PRODUCTS_PER_PAGE,
-      };
-      query.attributes = ["id", "name", "img", "salePrice"];
-      const { count, rows } = await Product.findAndCountAll(query);
-      console.log(count);
-      console.log(rows.map((p) => p.toJSON()));
-      const response = {
-        count,
-        totalPages: Math.ceil(count / PRODUCTS_PER_PAGE),
-        products: [...rows],
-      };
-      res.json(rows.length ? response : { message: "No products found" });
+      //Datos con todas las categorías
+      const dataProducts = await Product.findAll({
+        attributes: { exclude: ["id_Supplier"] },
+        include: [
+          { model: Category },
+          { model: Supplier, attributes: ["name"] },
+        ],
+        order: [["salePrice", orderPrice]],
+      });
+      resultData = [...dataProducts];
     } catch (error) {
       console.log(error);
     }
   }
+
+  //Código de paginado
+  const result = resultData.slice(
+    PRODUCTS_PER_PAGE * (page - 1),
+    PRODUCTS_PER_PAGE * (page - 1) + PRODUCTS_PER_PAGE
+  );
+
+  res.json({
+    count: resultData.length,
+    totalPages: Math.ceil(resultData.length / PRODUCTS_PER_PAGE),
+    products: result,
+  });
 };
 
 const findProductById = async (req, res) => {
@@ -50,10 +72,8 @@ const findProductById = async (req, res) => {
     const { id } = req.params;
     const data = await Product.findOne({
       where: { id },
-      include: [
-        { model: Category, through: { attributes: [] } },
-        { model: User, through: { attributes: [] } },
-      ],
+      attributes: { exclude: ["id_Supplier"] },
+      include: [{ model: Category }, { model: Supplier, attributes: ["name"] }],
     });
     if (data) {
       res.status(201).json(data);
@@ -69,10 +89,15 @@ const searchProducts = async (req, res) => {
   const { name } = req.query;
   if (name) {
     try {
-      const condition = name
-        ? { where: { name: { [Op.iLike]: `%${name}%` } } }
-        : {};
-      condition.attributes = ["id", "name", "img", "salePrice"];
+      const condition = {
+        where: { name: { [Op.iLike]: `%${name}%` } },
+        attributes: { exclude: ["id_Supplier"] },
+        include: [
+          { model: Category },
+          { model: Supplier, attributes: ["name"] },
+        ],
+        // order: [["salePrice", orderPrice]],
+      };
       const products = await Product.findAll(condition);
       res.json(products.length ? products : { message: "No products found" });
     } catch (error) {
@@ -88,11 +113,13 @@ const createProduct = async (req, res) => {
     name,
     description,
     salePrice,
-    stock,
-    img,
-    discount,
     purchasePrice,
-    categories,
+    img,
+    rating,
+    stock,
+    discount,
+    Categories,
+    supplier,
   } = req.body;
   try {
     const [product, created] = await Product.findOrCreate({
@@ -100,14 +127,16 @@ const createProduct = async (req, res) => {
       defaults: {
         description,
         salePrice,
-        stock,
         img,
-        discount,
         purchasePrice,
+        rating,
+        stock,
+        discount,
       },
     });
     if (created) {
-      product.addCategories(categories);
+      product.addCategories(Categories);
+      product.setSupplier(supplier);
       res.json(product);
     } else {
       res.send("this product is already created");

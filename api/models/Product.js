@@ -18,12 +18,20 @@ module.exports = (sequelize) => {
         type: DataTypes.REAL,
         allowNull: false,
       },
+      rating: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        defaultValue: 0,
+        validate: {
+          min: 0,
+          max: 5,
+        },
+      },
       stock: {
         type: DataTypes.INTEGER,
         allowNull: false,
       },
       img: {
-
         type: DataTypes.ARRAY({ type: DataTypes.STRING }),
         validate: {
           isUrl: true,
