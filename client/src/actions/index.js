@@ -40,7 +40,7 @@ export const getAllProducts = () => {
 export const getProductDetail = (idProduct) => {
   return async function (dispatch) {
     try {
-      const result = reqGetAxios(`${URL_BASE_PRODUCTS}/${idProduct}`);
+      const result = await reqGetAxios(`${URL_BASE_PRODUCTS}/${idProduct}`);
       dispatch(actionGenerator(SET_PRODUCT_DETAIL, result));
     } catch (error) {
       console.log(error);
