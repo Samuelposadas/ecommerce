@@ -15,7 +15,6 @@ const Home = () => {
     dispatch(getAllProducts());
   }, []);
 
-  console.log(allProducts);
   return (
     <>
       <Navbar />
