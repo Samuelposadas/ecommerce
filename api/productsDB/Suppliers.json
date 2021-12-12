@@ -1,6 +1,6 @@
 [
     {
-        "name":"Intel",
+        "name":"HardwareMaster",
 
         "phone": "123342445",
 
@@ -8,15 +8,15 @@
     },
 
     {
-        "name":"Microsoft",
+        "name":"StoreTech",
 
-        "phone": "123123123",
+        "phone": "981565157",
 
-        "email": "gonzalofleitas@gmail.com"
+        "email": "storetech220@gmail.com"
     },
 
     {
-        "name":"HP",
+        "name":"DeskLive",
 
         "phone": "12345678",
 
@@ -24,7 +24,7 @@
     },
 
     {
-        "name":"Motorolla",
+        "name":"DR-PC",
 
         "phone": "13457675",
 
@@ -32,7 +32,7 @@
     },
 
     {
-        "name":"Asus",
+        "name":"TurboByte",
 
         "phone": "22233455",
 
@@ -45,6 +45,14 @@
         "phone": "233344555",
 
         "email": "nico3331@gmail.com"
+    },
+
+    {
+        "name":"OLYSM",
+
+        "phone": "165165",
+
+        "email": "amdgaming@gmail.com"
     }
 
 ]
