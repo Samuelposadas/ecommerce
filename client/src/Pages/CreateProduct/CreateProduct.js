@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from "react";
 
-import { getAllCategories, getSuppliers, postProducts } from "../../actions";
+import {
+  getAllCategories,
+  getSuppliers,
+  postProducts,
+} from "../../actions/index";
 
 import { useDispatch, useSelector } from "react-redux";
 
@@ -50,6 +54,7 @@ const CreateProduct = () => {
   const [input, setInput] = useState(initialState);
 
   useEffect(() => {
+    console.log("hola");
     dispatch(getAllCategories());
   }, []);
 
