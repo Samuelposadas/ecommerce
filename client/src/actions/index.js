@@ -1,5 +1,11 @@
 import axios from "axios";
-import { GET_PRODUCT_BY_NAME, GET_ALL_PRODUCTS } from "../constants";
+import {
+  GET_PRODUCT_BY_NAME,
+  GET_ALL_PRODUCTS,
+  SET_PRODUCT_DETAIL,
+  URL_BASE_PRODUCTS,
+} from "../constants";
+import { actionGenerator, reqGetAxios } from "./metodos";
 
 export const getProductByName = (name) => {
   return async function (dispatch) {
@@ -26,6 +32,16 @@ export const getAllProducts = () => {
         type: GET_ALL_PRODUCTS,
         payload: products.data.products,
       });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+};
+export const getProductDetail = (idProduct) => {
+  return async function (dispatch) {
+    try {
+      const result = await reqGetAxios(`${URL_BASE_PRODUCTS}/${idProduct}`);
+      dispatch(actionGenerator(SET_PRODUCT_DETAIL, result));
     } catch (error) {
       console.log(error);
     }

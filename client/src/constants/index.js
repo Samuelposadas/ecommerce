@@ -4,3 +4,5 @@ export const SET_COPY_ALL_PRODUCTS = "SET_COPY_ALL_PRODUCTS";
 export const SET_ALL_CATEGORIES = "SET__ALL_CATEGORIES";
 export const SET_FILTER_PRODUCTS = "SET_FILTER_PRODUCTS";
 export const GET_PRODUCT_BY_NAME = "GET_PRODUCT_BY_NAME";
+export const SET_PRODUCT_DETAIL = "SET_PRODUCT_DETAIL";
+export const URL_BASE_PRODUCTS = "http://localhost:3001/products";
