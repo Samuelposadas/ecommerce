@@ -1,4 +1,4 @@
-const { Product, Op, Category, User, Supplier } = require("../db/db");
+const { Product, Op, Category, /* User, */ Supplier } = require("../db/db");
 
 const getProductsAll = async (req, res) => {
   let { category, orderPrice, page } = req.query;

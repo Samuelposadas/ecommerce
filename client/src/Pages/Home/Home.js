@@ -1,11 +1,12 @@
-import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { getAllProducts } from "../../actions/index";
+import React from "react";
+import { useSelector } from "react-redux";
+
 import styled from "styled-components";
 //components
 import Card from "../../Components/Card/Card";
 import Navbar from "../../common/Navbar/Navbar";
 import Footer from "../../common/Footer/Footer";
+import { Paginate } from "../../Components/Pagination/Paginate";
 
 const CardsContainer = styled.div`
   display: grid;
@@ -19,21 +20,19 @@ const CardsContainer = styled.div`
 `;
 
 const Home = () => {
-  const dispatch = useDispatch();
   const allProducts = useSelector((state) => state.allProducts);
-
-  useEffect(() => {
-    dispatch(getAllProducts());
-  }, []);
 
   return (
     <>
       <Navbar />
+
       <CardsContainer>
         {allProducts?.map((product) => (
           <Card key={product.id} {...product} />
         ))}
       </CardsContainer>
+
+      <Paginate />
 
       <Footer />
     </>

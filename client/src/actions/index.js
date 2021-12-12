@@ -4,6 +4,7 @@ import {
   GET_ALL_PRODUCTS,
   SET_PRODUCT_DETAIL,
   URL_BASE_PRODUCTS,
+  TOTAL_PAGES,
 } from "../constants";
 import { actionGenerator, reqGetAxios } from "./metodos";
 
@@ -11,7 +12,7 @@ export const getProductByName = (name) => {
   return async function (dispatch) {
     try {
       const product = await axios.get(
-        "http://localhost:3001/products/search?name=" + name
+        `http://localhost:3001/products/search?name=${name}`
       );
       console.log(product.data);
       return dispatch({
@@ -24,16 +25,24 @@ export const getProductByName = (name) => {
   };
 };
 
-export const getAllProducts = () => {
+export const getAllProducts = (numPage) => {
   return async function (dispatch) {
-    try {
-      const products = await axios.get("http://localhost:3001/products/");
-      return dispatch({
-        type: GET_ALL_PRODUCTS,
-        payload: products.data.products,
-      });
-    } catch (error) {
-      console.log(error);
+    if (numPage) {
+      try {
+        const products = await axios.get(
+          `http://localhost:3001/products?page=${numPage}`
+        );
+        dispatch({
+          type: GET_ALL_PRODUCTS,
+          payload: products.data.products,
+        });
+        dispatch({
+          type: TOTAL_PAGES,
+          payload: products.data.totalPages,
+        });
+      } catch (error) {
+        console.log(error);
+      }
     }
   };
 };
