@@ -58,3 +58,36 @@
 // };
 
 // export default ProductDetail;
+//--------------------------------------------------------------------------------------***********************
+
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useParams } from "react-router-dom";
+import { getProductDetail } from "../../actions";
+import { ProductDetailStyled } from "./productDetailStyled";
+
+const ProductDetail = () => {
+  const { id } = useParams();
+  const dispatch = useDispatch();
+  const { name, img, description } = useSelector(
+    (state) => state.productDetail
+  );
+  useEffect(() => {
+    dispatch(getProductDetail(id));
+  }, []);
+  return (
+    <ProductDetailStyled>
+      {name ? (
+        <section>
+          <picture>
+            <img src={img[0]} alt="" />
+          </picture>
+          <h1>{name}</h1>
+          <div>{description}</div>
+        </section>
+      ) : null}
+    </ProductDetailStyled>
+  );
+};
+
+export default ProductDetail;
