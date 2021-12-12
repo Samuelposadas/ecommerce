@@ -7,7 +7,6 @@ import {
   AiOutlineShopping,
 } from "react-icons/ai";
 import { GoThreeBars, GoX } from "react-icons/go";
-import { iMobileDropdown } from "../../types/propsNavbar";
 
 const Categories = [
   "Shop All",
@@ -112,10 +111,7 @@ const MobileWrapper = styled.div`
   }
 `;
 
-const MobileDropdown =
-  styled.ul <
-  iMobileDropdown >
-  `
+const MobileDropdown = styled.ul`
   display: none;
 
   @media screen and (max-width: 768px) {
