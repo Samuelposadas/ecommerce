@@ -6,12 +6,11 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Home from "../Pages/Home/Home";
 import ProductDetail from "../Pages/ProductDetail/ProductDetail";
 
-const Router = () => {
+const RouterApp = () => {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
-
         <Route path="*" element={<Navigate to="/home" />} />
         <Route path="/product/:id" element={<ProductDetail />} />
       </Routes>
@@ -19,4 +18,4 @@ const Router = () => {
   );
 };
 
-export default Router;
+export default RouterApp;

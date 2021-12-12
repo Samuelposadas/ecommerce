@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getAllProducts } from "../../actions/index";
 
 //components
-// import Card from "../../Components/Card/Card";
+import Card from "../../Components/Card/Card";
 import Navbar from "../../common/Navbar/Navbar";
 import Footer from "../../common/Footer/Footer";
 
@@ -19,9 +19,9 @@ const Home = () => {
   return (
     <>
       <Navbar />
-      {/* {allProducts.length?.map((product) => (
+      {allProducts?.map((product) => (
         <Card key={product.id} {...product} />
-      ))} */}
+      ))}
       <h1>hello</h1>
 
       <Footer />

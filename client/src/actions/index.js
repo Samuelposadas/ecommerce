@@ -21,10 +21,10 @@ export const getProductByName = (name) => {
 export const getAllProducts = () => {
   return async function (dispatch) {
     try {
-      const products = await axios.get("http://localhost:3001/products");
-      dispatch({
+      const products = await axios.get("http://localhost:3001/products/");
+      return dispatch({
         type: GET_ALL_PRODUCTS,
-        dispatch: products.data.products,
+        payload: products.data.products,
       });
     } catch (error) {
       console.log(error);
