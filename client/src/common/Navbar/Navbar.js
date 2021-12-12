@@ -53,7 +53,7 @@ const Menu = styled.ul`
   font-weight: 610;
   color: #e9e0e0ee;
   display: grid;
-  grid-template-columns: repeat(15, minmax(10px, auto));
+  grid-template-columns: repeat(14, minmax(10px, auto));
   grid-gap: 1rem;
   justify-items: center;
   align-items: center;
