@@ -1,6 +1,7 @@
 import React from "react";
 
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import CreateProduct from "../Pages/CreateProduct/CreateProduct";
 
 //components
 import Home from "../Pages/Home/Home";
@@ -13,6 +14,7 @@ const RouterApp = () => {
         <Route path="/" element={<Home />} />
         <Route path="*" element={<Navigate to="/home" />} />
         <Route path="/product/:id" element={<ProductDetail />} />
+        <Route path="/create" element={<CreateProduct />} />
       </Routes>
     </BrowserRouter>
   );
