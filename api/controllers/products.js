@@ -72,10 +72,8 @@ const findProductById = async (req, res) => {
     const { id } = req.params;
     const data = await Product.findOne({
       where: { id },
-      include: [
-        { model: Category, through: { attributes: [] } },
-        { model: User, through: { attributes: [] } },
-      ],
+      attributes: { exclude: ["id_Supplier"] },
+      include: [{ model: Category }, { model: Supplier, attributes: ["name"] }],
     });
     if (data) {
       res.status(201).json(data);
