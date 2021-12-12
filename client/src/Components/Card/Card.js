@@ -13,7 +13,7 @@ export const Container = styled.div`
   border-radius: 20px;
   box-shadow: 0 5px 5px rgba(0, e, e, 0.2);
   overflow: hidden;
-  margin-top: 40px;
+  margin: 20px;
   z-index: -2;
   transition: all 0.2s ease-in-out;
   &:hover {
@@ -24,34 +24,30 @@ export const Container = styled.div`
 
 export const Image = styled.img`
   align-self: center;
-  max-height: 200px;
-  width: 100%;
+  height: 250px;
+  width: 300px;
   object-fit: contain;
-  margin-bottom: 15px;
+  margin: 20px;
 `;
 
 export const Title = styled.p`
   font-size: 20px;
   font-weight: 200;
-  margin-top: 0;
-  margin-bottom: 10px;
-  margin-left: 10px;
+  margin: 20px;
   color: black;
 `;
 
 export const Price = styled.p`
   font-size: 20px;
   font-weight: 400;
-  margin-top: 0;
-  margin-bottom: 10px;
+  margin-left: 20px;
   color: #d391ff;
-  margin-left: 10px;
 `;
 
 export const Rating = styled.div`
   display: flex;
   flex-direction: row;
-  margin-left: 10px;
+  margin: 20px;
   color: black;
 `;
 

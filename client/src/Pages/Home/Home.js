@@ -16,6 +16,7 @@ const CardsContainer = styled.div`
   align-content: center;
   justify-items: center;
   align-items: center;
+  padding: 30px;
 `;
 
 const Home = () => {
@@ -29,12 +30,12 @@ const Home = () => {
   return (
     <>
       <Navbar />
+
       <CardsContainer>
         {allProducts?.map((product) => (
           <Card key={product.id} {...product} />
         ))}
       </CardsContainer>
-
       <Footer />
     </>
   );
