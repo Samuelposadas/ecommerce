@@ -1,8 +1,12 @@
-import { GET_PRODUCT_BY_NAME, GET_ALL_PRODUCTS } from "../constants";
-
 /* eslint-disable */
+import {
+  GET_PRODUCT_BY_NAME,
+  GET_ALL_PRODUCTS,
+  SET_PRODUCT_DETAIL,
+} from "../constants";
+
 const initialState = {
-  product: {},
+  productDetail: {},
   allProducts: [],
   renderProducts: [],
   copyAllProducts: [],
@@ -22,6 +26,11 @@ export const reducer = (state = initialState, action) => {
       return {
         ...state,
         allProducts: action.payload,
+      };
+    case SET_PRODUCT_DETAIL:
+      return {
+        ...state,
+        productDetail: action.payload,
       };
     default:
       return state;
