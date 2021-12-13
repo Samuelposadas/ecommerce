@@ -3,8 +3,11 @@ import axios from "axios";
 import {
   GET_PRODUCT_BY_NAME,
   GET_ALL_PRODUCTS,
+  POST_PRODUCT,
   SET_PRODUCT_DETAIL,
   URL_BASE_PRODUCTS,
+  GET_SUPPLIERS,
+  GET_ALL_CATEGORIES,
   TOTAL_PAGES,
   GET_CATEGORIES,
   GET_CATEGORY,
@@ -81,6 +84,52 @@ export const getAllProducts = (numPage, category, order) => {
     }
   };
 };
+
+export const postProducts = (payload) => {
+  return async function () {
+    try {
+      const postProduct = await axios.post(
+        "http://localhost:3001/products/create",
+        payload
+      );
+      return {
+        type: POST_PRODUCT,
+        postProduct,
+      };
+    } catch (error) {
+      console.log(error);
+    }
+  };
+};
+
+export const getSuppliers = () => {
+  return async function (dispatch) {
+    try {
+      const getSupplier = await axios.get("http://localhost:3001/suppliers");
+      return dispatch({
+        type: GET_SUPPLIERS,
+        payload: getSupplier.data,
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+};
+
+export const getAllCategories = () => {
+  return async function (dispatch) {
+    try {
+      const categories = await axios.get("http://localhost:3001/categories");
+      return dispatch({
+        type: GET_ALL_CATEGORIES,
+        payload: categories.data,
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+};
+
 export const getProductDetail = (idProduct) => {
   return async function (dispatch) {
     try {

@@ -7,7 +7,7 @@ dotenv.config();
 var cors = require("cors");
 
 const productsRouter = require("./routes/products");
-const usersRouter = require("./routes/products");
+// const usersRouter = require("./routes/products");
 const supplierRouter = require("./routes/suppliers");
 const categoryRouter = require("./routes/categories");
 

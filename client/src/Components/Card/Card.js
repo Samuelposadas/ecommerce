@@ -13,7 +13,7 @@ export const Container = styled.div`
   border-radius: 20px;
   box-shadow: 0 5px 5px rgba(0, e, e, 0.2);
   overflow: hidden;
-  margin-top: 40px;
+  margin: 20px;
   z-index: -2;
   transition: all 0.2s ease-in-out;
   &:hover {
@@ -24,18 +24,17 @@ export const Container = styled.div`
 
 export const Image = styled.img`
   align-self: center;
-  max-height: 200px;
-  width: 100%;
+  height: 270px;
+  width: 310px;
   object-fit: contain;
-  margin-bottom: 15px;
+  margin: 25px;
 `;
 
 export const Title = styled.p`
   font-size: 20px;
   font-weight: 200;
-  margin-top: 0;
-  margin-bottom: 10px;
-  margin-left: 10px;
+  margin-left: 25px;
+  margin-right: 25px;
   color: black;
 `;
 
@@ -44,24 +43,24 @@ export const Price = styled.p`
   font-weight: 400;
   margin-top: 0;
   margin-bottom: 10px;
-  color: #d391ff;
-  margin-left: 10px;
+  color: #147ce5;
+  margin: 25px;
 `;
 
 export const Rating = styled.div`
   display: flex;
   flex-direction: row;
-  margin-left: 10px;
-  color: black;
+  margin-left: 25px;
+  color: #feb236;
 `;
 
 export const StyledLink = styled(Link)`
   text-decoration: none;
 `;
 
-const Card = ({ img, name, salePrice, rating }) => {
+const Card = ({ img, name, salePrice, rating, id }) => {
   return (
-    <StyledLink to="/">
+    <StyledLink to={`/products/${id}`}>
       <Container>
         <Image src={img[0]} alt="image not found" />
         <Title>{name}</Title>

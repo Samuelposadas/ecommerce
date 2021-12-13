@@ -10,10 +10,10 @@ const {
 } = require("../controllers/products");
 
 router.route("/").get(getProductsAll);
-router.route("/:id").get(findProductById);
 router.route("/search").get(searchProducts);
 router.route("/create").post(createProduct);
 router.route("/update/:id").put(updateProduct);
+router.route("/:id").get(findProductById);
 
 router.route("/categories/change").put(addOrRemoveCategoryProduct);
 

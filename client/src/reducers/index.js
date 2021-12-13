@@ -3,6 +3,9 @@ import {
   GET_PRODUCT_BY_NAME,
   GET_ALL_PRODUCTS,
   SET_PRODUCT_DETAIL,
+  POST_PRODUCT,
+  GET_SUPPLIERS,
+  GET_ALL_CATEGORIES,
   TOTAL_PAGES,
   GET_CATEGORIES,
   GET_CATEGORY,
@@ -16,6 +19,9 @@ const initialState = {
   copyAllProducts: [],
   allCategories: [],
   filterProducts: [],
+
+  allSuppliers: [],
+
   totalPages: 1,
   category: "",
   order: "",
@@ -44,6 +50,7 @@ export const reducer = (state = initialState, { type, payload }) => {
         ...state,
         totalPages: payload,
       };
+
     case GET_CATEGORIES:
       return {
         ...state,
@@ -58,6 +65,23 @@ export const reducer = (state = initialState, { type, payload }) => {
       return {
         ...state,
         order: payload,
+
+
+    case POST_PRODUCT:
+      return {
+        ...state,
+      };
+
+    case GET_SUPPLIERS:
+      return {
+        ...state,
+        allSuppliers: payload,
+      };
+    case GET_ALL_CATEGORIES:
+      return {
+        ...state,
+        allCategories: payload,
+
       };
     default:
       return state;
