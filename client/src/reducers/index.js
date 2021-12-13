@@ -65,7 +65,7 @@ export const reducer = (state = initialState, { type, payload }) => {
       return {
         ...state,
         order: payload,
-
+      };
 
     case POST_PRODUCT:
       return {
@@ -81,7 +81,6 @@ export const reducer = (state = initialState, { type, payload }) => {
       return {
         ...state,
         allCategories: payload,
-
       };
     default:
       return state;
