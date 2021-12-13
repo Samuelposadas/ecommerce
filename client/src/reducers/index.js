@@ -88,6 +88,7 @@ export const reducer = (state = initialState, { type, payload }) => {
         ...state,
         allProducts: payload.products,
         totalPages: payload.totalPages,
+        category: "",
       };
     default:
       return state;
