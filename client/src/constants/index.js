@@ -9,3 +9,4 @@ export const TOTAL_PAGES = "TOTAL_PAGES";
 export const URL_BASE_PRODUCTS = "http://localhost:3001/products";
 export const GET_CATEGORIES = " GET_CATEGORIES";
 export const GET_CATEGORY = "GET_CATEGORY";
+export const ORDER = "ORDER";

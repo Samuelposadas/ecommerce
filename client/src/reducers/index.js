@@ -6,6 +6,7 @@ import {
   TOTAL_PAGES,
   GET_CATEGORIES,
   GET_CATEGORY,
+  ORDER,
 } from "../constants";
 
 const initialState = {
@@ -17,6 +18,7 @@ const initialState = {
   filterProducts: [],
   totalPages: 1,
   category: "",
+  order: "",
 };
 
 export const reducer = (state = initialState, { type, payload }) => {
@@ -51,6 +53,11 @@ export const reducer = (state = initialState, { type, payload }) => {
       return {
         ...state,
         category: payload,
+      };
+    case ORDER:
+      return {
+        ...state,
+        order: payload,
       };
     default:
       return state;

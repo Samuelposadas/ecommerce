@@ -10,9 +10,10 @@ export const Paginate = () => {
   const category = useSelector((state) => state.category);
 
   const dispatch = useDispatch();
+  const order = useSelector((state) => state.order);
 
   useEffect(() => {
-    dispatch(getAllProducts(numberPag, category));
+    dispatch(getAllProducts(numberPag, category, order));
   }, [numberPag]);
 
   return (

@@ -10,6 +10,8 @@ const getProductsAll = async (req, res) => {
   page ? page : 1;
   orderPrice = orderPrice ? orderPrice : "ASC";
   console.log(page);
+  console.log(orderPrice);
+  console.log(category);
 
   const PRODUCTS_PER_PAGE = 10;
 

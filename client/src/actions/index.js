@@ -8,6 +8,7 @@ import {
   TOTAL_PAGES,
   GET_CATEGORIES,
   GET_CATEGORY,
+  ORDER,
 } from "../constants";
 import { actionGenerator, reqGetAxios } from "./metodos";
 
@@ -28,13 +29,20 @@ export const getProductByName = (name) => {
   };
 };
 
-export const getAllProducts = (numPage, category) => {
+export const getAllProducts = (numPage, category, order) => {
   return async function (dispatch) {
     if (numPage && category) {
       try {
-        const products = await axios.get(
-          `http://localhost:3001/products?page=${numPage}&category=${category}`
-        );
+        let products;
+        if (!order) {
+          products = await axios.get(
+            `http://localhost:3001/products?page=${numPage}&category=${category}`
+          );
+        } else {
+          products = await axios.get(
+            `http://localhost:3001/products?page=${numPage}&category=${category}&orderPrice=${order}`
+          );
+        }
 
         dispatch({
           type: GET_ALL_PRODUCTS,
@@ -49,9 +57,16 @@ export const getAllProducts = (numPage, category) => {
       }
     } else if (numPage) {
       try {
-        const products = await axios.get(
-          `http://localhost:3001/products?page=${numPage}`
-        );
+        let products;
+        if (!order) {
+          products = await axios.get(
+            `http://localhost:3001/products?page=${numPage}`
+          );
+        } else {
+          products = await axios.get(
+            `http://localhost:3001/products?page=${numPage}&orderPrice=${order}`
+          );
+        }
         dispatch({
           type: GET_ALL_PRODUCTS,
           payload: products.data.products,
@@ -94,6 +109,13 @@ export const getCategoryAll = () => {
 export const getCategory = (payload) => {
   return {
     type: GET_CATEGORY,
+    payload,
+  };
+};
+
+export const order = (payload) => {
+  return {
+    type: ORDER,
     payload,
   };
 };

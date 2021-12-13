@@ -12,7 +12,14 @@ import {
   getCategory,
   getCategoryAll,
   getAllProducts,
+  order,
 } from "../../actions/index";
+
+const SelectStyled = styled.select`
+  background-color: #2b2929;
+  color: #e9e0e0ee;
+  border: none;
+`;
 
 /* const Categories = [
   "Shop All",
@@ -185,6 +192,18 @@ const Navbar = () => {
     dispatch(getCategory(categoryId));
     dispatch(getAllProducts(1, categoryId));
   };
+  const idCategory = useSelector((state) => state.category);
+  const [valueOrder, setValueOrder] = useState("");
+
+  const handleChange = (e) => {
+    e.preventDefault();
+    setValueOrder(e.target.value);
+  };
+  useEffect(() => {
+    dispatch(getAllProducts(1, idCategory, valueOrder));
+    dispatch(order(valueOrder));
+  }, [valueOrder]);
+
   return (
     <Container>
       <MobileWrapper>
@@ -212,12 +231,17 @@ const Navbar = () => {
               {category.name}
             </MenuItem>
           ))}
+
           <LogoContainer>
             <AiOutlineSearch />
           </LogoContainer>
           <LogoContainer>
             <AiOutlineShopping />
           </LogoContainer>
+          <SelectStyled onChange={handleChange}>
+            <option value={"ASC"}>Ascendente</option>
+            <option value={"DESC"}>Descendente</option>
+          </SelectStyled>
         </Menu>
         <Space />
       </Wrapper>
