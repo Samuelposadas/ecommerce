@@ -7,22 +7,29 @@ import {
 } from "../../actions/index";
 
 import { useDispatch, useSelector } from "react-redux";
-import { Container, Content, Select, StyledButton, StyledForm } from "./styles";
+import {
+  Container,
+  Header,
+  Content,
+  Select,
+  StyledButton,
+  StyledForm,
+} from "./styles";
 
 const validate = (input) => {
   let errors = {};
   if (input.rating < 1 || input.rating > 5) {
-    errors.rating = "rating should be greater than 1 and less than 5";
+    errors.rating = "Rating should be greater than 1 and less than 5";
   }
   if (input.stock < 1) {
-    errors.stock = "stock should be greater than 1";
+    errors.stock = "Stock should be greater than 1";
   }
 
   if (input.salePrice < 1) {
-    errors.salePrice = "salePrice should be greater than 1";
+    errors.salePrice = "Sale price should be greater than 1";
   }
   if (input.purchasePrice < 1) {
-    errors.purchasePrice = "purchasePrice should be greater than 1";
+    errors.purchasePrice = "Purchase price should be greater than 1";
   }
   input.supplier
     ? (errors.supplier = "")
@@ -125,6 +132,7 @@ const CreateProduct = () => {
   return (
     <Container>
       <StyledForm onSubmit={handleSubmit}>
+        <Header>Create a product</Header>
         <Content>
           <input
             className={errors.name && "danger"}
