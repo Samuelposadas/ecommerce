@@ -117,6 +117,7 @@ const searchProducts = async (req, res) => {
 };
 
 const createProduct = async (req, res) => {
+  console.log(req.body);
   const {
     name,
     description,
@@ -126,7 +127,7 @@ const createProduct = async (req, res) => {
     rating,
     stock,
     discount,
-    Categories,
+    categories,
     supplier,
   } = req.body;
   try {
@@ -143,7 +144,7 @@ const createProduct = async (req, res) => {
       },
     });
     if (created) {
-      product.addCategories(Categories);
+      product.addCategories(categories);
       product.setSupplier(supplier);
       res.json(product);
     } else {
