@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import styled from "styled-components";
 import {
@@ -7,8 +7,21 @@ import {
   AiOutlineShopping,
 } from "react-icons/ai";
 import { GoThreeBars, GoX } from "react-icons/go";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  getCategory,
+  getCategoryAll,
+  getAllProducts,
+  order,
+} from "../../actions/index";
 
-const Categories = [
+const SelectStyled = styled.select`
+  background-color: #2b2929;
+  color: #e9e0e0ee;
+  border: none;
+`;
+
+/* const Categories = [
   "Shop All",
   "Computers",
   "Tablet",
@@ -19,7 +32,7 @@ const Categories = [
   "Cinema",
   "Wearable Tech",
   "Sale",
-];
+]; */
 
 const Container = styled.div`
   height: 50px;
@@ -169,7 +182,27 @@ const MobileDropdownItem = styled.li`
 `;
 
 const Navbar = () => {
+  const categories = useSelector((state) => state.allCategories);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getCategoryAll());
+  }, []);
   const [showMobileMenu, setShowMobileMenu] = useState(false);
+  const categoryChange = (categoryId) => {
+    dispatch(getCategory(categoryId));
+    dispatch(getAllProducts(1, categoryId));
+  };
+  const idCategory = useSelector((state) => state.category);
+  const [valueOrder, setValueOrder] = useState("");
+
+  const handleChange = (e) => {
+    e.preventDefault();
+    setValueOrder(e.target.value);
+  };
+  useEffect(() => {
+    dispatch(getAllProducts(1, idCategory, valueOrder));
+    dispatch(order(valueOrder));
+  }, [valueOrder]);
 
   return (
     <Container>
@@ -190,15 +223,25 @@ const Navbar = () => {
           <LogoContainer>
             <AiOutlineAppstore />
           </LogoContainer>
-          {Categories.map((item, id) => (
-            <MenuItem key={id}>{item}</MenuItem>
+          {categories.map((category) => (
+            <MenuItem
+              onClick={() => categoryChange(category.id)}
+              key={category.id}
+            >
+              {category.name}
+            </MenuItem>
           ))}
+
           <LogoContainer>
             <AiOutlineSearch />
           </LogoContainer>
           <LogoContainer>
             <AiOutlineShopping />
           </LogoContainer>
+          <SelectStyled onChange={handleChange}>
+            <option value={"ASC"}>Ascendente</option>
+            <option value={"DESC"}>Descendente</option>
+          </SelectStyled>
         </Menu>
         <Space />
       </Wrapper>
@@ -207,8 +250,13 @@ const Navbar = () => {
       </Banner>
       {showMobileMenu ? (
         <MobileDropdown open={showMobileMenu}>
-          {Categories.map((item, id) => (
-            <MobileDropdownItem key={id}>{item}</MobileDropdownItem>
+          {categories.map((category) => (
+            <MobileDropdownItem
+              onClick={() => categoryChange(category.id)}
+              key={category.id}
+            >
+              {category.name}
+            </MobileDropdownItem>
           ))}
         </MobileDropdown>
       ) : (
