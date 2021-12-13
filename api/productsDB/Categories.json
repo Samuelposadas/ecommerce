@@ -1,26 +1,26 @@
 [
   {
     "id":1,
-    "name":"computer"
+    "name":"Computer"
   },
   {
     "id":2,
-    "name":"mobile"
+    "name":"Mobile"
   },
   {
     "id":3,
-    "name":"tv"
+    "name":"TV"
   },
   {
     "id":4,
-    "name":"accessory"
+    "name":"Accessory"
   },
   {
     "id":5,
-    "name":"tablet"
+    "name":"Tablet"
   },
   {
     "id":6,
-    "name":"laptop"
+    "name":"Laptop"
   }
 ]
