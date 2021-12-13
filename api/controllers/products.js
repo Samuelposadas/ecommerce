@@ -102,7 +102,12 @@ const searchProducts = async (req, res) => {
         // order: [["salePrice", orderPrice]],
       };
       const products = await Product.findAll(condition);
-      res.json(products.length ? products : { message: "No products found" });
+      // res.json(products.length ? products : { message: "No products found" });
+      res.json({
+        count: products.length,
+        totalPages: Math.ceil(products.length / 10),
+        products: products,
+      });
     } catch (error) {
       console.log(error);
     }
@@ -112,6 +117,7 @@ const searchProducts = async (req, res) => {
 };
 
 const createProduct = async (req, res) => {
+  console.log(req.body);
   const {
     name,
     description,
@@ -121,7 +127,7 @@ const createProduct = async (req, res) => {
     rating,
     stock,
     discount,
-    Categories,
+    categories,
     supplier,
   } = req.body;
   try {
@@ -138,7 +144,7 @@ const createProduct = async (req, res) => {
       },
     });
     if (created) {
-      product.addCategories(Categories);
+      product.addCategories(categories);
       product.setSupplier(supplier);
       res.json(product);
     } else {

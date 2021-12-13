@@ -12,7 +12,7 @@
     "stock": 10,
     "discount": 0,
     "supplier": 3,
-    "Categories": [1,6]
+    "Categories": [6]
   },
 
   {
@@ -28,7 +28,7 @@
     "stock": 7,
     "discount": 0,
     "supplier": 3,
-    "Categories": [1,6]
+    "Categories": [6]
   },
 
   {
@@ -154,7 +154,7 @@
     "stock": 10,
     "discount": 0,
     "supplier": 2,
-    "Categories": [1,5]
+    "Categories": [5]
   },
   {
     "name": "Lenovo Tab M8 Tablet",
@@ -184,7 +184,7 @@
     "stock": 5,
     "discount": 0,
     "supplier": 6,
-    "Categories": [1,5]
+    "Categories": [5,6]
   },
   {
     "name": "All-New Insignia 55 inch NS-55F301NA22 F30 Series",
@@ -349,7 +349,7 @@
     "stock": 12,
     "discount": 0,
     "supplier": 2,
-    "Categories": [4]
+    "Categories": [2]
   },
   {
     "name": "Razer Tartarus v2 Gaming Keypad",

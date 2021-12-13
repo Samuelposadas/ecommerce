@@ -12,6 +12,7 @@ import {
   GET_CATEGORIES,
   GET_CATEGORY,
   ORDER,
+  GET_PRODUCTS_DEFAULT,
 } from "../constants";
 import { actionGenerator, reqGetAxios } from "./metodos";
 
@@ -21,10 +22,12 @@ export const getProductByName = (name) => {
       const product = await axios.get(
         `http://localhost:3001/products/search?name=${name}`
       );
-      console.log(product.data);
       return dispatch({
         type: GET_PRODUCT_BY_NAME,
-        payload: product.data,
+        payload: {
+          products: product.data.products,
+          totalPages: product.data.totalPages,
+        },
       });
     } catch (error) {
       console.log(error);
@@ -166,5 +169,22 @@ export const order = (payload) => {
   return {
     type: ORDER,
     payload,
+  };
+};
+
+export const action_defaul_values = () => {
+  return async (dispatch) => {
+    try {
+      const product = await axios.get("http://localhost:3001/products?page=1");
+      dispatch({
+        type: GET_PRODUCTS_DEFAULT,
+        payload: {
+          products: product.data.products,
+          totalPages: product.data.totalPages,
+        },
+      });
+    } catch (error) {
+      console.log(error);
+    }
   };
 };

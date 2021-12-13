@@ -13,6 +13,8 @@ import {
   getCategoryAll,
   getAllProducts,
   order,
+  getProductByName,
+  action_defaul_values,
 } from "../../actions/index";
 
 const SelectStyled = styled.select`
@@ -204,6 +206,10 @@ const Navbar = () => {
     dispatch(order(valueOrder));
   }, [valueOrder]);
 
+  const onSearch = () => {
+    dispatch(getProductByName(document.getElementById("idSearch").value));
+  };
+
   return (
     <Container>
       <MobileWrapper>
@@ -221,7 +227,9 @@ const Navbar = () => {
         <Space />
         <Menu>
           <LogoContainer>
-            <AiOutlineAppstore />
+            <AiOutlineAppstore
+              onClick={() => dispatch(action_defaul_values())}
+            />
           </LogoContainer>
           {categories.map((category) => (
             <MenuItem
@@ -233,7 +241,8 @@ const Navbar = () => {
           ))}
 
           <LogoContainer>
-            <AiOutlineSearch />
+            <input type="text" placeholder="Search" id="idSearch" />
+            <AiOutlineSearch onClick={onSearch} />
           </LogoContainer>
           <LogoContainer>
             <AiOutlineShopping />

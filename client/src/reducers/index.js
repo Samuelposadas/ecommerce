@@ -10,6 +10,7 @@ import {
   GET_CATEGORIES,
   GET_CATEGORY,
   ORDER,
+  GET_PRODUCTS_DEFAULT,
 } from "../constants";
 
 const initialState = {
@@ -32,9 +33,9 @@ export const reducer = (state = initialState, { type, payload }) => {
     case GET_PRODUCT_BY_NAME:
       return {
         ...state,
-        renderProducts: payload,
+        allProducts: payload.products,
+        totalPages: payload.totalPages,
       };
-
     case GET_ALL_PRODUCTS:
       return {
         ...state,
@@ -81,6 +82,12 @@ export const reducer = (state = initialState, { type, payload }) => {
       return {
         ...state,
         allCategories: payload,
+      };
+    case GET_PRODUCTS_DEFAULT:
+      return {
+        ...state,
+        allProducts: payload.products,
+        totalPages: payload.totalPages,
       };
     default:
       return state;
