@@ -7,8 +7,9 @@ const getProductsAll = async (req, res) => {
   let resultData;
 
   //Valores por defecto si no vienen por query
-  page = page ? page : 1;
+  page ? page : 1;
   orderPrice = orderPrice ? orderPrice : "ASC";
+  console.log(page);
 
   const PRODUCTS_PER_PAGE = 10;
 

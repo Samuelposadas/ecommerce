@@ -7,11 +7,12 @@ import { ButtonPage, Pagination, LabelPage } from "./stylePag";
 export const Paginate = () => {
   const [numberPag, setNumberPag] = useState(1);
   const totalPages = useSelector((state) => state.totalPages);
+  const category = useSelector((state) => state.category);
 
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getAllProducts(numberPag));
+    dispatch(getAllProducts(numberPag, category));
   }, [numberPag]);
 
   return (

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import styled from "styled-components";
 import {
@@ -7,8 +7,14 @@ import {
   AiOutlineShopping,
 } from "react-icons/ai";
 import { GoThreeBars, GoX } from "react-icons/go";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  getCategory,
+  getCategoryAll,
+  getAllProducts,
+} from "../../actions/index";
 
-const Categories = [
+/* const Categories = [
   "Shop All",
   "Computers",
   "Tablet",
@@ -19,7 +25,7 @@ const Categories = [
   "Cinema",
   "Wearable Tech",
   "Sale",
-];
+]; */
 
 const Container = styled.div`
   height: 50px;
@@ -169,8 +175,16 @@ const MobileDropdownItem = styled.li`
 `;
 
 const Navbar = () => {
+  const categories = useSelector((state) => state.allCategories);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getCategoryAll());
+  }, []);
   const [showMobileMenu, setShowMobileMenu] = useState(false);
-
+  const categoryChange = (categoryId) => {
+    dispatch(getCategory(categoryId));
+    dispatch(getAllProducts(1, categoryId));
+  };
   return (
     <Container>
       <MobileWrapper>
@@ -190,8 +204,13 @@ const Navbar = () => {
           <LogoContainer>
             <AiOutlineAppstore />
           </LogoContainer>
-          {Categories.map((item, id) => (
-            <MenuItem key={id}>{item}</MenuItem>
+          {categories.map((category) => (
+            <MenuItem
+              onClick={() => categoryChange(category.id)}
+              key={category.id}
+            >
+              {category.name}
+            </MenuItem>
           ))}
           <LogoContainer>
             <AiOutlineSearch />
@@ -207,8 +226,13 @@ const Navbar = () => {
       </Banner>
       {showMobileMenu ? (
         <MobileDropdown open={showMobileMenu}>
-          {Categories.map((item, id) => (
-            <MobileDropdownItem key={id}>{item}</MobileDropdownItem>
+          {categories.map((category) => (
+            <MobileDropdownItem
+              onClick={() => categoryChange(category.id)}
+              key={category.id}
+            >
+              {category.name}
+            </MobileDropdownItem>
           ))}
         </MobileDropdown>
       ) : (

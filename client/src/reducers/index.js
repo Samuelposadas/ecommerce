@@ -4,6 +4,8 @@ import {
   GET_ALL_PRODUCTS,
   SET_PRODUCT_DETAIL,
   TOTAL_PAGES,
+  GET_CATEGORIES,
+  GET_CATEGORY,
 } from "../constants";
 
 const initialState = {
@@ -14,6 +16,7 @@ const initialState = {
   allCategories: [],
   filterProducts: [],
   totalPages: 1,
+  category: "",
 };
 
 export const reducer = (state = initialState, { type, payload }) => {
@@ -38,6 +41,16 @@ export const reducer = (state = initialState, { type, payload }) => {
       return {
         ...state,
         totalPages: payload,
+      };
+    case GET_CATEGORIES:
+      return {
+        ...state,
+        allCategories: payload,
+      };
+    case GET_CATEGORY:
+      return {
+        ...state,
+        category: payload,
       };
     default:
       return state;

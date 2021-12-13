@@ -7,3 +7,5 @@ export const GET_PRODUCT_BY_NAME = "GET_PRODUCT_BY_NAME";
 export const SET_PRODUCT_DETAIL = "SET_PRODUCT_DETAIL";
 export const TOTAL_PAGES = "TOTAL_PAGES";
 export const URL_BASE_PRODUCTS = "http://localhost:3001/products";
+export const GET_CATEGORIES = " GET_CATEGORIES";
+export const GET_CATEGORY = "GET_CATEGORY";
