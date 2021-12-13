@@ -41,10 +41,23 @@ const validate = (input) => {
   input.categories.length === 0
     ? (errors.categories = "Choose at least one category")
     : (errors.categories = "");
-  if (!input.img.includes("https://" || "http://")) {
-    errors.img = "This isn't a valid image address";
+  if (
+    !input.imgTotal.includes("https://" || "http://") &&
+    input.img.length === 0
+  ) {
+    errors.imgTotal = "This isn't a valid image address";
+  } else {
+    errors.imgTotal = "";
+  }
+  if (input.img.length === 0) {
+    errors.img = "Image is required";
   } else {
     errors.img = "";
+  }
+  if (input.supplier === 0) {
+    errors.supplier = "Supplier is required";
+  } else {
+    errors.supplier = "";
   }
   return errors;
 };
@@ -53,14 +66,15 @@ const CreateProduct = () => {
   const initialState = {
     name: "",
     description: "",
-    salePrice: 0,
-    rating: 0,
-    stock: 0,
+    salePrice: "",
+    rating: "",
+    stock: "",
+    imgTotal: "",
     img: [],
-    purchasePrice: 0,
-    discount: 0,
+    purchasePrice: "",
+    discount: "",
     categories: [],
-    supplier: 1,
+    supplier: 0,
   };
   const dispatch = useDispatch();
   const allCategories = useSelector((state) => state.allCategories);
@@ -79,10 +93,18 @@ const CreateProduct = () => {
   }, []);
 
   function handleChange(e) {
-    setInput((input) => ({
-      ...input,
-      [e.target.name]: e.target.value,
-    }));
+    console.log(e.target.value);
+    if (isNaN(parseInt(e.target.value))) {
+      setInput((input) => ({
+        ...input,
+        [e.target.name]: e.target.value,
+      }));
+    } else {
+      setInput((input) => ({
+        ...input,
+        [e.target.name]: parseInt(e.target.value),
+      }));
+    }
     setErrors(
       validate({
         ...input,
@@ -109,12 +131,18 @@ const CreateProduct = () => {
     );
   };
   const handleSelectSupplier = (e) => {
-    if (e.target.value !== "null") {
+    if (e.target.value === "null") {
+      setInput((input) => ({
+        ...input,
+        supplier: 0,
+      }));
+    } else {
       setInput((input) => ({
         ...input,
         supplier: +e.target.value,
       }));
     }
+    console.log(input.supplier);
     setErrors(
       validate({
         ...input,
@@ -129,6 +157,16 @@ const CreateProduct = () => {
     setInput(initialState);
   };
 
+  const handleClickImg = (e) => {
+    e.preventDefault();
+    if (!errors.imgTotal && !input.img.includes(input.img) && input.imgTotal) {
+      setInput((input) => ({
+        ...input,
+        img: [...input.img, input.imgTotal],
+        imgTotal: "",
+      }));
+    }
+  };
   return (
     <Container>
       <StyledForm onSubmit={handleSubmit}>
@@ -192,11 +230,12 @@ const CreateProduct = () => {
           <input
             className={errors.img && "danger"}
             type="text"
-            name="img"
+            name="imgTotal"
             placeholder="products img"
-            value={input.img}
+            value={input.imgTotal}
             onChange={handleChange}
           />
+          <button onClick={handleClickImg}>Add img</button>
           {errors.img && <p className="danger">{errors.img}</p>}
         </Content>
         <Content>
@@ -245,6 +284,7 @@ const CreateProduct = () => {
               </option>
             ))}
           </select>
+          {errors.supplier && <p className="danger">{errors.supplier}</p>}
         </Select>
 
         <StyledButton
