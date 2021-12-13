@@ -102,7 +102,12 @@ const searchProducts = async (req, res) => {
         // order: [["salePrice", orderPrice]],
       };
       const products = await Product.findAll(condition);
-      res.json(products.length ? products : { message: "No products found" });
+      // res.json(products.length ? products : { message: "No products found" });
+      res.json({
+        count: products.length,
+        totalPages: Math.ceil(products.length / 10),
+        products: products,
+      });
     } catch (error) {
       console.log(error);
     }
