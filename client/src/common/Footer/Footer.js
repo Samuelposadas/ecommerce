@@ -5,7 +5,8 @@ const Container = styled.div`
   color: #1b1a1af4;
   background-color: #b5b4b832;
   font-size: 20px;
-  margin-top: 0px;
+  padding-top: 35px;
+  padding-bottom: 35px;
 `;
 
 const SubWrapper = styled.div`
@@ -18,22 +19,18 @@ const SubWrapper = styled.div`
 
 const Wrapper = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-
-  justify-items: center;
-  align-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(215px, auto));
 `;
 
 const Card = styled.ul`
-  display: grid;
-  grid-template-columns: 210px;
-  margin-left: 60px;
-  margin-bottom: 50px;
-
-  justify-items: start;
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+  margin: 20px;
 `;
 const CardTitle = styled.h1`
   font-size: 21px;
+  margin-bottom: 10px;
 `;
 const CardLink = styled.li`
   font-size: 14px;
