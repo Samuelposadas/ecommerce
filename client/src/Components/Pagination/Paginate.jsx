@@ -29,8 +29,8 @@ export const Paginate = () => {
   return (
     <Pagination>
       {numberPag > 1 ? (
-        <ButtonPage onClick={() => setNumberPag(numberPag - 1)}>
-          {"<"} Previous
+        <ButtonPage l={true} onClick={() => setNumberPag(numberPag - 1)}>
+          {"<"} &nbsp;&nbsp;Previous
         </ButtonPage>
       ) : null}
       {totalPages < 1 ? null : (
@@ -40,8 +40,8 @@ export const Paginate = () => {
         </>
       )}
       {numberPag < totalPages ? (
-        <ButtonPage onClick={() => setNumberPag(numberPag + 1)}>
-          Next {">"}
+        <ButtonPage r={true} onClick={() => setNumberPag(numberPag + 1)}>
+          Next&nbsp;&nbsp; {" >"}
         </ButtonPage>
       ) : null}
     </Pagination>
