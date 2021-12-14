@@ -208,6 +208,7 @@ const Navbar = () => {
     dispatch(getAllProducts(1, categoryId));
   };
   const idCategory = useSelector((state) => state.category);
+  const nameProduct = useSelector((state) => state.nameProduct);
   const [valueOrder, setValueOrder] = useState("");
 
   const handleChange = (e) => {
@@ -215,7 +216,7 @@ const Navbar = () => {
     setValueOrder(e.target.value);
   };
   useEffect(() => {
-    dispatch(getAllProducts(1, idCategory, valueOrder));
+    dispatch(getAllProducts(1, idCategory, valueOrder, nameProduct));
     dispatch(order(valueOrder));
   }, [valueOrder]);
 
@@ -226,7 +227,6 @@ const Navbar = () => {
   const [style, setStyle] = useState("");
 
   const resetValues = () => {
-    dispatch(action_defaul_values());
     setStyle("");
   };
 
@@ -247,7 +247,12 @@ const Navbar = () => {
         <Space />
         <Menu>
           <LogoContainer>
-            <AiOutlineAppstore onClick={resetValues} />
+            <AiOutlineAppstore
+              onClick={() => {
+                resetValues();
+                dispatch(action_defaul_values());
+              }}
+            />
           </LogoContainer>
           {categories.map((category) => (
             <MenuItem

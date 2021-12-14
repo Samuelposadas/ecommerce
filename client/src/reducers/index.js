@@ -1,4 +1,5 @@
 /* eslint-disable */
+
 import {
   GET_PRODUCT_BY_NAME,
   GET_ALL_PRODUCTS,
@@ -11,6 +12,7 @@ import {
   GET_CATEGORY,
   ORDER,
   GET_PRODUCTS_DEFAULT,
+  SAVENAME,
 } from "../constants";
 
 const initialState = {
@@ -26,6 +28,7 @@ const initialState = {
   totalPages: 1,
   category: "",
   order: "",
+  nameProduct: "",
 };
 
 export const reducer = (state = initialState, { type, payload }) => {
@@ -61,6 +64,7 @@ export const reducer = (state = initialState, { type, payload }) => {
       return {
         ...state,
         category: payload,
+        nameProduct: "",
       };
     case ORDER:
       return {
@@ -88,6 +92,13 @@ export const reducer = (state = initialState, { type, payload }) => {
         ...state,
         allProducts: payload.products,
         totalPages: payload.totalPages,
+        category: "",
+        nameProduct: "",
+      };
+    case SAVENAME:
+      return {
+        ...state,
+        nameProduct: payload,
         category: "",
       };
     default:

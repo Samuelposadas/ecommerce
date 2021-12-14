@@ -1,7 +1,7 @@
 const { Product, Op, Category, /* User, */ Supplier } = require("../db/db");
 
 const getProductsAll = async (req, res) => {
-  let { category, orderPrice, page } = req.query;
+  let { category, orderPrice, page, nameproduct } = req.query;
 
   //variable para mandar a paginar
   let resultData;
@@ -9,9 +9,6 @@ const getProductsAll = async (req, res) => {
   //Valores por defecto si no vienen por query
   page ? page : 1;
   orderPrice = orderPrice ? orderPrice : "ASC";
-  console.log(page);
-  console.log(orderPrice);
-  console.log(category);
 
   const PRODUCTS_PER_PAGE = 10;
 
@@ -40,7 +37,24 @@ const getProductsAll = async (req, res) => {
     } catch (error) {
       console.log(error);
     }
-  } else {
+  } else if (nameproduct) {
+    try {
+      const condition = {
+        where: { name: { [Op.iLike]: `%${nameproduct}%` } },
+        attributes: { exclude: ["id_Supplier"] },
+        include: [
+          { model: Category },
+          { model: Supplier, attributes: ["name"] },
+        ],
+        order: [["salePrice", orderPrice]],
+      };
+      const products = await Product.findAll(condition);
+      // res.json(products.length ? products : { message: "No products found" });
+      resultData = [...products];
+    } catch (error) {
+      console.log(error);
+    }
+  } else if (!nameproduct && !category) {
     try {
       //Datos con todas las categorías
       const dataProducts = await Product.findAll({
