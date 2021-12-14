@@ -67,11 +67,11 @@ export const getAllProducts = (numPage, category, order, nameProduct) => {
         let products;
         if (!order) {
           products = await axios.get(
-            `http://localhost:3001/products?page=${numPage}&nameProduct=${nameProduct}`
+            `http://localhost:3001/products?page=${numPage}&nameproduct=${nameProduct}`
           );
         } else {
           products = await axios.get(
-            `http://localhost:3001/products?page=${numPage}&nameProduct=${nameProduct}&orderPrice=${order}`
+            `http://localhost:3001/products?page=${numPage}&nameproduct=${nameProduct}&orderPrice=${order}`
           );
         }
 

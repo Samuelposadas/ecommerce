@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { getProductByName, saveName } from "../../actions";
+import { getAllProducts, saveName } from "../../actions";
 import { InputStyled, FormSt } from "./styles";
 import { AiOutlineSearch } from "react-icons/ai";
 
@@ -15,7 +15,7 @@ const Searchbar = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (input === "") return;
-    dispatch(getProductByName(input));
+    dispatch(getAllProducts(1, null, null, input));
     dispatch(saveName(input));
     setInput("");
     // eslint-disable-next-line react/prop-types
