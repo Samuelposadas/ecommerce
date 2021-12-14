@@ -4,7 +4,7 @@ import { getProductByName } from "../../actions";
 import { InputStyled, FormSt } from "./styles";
 import { AiOutlineSearch } from "react-icons/ai";
 
-const Searchbar = () => {
+const Searchbar = (props) => {
   const [input, setInput] = useState("");
   const dispatch = useDispatch();
 
@@ -17,6 +17,8 @@ const Searchbar = () => {
     if (input === "") return;
     dispatch(getProductByName(input));
     setInput("");
+    // eslint-disable-next-line react/prop-types
+    props.reset();
   };
 
   return (

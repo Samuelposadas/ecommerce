@@ -6,6 +6,12 @@ export const InputStyled = styled.input`
   border-radius: 30px;
   border: 1px solid black;
   margin-right: 10px;
+  &:focus {
+    outline: none;
+  }
+  &:active {
+    outline: none;
+  }
 `;
 
 export const FormSt = styled.form`

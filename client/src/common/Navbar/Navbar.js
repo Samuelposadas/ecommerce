@@ -20,6 +20,12 @@ const SelectStyled = styled.select`
   font-size: 10px;
 `;
 
+const OptionStyled = styled.option`
+  &:hover {
+    background-color: #2b2929;
+  }
+`;
+
 /* const Categories = [
   "Shop All",
   "Computers",
@@ -81,6 +87,10 @@ const MenuItem = styled.li`
   list-style-type: none;
   cursor: pointer;
   width: max-content;
+  padding: 20px 20px;
+  background: ${(props) =>
+    props.bd ? "linear-gradient( to bottom, #000 , #555555)" : "none"};
+  padding: ${(props) => (props.mb ? "20px 20px" : null)};
 `;
 const MobileIconOne = styled.div`
   display: none;
@@ -183,7 +193,7 @@ const MobileDropdownItem = styled.li`
 const LabelStyled = styled.label`
   color: #e9e0e0ee;
   font-size: 10px;
-  margin-right: -22px;
+  margin-right: -15px;
 `;
 
 const Navbar = () => {
@@ -213,6 +223,13 @@ const Navbar = () => {
     dispatch(getProductByName(document.getElementById("idSearch").value));
   }; */
 
+  const [style, setStyle] = useState("");
+
+  const resetValues = () => {
+    dispatch(action_defaul_values());
+    setStyle("");
+  };
+
   return (
     <Container>
       <MobileWrapper>
@@ -230,13 +247,16 @@ const Navbar = () => {
         <Space />
         <Menu>
           <LogoContainer>
-            <AiOutlineAppstore
-              onClick={() => dispatch(action_defaul_values())}
-            />
+            <AiOutlineAppstore onClick={resetValues} />
           </LogoContainer>
           {categories.map((category) => (
             <MenuItem
-              onClick={() => categoryChange(category.id)}
+              bd={style === category.id ? true : false}
+              mb={style === category.id ? true : false}
+              onClick={() => {
+                categoryChange(category.id);
+                setStyle(category.id);
+              }}
               key={category.id}
             >
               {category.name}
@@ -246,15 +266,15 @@ const Navbar = () => {
           <LogoContainer>
             {/*            <input type="text" placeholder="Search" id="idSearch" />
             <AiOutlineSearch onClick={onSearch} /> */}
-            <Searchbar />
+            <Searchbar reset={resetValues} />
           </LogoContainer>
           <LogoContainer>
             <AiOutlineShopping />
           </LogoContainer>
-          <LabelStyled>Ordernar por:</LabelStyled>
+          <LabelStyled>Order by:</LabelStyled>
           <SelectStyled onChange={handleChange}>
-            <option value={"ASC"}>Lower price</option>
-            <option value={"DESC"}>Higher price</option>
+            <OptionStyled value={"ASC"}>Lower price</OptionStyled>
+            <OptionStyled value={"DESC"}>Higher price</OptionStyled>
           </SelectStyled>
         </Menu>
         <Space />
