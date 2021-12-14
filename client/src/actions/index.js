@@ -13,6 +13,7 @@ import {
   GET_CATEGORY,
   ORDER,
   GET_PRODUCTS_DEFAULT,
+  SAVENAME,
 } from "../constants";
 import { actionGenerator, reqGetAxios } from "./metodos";
 
@@ -35,7 +36,7 @@ export const getProductByName = (name) => {
   };
 };
 
-export const getAllProducts = (numPage, category, order) => {
+export const getAllProducts = (numPage, category, order, nameProduct) => {
   return async function (dispatch) {
     if (numPage && category) {
       try {
@@ -61,7 +62,31 @@ export const getAllProducts = (numPage, category, order) => {
       } catch (error) {
         console.log(error);
       }
-    } else if (numPage) {
+    } else if (numPage && nameProduct) {
+      try {
+        let products;
+        if (!order) {
+          products = await axios.get(
+            `http://localhost:3001/products?page=${numPage}&nameproduct=${nameProduct}`
+          );
+        } else {
+          products = await axios.get(
+            `http://localhost:3001/products?page=${numPage}&nameproduct=${nameProduct}&orderPrice=${order}`
+          );
+        }
+
+        dispatch({
+          type: GET_ALL_PRODUCTS,
+          payload: products.data.products,
+        });
+        dispatch({
+          type: TOTAL_PAGES,
+          payload: products.data.totalPages,
+        });
+      } catch (error) {
+        console.log(error);
+      }
+    } else if (numPage && !nameProduct && !category) {
       try {
         let products;
         if (!order) {
@@ -186,5 +211,12 @@ export const action_defaul_values = () => {
     } catch (error) {
       console.log(error);
     }
+  };
+};
+
+export const saveName = (payload) => {
+  return {
+    type: SAVENAME,
+    payload,
   };
 };

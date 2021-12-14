@@ -6,6 +6,16 @@ export const InputStyled = styled.input`
   border-radius: 30px;
   border: 1px solid black;
   margin-right: 10px;
+  background: #ddd;
+  &:focus {
+    outline: none;
+  }
+  &:active {
+    outline: none;
+  }
+  &::placeholder {
+    color: #2b2929;
+  }
 `;
 
 export const FormSt = styled.form`
