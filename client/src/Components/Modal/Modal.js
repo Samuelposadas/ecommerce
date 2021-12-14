@@ -1,37 +1,37 @@
 import React, { useRef, useEffect, useCallback } from "react";
 import { useSpring, animated } from "react-spring";
-import styled from "styled-components";
+import styled, { createGlobalStyle } from "styled-components";
 import { MdClose } from "react-icons/md";
-import Image from "./modal.jpg";
+
+const GlobalStyle = createGlobalStyle`
+  body {
+    overflow: hidden;
+    
+  }
+`;
 
 const Background = styled.div`
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.8);
-  position: fixed;
+  position: absolute;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: end;
+  align-content: center;
 `;
 
 const ModalWrapper = styled.div`
-  width: 800px;
-  height: 500px;
+  width: 350px;
+  height: 650px;
   box-shadow: 0 5px 16px rgba(0, 0, 0, 0.2);
   background: #fff;
   color: #000;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  position: relative;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  position: sticky;
   z-index: 10;
-  border-radius: 10px;
-`;
-
-const ModalImg = styled.img`
-  width: 100%;
-  height: 100%;
-  border-radius: 10px 0 0 10px;
-  background: #000;
+  border-radius: 1px;
 `;
 
 const ModalContent = styled.div`
@@ -39,10 +39,10 @@ const ModalContent = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  line-height: 1.8;
   color: #141414;
   p {
     margin-bottom: 1rem;
+    font-size: 15px;
   }
   button {
     padding: 10px 24px;
@@ -68,10 +68,10 @@ export const Modal = ({ showModal, setShowModal }) => {
 
   const animation = useSpring({
     config: {
-      duration: 250,
+      duration: 500,
     },
-    opacity: showModal ? 1 : 0,
-    transform: showModal ? "translateY(0%)" : "translateY(-100%)",
+    opacity: showModal ? 1 : 1,
+    transform: showModal ? "translateX(0%)" : "translateX(+100%)",
   });
 
   const closeModal = (e) => {
@@ -98,22 +98,23 @@ export const Modal = ({ showModal, setShowModal }) => {
   return (
     <>
       {showModal ? (
-        <Background onClick={closeModal} ref={modalRef}>
-          <animated.div style={animation}>
-            <ModalWrapper showModal={showModal}>
-              <ModalImg src={Image} alt="camera" />
-              <ModalContent>
-                <h1>Are you ready?</h1>
-                <p>Get exclusive access to our next launch.</p>
-                <button>Join Now</button>
-              </ModalContent>
-              <CloseModalButton
-                aria-label="Close modal"
-                onClick={() => setShowModal((prev) => !prev)}
-              />
-            </ModalWrapper>
-          </animated.div>
-        </Background>
+        <>
+          <GlobalStyle />
+          <Background onClick={closeModal} ref={modalRef}>
+            <animated.div style={animation}>
+              <ModalWrapper showModal={showModal}>
+                <ModalContent>
+                  <p>Your shopping cart is empty.</p>
+                  <button>CHECKOUT</button>
+                </ModalContent>
+                <CloseModalButton
+                  aria-label="Close modal"
+                  onClick={() => setShowModal((prev) => !prev)}
+                />
+              </ModalWrapper>
+            </animated.div>
+          </Background>
+        </>
       ) : null}
     </>
   );

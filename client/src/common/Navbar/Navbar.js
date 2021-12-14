@@ -12,6 +12,7 @@ import {
   action_defaul_values,
 } from "../../actions/index";
 import Searchbar from "../../Components/Searchbar/Searchbar";
+import { Modal } from "../../Components/Modal/Modal";
 
 const SelectStyled = styled.select`
   background-color: #2b2929;
@@ -25,19 +26,6 @@ const OptionStyled = styled.option`
     background-color: #2b2929;
   }
 `;
-
-/* const Categories = [
-  "Shop All",
-  "Computers",
-  "Tablet",
-  "Drones & Cameras",
-  "Audio",
-  "Mobile",
-  "T.V & Home",
-  "Cinema",
-  "Wearable Tech",
-  "Sale",
-]; */
 
 const Container = styled.div`
   height: 50px;
@@ -220,14 +208,16 @@ const Navbar = () => {
     dispatch(order(valueOrder));
   }, [valueOrder]);
 
-  /*   const onSearch = () => {
-    dispatch(getProductByName(document.getElementById("idSearch").value));
-  }; */
-
   const [style, setStyle] = useState("");
 
   const resetValues = () => {
     setStyle("");
+  };
+
+  const [showModal, setShowModal] = useState(false);
+
+  const openModal = () => {
+    setShowModal((prev) => !prev);
   };
 
   return (
@@ -240,7 +230,7 @@ const Navbar = () => {
           <AiOutlineAppstore />
         </MobileIcon>
         <MobileIcon>
-          <AiOutlineShopping />
+          <AiOutlineShopping onClick={openModal} />
         </MobileIcon>
       </MobileWrapper>
       <Wrapper>
@@ -274,7 +264,7 @@ const Navbar = () => {
             <Searchbar reset={resetValues} />
           </LogoContainer>
           <LogoContainer>
-            <AiOutlineShopping />
+            <AiOutlineShopping onClick={openModal} />
           </LogoContainer>
           <LabelStyled>Order by:</LabelStyled>
           <SelectStyled onChange={handleChange}>
@@ -287,6 +277,7 @@ const Navbar = () => {
       <Banner>
         Shop early for the best selection of holiday favorites. Shop now.
       </Banner>
+      <Modal showModal={showModal} setShowModal={setShowModal} />
       {showMobileMenu ? (
         <MobileDropdown open={showMobileMenu}>
           {categories.map((category) => (
