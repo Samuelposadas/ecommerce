@@ -16,6 +16,15 @@ export const Paginate = () => {
     dispatch(getAllProducts(numberPag, category, order));
   }, [numberPag]);
 
+  useEffect(() => {
+    if (totalPages === 0) {
+      return;
+    }
+    if (totalPages <= numberPag) {
+      setNumberPag(totalPages);
+    }
+  }, [totalPages]);
+
   return (
     <Pagination>
       {numberPag > 1 ? (
@@ -23,8 +32,12 @@ export const Paginate = () => {
           {"<"} Previous
         </ButtonPage>
       ) : null}
-      <LabelPage br={"#ddd"}> {numberPag} </LabelPage>
-      <LabelPage>de {totalPages}</LabelPage>
+      {totalPages < 1 ? null : (
+        <>
+          <LabelPage br={"#ddd"}> {numberPag} </LabelPage>
+          <LabelPage>de {totalPages}</LabelPage>
+        </>
+      )}
       {numberPag < totalPages ? (
         <ButtonPage onClick={() => setNumberPag(numberPag + 1)}>
           Next {">"}

@@ -1,11 +1,7 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
 import styled from "styled-components";
-import {
-  AiOutlineAppstore,
-  AiOutlineSearch,
-  AiOutlineShopping,
-} from "react-icons/ai";
+import { AiOutlineAppstore, AiOutlineShopping } from "react-icons/ai";
 import { GoThreeBars, GoX } from "react-icons/go";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -13,14 +9,15 @@ import {
   getCategoryAll,
   getAllProducts,
   order,
-  getProductByName,
   action_defaul_values,
 } from "../../actions/index";
+import Searchbar from "../../Components/Searchbar/Searchbar";
 
 const SelectStyled = styled.select`
   background-color: #2b2929;
   color: #e9e0e0ee;
   border: none;
+  font-size: 10px;
 `;
 
 /* const Categories = [
@@ -183,6 +180,12 @@ const MobileDropdownItem = styled.li`
   align-items: center;
 `;
 
+const LabelStyled = styled.label`
+  color: #e9e0e0ee;
+  font-size: 10px;
+  margin-right: -22px;
+`;
+
 const Navbar = () => {
   const categories = useSelector((state) => state.allCategories);
   const dispatch = useDispatch();
@@ -206,9 +209,9 @@ const Navbar = () => {
     dispatch(order(valueOrder));
   }, [valueOrder]);
 
-  const onSearch = () => {
+  /*   const onSearch = () => {
     dispatch(getProductByName(document.getElementById("idSearch").value));
-  };
+  }; */
 
   return (
     <Container>
@@ -241,15 +244,17 @@ const Navbar = () => {
           ))}
 
           <LogoContainer>
-            <input type="text" placeholder="Search" id="idSearch" />
-            <AiOutlineSearch onClick={onSearch} />
+            {/*            <input type="text" placeholder="Search" id="idSearch" />
+            <AiOutlineSearch onClick={onSearch} /> */}
+            <Searchbar />
           </LogoContainer>
           <LogoContainer>
             <AiOutlineShopping />
           </LogoContainer>
+          <LabelStyled>Ordernar por:</LabelStyled>
           <SelectStyled onChange={handleChange}>
-            <option value={"ASC"}>Ascendente</option>
-            <option value={"DESC"}>Descendente</option>
+            <option value={"ASC"}>Lower price</option>
+            <option value={"DESC"}>Higher price</option>
           </SelectStyled>
         </Menu>
         <Space />

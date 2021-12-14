@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { getProductByName } from "../../actions";
-import { InputStyled, ButtonStyled } from "./styles";
+import { InputStyled, FormSt } from "./styles";
+import { AiOutlineSearch } from "react-icons/ai";
 
 const Searchbar = () => {
   const [input, setInput] = useState("");
@@ -13,21 +14,23 @@ const Searchbar = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (input === "") return;
     dispatch(getProductByName(input));
     setInput("");
   };
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
+      <FormSt>
         <InputStyled
           type="text"
           value={input}
           placeholder="Search.."
           onChange={handleInputChange}
         />
-        <ButtonStyled> Search </ButtonStyled>
-      </form>
+        <AiOutlineSearch onClick={handleSubmit} />
+        {/* <ButtonStyled> Search </ButtonStyled> */}
+      </FormSt>
     </div>
   );
 };
