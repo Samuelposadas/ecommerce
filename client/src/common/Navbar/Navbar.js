@@ -37,7 +37,7 @@ const Container = styled.div`
 `;
 const Banner = styled.div`
   height: 45px;
-  background-color: #c53131e8;
+  background-color: #147ce5;
   color: #e9e0e0ee;
   font-size: 12px;
   font-weight: 500;
@@ -77,9 +77,7 @@ const MenuItem = styled.li`
   cursor: pointer;
   width: max-content;
   padding: 20px 20px;
-  background: ${(props) =>
-    props.bd ? "linear-gradient( to bottom, #000 , #555555)" : "none"};
-  padding: ${(props) => (props.mb ? "20px 20px" : null)};
+  text-decoration: ${(props) => (props.bd ? "underline solid" : "none")};
 `;
 const MobileIconOne = styled.div`
   display: none;
