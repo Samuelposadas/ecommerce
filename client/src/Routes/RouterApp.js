@@ -6,6 +6,7 @@ import CreateProduct from "../Pages/CreateProduct/CreateProduct";
 
 //components
 import Home from "../Pages/Home/Home";
+
 import ProductDetail from "../Pages/ProductDetail/ProductDetail";
 
 const RouterApp = () => {
@@ -13,10 +14,9 @@ const RouterApp = () => {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="*" element={<Navigate to="/home" />} />
+        <Route path="*" element={<Navigate to="/" />} />
         <Route path="/products/:id" element={<ProductDetail />} />
         <Route path="/create" element={<CreateProduct />} />
-        <Route path="*" element={<Navigate to="/home" />} />
       </Routes>
     </BrowserRouter>
   );

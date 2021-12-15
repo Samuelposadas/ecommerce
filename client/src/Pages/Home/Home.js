@@ -8,6 +8,7 @@ import Navbar from "../../common/Navbar/Navbar";
 import Footer from "../../common/Footer/Footer";
 import { Paginate } from "../../Components/Pagination/Paginate";
 import ModalContainer from "../../Components/Modal/ModalContainer";
+// import Login from "../Login/Login";
 
 const CardsContainer = styled.div`
   display: grid;
@@ -27,7 +28,6 @@ const Home = () => {
     <>
       <Navbar />
       <ModalContainer />
-
       <CardsContainer>
         {allProducts?.map((product) => (
           <Card key={product.id} {...product} />
