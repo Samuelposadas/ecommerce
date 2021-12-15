@@ -1,6 +1,7 @@
 import React from "react";
 
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import Paypal from "../Components/Paypal/Paypal";
 
 import CreateProduct from "../Pages/CreateProduct/CreateProduct";
 
@@ -17,6 +18,7 @@ const RouterApp = () => {
         <Route path="*" element={<Navigate to="/" />} />
         <Route path="/products/:id" element={<ProductDetail />} />
         <Route path="/create" element={<CreateProduct />} />
+        <Route path="/paypal" element={<Paypal />} />
       </Routes>
     </BrowserRouter>
   );
