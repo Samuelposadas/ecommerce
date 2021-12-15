@@ -8,6 +8,11 @@ import Navbar from "../../common/Navbar/Navbar";
 import Footer from "../../common/Footer/Footer";
 import { Paginate } from "../../Components/Pagination/Paginate";
 
+
+import ModalContainer from "../../Components/Modal/ModalContainer";
+// import Login from "../Login/Login";
+
+
 const CardsContainer = styled.div`
   display: grid;
   background-color: #b5b4b832;
@@ -25,6 +30,8 @@ const Home = () => {
   return (
     <>
       <Navbar />
+
+      <ModalContainer />
 
       <CardsContainer>
         {allProducts?.map((product) => (
