@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
 import styled from "styled-components";
+import { useDispatch, useSelector } from "react-redux";
 import { AiOutlineAppstore, AiOutlineShopping } from "react-icons/ai";
 import { GoThreeBars, GoX } from "react-icons/go";
-import { useDispatch, useSelector } from "react-redux";
 import {
   getCategory,
   getCategoryAll,
@@ -11,7 +11,10 @@ import {
   order,
   action_defaul_values,
 } from "../../actions/index";
+
+//components
 import Searchbar from "../../Components/Searchbar/Searchbar";
+import Auth from "../../Components/Auth/Auth";
 
 const SelectStyled = styled.select`
   background-color: #2b2929;
@@ -281,6 +284,7 @@ const Navbar = () => {
             <OptionStyled value={"ASC"}>Lower price</OptionStyled>
             <OptionStyled value={"DESC"}>Higher price</OptionStyled>
           </SelectStyled>
+          <Auth />
         </Menu>
         <Space />
       </Wrapper>

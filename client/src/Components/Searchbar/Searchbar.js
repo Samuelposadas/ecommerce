@@ -4,6 +4,7 @@ import { getAllProducts, saveName } from "../../actions";
 import { InputStyled, FormSt } from "./styles";
 import { AiOutlineSearch } from "react-icons/ai";
 
+
 const Searchbar = (props) => {
   const [input, setInput] = useState("");
   const dispatch = useDispatch();
