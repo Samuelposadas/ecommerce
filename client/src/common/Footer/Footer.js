@@ -2,11 +2,11 @@ import React from "react";
 import styled from "styled-components";
 
 const Container = styled.div`
-  color: #1b1a1af4;
-  background-color: #b5b4b832;
+  color: #e9e0e0ee;
+  background-color: #2b2929;
   font-size: 20px;
-  padding-top: 35px;
-  padding-bottom: 35px;
+  padding-top: 15px;
+  padding-bottom: 15px;
 `;
 
 const SubWrapper = styled.div`
@@ -27,6 +27,7 @@ const Card = styled.ul`
   flex-direction: column;
   justify-self: center;
   margin: 20px;
+  width: 130px;
 `;
 const CardTitle = styled.h1`
   font-size: 21px;
