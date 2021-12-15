@@ -8,7 +8,6 @@ import {
   getCategory,
   getCategoryAll,
   getAllProducts,
-  order,
   action_defaul_values,
 } from "../../actions/index";
 
@@ -19,19 +18,18 @@ import { Modal } from "../../Components/Modal/Modal";
 
 import Auth from "../../Components/Auth/Auth";
 
+// const SelectStyled = styled.select`
+//   background-color: #2b2929;
+//   color: #e9e0e0ee;
+//   border: none;
+//   font-size: 10px;
+// `;
 
-const SelectStyled = styled.select`
-  background-color: #2b2929;
-  color: #e9e0e0ee;
-  border: none;
-  font-size: 10px;
-`;
-
-const OptionStyled = styled.option`
-  &:hover {
-    background-color: #2b2929;
-  }
-`;
+// const OptionStyled = styled.option`
+//   &:hover {
+//     background-color: #2b2929;
+//   }
+// `;
 
 const Container = styled.div`
   height: 50px;
@@ -50,10 +48,7 @@ const Banner = styled.div`
 const Wrapper = styled.div`
   height: 50px;
   display: grid;
-  grid-template-columns: minmax(0px, auto) minmax(800px, auto) minmax(
-      30px,
-      auto
-    );
+  grid-template-columns: minmax(0px, auto) minmax(770px, auto) minmax(0px, auto);
 
   @media screen and (max-width: 768px) {
     display: none;
@@ -61,17 +56,17 @@ const Wrapper = styled.div`
 `;
 const Space = styled.div``;
 const Menu = styled.ul`
-  font-size: 10px;
+  font-size: 12.5px;
   font-weight: 610;
   color: #e9e0e0ee;
   display: grid;
-  grid-template-columns: repeat(14, minmax(10px, auto));
+  grid-template-columns: repeat(9, minmax(10px, auto));
   grid-gap: 1rem;
   justify-items: center;
   align-items: center;
 `;
 const LogoContainer = styled.div`
-  font-size: 20px;
+  font-size: 25px;
   color: #e9e0e0ee;
   justify-self: center;
   align-self: center;
@@ -123,7 +118,7 @@ const MobileWrapper = styled.div`
   @media screen and (max-width: 768px) {
     height: 50px;
     display: grid;
-    grid-template-columns: auto 85% auto;
+    grid-template-columns: auto auto 72% auto auto;
   }
 `;
 
@@ -135,16 +130,10 @@ const MobileDropdown = styled.ul`
     gap: 0rem;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(10, 28%);
-    margin-left: -40.7px;
-    margin-top: 0px;
     position: relative;
-    -o-transition-property: all;
-    transition-duration: 10s;
-    transition-timing-function: linear;
-    transition-delay: 10s;
     z-index: 1;
 
-    animation: ${({ open }) => (open ? "box 1.2s ease" : "box1 1.2s ease")};
+    animation: ${({ open }) => (open ? "box 0.7s ease" : "box1 0.7s ease")};
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
 
@@ -172,6 +161,7 @@ const MobileDropdown = styled.ul`
   }
 `;
 const MobileDropdownItem = styled.li`
+  font-size: 15px;
   border-bottom-style: solid;
   border-bottom-width: 1px;
   background-color: #2b2929;
@@ -183,12 +173,11 @@ const MobileDropdownItem = styled.li`
   justify-content: center;
   align-items: center;
 `;
-
-const LabelStyled = styled.label`
-  color: #e9e0e0ee;
-  font-size: 10px;
-  margin-right: -15px;
-`;
+// const LabelStyled = styled.label`
+//   color: #e9e0e0ee;
+//   font-size: 10px;
+//   margin-right: -15px;
+// `;
 
 const Navbar = () => {
   const categories = useSelector((state) => state.allCategories);
@@ -201,18 +190,18 @@ const Navbar = () => {
     dispatch(getCategory(categoryId));
     dispatch(getAllProducts(1, categoryId));
   };
-  const idCategory = useSelector((state) => state.category);
-  const nameProduct = useSelector((state) => state.nameProduct);
-  const [valueOrder, setValueOrder] = useState("");
+  // const idCategory = useSelector((state) => state.category);
+  // const nameProduct = useSelector((state) => state.nameProduct);
+  // const [valueOrder, setValueOrder] = useState("");
 
-  const handleChange = (e) => {
-    e.preventDefault();
-    setValueOrder(e.target.value);
-  };
-  useEffect(() => {
-    dispatch(getAllProducts(1, idCategory, valueOrder, nameProduct));
-    dispatch(order(valueOrder));
-  }, [valueOrder]);
+  // const handleChange = (e) => {
+  //   e.preventDefault();
+  //   setValueOrder(e.target.value);
+  // };
+  // useEffect(() => {
+  //   dispatch(getAllProducts(1, idCategory, valueOrder, nameProduct));
+  //   dispatch(order(valueOrder));
+  // }, [valueOrder]);
 
   const [style, setStyle] = useState("");
 
@@ -234,6 +223,10 @@ const Navbar = () => {
         </MobileIconOne>
         <MobileIcon>
           <AiOutlineAppstore />
+        </MobileIcon>
+        <Space />
+        <MobileIcon>
+          <Auth />
         </MobileIcon>
         <MobileIcon>
           <AiOutlineShopping onClick={openModal} />
@@ -263,26 +256,24 @@ const Navbar = () => {
               {category.name}
             </MenuItem>
           ))}
-
           <LogoContainer>
-            {/*            <input type="text" placeholder="Search" id="idSearch" />
-            <AiOutlineSearch onClick={onSearch} /> */}
-            <Searchbar reset={resetValues} />
+            <Auth />
           </LogoContainer>
           <LogoContainer>
             <AiOutlineShopping onClick={openModal} />
           </LogoContainer>
-          <LabelStyled>Order by:</LabelStyled>
-          <SelectStyled onChange={handleChange}>
+          {/* <LabelStyled>Order by:</LabelStyled> */}
+          {/* <SelectStyled onChange={handleChange}>
             <OptionStyled value={"ASC"}>Lower price</OptionStyled>
             <OptionStyled value={"DESC"}>Higher price</OptionStyled>
-          </SelectStyled>
-          <Auth />
+          </SelectStyled> */}
         </Menu>
         <Space />
       </Wrapper>
       <Banner>
-        Shop early for the best selection of holiday favorites. Shop now.
+        <LogoContainer>
+          <Searchbar reset={resetValues} />
+        </LogoContainer>
       </Banner>
       <Modal showModal={showModal} setShowModal={setShowModal} />
       {showMobileMenu ? (

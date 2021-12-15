@@ -4,7 +4,6 @@ import { getAllProducts, saveName } from "../../actions";
 import { InputStyled, FormSt } from "./styles";
 import { AiOutlineSearch } from "react-icons/ai";
 
-
 const Searchbar = (props) => {
   const [input, setInput] = useState("");
   const dispatch = useDispatch();
@@ -29,11 +28,10 @@ const Searchbar = (props) => {
         <InputStyled
           type="text"
           value={input}
-          placeholder="Search.."
+          placeholder="Search products, brands and more..."
           onChange={handleInputChange}
         />
         <AiOutlineSearch onClick={handleSubmit} />
-        {/* <ButtonStyled> Search </ButtonStyled> */}
       </FormSt>
     </div>
   );
