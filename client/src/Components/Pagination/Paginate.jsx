@@ -36,7 +36,7 @@ export const Paginate = () => {
       {totalPages < 1 ? null : (
         <>
           <LabelPage br={"#ddd"}> {numberPag} </LabelPage>
-          <LabelPage>de {totalPages}</LabelPage>
+          <LabelPage>out of {totalPages}</LabelPage>
         </>
       )}
       {numberPag < totalPages ? (
