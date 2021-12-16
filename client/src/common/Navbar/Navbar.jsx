@@ -37,7 +37,7 @@ const Container = styled.div`
 `;
 const Banner = styled.div`
   height: 45px;
-  background-color: #147ce5;
+  background-color: #147ce5cc;
   color: #e9e0e0ee;
   font-size: 12px;
   font-weight: 500;
