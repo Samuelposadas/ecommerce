@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const ButtonPage = styled.button`
   border: none;
   border-radius: none;
-  color: #05f;
+  color: #2b2929;
   background: none;
   font-size: 17px;
   padding: 10px;
@@ -21,11 +21,11 @@ export const Pagination = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
-  height: 50px;
+  height: 80px;
   align-items: center;
   font-family: Georgia, "Times New Roman", Times, serif;
   font-weight: lighter;
-  color: #2b292970;
+  color: #2b2929;
   background-color: #b5b4b832;
 `;
 

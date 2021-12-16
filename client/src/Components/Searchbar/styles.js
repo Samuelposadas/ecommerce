@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
 export const InputStyled = styled.input`
-  height: 30px;
-  width: 200px;
-  border-radius: 30px;
-  border: 1px solid black;
+  height: 23px;
+  width: 380px;
+  border-radius: 5px;
+  border: 6px #c53131e8;
   margin-right: 10px;
   background: #ddd;
   &:focus {

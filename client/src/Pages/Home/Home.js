@@ -4,14 +4,11 @@ import { useSelector } from "react-redux";
 import styled from "styled-components";
 //components
 import Card from "../../Components/Card/Card";
-import Navbar from "../../common/Navbar/Navbar";
+import Navbar from "../../common/Navbar/Navbar.jsx";
 import Footer from "../../common/Footer/Footer";
 import { Paginate } from "../../Components/Pagination/Paginate";
 
-
-import ModalContainer from "../../Components/Modal/ModalContainer";
 // import Login from "../Login/Login";
-
 
 const CardsContainer = styled.div`
   display: grid;
@@ -30,8 +27,6 @@ const Home = () => {
   return (
     <>
       <Navbar />
-
-      <ModalContainer />
 
       <CardsContainer>
         {allProducts?.map((product) => (

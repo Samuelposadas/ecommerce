@@ -2,31 +2,30 @@ import React from "react";
 import styled from "styled-components";
 
 const Container = styled.div`
-  color: #1b1a1af4;
-  background-color: #b5b4b832;
+  color: #e9e0e0ee;
+  background-color: #2b2929;
   font-size: 20px;
-  padding-top: 35px;
-  padding-bottom: 35px;
+  padding-top: 15px;
+  padding-bottom: 15px;
 `;
 
 const SubWrapper = styled.div`
   display: grid;
-  grid-template-columns: minmax(210px, 1100px);
-
-  align-content: center;
+  grid-template-columns: minmax(210px, 1000px);
   justify-content: center;
 `;
 
 const Wrapper = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(215px, auto));
+  grid-template-columns: repeat(auto-fit, minmax(180px, auto));
 `;
 
 const Card = styled.ul`
   display: flex;
   flex-direction: column;
-  justify-self: center;
+  justify-self: end;
   margin: 20px;
+  width: 130px;
 `;
 const CardTitle = styled.h1`
   font-size: 21px;
@@ -40,7 +39,7 @@ const CardLink = styled.li`
   transition: all 0.5s ease;
   :hover {
     padding-left: 15px;
-    color: #1a1818ab;
+    color: #e9e0e0ee;
   }
 `;
 
@@ -50,28 +49,28 @@ const Footer = () => {
       <SubWrapper>
         <Wrapper>
           <Card>
-            <CardTitle>About Us</CardTitle>
+            <CardTitle>ABOUT US</CardTitle>
             <CardLink>Story</CardLink>
             <CardLink>Clients</CardLink>
             <CardLink>Testimonials</CardLink>
             <CardLink>Our Team</CardLink>
           </Card>
           <Card>
-            <CardTitle>Services</CardTitle>
+            <CardTitle>SERVICES</CardTitle>
             <CardLink>Marketing</CardLink>
             <CardLink>Consulting</CardLink>
             <CardLink>Development</CardLink>
             <CardLink>Design</CardLink>
           </Card>
           <Card>
-            <CardTitle>Contact Us</CardTitle>
+            <CardTitle>CONTACT US</CardTitle>
             <CardLink>United States</CardLink>
             <CardLink>United Kingdom</CardLink>
             <CardLink>Australia</CardLink>
             <CardLink>Support</CardLink>
           </Card>
           <Card>
-            <CardTitle>Social</CardTitle>
+            <CardTitle>SOCIAL</CardTitle>
             <CardLink>Facebook</CardLink>
             <CardLink>Instagram</CardLink>
             <CardLink>Youtube</CardLink>

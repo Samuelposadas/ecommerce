@@ -5,7 +5,7 @@ import {
   GET_ALL_PRODUCTS,
   POST_PRODUCT,
   SET_PRODUCT_DETAIL,
-  URL_BASE_PRODUCTS,
+  URL_BASE,
   GET_SUPPLIERS,
   GET_ALL_CATEGORIES,
   TOTAL_PAGES,
@@ -21,7 +21,7 @@ export const getProductByName = (name) => {
   return async function (dispatch) {
     try {
       const product = await axios.get(
-        `http://localhost:3001/products/search?name=${name}`
+        `${URL_BASE}/products/search?name=${name}`
       );
       return dispatch({
         type: GET_PRODUCT_BY_NAME,
@@ -43,11 +43,11 @@ export const getAllProducts = (numPage, category, order, nameProduct) => {
         let products;
         if (!order) {
           products = await axios.get(
-            `http://localhost:3001/products?page=${numPage}&category=${category}`
+            `${URL_BASE}/products?page=${numPage}&category=${category}`
           );
         } else {
           products = await axios.get(
-            `http://localhost:3001/products?page=${numPage}&category=${category}&orderPrice=${order}`
+            `${URL_BASE}/products?page=${numPage}&category=${category}&orderPrice=${order}`
           );
         }
 
@@ -67,11 +67,11 @@ export const getAllProducts = (numPage, category, order, nameProduct) => {
         let products;
         if (!order) {
           products = await axios.get(
-            `http://localhost:3001/products?page=${numPage}&nameproduct=${nameProduct}`
+            `${URL_BASE}/products?page=${numPage}&nameproduct=${nameProduct}`
           );
         } else {
           products = await axios.get(
-            `http://localhost:3001/products?page=${numPage}&nameproduct=${nameProduct}&orderPrice=${order}`
+            `${URL_BASE}/products?page=${numPage}&nameproduct=${nameProduct}&orderPrice=${order}`
           );
         }
 
@@ -91,11 +91,11 @@ export const getAllProducts = (numPage, category, order, nameProduct) => {
         let products;
         if (!order) {
           products = await axios.get(
-            `http://localhost:3001/products?page=${numPage}`
+            `${URL_BASE}/products?page=${numPage}`
           );
         } else {
           products = await axios.get(
-            `http://localhost:3001/products?page=${numPage}&orderPrice=${order}`
+            `${URL_BASE}/products?page=${numPage}&orderPrice=${order}`
           );
         }
         dispatch({
@@ -117,7 +117,7 @@ export const postProducts = (payload) => {
   return async function () {
     try {
       const postProduct = await axios.post(
-        "http://localhost:3001/products/create",
+        `${URL_BASE}/products/create`,
         payload
       );
       return {
@@ -133,7 +133,7 @@ export const postProducts = (payload) => {
 export const getSuppliers = () => {
   return async function (dispatch) {
     try {
-      const getSupplier = await axios.get("http://localhost:3001/suppliers");
+      const getSupplier = await axios.get(`${URL_BASE}/suppliers`);
       return dispatch({
         type: GET_SUPPLIERS,
         payload: getSupplier.data,
@@ -147,7 +147,7 @@ export const getSuppliers = () => {
 export const getAllCategories = () => {
   return async function (dispatch) {
     try {
-      const categories = await axios.get("http://localhost:3001/categories");
+      const categories = await axios.get(`${URL_BASE}/categories`);
       return dispatch({
         type: GET_ALL_CATEGORIES,
         payload: categories.data,
@@ -161,7 +161,7 @@ export const getAllCategories = () => {
 export const getProductDetail = (idProduct) => {
   return async function (dispatch) {
     try {
-      const result = await reqGetAxios(`${URL_BASE_PRODUCTS}/${idProduct}`);
+      const result = await reqGetAxios(`${URL_BASE}/products/${idProduct}`);
       dispatch(actionGenerator(SET_PRODUCT_DETAIL, result));
     } catch (error) {
       console.log(error);
@@ -172,7 +172,7 @@ export const getProductDetail = (idProduct) => {
 export const getCategoryAll = () => {
   return async function (dispatch) {
     try {
-      const categories = await axios.get("http://localhost:3001/categories");
+      const categories = await axios.get(`${URL_BASE}/categories`);
 
       return dispatch({
         type: GET_CATEGORIES,
@@ -200,7 +200,7 @@ export const order = (payload) => {
 export const action_defaul_values = () => {
   return async (dispatch) => {
     try {
-      const product = await axios.get("http://localhost:3001/products?page=1");
+      const product = await axios.get(`${URL_BASE}/products?page=1`);
       dispatch({
         type: GET_PRODUCTS_DEFAULT,
         payload: {
@@ -218,5 +218,20 @@ export const saveName = (payload) => {
   return {
     type: SAVENAME,
     payload,
+  };
+};
+
+export const updateProduct = (payload) => {
+  const { id } = payload;
+  return async () => {
+    try {
+      const { data } = await axios.put(
+        `${URL_BASE}/products/update/${id}`,
+        payload
+      );
+      console.log(data);
+    } catch (e) {
+      console.log(e);
+    }
   };
 };
