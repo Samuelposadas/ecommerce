@@ -1,54 +1,38 @@
 import React, { useEffect, useState } from "react";
-import validate from "./validate";
-
-import {
-  getAllCategories,
-  getSuppliers,
-  postProducts,
-} from "../../actions/index";
-
 import { useDispatch, useSelector } from "react-redux";
+import { getAllCategories, getSuppliers, updateProduct } from "../../actions";
 import {
   Container,
-  Header,
   Content,
+  Header,
+  ImgContainer,
   Select,
+  ShowCategories,
   StyledButton,
   StyledForm,
-} from "./styles";
+} from "../CreateProduct/styles";
+import validate from "../CreateProduct/validate";
 
-const CreateProduct = () => {
-  const initialState = {
-    name: "",
-    description: "",
-    salePrice: "",
-    rating: "",
-    stock: "",
-    imgTotal: "",
-    img: [],
-    purchasePrice: "",
-    discount: "",
-    categories: [],
-    supplier: "",
-  };
+const UpdateProduct = () => {
   const dispatch = useDispatch();
-  const allCategories = useSelector((state) => state.allCategories);
-  const allSuppliers = useSelector((state) => state.allSuppliers);
-  // eslint-disable-next-line no-unused-vars
-  const [errors, setErrors] = useState({});
-  const [input, setInput] = useState(initialState);
-
   useEffect(() => {
-    console.log("hola");
     dispatch(getAllCategories());
-  }, []);
-
-  useEffect(() => {
     dispatch(getSuppliers());
   }, []);
+  const product = useSelector((state) => state.productDetail);
+  const allCategories = useSelector((state) => state.allCategories);
+  const allSuppliers = useSelector((state) => state.allSuppliers);
+  const initialState = {
+    ...product,
+    imgTotal: "",
+    categories: product.Categories.map((category) => category.id),
+    supplier: product.Supplier.id,
+  };
+  const [errors, setErrors] = useState({});
+  const [input, setInput] = useState(initialState);
+  console.log(input);
 
-  function handleChange(e) {
-    console.log(e.target.value);
+  const handleChange = (e) => {
     if (isNaN(parseInt(e.target.value))) {
       setInput((input) => ({
         ...input,
@@ -60,53 +44,14 @@ const CreateProduct = () => {
         [e.target.name]: parseInt(e.target.value),
       }));
     }
-  }
-  useEffect(() => {
-    setErrors(validate(input));
-  }, [input]);
-
-  const handleSelectCategories = (e) => {
-    if (
-      e.target.value !== "null" &&
-      !input.categories.includes(+e.target.value)
-    ) {
-      setInput((input) => ({
-        ...input,
-        categories: [...input.categories, +e.target.value],
-      }));
-    }
-    setErrors(
-      validate({
-        ...input,
-        categories: [...input.categories, e.target.value],
-      })
-    );
-  };
-  const handleSelectSupplier = (e) => {
-    if (e.target.value === "null") {
-      setInput((input) => ({
-        ...input,
-        supplier: 0,
-      }));
-    } else {
-      setInput((input) => ({
-        ...input,
-        supplier: +e.target.value,
-      }));
-    }
-    console.log(input.supplier);
-    setErrors(
-      validate({
-        ...input,
-        supplier: e.target.value,
-      })
-    );
+    let errors = validate({ ...input, [e.target.name]: e.target.value });
+    setErrors(errors);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(postProducts(input));
-    setInput(initialState);
+    console.log(input);
+    dispatch(updateProduct(input));
   };
 
   const handleClickImg = (e) => {
@@ -122,95 +67,180 @@ const CreateProduct = () => {
         imgTotal: "",
       }));
     }
+    let error = validate({
+      ...input,
+      img: [...input.img, input.imgTotal],
+      imgTotal: "",
+    });
+    setErrors(error);
   };
+
+  const handleSelectCategories = (e) => {
+    if (
+      e.target.value !== "null" &&
+      !input.categories.includes(+e.target.value)
+    ) {
+      setInput((input) => ({
+        ...input,
+        categories: [...input.categories, +e.target.value],
+      }));
+    }
+    let errors = validate({
+      ...input,
+      categories: [...input.categories, +e.target.value],
+    });
+    setErrors(errors);
+  };
+
+  const handleSelectSupplier = (e) => {
+    if (e.target.value === "null") {
+      setInput((input) => ({
+        ...input,
+        supplier: 0,
+      }));
+      let errors = validate({
+        ...input,
+        supplier: 0,
+      });
+      setErrors(errors);
+    } else {
+      setInput((input) => ({
+        ...input,
+        supplier: +e.target.value,
+      }));
+      let errors = validate({
+        ...input,
+        supplier: +e.target.value,
+      });
+      setErrors(errors);
+    }
+    console.log(errors.supplier);
+  };
+
+  const deleteImg = (e) => {
+    const newImg = input.img.filter((img) => img !== e.target.value);
+    setInput({
+      ...input,
+      img: newImg,
+    });
+    let errors = validate({
+      ...input,
+      img: newImg,
+    });
+    setErrors(errors);
+  };
+
+  const deleteCategory = (e) => {
+    const newCategories = input.categories.filter(
+      (category) => category !== +e.target.value
+    );
+    setInput({
+      ...input,
+      categories: newCategories,
+    });
+    let errors = validate({
+      ...input,
+      categories: newCategories,
+    });
+    setErrors(errors);
+  };
+
   return (
     <Container>
       <StyledForm onSubmit={handleSubmit}>
-        <Header>Create a product</Header>
+        <Header>Update product</Header>
         <Content>
+          <h3>Name</h3>
           <input
             className={errors.name && "danger"}
             type="text"
             name="name"
             value={input.name}
             onChange={handleChange}
-            placeholder="product name"
           />
           {errors.name && <p className="danger">{errors.name}</p>}
         </Content>
         <Content>
+          <h3>Description</h3>
           <input
             className={errors.description && "danger"}
             type="text"
             name="description"
-            placeholder="product description"
             value={input.description}
             onChange={handleChange}
           />
           {errors.description && <p className="danger">{errors.description}</p>}
         </Content>
         <Content>
+          <h3>Sale price</h3>
           <input
             className={errors.salePrice && "danger"}
             type="number"
             name="salePrice"
-            placeholder="product salePrice"
             value={input.salePrice}
             onChange={handleChange}
           />
           {errors.salePrice && <p className="danger">{errors.salePrice}</p>}
         </Content>
         <Content>
+          <h3>Rating</h3>
           <input
             className={errors.rating && "danger"}
             type="number"
             name="rating"
-            placeholder="product rating"
             value={input.rating}
             onChange={handleChange}
           />
           {errors.rating && <p className="danger">{errors.rating}</p>}
         </Content>
         <Content>
+          <h3>Stock</h3>
           <input
             className={errors.stock && "danger"}
             type="number"
             name="stock"
-            placeholder="product stock"
             value={input.stock}
             onChange={handleChange}
           />
           {errors.stock && <p className="danger">{errors.stock}</p>}
         </Content>
         <Content>
+          <h3>Images</h3>
           <input
             className={errors.img && "danger"}
             type="text"
             name="imgTotal"
-            placeholder="products img"
             value={input.imgTotal}
             onChange={handleChange}
           />
           <button onClick={handleClickImg}>Add img</button>
+          {input.img?.map((img) => (
+            <ImgContainer key={img}>
+              <img src={img} />
+              <button onClick={deleteImg} value={img}>
+                X
+              </button>
+            </ImgContainer>
+          ))}
           {errors.img && <p className="danger">{errors.img}</p>}
         </Content>
         <Content>
+          <h3>Discount</h3>
           <input
             className={errors.discount && "danger"}
             type="number"
             name="discount"
             value={input.discount}
             onChange={handleChange}
-            placeholder="product discount"
           />
           {errors.discount && <p className="danger">{errors.discount}</p>}
         </Content>
         <Content>
+          <h3>Purchase price</h3>
           <input
             className={errors.purchasePrice && "danger"}
             type="number"
             name="purchasePrice"
-            placeholder="product purchasePrice"
             value={input.purchasePrice}
             onChange={handleChange}
           />
@@ -228,6 +258,19 @@ const CreateProduct = () => {
               </option>
             ))}
           </select>
+
+          {allCategories.map(
+            (category) =>
+              input.categories.includes(category.id) && (
+                <ShowCategories key={category.id}>
+                  <p>{category.name}</p>
+                  <button onClick={deleteCategory} value={category.id}>
+                    X
+                  </button>
+                </ShowCategories>
+              )
+          )}
+
           {errors.categories && <p className="danger">{errors.categories}</p>}
         </Select>
         <Select>
@@ -258,11 +301,11 @@ const CreateProduct = () => {
             errors.supplier
           }
         >
-          Create
+          Update
         </StyledButton>
       </StyledForm>
     </Container>
   );
 };
 
-export default CreateProduct;
+export default UpdateProduct;

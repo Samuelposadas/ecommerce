@@ -15,7 +15,11 @@ const Auth = () => {
       {isAuthenticated && (
         <Container>
           <h3>{user.name}</h3>
-          <img style={{ width: "40px", height: "40px" }} src={user.picture} />
+          <img
+            style={{ width: "40px", height: "40px" }}
+            src={user.picture}
+            alt={user.email_verified}
+          />
         </Container>
       )}
     </Container>

@@ -220,3 +220,18 @@ export const saveName = (payload) => {
     payload,
   };
 };
+
+export const updateProduct = (payload) => {
+  const { id } = payload;
+  return async () => {
+    try {
+      const { data } = await axios.put(
+        `http://localhost:3001/products/update/${id}`,
+        payload
+      );
+      console.log(data);
+    } catch (e) {
+      console.log(e);
+    }
+  };
+};

@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { Container, Info, Product } from "./styles";
 import StarIcon from "@mui/icons-material/Star";
 import { ButtonDetail } from "../../common/Btn/BtnStyled";
@@ -9,14 +9,11 @@ import { getProductDetail } from "../../actions";
 
 const ProductDetail = () => {
   const { id } = useParams();
-  console.log(id);
   const dispatch = useDispatch();
   const product = useSelector((state) => state.productDetail);
   useEffect(() => {
     dispatch(getProductDetail(id));
-    console.log("ENTRO");
   }, []);
-  console.log(product);
   const productComplete = {
     ...product,
     comments: [
@@ -29,7 +26,6 @@ const ProductDetail = () => {
       { content: "dsadsads", stars: 1 },
     ],
   };
-  console.log(productComplete);
   const { img, description, comments, name, salePrice, rating } =
     productComplete;
   return (
@@ -62,6 +58,9 @@ const ProductDetail = () => {
         <ButtonDetail backgroundColor={lightBlue} color={blue}>
           Add to cart
         </ButtonDetail>
+        <Link to={`/update/${id}`}>
+          <ButtonDetail backgroundColor={blue}>Edit</ButtonDetail>
+        </Link>
       </Info>
     </Container>
   );

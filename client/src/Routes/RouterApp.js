@@ -8,6 +8,7 @@ import CreateProduct from "../Pages/CreateProduct/CreateProduct";
 import Home from "../Pages/Home/Home";
 
 import ProductDetail from "../Pages/ProductDetail/ProductDetail";
+import UpdateProduct from "../Pages/UpdateProduct/UpdateProduct";
 
 const RouterApp = () => {
   return (
@@ -17,6 +18,7 @@ const RouterApp = () => {
         <Route path="*" element={<Navigate to="/" />} />
         <Route path="/products/:id" element={<ProductDetail />} />
         <Route path="/create" element={<CreateProduct />} />
+        <Route path="/update/:id" element={<UpdateProduct />} />
       </Routes>
     </BrowserRouter>
   );
