@@ -7,6 +7,12 @@ import reportWebVitals from "./reportWebVitals";
 import { store } from "./store/index.js";
 import { Provider } from "react-redux";
 import { Auth0Provider } from "@auth0/auth0-react";
+import dotenv from "dotenv";
+import axios from "axios";
+
+dotenv.config();
+
+axios.defaults.baseURL = process.env.REACT_APP_API;
 
 const domain = process.env.REACT_APP_AUTH0_DOMAIN;
 
