@@ -20,12 +20,13 @@ export const StyledForm = styled.form`
   background-size: cover;
   height: auto;
   margin-top: 20px;
-  width: 250px;
+  width: auto;
 `;
 export const Content = styled.div`
   height: 70px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  align-items: center;
   & input {
     border-radius: 10px;
     margin-top: 10px;
@@ -40,6 +41,11 @@ export const Content = styled.div`
   }
   & input.danger {
     border: 2px solid red;
+  }
+  & h3 {
+    font-size: 17px;
+    font-weight: bold;
+    margin-bottom: 5px;
   }
 `;
 export const Select = styled.div`
@@ -79,5 +85,48 @@ export const StyledButton = styled.button`
   }
   &:disabled {
     background-color: grey;
+  }
+`;
+
+export const ShowCategories = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 5px;
+  & button {
+    /* border: none; */
+    border-radius: 10px;
+    margin-left: 5px;
+  }
+`;
+
+export const InputImg = styled.div`
+  height: 70px;
+  display: flex;
+  flex-direction: row;
+
+  & input {
+    border-radius: 10px;
+    margin-top: 10px;
+    height: 40px;
+    width: 350px;
+  }
+  & p.danger {
+    color: red;
+    font-size: 15px;
+    margin-top: 5px;
+    width: 350px;
+  }
+  & input.danger {
+    border: 2px solid red;
+  }
+`;
+
+export const ImgContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  & img {
+    height: 60px;
+    width: 60px;
   }
 `;

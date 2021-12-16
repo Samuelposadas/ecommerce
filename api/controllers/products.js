@@ -90,7 +90,10 @@ const findProductById = async (req, res) => {
     const data = await Product.findOne({
       where: { id },
       attributes: { exclude: ["id_Supplier"] },
-      include: [{ model: Category }, { model: Supplier, attributes: ["name"] }],
+      include: [
+        { model: Category },
+        { model: Supplier, attributes: ["name", "id"] },
+      ],
     });
     if (data) {
       res.status(201).json(data);
@@ -199,11 +202,18 @@ const updateProduct = async (req, res) => {
     discount,
     purchasePrice,
     categories,
+    supplier,
   } = req.body;
   try {
     const product = await Product.findByPk(id);
     if (!product) {
       res.status(400).send("Product not found");
+    }
+    if (categories) {
+      await product.setCategories(categories);
+    }
+    if (supplier) {
+      await product.setSupplier(supplier);
     }
     const update = {};
     if (name) update.name = name;
@@ -213,7 +223,7 @@ const updateProduct = async (req, res) => {
     if (img) update.img = img;
     if (discount) update.discount = discount;
     if (purchasePrice) update.purchasePrice = purchasePrice;
-    if (categories) update.categories = categories;
+    // if (categories) update.categories = categories;
     const updateProduct = await product.update(update);
     res.json(updateProduct);
   } catch (error) {
