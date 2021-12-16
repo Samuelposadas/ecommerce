@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import styled from "styled-components";
 //components
 import Card from "../../Components/Card/Card";
-import Navbar from "../../common/Navbar/Navbar";
+import Navbar from "../../common/Navbar/Navbar.jsx";
 import Footer from "../../common/Footer/Footer";
 import { Paginate } from "../../Components/Pagination/Paginate";
 
