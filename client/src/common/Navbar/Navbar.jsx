@@ -83,17 +83,7 @@ const MenuItem = styled.li`
 const MobileIconOne = styled.div`
   display: none;
 
-  @media screen and (max-width: 768px) {
-    display: grid;
-    align-items: center;
-    justify-items: center;
-    cursor: pointer;
-
-    svg {
-      fill: #e9e0e0ee;
-      font-size: 26px;
-    }
-  }
+  
 `;
 const MobileIcon = styled.div`
   display: none;
