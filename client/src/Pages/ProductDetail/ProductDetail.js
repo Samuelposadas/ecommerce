@@ -13,14 +13,14 @@ const Wrapper = styled.div`
   justify-content: center;
 `;
 const Container = styled.div`
-  width: 80%;
+  width: 90%;
   padding: 10px;
   margin-top: 40px;
   margin-bottom: 40px;
 
   display: grid;
   gap: 4rem;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 60% 40%;
   grid-template-rows: repeat(auto, 4);
   grid-template-areas:
     "image info"
@@ -28,7 +28,7 @@ const Container = styled.div`
     "description description"
     "rating rating";
 
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: 850px) {
     width: 100%;
     display: grid;
     grid-template-columns: 1fr;
@@ -48,8 +48,8 @@ const ProductImage = styled.div`
   justify-content: center;
 
   img {
-    width: 350px;
-    height: 350px;
+    width: 320px;
+    height: 320px;
   }
 `;
 const ProductInfo = styled.div`
@@ -122,9 +122,21 @@ const ProductDetail = () => {
   const productComplete = {
     ...product,
     comments: [
-      { content: "This is a comment.", stars: 5 },
-      { content: "This is another comment.", stars: 3 }, // cuando traiga el producto, me va a llegar con los comentarios que le corresponden
-      { content: "This product is great...", stars: 1 },
+      {
+        content:
+          "This is a comment. This comment is supposed to be longer than one line. Just for testing.",
+        stars: 5,
+      },
+      {
+        content:
+          "This is another comment. This comment is supposed to be longer than one line. Just for testing.",
+        stars: 3,
+      }, // cuando traiga el producto, me va a llegar con los comentarios que le corresponden
+      {
+        content:
+          "This product is great... This comment is supposed to be longer than one line. Just for testing.",
+        stars: 1,
+      },
     ],
   };
   const { img, description, comments, name, salePrice, rating } =
@@ -149,12 +161,16 @@ const ProductDetail = () => {
             <img></img>
             <img></img>
           </span>
-          <ButtonDetail backgroundColor={blue}>Buy now</ButtonDetail>
-          <ButtonDetail backgroundColor={lightBlue} color={blue}>
+          <ButtonDetail backgroundColor={blue} width={"95%"}>
+            Buy now
+          </ButtonDetail>
+          <ButtonDetail backgroundColor={lightBlue} width={"95%"} color={blue}>
             Add to cart
           </ButtonDetail>
           <Link to={`/update/${id}`}>
-            <ButtonDetail backgroundColor={blue}>Edit</ButtonDetail>
+            <ButtonDetail backgroundColor={blue} width={"95%"}>
+              Edit
+            </ButtonDetail>
           </Link>
         </ProductInfo>
         <ProductDescription>
