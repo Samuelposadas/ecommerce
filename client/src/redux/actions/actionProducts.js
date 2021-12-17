@@ -14,7 +14,7 @@ import {
   ORDER,
   GET_PRODUCTS_DEFAULT,
   SAVENAME,
-} from "../constants";
+} from "../constants/index";
 import { actionGenerator, reqGetAxios } from "./metodos";
 
 export const getProductByName = (name) => {

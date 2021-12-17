@@ -5,7 +5,7 @@ import {
   getAllCategories,
   getSuppliers,
   postProducts,
-} from "../../actions/index";
+} from "../../redux/actions/actionProducts";
 
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -32,8 +32,8 @@ const CreateProduct = () => {
     supplier: "",
   };
   const dispatch = useDispatch();
-  const allCategories = useSelector((state) => state.allCategories);
-  const allSuppliers = useSelector((state) => state.allSuppliers);
+  const allCategories = useSelector((state) => state.products.allCategories);
+  const allSuppliers = useSelector((state) => state.products.allSuppliers);
   // eslint-disable-next-line no-unused-vars
   const [errors, setErrors] = useState({});
   const [input, setInput] = useState(initialState);

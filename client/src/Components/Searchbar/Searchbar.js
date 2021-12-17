@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { getAllProducts, saveName } from "../../actions";
+import { getAllProducts, saveName } from "../../redux/actions/actionProducts";
 import { InputStyled, FormSt } from "./styles";
 import { AiOutlineSearch } from "react-icons/ai";
 

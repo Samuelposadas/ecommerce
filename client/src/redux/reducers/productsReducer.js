@@ -13,7 +13,7 @@ import {
   ORDER,
   GET_PRODUCTS_DEFAULT,
   SAVENAME,
-} from "../constants";
+} from "../constants/index";
 
 const initialState = {
   productDetail: {},

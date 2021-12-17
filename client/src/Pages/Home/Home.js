@@ -22,7 +22,7 @@ const CardsContainer = styled.div`
 `;
 
 const Home = () => {
-  const allProducts = useSelector((state) => state.allProducts);
+  const allProducts = useSelector((state) => state.products.allProducts);
 
   return (
     <>
