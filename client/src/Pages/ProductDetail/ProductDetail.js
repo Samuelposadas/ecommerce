@@ -5,8 +5,8 @@ import { ButtonDetail } from "../../common/Btn/BtnStyled";
 import { blue, lightBlue } from "../../bankStyles/variables";
 import { useDispatch, useSelector } from "react-redux";
 import { getProductDetail } from "../../redux/actions/actionProducts";
+import { addToCart } from "../../redux/actions/actionCart";
 import styled from "styled-components";
-
 const Wrapper = styled.div`
   display: flex;
   align-content: center;
@@ -150,7 +150,11 @@ const ProductDetail = () => {
             <img></img>
           </span>
           <ButtonDetail backgroundColor={blue}>Buy now</ButtonDetail>
-          <ButtonDetail backgroundColor={lightBlue} color={blue}>
+          <ButtonDetail
+            backgroundColor={lightBlue}
+            color={blue}
+            onClick={() => dispatch(addToCart(id))}
+          >
             Add to cart
           </ButtonDetail>
           <Link to={`/update/${id}`}>
