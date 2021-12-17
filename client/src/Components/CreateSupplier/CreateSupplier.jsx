@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { StyledCreateSupplier } from "./styledCreateSupplier";
 import { validate } from "./validate";
 import axios from "axios";
-import { URL_BASE } from "../../constants";
+import { URL_BASE } from "../../redux/constants/index";
 
 const CreateSupplier = () => {
   const [dataSupplier, setDataSupplier] = useState({

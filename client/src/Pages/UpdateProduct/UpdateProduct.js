@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getAllCategories, getSuppliers, updateProduct } from "../../actions";
+import {
+  getAllCategories,
+  getSuppliers,
+  updateProduct,
+} from "../../redux/actions/actionProducts";
 import {
   Container,
   Content,
@@ -19,9 +23,9 @@ const UpdateProduct = () => {
     dispatch(getAllCategories());
     dispatch(getSuppliers());
   }, []);
-  const product = useSelector((state) => state.productDetail);
-  const allCategories = useSelector((state) => state.allCategories);
-  const allSuppliers = useSelector((state) => state.allSuppliers);
+  const product = useSelector((state) => state.products.productDetail);
+  const allCategories = useSelector((state) => state.products.allCategories);
+  const allSuppliers = useSelector((state) => state.products.allSuppliers);
   const initialState = {
     ...product,
     imgTotal: "",

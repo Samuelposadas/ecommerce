@@ -4,7 +4,7 @@ import StarIcon from "@mui/icons-material/Star";
 import { ButtonDetail } from "../../common/Btn/BtnStyled";
 import { blue, lightBlue } from "../../bankStyles/variables";
 import { useDispatch, useSelector } from "react-redux";
-import { getProductDetail } from "../../actions";
+import { getProductDetail } from "../../redux/actions/actionProducts";
 import styled from "styled-components";
 
 const Wrapper = styled.div`
@@ -115,7 +115,7 @@ const ProductRating = styled.div`
 const ProductDetail = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
-  const product = useSelector((state) => state.productDetail);
+  const product = useSelector((state) => state.products.productDetail);
   useEffect(() => {
     dispatch(getProductDetail(id));
   }, []);

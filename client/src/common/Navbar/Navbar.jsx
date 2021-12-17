@@ -9,7 +9,7 @@ import {
   getCategoryAll,
   getAllProducts,
   action_defaul_values,
-} from "../../actions/index";
+} from "../../redux/actions/actionProducts";
 
 //components
 import Searchbar from "../../Components/Searchbar/Searchbar";
@@ -178,7 +178,7 @@ const MobileDropdownItem = styled.li`
 // `;
 
 const Navbar = () => {
-  const categories = useSelector((state) => state.allCategories);
+  const categories = useSelector((state) => state.products.allCategories);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getCategoryAll());

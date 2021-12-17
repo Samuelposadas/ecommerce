@@ -4,7 +4,7 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import { store } from "./store/index.js";
+import { store } from "./redux/store/index";
 import { Provider } from "react-redux";
 import { Auth0Provider } from "@auth0/auth0-react";
 import dotenv from "dotenv";
