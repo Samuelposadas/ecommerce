@@ -90,9 +90,7 @@ export const getAllProducts = (numPage, category, order, nameProduct) => {
       try {
         let products;
         if (!order) {
-          products = await axios.get(
-            `${URL_BASE}/products?page=${numPage}`
-          );
+          products = await axios.get(`${URL_BASE}/products?page=${numPage}`);
         } else {
           products = await axios.get(
             `${URL_BASE}/products?page=${numPage}&orderPrice=${order}`
