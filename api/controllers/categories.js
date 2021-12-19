@@ -39,7 +39,7 @@ const deleteCategory = async (req, res, next) => {
     });
     if (category) {
       category.destroy();
-      res.json({ msg: `Category ${category} destroyed successfully` });
+      res.json({ msg: `Category ${categoryName} destroyed successfully` });
     } else {
       res.json({ msg: `Category ${categoryName} does not exist in the D.B` });
     }
