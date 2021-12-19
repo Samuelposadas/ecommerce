@@ -32,7 +32,7 @@ app.use("/payment", paymentRouter);
 app.use("/users", users);
 app.use("/typeuser", typeUser);
 app.use("/orders", orders);
-app.use("/comment", commentRouter);
+app.use("/comments", commentRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res) {
