@@ -7,13 +7,12 @@ const createUser = async (req, res, next) => {
       defaults: {
         firstName,
         lastName,
-        email,
         username,
         password,
       },
     });
     if (created) {
-      await user.setType_User(idType);
+      user.setType_User(idType);
       res.json({ msg: "User created successfully" });
     } else {
       res.json({ msg: "Already exists" });
