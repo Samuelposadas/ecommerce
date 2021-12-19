@@ -11,15 +11,17 @@ const Categories = () => {
   const allCategories = useSelector((state) => state.products.allCategories);
   console.log(allCategories);
 
-  const [category, setCategory] = useState("");
+  const [categoryName, setCategoryName] = useState("");
 
   const onChangeCategory = (e) => {
-    setCategory(e.target.value);
+    setCategoryName(e.target.value);
   };
 
   const onSubmitCategory = async (e) => {
     e.preventDefault();
-    await axios.post(`${URL_BASE}`);
+    const res = await axios.post(`${URL_BASE}/categories`, { categoryName });
+    alert(res.data.name || res.data.msg);
+    dispatch(getAllCategories());
   };
 
   useEffect(() => {
@@ -32,12 +34,12 @@ const Categories = () => {
         <input
           type="text"
           name="name"
-          value={category}
+          value={categoryName}
           id=""
           placeholder="enter category name"
           onChange={onChangeCategory}
         />
-        <button type="button">Create</button>
+        <button>Create</button>
       </form>
       {renderCategories(allCategories)}
     </StyledCategories>
