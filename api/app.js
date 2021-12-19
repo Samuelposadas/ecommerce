@@ -12,6 +12,7 @@ const supplierRouter = require("./routes/suppliers");
 const categoryRouter = require("./routes/categories");
 const paymentRouter = require("./routes/payment");
 const users = require("./routes/users");
+const typeUser = require("./routes/typeUser");
 
 const app = express();
 app.use(cors());
@@ -27,6 +28,7 @@ app.use("/suppliers", supplierRouter);
 app.use("/categories", categoryRouter);
 app.use("/payment", paymentRouter);
 app.use("/users", users);
+app.use("/typeuser", typeUser);
 
 // catch 404 and forward to error handler
 app.use(function (req, res) {
