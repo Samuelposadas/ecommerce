@@ -48,8 +48,8 @@ const ProductImage = styled.div`
   justify-content: center;
 
   img {
-    width: 320px;
-    height: 320px;
+    width: 360px;
+    height: 360px;
   }
 `;
 const ProductInfo = styled.div`
