@@ -1,7 +1,11 @@
-const { User } = require("../db/db");
+const { User, Type_User } = require("../db/db");
 const createUser = async (req, res, next) => {
   const { firstName, lastName, email, username, password, idType } = req.body;
   try {
+    const validateIdType = await Type_User.findByPk(idType);
+    if (validateIdType === null) {
+      return res.json({ msg: "Error idType" });
+    }
     const [user, created] = await User.findOrCreate({
       where: { email },
       defaults: {
