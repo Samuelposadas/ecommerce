@@ -4,7 +4,6 @@ const createTypeUser = async (req, res, next) => {
     const { name } = req.query;
     const [typeUser, created] = await Type_User.findOrCreate({
       where: { name },
-      defaults: { name },
     });
     if (created) {
       res.json({ msg: `Created successfully` });
