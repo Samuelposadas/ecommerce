@@ -37,9 +37,9 @@ const deleteCategory = async (req, res, next) => {
     const category = await Category.findOne({ where: { name: categoryName } });
     if (category) {
       category.destroy();
-      res.json({ msg: "Category destroyed successfully" });
+      res.json({ msg: `Category ${category} destroyed successfully` });
     } else {
-      res.json({ msg: "This category does not exist in the D.B" });
+      res.json({ msg: `Category ${categoryName} does not exist in the D.B` });
     }
   } catch (error) {
     next(error);
