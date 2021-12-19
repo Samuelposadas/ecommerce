@@ -34,7 +34,9 @@ const createCategory = async (req, res, next) => {
 const deleteCategory = async (req, res, next) => {
   try {
     const { categoryName } = req.body;
-    const category = await Category.findOne({ where: { name: categoryName } });
+    const category = await Category.findOne({
+      where: { name: categoryName ? categoryName : "" },
+    });
     if (category) {
       category.destroy();
       res.json({ msg: `Category ${category} destroyed successfully` });
