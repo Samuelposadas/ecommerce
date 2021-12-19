@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { removeFromCart } from "../../redux/actions/actionCart";
+import { editQuantity, removeFromCart } from "../../redux/actions/actionCart";
 import styled from "styled-components";
 
 const Container = styled.div`
@@ -17,13 +17,18 @@ const CartItem = ({ img, name, salePrice, id, quantity }) => {
   const deleteItem = (id) => {
     dispatch(removeFromCart(id));
   };
+  const [input, setInput] = useState(quantity);
+  const handleChange = (e) => {
+    setInput(e.target.value);
+    dispatch(editQuantity(e.target.value, id));
+  };
   return (
     <Container>
       <button onClick={() => deleteItem(id)}>X</button>
       <img src={img}></img>
       <h2>{name}</h2>
       <h2>{salePrice}</h2>
-      <p>{quantity}</p>
+      <input value={input} min="1" type="number" onChange={handleChange} />
     </Container>
   );
 };
