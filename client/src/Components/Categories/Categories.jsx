@@ -22,6 +22,7 @@ const Categories = () => {
     const res = await axios.post(`${URL_BASE}/categories`, { categoryName });
     alert(res.data.name || res.data.msg);
     dispatch(getAllCategories());
+    setCategoryName("");
   };
 
   useEffect(() => {
