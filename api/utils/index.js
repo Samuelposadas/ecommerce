@@ -24,7 +24,11 @@ const incomeProductDB = async () => {
 };
 
 const incomeCategory = async () => {
-  await Category.bulkCreate(categories);
+  categories.forEach(async (category) => {
+    await Category.create({
+      name: category.name,
+    });
+  });
 };
 
 const incomeSuppliers = async () => {
