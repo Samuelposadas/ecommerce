@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { URL_BASE } from "../../redux/constants";
 import { getAllCategories } from "../../redux/actions/actionProducts";
 import { StyledCategories } from "./styledCategories";
-import { renderCategories } from "../../utils/mapsRenders";
+// import { renderCategories } from "../../utils/mapsRenders";
 
 const Categories = () => {
   const dispatch = useDispatch();
@@ -13,7 +13,7 @@ const Categories = () => {
 
   const [categoryName, setCategoryName] = useState("");
 
-  const onChangeCategory = (e) => {
+  const onChangeCategoryName = (e) => {
     setCategoryName(e.target.value);
   };
 
@@ -23,6 +23,18 @@ const Categories = () => {
     alert(res.data.name || res.data.msg);
     dispatch(getAllCategories());
     setCategoryName("");
+  };
+
+  const onDeleteCategory = async (e) => {
+    const categoryName = e.target.getAttribute("data-category-name");
+    try {
+      const res = await axios.delete(`${URL_BASE}/categories`, {
+        categoryName,
+      });
+      alert(res.data.msg);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   useEffect(() => {
@@ -38,11 +50,26 @@ const Categories = () => {
           value={categoryName}
           id=""
           placeholder="enter category name"
-          onChange={onChangeCategory}
+          onChange={onChangeCategoryName}
         />
         <button>Create</button>
       </form>
-      {renderCategories(allCategories)}
+      <ul>
+        {allCategories.map((category) => {
+          return (
+            <li key={category.id}>
+              <span>{category.name}</span>
+              <span
+                data-category-name={category.name}
+                onClick={onDeleteCategory}
+                className="deleteCategory"
+              >
+                X
+              </span>
+            </li>
+          );
+        })}
+      </ul>
     </StyledCategories>
   );
 };
