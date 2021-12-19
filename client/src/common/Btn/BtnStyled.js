@@ -15,7 +15,8 @@ export const Btn = styled.div`
 export const ButtonDetail = styled.button`
   background-color: ${({ backgroundColor }) => backgroundColor || "#202020"};
   color: ${({ color }) => color || "white"};
-  width: 300px;
+  width: ${({ width }) => width || "400px"};
+  min-width: 320px;
   height: 40px;
   font-size: 17px;
   margin-top: 10px;

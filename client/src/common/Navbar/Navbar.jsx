@@ -17,6 +17,7 @@ import Searchbar from "../../Components/Searchbar/Searchbar";
 import { Modal } from "../../Components/Modal/Modal";
 
 import Auth from "../../Components/Auth/Auth";
+import { Link } from "react-router-dom";
 
 // const SelectStyled = styled.select`
 //   background-color: #2b2929;
@@ -82,17 +83,7 @@ const MenuItem = styled.li`
 const MobileIconOne = styled.div`
   display: none;
 
-  @media screen and (max-width: 768px) {
-    display: grid;
-    align-items: center;
-    justify-items: center;
-    cursor: pointer;
-
-    svg {
-      fill: #e9e0e0ee;
-      font-size: 26px;
-    }
-  }
+  
 `;
 const MobileIcon = styled.div`
   display: none;
@@ -257,9 +248,11 @@ const Navbar = () => {
           <LogoContainer>
             <Auth />
           </LogoContainer>
-          <LogoContainer>
-            <AiOutlineShopping onClick={openModal} />
-          </LogoContainer>
+          <Link to="/shop">
+            <LogoContainer>
+              <AiOutlineShopping onClick={openModal} />
+            </LogoContainer>
+          </Link>
           {/* <LabelStyled>Order by:</LabelStyled> */}
           {/* <SelectStyled onChange={handleChange}>
             <OptionStyled value={"ASC"}>Lower price</OptionStyled>
