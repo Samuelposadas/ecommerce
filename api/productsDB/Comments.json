@@ -1,0 +1,14 @@
+[
+  {
+    "content": "muy malo",
+    "stars": 1,
+    "id_Product": 1,
+    "id_User": 1
+  },
+  {
+    "content": "muy bueno",
+    "stars": 5,
+    "id_Product": 2,
+    "id_User": 2
+  }
+]
