@@ -12,7 +12,7 @@ const createTypeUser = async (req, res, next) => {
       res.json({ msg: `Already exists` });
     }
   } catch (error) {
-    next();
+    next(error);
   }
 };
 
