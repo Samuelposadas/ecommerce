@@ -27,11 +27,18 @@ const Categories = () => {
 
   const onDeleteCategory = async (e) => {
     const categoryName = e.target.getAttribute("data-category-name");
+    console.log(categoryName);
     try {
-      const res = await axios.delete(`${URL_BASE}/categories`, {
-        categoryName,
+      const res = await axios({
+        method: "delete",
+        url: `${URL_BASE}/categories`,
+        data: {
+          categoryName,
+        },
       });
+      console.log(res.data);
       alert(res.data.msg);
+      dispatch(getAllCategories());
     } catch (error) {
       console.log(error);
     }
