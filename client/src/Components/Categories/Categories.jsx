@@ -9,7 +9,6 @@ import { StyledCategories } from "./styledCategories";
 const Categories = () => {
   const dispatch = useDispatch();
   const allCategories = useSelector((state) => state.products.allCategories);
-  console.log(allCategories);
 
   const [categoryName, setCategoryName] = useState("");
 
@@ -19,15 +18,18 @@ const Categories = () => {
 
   const onSubmitCategory = async (e) => {
     e.preventDefault();
-    const res = await axios.post(`${URL_BASE}/categories`, { categoryName });
-    alert(res.data.name || res.data.msg);
-    dispatch(getAllCategories());
-    setCategoryName("");
+    try {
+      const res = await axios.post(`${URL_BASE}/categories`, { categoryName });
+      dispatch(getAllCategories());
+      setCategoryName("");
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   const onDeleteCategory = async (e) => {
     const categoryName = e.target.getAttribute("data-category-name");
-    console.log(categoryName);
+    alert(`Are you sure to delete the category ${categoryName}`);
     try {
       const res = await axios({
         method: "delete",
@@ -36,8 +38,6 @@ const Categories = () => {
           categoryName,
         },
       });
-      console.log(res.data);
-      alert(res.data.msg);
       dispatch(getAllCategories());
     } catch (error) {
       console.log(error);
@@ -56,7 +56,7 @@ const Categories = () => {
           name="name"
           value={categoryName}
           id=""
-          placeholder="enter category name"
+          placeholder="new category name..."
           onChange={onChangeCategoryName}
         />
         <button>Create</button>
@@ -65,6 +65,7 @@ const Categories = () => {
         {allCategories.map((category) => {
           return (
             <li key={category.id}>
+              <input type="text" name="" id="" />
               <span>{category.name}</span>
               <span
                 data-category-name={category.name}
