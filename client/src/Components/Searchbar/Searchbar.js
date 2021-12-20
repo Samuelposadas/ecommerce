@@ -30,6 +30,12 @@ const Searchbar = (props) => {
           value={input}
           placeholder="Search products, brands and more..."
           onChange={handleInputChange}
+          onKeyPress={(e) => {
+            if (e.key === "Enter") {
+              e.preventDefault();
+              handleSubmit(e);
+            }
+          }}
         />
         <AiOutlineSearch onClick={handleSubmit} />
       </FormSt>

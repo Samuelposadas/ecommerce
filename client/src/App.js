@@ -4,8 +4,8 @@ import "./App.css";
 import { createGlobalStyle } from "styled-components";
 import { ThemeProvider } from "styled-components";
 import { lightTheme, darkTheme } from "./darkTheme/themes";
-import { CgSun } from "react-icons/cg";
-import { HiMoon } from "react-icons/hi";
+
+import { MdDarkMode, MdOutlineDarkMode } from "react-icons/md";
 import { Toggle } from "./darkTheme/style.js";
 import { Toaster, toast } from "react-hot-toast";
 
@@ -46,9 +46,14 @@ const App = () => {
       });
     }
   };
-  const icon = theme == "light" ? <CgSun size={40} /> : <HiMoon size={40} />;
+  const icon =
+    theme == "light" ? (
+      <MdOutlineDarkMode size={30} />
+    ) : (
+      <MdDarkMode size={30} />
+    );
   return (
-    <ThemeProvider theme={theme === "light" ? darkTheme : lightTheme}>
+    <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
       <div className="app">
         <Toggle onClick={themeToggle}>{icon}</Toggle>
         <RouterApp />
