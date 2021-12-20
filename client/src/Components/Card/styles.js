@@ -5,7 +5,7 @@ export const Container = styled.div`
   background-color: white;
   display: flex;
   flex-direction: column;
-  width: 330px;
+  width: 200px;
   height: 350px;
   border-radius: 8px;
   box-shadow: 0 2px 2px rgba(0, e, e, 0.2);
@@ -24,6 +24,7 @@ export const Container = styled.div`
     object-fit: contain;
     margin-bottom: 15px;
   }
+  margin: 10px;
 `;
 
 export const Title = styled.p`

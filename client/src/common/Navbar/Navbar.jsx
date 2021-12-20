@@ -82,8 +82,6 @@ const MenuItem = styled.li`
 `;
 const MobileIconOne = styled.div`
   display: none;
-
-  
 `;
 const MobileIcon = styled.div`
   display: none;
@@ -179,18 +177,6 @@ const Navbar = () => {
     dispatch(getCategory(categoryId));
     dispatch(getAllProducts(1, categoryId));
   };
-  // const idCategory = useSelector((state) => state.category);
-  // const nameProduct = useSelector((state) => state.nameProduct);
-  // const [valueOrder, setValueOrder] = useState("");
-
-  // const handleChange = (e) => {
-  //   e.preventDefault();
-  //   setValueOrder(e.target.value);
-  // };
-  // useEffect(() => {
-  //   dispatch(getAllProducts(1, idCategory, valueOrder, nameProduct));
-  //   dispatch(order(valueOrder));
-  // }, [valueOrder]);
 
   const [style, setStyle] = useState("");
 
@@ -253,11 +239,6 @@ const Navbar = () => {
               <AiOutlineShopping onClick={openModal} />
             </LogoContainer>
           </Link>
-          {/* <LabelStyled>Order by:</LabelStyled> */}
-          {/* <SelectStyled onChange={handleChange}>
-            <OptionStyled value={"ASC"}>Lower price</OptionStyled>
-            <OptionStyled value={"DESC"}>Higher price</OptionStyled>
-          </SelectStyled> */}
         </Menu>
         <Space />
       </Wrapper>
