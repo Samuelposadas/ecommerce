@@ -11,6 +11,7 @@ import CreateProduct from "../Pages/CreateProduct/CreateProduct";
 
 //components
 import Home from "../Pages/Home/Home";
+import Navbar from "../common/Navbar/Navbar";
 
 import ProductDetail from "../Pages/ProductDetail/ProductDetail";
 import UpdateProduct from "../Pages/UpdateProduct/UpdateProduct";
@@ -21,6 +22,7 @@ const RouterApp = () => {
   return (
     <BrowserRouter>
       <Routes>
+        <Route path="*" element={<Navbar />} />
         <Route path="/" element={<Home />} />
         <Route path="*" element={<Navigate to="/" />} />
         <Route path="/buy" element={<Shopping />} />

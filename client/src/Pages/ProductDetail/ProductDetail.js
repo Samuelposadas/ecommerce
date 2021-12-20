@@ -7,20 +7,21 @@ import { useDispatch, useSelector } from "react-redux";
 import { getProductDetail } from "../../redux/actions/actionProducts";
 import { addToCart } from "../../redux/actions/actionCart";
 import styled from "styled-components";
+
 const Wrapper = styled.div`
   display: flex;
   align-content: center;
   justify-content: center;
+  margin-top: 45px;
+  margin-bottom: 45px;
 `;
 const Container = styled.div`
-  width: 90%;
-  padding: 10px;
-  margin-top: 40px;
-  margin-bottom: 40px;
+  width: 99%;
+  max-width: 950px;
 
   display: grid;
-  gap: 4rem;
-  grid-template-columns: 60% 40%;
+  gap: 2rem;
+  grid-template-columns: 55% 45%;
   grid-template-rows: repeat(auto, 4);
   grid-template-areas:
     "image info"
@@ -28,8 +29,8 @@ const Container = styled.div`
     "description description"
     "rating rating";
 
-  @media screen and (max-width: 850px) {
-    width: 100%;
+  @media screen and (max-width: 900px) {
+    width: 99%;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(auto, 4);
@@ -48,8 +49,9 @@ const ProductImage = styled.div`
   justify-content: center;
 
   img {
-    width: 360px;
-    height: 360px;
+    object-fit: contain;
+    width: 420px;
+    height: 370px;
   }
 `;
 const ProductInfo = styled.div`
@@ -89,7 +91,6 @@ const ProductInfo = styled.div`
 const ProductDescription = styled.div`
   grid-area: description;
   font-size: 15px;
-  max-width: 1300px;
 
   h1 {
     font-size: 20px;
@@ -161,26 +162,29 @@ const ProductDetail = () => {
             <img></img>
             <img></img>
           </span>
-          <ButtonDetail backgroundColor={blue}>Buy now</ButtonDetail>
+          <ButtonDetail backgroundColor={blue} width={"100%"}>
+            Buy now
+          </ButtonDetail>
           <ButtonDetail
             backgroundColor={lightBlue}
             color={blue}
+            width={"100%"}
             onClick={() => dispatch(addToCart(id))}
           >
             Add to cart
           </ButtonDetail>
           <Link to={`/update/${id}`}>
-            <ButtonDetail backgroundColor={blue} width={"95%"}>
+            <ButtonDetail backgroundColor={blue} width={"100%"}>
               Edit
             </ButtonDetail>
           </Link>
         </ProductInfo>
         <ProductDescription>
-          <h1>Product description</h1>
+          <h1>Description</h1>
           <p>{description}</p>
         </ProductDescription>
         <ProductRating>
-          <h1>Product rating</h1>
+          <h1>Rating</h1>
           {comments.map((comment, index) => (
             <div key={index}>
               {Array(Math.round(comment.stars)).fill(
