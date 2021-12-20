@@ -10,7 +10,7 @@ const getProductsAll = async (req, res) => {
   page = page ? page : 1;
   orderPrice = orderPrice ? orderPrice : "ASC";
 
-  const PRODUCTS_PER_PAGE = 10;
+  const PRODUCTS_PER_PAGE = 12;
 
   if (category) {
     try {

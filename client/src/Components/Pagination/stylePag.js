@@ -11,10 +11,8 @@ export const ButtonPage = styled.button`
 
   &:hover {
     background: linear-gradient(to bottom, #b5b4b832, #ddd);
-    /*     border-top-right-radius: ${({ r }) => (r ? "75%" : null)};
-    border-bottom-right-radius: ${({ r }) => (r ? "75%" : null)};
-    border-bottom-left-radius: ${({ l }) => (l ? "85%" : null)};
-    border-top-left-radius: ${({ l }) => (l ? "85%" : null)}; */
+    border: 1px solid #2b2929;
+    border-radius: 4px;
   }
 `;
 export const Pagination = styled.div`

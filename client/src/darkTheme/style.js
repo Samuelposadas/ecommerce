@@ -2,11 +2,13 @@ import styled from "styled-components";
 
 export const Toggle = styled.button`
   cursor: pointer;
-  height: 50px;
-  width: 50px;
+  height: 40px;
+  width: 40px;
   border-radius: 50%;
   border: none;
-  backgroun-color: ${(props) => props.theme.fontColor};
+  color: ${(props) => props.theme.color};
+  background-color: ${(props) => props.theme.fontColor};
+
   &:focus {
     outline: none;
   }
