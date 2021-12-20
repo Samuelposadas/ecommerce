@@ -1,21 +1,21 @@
 import styled from "styled-components";
 
 export const StyledAdminTopbar = styled.div`
-  font-size: 2em;
   position: sticky;
   top: 0;
   padding: 10px;
-  border-bottom: 1px #555 dotted;
+  background-color: white;
   z-index: 999;
   .topbarWrapper {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
+    height: 50px;
+    border-bottom: 1px #555 dotted;
     .topLeft {
       .logo {
         font-weight: bold;
-        color: darkblue;
         cursor: pointer;
       }
     }
