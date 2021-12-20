@@ -1,0 +1,26 @@
+[
+  {
+    "firstName": "edwin",
+    "lastName": "ortiz",
+    "email": "edwinOrtiz@gmail.com",
+    "username": "edarasasda",
+    "password": "asdasddas",
+    "idType": 1
+  },
+  {
+    "firstName": "augusto",
+    "lastName": "girotti",
+    "email": "agugirotti@gmail.com",
+    "username": "agug",
+    "password": "hola123",
+    "idType": 1
+  },
+  {
+    "firstName": "asddas",
+    "lastName": "asasd",
+    "email": "asasd@gmail.com",
+    "username": "asasdsad",
+    "password": "asasdasd",
+    "idType": 1
+  }
+]

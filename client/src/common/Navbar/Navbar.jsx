@@ -80,9 +80,16 @@ const MenuItem = styled.li`
   padding: 20px 20px;
   text-decoration: ${(props) => (props.bd ? "underline solid" : "none")};
 `;
+
 const MobileIconOne = styled.div`
   display: none;
 `;
+// const MobileIconOne = styled.div`
+//   display: none;
+
+  
+// `;
+
 const MobileIcon = styled.div`
   display: none;
 
@@ -193,9 +200,9 @@ const Navbar = () => {
   return (
     <Container>
       <MobileWrapper>
-        <MobileIconOne onClick={() => setShowMobileMenu(!showMobileMenu)}>
+        <MobileIcon onClick={() => setShowMobileMenu(!showMobileMenu)}>
           {showMobileMenu ? <GoX /> : <GoThreeBars />}
-        </MobileIconOne>
+        </MobileIcon>
         <MobileIcon>
           <AiOutlineAppstore />
         </MobileIcon>

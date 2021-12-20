@@ -15,6 +15,7 @@ import Home from "../Pages/Home/Home";
 import ProductDetail from "../Pages/ProductDetail/ProductDetail";
 import UpdateProduct from "../Pages/UpdateProduct/UpdateProduct";
 import ShoppingCart from "../Pages/ShoppingCart/ShoppingCart";
+import AdminPanel from "../Pages/AdminPanel/AdminPanel";
 
 const RouterApp = () => {
   return (
@@ -28,6 +29,7 @@ const RouterApp = () => {
         <Route path="/update/:id" element={<UpdateProduct />} />
         <Route path="/paypal" element={<Paypal />} />
         <Route path="/create/supplier" element={<CreateSupplier />} />
+        <Route path="/admin" element={<AdminPanel />} />
         <Route path="/shop" element={<ShoppingCart />} />
       </Routes>
     </BrowserRouter>
