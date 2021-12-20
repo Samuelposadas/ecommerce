@@ -43,7 +43,7 @@ const Container = styled.div`
     margin-bottom: 30px;
     padding: 0;
     border-radius: 0%;
-    width: 100%;
+    width: 98%;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(auto, 4);
@@ -71,6 +71,7 @@ const ProductInfo = styled.div`
   grid-area: info;
   display: flex;
   flex-direction: column;
+  margin-right: 15px;
 
   h1 {
     font-size: 18px;
@@ -175,19 +176,19 @@ const ProductDetail = () => {
             <img></img>
             <img></img>
           </span>
-          <ButtonDetail backgroundColor={blue} width={"95%"}>
+          <ButtonDetail backgroundColor={blue} width={"99%"}>
             Buy now
           </ButtonDetail>
           <ButtonDetail
             backgroundColor={lightBlue}
             color={blue}
-            width={"95%"}
+            width={"99%"}
             onClick={() => dispatch(addToCart(id))}
           >
             Add to cart
           </ButtonDetail>
           <Link to={`/update/${id}`}>
-            <ButtonDetail backgroundColor={blue} width={"95%"}>
+            <ButtonDetail backgroundColor={blue} width={"99%"}>
               Edit
             </ButtonDetail>
           </Link>
