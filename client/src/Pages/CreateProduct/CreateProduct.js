@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import validate from "./validate";
+import { Toaster, toast } from "react-hot-toast";
 
 import {
   getAllCategories,
@@ -107,6 +108,12 @@ const CreateProduct = () => {
     e.preventDefault();
     dispatch(postProducts(input));
     setInput(initialState);
+    // eslint-disable-next-line no-undef
+    toast.promise(saveSettings(settings), {
+      loading: "Saving...",
+      success: <b>Product Created Successfully!</b>,
+      error: <b>error could not create the product.</b>,
+    });
   };
 
   const handleClickImg = (e) => {
@@ -261,6 +268,7 @@ const CreateProduct = () => {
           Create
         </StyledButton>
       </StyledForm>
+      <Toaster />
     </Container>
   );
 };
