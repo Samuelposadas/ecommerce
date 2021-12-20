@@ -12,12 +12,21 @@ const Wrapper = styled.div`
   display: flex;
   align-content: center;
   justify-content: center;
-  margin-top: 45px;
-  margin-bottom: 45px;
+  background-color: #b5b4b832;
+
+  @media screen and (max-width: 900px) {
+    background-color: white;
+  }
 `;
 const Container = styled.div`
-  width: 99%;
+  margin-top: 80px;
+  margin-bottom: 80px;
+  padding: 20px;
+  width: 100%;
   max-width: 950px;
+
+  background-color: white;
+  border-radius: 20px;
 
   display: grid;
   gap: 2rem;
@@ -30,7 +39,11 @@ const Container = styled.div`
     "rating rating";
 
   @media screen and (max-width: 900px) {
-    width: 99%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding: 0;
+    border-radius: 0%;
+    width: 100%;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(auto, 4);
@@ -162,19 +175,19 @@ const ProductDetail = () => {
             <img></img>
             <img></img>
           </span>
-          <ButtonDetail backgroundColor={blue} width={"100%"}>
+          <ButtonDetail backgroundColor={blue} width={"95%"}>
             Buy now
           </ButtonDetail>
           <ButtonDetail
             backgroundColor={lightBlue}
             color={blue}
-            width={"100%"}
+            width={"95%"}
             onClick={() => dispatch(addToCart(id))}
           >
             Add to cart
           </ButtonDetail>
           <Link to={`/update/${id}`}>
-            <ButtonDetail backgroundColor={blue} width={"100%"}>
+            <ButtonDetail backgroundColor={blue} width={"95%"}>
               Edit
             </ButtonDetail>
           </Link>
