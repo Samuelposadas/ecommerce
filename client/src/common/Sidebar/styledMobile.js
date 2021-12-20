@@ -19,7 +19,7 @@ export const ContainerFilterMobile = styled.div`
     //border-bottom-left-radius: ${({ open }) => (open ? "20px" : "none")};
     //border-bottom-right-radius: ${({ open }) => (open ? "20px" : "none")};
 
-    animation: ${({ open }) => (open ? "open 0.0s ease " : "close 0.0s ease")};
+    animation: ${({ open }) => (open ? "open 0.5s ease " : "close 0.5s ease")};
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
 

@@ -10,9 +10,8 @@ import styled from "styled-components";
 
 import { Toaster, toast } from "react-hot-toast";
 
-
 const Wrapper = styled.div`
-  display: flex;s
+  display: flex;
   align-content: center;
   justify-content: center;
   background-color: #b5b4b832;
@@ -190,12 +189,8 @@ const ProductDetail = () => {
           <ButtonDetail
             backgroundColor={lightBlue}
             color={blue}
-
             onClick={addCart}
-
             width={"99%"}
-            onClick={() => dispatch(addToCart(id))}
-
           >
             Add to cart
           </ButtonDetail>
