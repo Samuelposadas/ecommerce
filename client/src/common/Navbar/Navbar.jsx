@@ -81,13 +81,12 @@ const MenuItem = styled.li`
   text-decoration: ${(props) => (props.bd ? "underline solid" : "none")};
 `;
 
-const MobileIconOne = styled.div`
+/* const MobileIconOne = styled.div`
   display: none;
-`;
+`; */
 // const MobileIconOne = styled.div`
 //   display: none;
 
-  
 // `;
 
 const MobileIcon = styled.div`
