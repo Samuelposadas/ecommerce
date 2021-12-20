@@ -7,6 +7,7 @@ import { lightTheme, darkTheme } from "./darkTheme/themes";
 import { CgSun } from "react-icons/cg";
 import { HiMoon } from "react-icons/hi";
 import { Toggle } from "./darkTheme/style.js";
+import { Toaster, toast } from "react-hot-toast";
 
 //components at the bottom of this line
 import RouterApp from "./Routes/RouterApp";
@@ -24,6 +25,26 @@ const App = () => {
 
   const themeToggle = () => {
     theme === "light" ? setTheme("dark") : setTheme("light");
+    if (theme === "dark") {
+      toast("dark mode!", {
+        icon: "🌙",
+        style: {
+          borderRadius: "10px",
+          background: "#333",
+          color: "#fff",
+        },
+      });
+    }
+    if (theme === "light") {
+      toast("light mode!", {
+        icon: "🌞",
+        style: {
+          borderRadius: "10px",
+          background: "white",
+          color: "black",
+        },
+      });
+    }
   };
   const icon = theme == "light" ? <CgSun size={40} /> : <HiMoon size={40} />;
   return (
@@ -33,6 +54,7 @@ const App = () => {
         <RouterApp />
         <GlobalStyle />
       </div>
+      <Toaster />
     </ThemeProvider>
   );
 };

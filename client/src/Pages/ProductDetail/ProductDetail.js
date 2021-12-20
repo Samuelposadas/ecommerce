@@ -7,8 +7,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { getProductDetail } from "../../redux/actions/actionProducts";
 import { addToCart } from "../../redux/actions/actionCart";
 import styled from "styled-components";
+import { Toaster, toast } from "react-hot-toast";
+
 const Wrapper = styled.div`
-  display: flex;
+  display: flex;s
   align-content: center;
   justify-content: center;
 `;
@@ -141,6 +143,11 @@ const ProductDetail = () => {
   };
   const { img, description, comments, name, salePrice, rating } =
     productComplete;
+
+  const addCart = () => {
+    dispatch(addToCart(id));
+    toast.success("Added Product");
+  };
   return (
     <Wrapper>
       <Container>
@@ -165,7 +172,7 @@ const ProductDetail = () => {
           <ButtonDetail
             backgroundColor={lightBlue}
             color={blue}
-            onClick={() => dispatch(addToCart(id))}
+            onClick={addCart}
           >
             Add to cart
           </ButtonDetail>
@@ -192,6 +199,7 @@ const ProductDetail = () => {
           ))}
         </ProductRating>
       </Container>
+      <Toaster />
     </Wrapper>
   );
 };

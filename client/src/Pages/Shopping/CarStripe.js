@@ -1,6 +1,7 @@
 import React from "react";
 import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 import axios from "axios";
+import { Toaster, toast } from "react-hot-toast";
 
 export const CarStripe = () => {
   const stripe = useStripe();
@@ -24,11 +25,20 @@ export const CarStripe = () => {
       );
       console.log(data);
     }
+    // eslint-disable-next-line no-undef
+    toast.promise(saveSettings(settings), {
+      loading: "Saving...",
+      success: <b>your purchase was successful!</b>,
+      error: <b>your purchase could not be made.</b>,
+    });
   };
   return (
-    <form onSubmit={handleSubmit}>
-      <CardElement />
-      <button>BUY</button>
-    </form>
+    <>
+      <form onSubmit={handleSubmit}>
+        <CardElement />
+        <button>BUY</button>
+      </form>
+      <Toaster />
+    </>
   );
 };

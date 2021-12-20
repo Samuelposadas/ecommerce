@@ -16,6 +16,7 @@ import {
   StyledForm,
 } from "../CreateProduct/styles";
 import validate from "../CreateProduct/validate";
+import { Toaster, toast } from "react-hot-toast";
 
 const UpdateProduct = () => {
   const dispatch = useDispatch();
@@ -56,6 +57,12 @@ const UpdateProduct = () => {
     e.preventDefault();
     console.log(input);
     dispatch(updateProduct(input));
+    // eslint-disable-next-line no-undef
+    toast.promise(saveSettings(settings), {
+      loading: "Saving...",
+      success: <b>Product edit Successfully!</b>,
+      error: <b>Error could not edit the product.</b>,
+    });
   };
 
   const handleClickImg = (e) => {
@@ -308,6 +315,7 @@ const UpdateProduct = () => {
           Update
         </StyledButton>
       </StyledForm>
+      <Toaster />
     </Container>
   );
 };
