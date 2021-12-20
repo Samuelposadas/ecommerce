@@ -6,9 +6,5 @@ export const StyledAdminPanel = styled.div`
   .container {
     display: flex;
     flex-wrap: wrap;
-    .otherPages {
-      flex: 4;
-      background-color: tomato;
-    }
   }
 `;
