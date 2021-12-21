@@ -8,12 +8,12 @@ export const Container = styled.div`
   background-color: white;
   display: flex;
   flex-direction: column;
-  width: 400px;
-  height: 480px;
+  width: 310px;
+  height: 330px;
+  margin-top: 10px;
   border-radius: 20px;
   box-shadow: 0 5px 5px rgba(0, e, e, 0.2);
   overflow: hidden;
-  margin: 20px;
   z-index: -2;
   transition: all 0.2s ease-in-out;
   &:hover {
@@ -24,33 +24,33 @@ export const Container = styled.div`
 
 export const Image = styled.img`
   align-self: center;
-  height: 270px;
-  width: 310px;
+  height: 190px;
+  width: 240px;
   object-fit: contain;
-  margin: 25px;
+  margin: 20px;
 `;
 
 export const Title = styled.p`
-  font-size: 20px;
+  font-size: 15px;
   font-weight: 200;
-  margin-left: 25px;
-  margin-right: 25px;
+  margin-left: 20px;
+  margin-right: 20px;
   color: black;
 `;
 
 export const Price = styled.p`
-  font-size: 20px;
+  font-size: 15px;
   font-weight: 400;
-  margin-top: 0;
-  margin-bottom: 10px;
+  margin-top: 8px;
+  margin-bottom: 8px;
   color: #147ce5;
-  margin: 25px;
+  margin-left: 20px;
 `;
 
 export const Rating = styled.div`
   display: flex;
   flex-direction: row;
-  margin-left: 25px;
+  margin-left: 20px;
   color: #feb236;
 `;
 

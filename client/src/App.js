@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import styled from "styled-components";
 
 import "./App.css";
 import { createGlobalStyle } from "styled-components";
@@ -18,6 +19,10 @@ const GlobalStyle = createGlobalStyle`
     background-color : ${(props) => props.theme.body};
     color : ${(props) => props.theme.fontColor};
   }
+`;
+const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
 `;
 
 const App = () => {
@@ -54,11 +59,11 @@ const App = () => {
     );
   return (
     <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
-      <div className="app">
+      <Wrapper>
         <Toggle onClick={themeToggle}>{icon}</Toggle>
         <RouterApp />
         <GlobalStyle />
-      </div>
+      </Wrapper>
       <Toaster />
     </ThemeProvider>
   );

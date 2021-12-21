@@ -13,7 +13,7 @@ export const ContainerFilterMobile = styled.div`
     padding-top: 10px;
     width: 100%;
     background-color: #f0f0f1;
-    z-index: 1000;
+    z-index: 2;
 
     //border-bottom: ${({ open }) => (open ? "5px inset #186cc2" : "none")};
     //border-bottom-left-radius: ${({ open }) => (open ? "20px" : "none")};

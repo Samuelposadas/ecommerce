@@ -1,16 +1,17 @@
 import styled from "styled-components";
 
 export const CardsContainer = styled.div`
-  grid-column: 2/7;
   display: grid;
+  grid-column: 2/7;
   background-color: #b5b4b832;
   margin-top: 45px;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 440px));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 320px));
+  gap: 0.1rem;
   justify-content: center;
   align-content: center;
   justify-items: center;
   align-items: center;
-  z-index: 10;
+  z-index: 1;
 
   @media screen and (max-width: 768px) {
     grid-column: 1/2;
@@ -20,7 +21,7 @@ export const CardsContainer = styled.div`
 
 export const ContainerDisplay = styled.div`
   display: grid;
-  grid-template-columns: 180px 6fr;
+  grid-template-columns: 1fr 7fr;
   grid-template-rows: 1fr;
 
   @media screen and (max-width: 768px) {
