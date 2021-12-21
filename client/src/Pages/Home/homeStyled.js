@@ -29,6 +29,6 @@ export const ContainerDisplay = styled.div`
 
     grid-template-columns: 1fr;
 
-    grid-template-rows: 40px 1fr;
+    grid-template-rows: 51px 1fr;
   }
 `;
