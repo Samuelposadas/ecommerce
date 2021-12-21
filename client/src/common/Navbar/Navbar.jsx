@@ -17,7 +17,6 @@ import Searchbar from "../../Components/Searchbar/Searchbar";
 import { Modal } from "../../Components/Modal/Modal";
 
 import Auth from "../../Components/Auth/Auth";
-import { Link } from "react-router-dom";
 
 // const SelectStyled = styled.select`
 //   background-color: #2b2929;
@@ -34,12 +33,12 @@ import { Link } from "react-router-dom";
 
 const Container = styled.div`
   height: 50px;
-  background-color: #0F1111;
+  background-color: #0f1111;
 `;
 const Banner = styled.div`
   height: 45px;
   /* background-color: #147ce5cc; */
-  background-color: #232F3E;
+  background-color: #232f3e;
   color: #e9e0e0ee;
   font-size: 12px;
   font-weight: 500;
@@ -125,7 +124,7 @@ const MobileDropdown = styled.ul`
     grid-template-columns: 1fr;
     grid-template-rows: repeat(10, 28%);
     position: relative;
-    z-index: 1;
+    z-index: 100;
 
     animation: ${({ open }) => (open ? "box 0.7s ease" : "box1 0.7s ease")};
     animation-iteration-count: 1;
@@ -241,11 +240,10 @@ const Navbar = () => {
           <LogoContainer>
             <Auth />
           </LogoContainer>
-          <Link to="/shop">
-            <LogoContainer>
-              <AiOutlineShopping onClick={openModal} />
-            </LogoContainer>
-          </Link>
+
+          <LogoContainer>
+            <AiOutlineShopping onClick={openModal} />
+          </LogoContainer>
         </Menu>
         <Space />
       </Wrapper>
@@ -257,6 +255,7 @@ const Navbar = () => {
       <Modal showModal={showModal} setShowModal={setShowModal} />
       {showMobileMenu ? (
         <MobileDropdown open={showMobileMenu}>
+          <Space />
           {categories.map((category) => (
             <MobileDropdownItem
               onClick={() => categoryChange(category.id)}
