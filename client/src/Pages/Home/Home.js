@@ -18,12 +18,12 @@ const Home = () => {
     <>
       <Navbar />
       <ContainerDisplay>
+        <SideBarFilters />
         <CardsContainer>
           {allProducts?.map((product) => (
             <Card key={product.id} {...product} />
           ))}
         </CardsContainer>
-        <SideBarFilters />
       </ContainerDisplay>
 
       <Paginate />

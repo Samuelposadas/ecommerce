@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { getAllProducts, saveName } from "../../redux/actions/actionProducts";
-import { InputStyled, FormSt } from "./styles";
+import { InputStyled, FormSt, LogoContainer } from "./styles";
 import { AiOutlineSearch } from "react-icons/ai";
 
 const Searchbar = (props) => {
@@ -28,7 +28,7 @@ const Searchbar = (props) => {
         <InputStyled
           type="text"
           value={input}
-          placeholder="Search products, brands and more..."
+          placeholder=" Search products, brands and more..."
           onChange={handleInputChange}
           onKeyPress={(e) => {
             if (e.key === "Enter") {
@@ -37,7 +37,9 @@ const Searchbar = (props) => {
             }
           }}
         />
-        <AiOutlineSearch onClick={handleSubmit} />
+        <LogoContainer>
+          <AiOutlineSearch onClick={handleSubmit} />
+        </LogoContainer>
       </FormSt>
     </div>
   );

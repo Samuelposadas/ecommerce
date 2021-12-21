@@ -5,7 +5,7 @@ export const StyledAdminTopbar = styled.div`
   top: 0;
   padding: 10px;
   background-color: white;
-  z-index: 999;
+  z-index: 2;
   .topbarWrapper {
     display: flex;
     flex-wrap: wrap;
