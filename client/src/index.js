@@ -4,11 +4,12 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import { store } from "./redux/store/index";
+import { store, persistor } from "./redux/store/index";
 import { Provider } from "react-redux";
 import { Auth0Provider } from "@auth0/auth0-react";
 import dotenv from "dotenv";
 import axios from "axios";
+import { PersistGate } from "redux-persist/integration/react";
 
 dotenv.config();
 
@@ -27,7 +28,9 @@ ReactDOM.render(
         clientId={clientId}
         redirectUri={window.location.origin}
       >
-        <App />
+        <PersistGate persistor={persistor}>
+          <App />
+        </PersistGate>
       </Auth0Provider>
     </Provider>
   </React.StrictMode>,
