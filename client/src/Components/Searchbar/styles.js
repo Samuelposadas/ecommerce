@@ -10,10 +10,10 @@ export const FormSt = styled.form`
 export const InputStyled = styled.input`
   height: 34px;
   width: 390px;
-  border-radius: 5px 0px 0px 5px;
+  border-radius: 4px 0px 0px 4px;
   border: 6px #c53131e8;
 
-  background-color: #e9e0e0ee;
+  background-color: white;
   &:focus {
     outline: none;
   }
@@ -31,10 +31,10 @@ export const LogoContainer = styled.div`
   justify-content: center;
   height: 34px;
   width: 38px;
-  border-radius: 0px 5px 5px 0px;
+  border-radius: 0px 4px 4px 0px;
   border: 6px #c53131e8;
   background-color: #147ce5cc;
-  color: #e9e0e0ee;
+  color: #0f1111;
 
   svg {
   }
