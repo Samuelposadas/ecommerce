@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllProducts } from "../../redux/actions/actionProducts";
-import { ButtonPage, Pagination, LabelPage } from "./stylePag";
+import { ButtonPage, Pagination, LabelPage, OutOf } from "./stylePag";
 
 export const Paginate = () => {
   const [numberPag, setNumberPag] = useState(1);
@@ -28,22 +28,19 @@ export const Paginate = () => {
 
   return (
     <Pagination>
-      {numberPag > 1 ? (
-        <ButtonPage l={true} onClick={() => setNumberPag(numberPag - 1)}>
-          {"<"} &nbsp;&nbsp;Previous
-        </ButtonPage>
-      ) : null}
+      <ButtonPage left={"1px solid #2b2929"} radius={"3px 0px 0px 3px"} l={true} onClick={() => setNumberPag(numberPag - 1)} disabled={numberPag <= 1}>
+        {"<"} &nbsp;&nbsp;Prev
+      </ButtonPage>
       {totalPages < 1 ? null : (
         <>
-          <LabelPage br={"#ddd"}> {numberPag} </LabelPage>
-          <LabelPage>out of {totalPages}</LabelPage>
+          <LabelPage decoration={"underline"} border={"1px solid #2b2929;"}> {numberPag} </LabelPage>
+		  <OutOf border={"1px solid #2b2929;"}>out of</OutOf>
+          <LabelPage border={"1px solid #2b2929;"} > {totalPages}</LabelPage>
         </>
       )}
-      {numberPag < totalPages ? (
-        <ButtonPage r={true} onClick={() => setNumberPag(numberPag + 1)}>
+      <ButtonPage right={"1px solid #2b2929"} radius={"0px 3px 3px 0px"} r={true} onClick={() => setNumberPag(numberPag + 1)} disabled={numberPag >= totalPages}>
           Next&nbsp;&nbsp; {" >"}
-        </ButtonPage>
-      ) : null}
+      </ButtonPage>
     </Pagination>
   );
 };
