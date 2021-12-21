@@ -12,6 +12,7 @@ export const InputStyled = styled.input`
   width: 390px;
   border-radius: 4px 0px 0px 4px;
   border: 6px #c53131e8;
+  z-index: 100;
 
   background-color: white;
   &:focus {
@@ -35,6 +36,7 @@ export const LogoContainer = styled.div`
   border: 6px #c53131e8;
   background-color: #147ce5cc;
   color: #0f1111;
+  z-index: 100;
 
   svg {
   }

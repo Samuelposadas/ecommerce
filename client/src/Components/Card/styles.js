@@ -5,51 +5,50 @@ export const Container = styled.div`
   background-color: white;
   display: flex;
   flex-direction: column;
-  width: 234px;
-  height: 390px;
-  border-radius: 8px;
-  box-shadow: 0 2px 2px rgba(0, e, e, 0.2);
+  width: 310px;
+  height: 330px;
+  margin-top: 10px;
+  border-radius: 15px;
+  box-shadow: 0 5px 5px rgba(0, e, e, 0.2);
   overflow: hidden;
-  margin-top: 70px;
-  z-index: -5;
-  transition: all 600ms ease;
+  z-index: -2;
+  transition: all 0.2s ease-in-out;
   &:hover {
-    transform: translateY(-15px);
-    box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
+    transform: scale(1.01, 1.01);
+    box-shadow: 0 0 10px #d8d8d8;
   }
-  & > img {
-    align-self: center;
-    max-height: 200px;
-    width: 100%;
-    object-fit: contain;
-    margin-bottom: 15px;
-  }
-  margin: 10px;
+`;
+
+export const Image = styled.img`
+  align-self: center;
+  height: 190px;
+  width: 240px;
+  object-fit: contain;
+  margin: 20px;
 `;
 
 export const Title = styled.p`
-  font-size: 20px;
+  font-size: 15px;
   font-weight: 200;
-  margin-top: 0;
-  margin-bottom: 10px;
-  margin-left: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
   color: black;
 `;
 
 export const Price = styled.p`
-  font-size: 20px;
+  font-size: 15px;
   font-weight: 400;
-  margin-top: 0;
-  margin-bottom: 10px;
-  color: #d391ff;
-  margin-left: 10px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  color: #147ce5;
+  margin-left: 20px;
 `;
 
 export const Rating = styled.div`
   display: flex;
   flex-direction: row;
-  margin-left: 10px;
-  color: black;
+  margin-left: 20px;
+  color: #feb236;
 `;
 
 export const StyledLink = styled(Link)`

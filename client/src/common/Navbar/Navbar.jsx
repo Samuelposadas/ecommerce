@@ -203,7 +203,12 @@ const Navbar = () => {
           {showMobileMenu ? <GoX /> : <GoThreeBars />}
         </MobileIcon>
         <MobileIcon>
-          <AiOutlineAppstore />
+          <AiOutlineAppstore
+            onClick={() => {
+              resetValues();
+              dispatch(action_defaul_values());
+            }}
+          />
         </MobileIcon>
         <Space />
         <MobileIcon>

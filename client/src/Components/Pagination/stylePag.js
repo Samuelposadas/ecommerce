@@ -26,7 +26,6 @@ export const ButtonPage = styled.button`
   border-radius: ${({ radius }) => (radius ? radius : "none")};
   border-left: ${({ left }) => (left ? left : "none")};
   border-right: ${({ right }) => (right ? right : "none")};
-
   &:hover {
     cursor: pointer;
     background: linear-gradient(to bottom, #b5b4b832, #ddd);
