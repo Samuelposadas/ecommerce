@@ -184,7 +184,7 @@
     "stock": 5,
     "discount": 0,
     "supplier": 6,
-    "Categories": [5,6]
+    "Categories": [5, 6]
   },
   {
     "name": "All-New Insignia 55 inch NS-55F301NA22 F30 Series",
@@ -234,7 +234,7 @@
   {
     "name": "RGB Gaming Wireless Charging Mouse Pad",
     "description": "The RGB gaming mouse pad is made of natural rubber material, which makes the mouse move more precise. The soft and smooth surface is more perfect for waterproofing. Effectively prevent damage from spilled beverages or other liquids, and is easy to clean with water without fading. Ideal for games or work，durable",
-    "salePrice": 24.50,
+    "salePrice": 24.5,
     "img": [
       "https://m.media-amazon.com/images/I/51qNwi8i5YL._AC_SX679_.jpg",
       "https://m.media-amazon.com/images/I/51NQLqfrG4L._AC_.jpg"
@@ -440,5 +440,170 @@
     "discount": 0,
     "supplier": 5,
     "Categories": [1]
+  },
+  {
+    "name": "Apple MacBook Pro 13",
+    "description": "13.3-inch MacBook Pro BTO with Retinal Display - 61W USB Type-C Power Adapter - Type-C USB Charging Cable (2m) - Apple 1-Year Limited Warranty with 90-Day Technical Support",
+    "salePrice": 1649.93,
+    "img": [
+      "https://m.media-amazon.com/images/I/51pWDiO9CrL._AC_SX466_.jpg",
+      "https://m.media-amazon.com/images/I/61aIxbma5SL._AC_SY355_.jpg"
+    ],
+    "purchasePrice": 1250,
+    "rating": 4,
+    "stock": 5,
+    "discount": 0,
+    "supplier": 5,
+    "Categories": [6]
+  },
+  {
+    "name": "Apple MacBook Pro 2021",
+    "description": "(14-inch, Apple M1 Pro chip with 10-core CPU and 16-core GPU, 16GB RAM, 1TB SSD) - Silver",
+    "salePrice": 2480,
+    "img": [
+      "https://m.media-amazon.com/images/I/61vFO3R5UNL._AC_SX342_.jpg",
+      "https://m.media-amazon.com/images/I/71AKE565U4L._AC_SX342_.jpg"
+    ],
+    "purchasePrice": 1800,
+    "rating": 5,
+    "stock": 3,
+    "discount": 0,
+    "supplier": 3,
+    "Categories": [6]
+  },
+  {
+    "name": "Samsung Galaxy Z Flip 3 5G Factory Unlocked",
+    "description": "Flex your best angle: With flex mode, simply unfold your phone screen to the best angle for hands-free photos and video calls; choose what you want to capture, place it, stand up and shoot your best photo",
+    "salePrice": 950,
+    "img": [
+      "https://m.media-amazon.com/images/I/716P9qOKcUL._AC_SX466_.jpg",
+      "https://m.media-amazon.com/images/I/71FegtQDBTL._AC_SY355_.jpg"
+    ],
+    "purchasePrice": 600,
+    "rating": 3,
+    "stock": 7,
+    "discount": 0,
+    "supplier": 3,
+    "Categories": [2]
+  },
+  {
+    "name": "Samsung Galaxy S21 5G | Factory unlocked Android phone",
+    "description": "International version 5G Smartphone | Professional grade camera, 8K video, 64MP high resolution | 128GB, (SM-G991B/DS) (Phantom Violet)",
+    "salePrice": 825,
+    "img": [
+      "https://m.media-amazon.com/images/I/71cb4T2yAeL._AC_SX522_.jpg",
+      "https://m.media-amazon.com/images/I/61wmqK1hlRL._AC_SX425_.jpg"
+    ],
+    "purchasePrice": 550,
+    "rating": 4,
+    "stock": 2,
+    "discount": 0,
+    "supplier": 1,
+    "Categories": [2]
+  },
+  {
+    "name": "Apple iPhone 12 Pro",
+    "description": "Unlocked and compatible with any preferred carrier on GSM and CDMA networks (eg AT&T, T-Mobile, Sprint, Verizon, US Cellular, Cricket, Metro, Tracfone, Mint Mobile, etc. ).",
+    "salePrice": 1400,
+    "img": [
+      "https://m.media-amazon.com/images/I/61kYwdMmD-L._AC_SX679_.jpg",
+      "https://m.media-amazon.com/images/I/51IS48kzwvL._AC_SY550_.jpg"
+    ],
+    "purchasePrice": 1000,
+    "rating": 5,
+    "stock": 4,
+    "discount": 0,
+    "supplier": 6,
+    "Categories": [2]
+  },
+  {
+    "name": "Samsung Electronics Tablet Android Galaxy Tab S7 FE 2021",
+    "description": "Big screen, big experience: A large 12.5-inch screen brings your content to life in brilliant color, whether indoors or out, making the Samsung Galaxy S7 FE a great tablet for studying time or a quick break from work. training",
+    "salePrice": 530,
+    "img": [
+      "https://m.media-amazon.com/images/I/913nyCXkdrS._AC_SX679_.jpg",
+      "https://m.media-amazon.com/images/I/61yA3Ls+4US._AC_SY450_.jpg"
+    ],
+    "purchasePrice": 400,
+    "rating": 3,
+    "stock": 5,
+    "discount": 0,
+    "supplier": 2,
+    "Categories": [5]
+  },
+  {
+    "name": "65-inch Sony TV X85J: 4K Ultra HD LED Smart Google TV",
+    "description": "native refresh rate of 120HZ, Dolby Vision HDR and Alexa compatibility KD65X85J- model 2021",
+    "salePrice": 1100,
+    "img": [
+      "https://m.media-amazon.com/images/I/812wiz16nlL._AC_SX679_.jpg",
+      "https://m.media-amazon.com/images/I/81PRHCsCIlL._AC_SX466_.jpg"
+    ],
+    "purchasePrice": 900,
+    "rating": 4,
+    "stock": 7,
+    "discount": 0,
+    "supplier": 4,
+    "Categories": [3]
+  },
+  {
+    "name": "LG Smart TV OLED A1 Series 48 Integrated Alexa 4K",
+    "description": "60Hz refresh rate, 4K powered by ai, Dolby Cinema, WiSA Ready, game mode (OLED48A1PUA, 2021)",
+    "salePrice": 1200,
+    "img": [
+      "https://m.media-amazon.com/images/I/91UdRXFfirS._AC_SX466_.jpg",
+      "https://m.media-amazon.com/images/I/61U2jBF5npS._AC_SX355_.jpg"
+    ],
+    "purchasePrice": 950,
+    "rating": 2,
+    "stock": 4,
+    "discount": 0,
+    "supplier": 5,
+    "Categories": [3]
+  },
+  {
+    "name": "Skytech Gaming Archangel Desktop Computer for Gaming",
+    "description": "Ryzen 5 5600X 3.7GHz, RTX 3060 TI 8G, 1TB NVMe SSD, 16GB DDR4 3200MHz, RGB fans, Windows 10 Home 64bit, 802.11AC Wi-Fi, white",
+    "salePrice": 1699.99,
+    "img": [
+      "https://m.media-amazon.com/images/I/71pczXb2vaL._AC_SX679_.jpg",
+      "https://m.media-amazon.com/images/I/71hDxaPOPnL._AC_SY879_.jpg"
+    ],
+    "purchasePrice": 1200,
+    "rating": 5,
+    "stock": 5,
+    "discount": 0,
+    "supplier": 5,
+    "Categories": [1]
+  },
+  {
+    "name": "Desktop PC Gamer Skytech Blaze 3.0",
+    "description": "Intel i5-11400F, RX 6600, 1TB NVME, 16G DDR4 3200, 120mm AIO, AC Wi-Fi, Windows 10 Home 64bit, white",
+    "salePrice": 1399.99,
+    "img": [
+      "https://m.media-amazon.com/images/I/81nBciZF-0L._AC_SX679_.jpg",
+      "https://m.media-amazon.com/images/I/81hMsMRooqL._AC_SY879_.jpg"
+    ],
+    "purchasePrice": 1000,
+    "rating": 4,
+    "stock": 3,
+    "discount": 0,
+    "supplier": 4,
+    "Categories": [1]
+  },
+  {
+    "name": "ASUS VivoBook 15 Thin and Light Laptop",
+    "description": "15.6-inch FHD Display, AMD Quad Core R7-3700U CPU, 8GB DDR4 RAM, 512GB PCIe SSD, AMD Radeon Vega 10 Graphics, Fingerprint, Windows 10 Home, Slate Gray , F512DA-NH77",
+    "salePrice": 695,
+    "img": [
+      "https://m.media-amazon.com/images/I/81fstJkUlaL._AC_SX679_.jpg",
+      "https://m.media-amazon.com/images/I/816ioPpcNEL._AC_SY450_.jpg"
+    ],
+    "purchasePrice": 200,
+    "rating": 5,
+    "stock": 2,
+    "discount": 0,
+    "supplier": 4,
+    "Categories": [6]
   }
 ]
