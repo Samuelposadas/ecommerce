@@ -28,18 +28,33 @@ export const Paginate = () => {
 
   return (
     <Pagination>
-      <ButtonPage left={"1px solid #2b2929"} radius={"3px 0px 0px 3px"} l={true} onClick={() => setNumberPag(numberPag - 1)} disabled={numberPag <= 1}>
+      <ButtonPage
+        left={"1px solid #2b2929"}
+        radius={"3px 0px 0px 3px"}
+        l={true}
+        onClick={() => setNumberPag(numberPag - 1)}
+        disabled={numberPag <= 1}
+      >
         {"<"} &nbsp;&nbsp;Prev
       </ButtonPage>
       {totalPages < 1 ? null : (
         <>
-          <LabelPage decoration={"underline"} border={"1px solid #2b2929;"}> {numberPag} </LabelPage>
-		  <OutOf border={"1px solid #2b2929;"}>out of</OutOf>
-          <LabelPage border={"1px solid #2b2929;"} > {totalPages}</LabelPage>
+          <LabelPage decoration={"underline"} border={"1px solid #2b2929;"}>
+            {" "}
+            {numberPag}{" "}
+          </LabelPage>
+          <OutOf border={"1px solid #2b2929;"}>out of</OutOf>
+          <LabelPage border={"1px solid #2b2929;"}> {totalPages}</LabelPage>
         </>
       )}
-      <ButtonPage right={"1px solid #2b2929"} radius={"0px 3px 3px 0px"} r={true} onClick={() => setNumberPag(numberPag + 1)} disabled={numberPag >= totalPages}>
-          Next&nbsp;&nbsp; {" >"}
+      <ButtonPage
+        right={"1px solid #2b2929"}
+        radius={"0px 3px 3px 0px"}
+        r={true}
+        onClick={() => setNumberPag(numberPag + 1)}
+        disabled={numberPag >= totalPages}
+      >
+        Next&nbsp;&nbsp; {" >"}
       </ButtonPage>
     </Pagination>
   );
