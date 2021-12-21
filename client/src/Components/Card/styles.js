@@ -5,13 +5,13 @@ export const Container = styled.div`
   background-color: white;
   display: flex;
   flex-direction: column;
-  width: 200px;
-  height: 350px;
+  width: 234px;
+  height: 390px;
   border-radius: 8px;
   box-shadow: 0 2px 2px rgba(0, e, e, 0.2);
   overflow: hidden;
   margin-top: 70px;
-  z-index: -2;
+  z-index: -5;
   transition: all 600ms ease;
   &:hover {
     transform: translateY(-15px);

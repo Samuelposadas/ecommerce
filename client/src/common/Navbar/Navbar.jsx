@@ -34,11 +34,12 @@ import { Link } from "react-router-dom";
 
 const Container = styled.div`
   height: 50px;
-  background-color: #2b2929;
+  background-color: #0F1111;
 `;
 const Banner = styled.div`
   height: 45px;
-  background-color: #147ce5cc;
+  /* background-color: #147ce5cc; */
+  background-color: #232F3E;
   color: #e9e0e0ee;
   font-size: 12px;
   font-weight: 500;

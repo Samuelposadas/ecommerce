@@ -30,7 +30,7 @@ const ModalWrapper = styled.div`
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
   position: sticky;
-  z-index: 10;
+  z-index: 50;
   border-radius: 1px;
 `;
 
@@ -60,7 +60,7 @@ const CloseModalButton = styled(MdClose)`
   width: 32px;
   height: 32px;
   padding: 0;
-  z-index: 10;
+  z-index: 50;
 `;
 
 export const Modal = ({ showModal, setShowModal }) => {
