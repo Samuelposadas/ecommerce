@@ -16,6 +16,9 @@ import ProductDetail from "../Pages/ProductDetail/ProductDetail";
 import UpdateProduct from "../Pages/UpdateProduct/UpdateProduct";
 import ShoppingCart from "../Pages/ShoppingCart/ShoppingCart";
 import AdminPanel from "../Pages/AdminPanel/AdminPanel";
+import AdminUsers from "../Pages/AdminUsers/AdminUsers";
+import AdminCategories from "../Pages/AdminCategories/AdminCategories";
+import AdminProducts from "../Pages/AdminProducts/AdminProducts";
 
 const RouterApp = () => {
   return (
@@ -29,7 +32,12 @@ const RouterApp = () => {
         <Route path="/update/:id" element={<UpdateProduct />} />
         <Route path="/paypal" element={<Paypal />} />
         <Route path="/create/supplier" element={<CreateSupplier />} />
-        <Route path="/admin" element={<AdminPanel />} />
+        <Route path="/admin/" element={<AdminPanel />}>
+          <Route index element={<AdminProducts />} />
+          <Route path="users" element={<AdminUsers />} />
+          <Route path="categories" element={<AdminCategories />} />
+          <Route path="products" element={<AdminProducts />} />
+        </Route>
         <Route path="/shop" element={<ShoppingCart />} />
       </Routes>
     </BrowserRouter>

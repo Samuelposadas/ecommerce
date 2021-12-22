@@ -38,7 +38,7 @@ const deleteCategory = async (req, res, next) => {
       where: { name: categoryName ? categoryName : "" },
     });
     if (category) {
-      category.destroy();
+      await category.destroy();
       res.json({ msg: `Category ${categoryName} destroyed successfully` });
     } else {
       res.json({ msg: `Category ${categoryName} does not exist in the D.B` });

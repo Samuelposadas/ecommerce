@@ -8,6 +8,7 @@ import MessageOutlinedIcon from "@mui/icons-material/MessageOutlined";
 import Inventory2OutlinedIcon from "@mui/icons-material/Inventory2Outlined";
 
 import { StyledAdminSidebar } from "./styledAdminSidebar";
+import { Link } from "react-router-dom";
 
 export default function AdminSidebar() {
   return (
@@ -20,18 +21,24 @@ export default function AdminSidebar() {
               <LineStyleOutlinedIcon className="sidebarIcon" />
               Menu
             </li>
-            <li className="sidebarListItem">
-              <Inventory2OutlinedIcon className="sidebarIcon" />
-              Products
-            </li>
-            <li className="sidebarListItem">
-              <ManageAccountsOutlinedIcon className="sidebarIcon" />
-              Users
-            </li>
-            <li className="sidebarListItem">
-              <CategoryOutlinedIcon className="sidebarIcon" />
-              Categories
-            </li>
+            <Link to="products">
+              <li className="sidebarListItem">
+                <Inventory2OutlinedIcon className="sidebarIcon" />
+                Products
+              </li>
+            </Link>
+            <Link to="users">
+              <li className="sidebarListItem">
+                <ManageAccountsOutlinedIcon className="sidebarIcon" />
+                Users
+              </li>
+            </Link>
+            <Link to="categories">
+              <li className="sidebarListItem">
+                <CategoryOutlinedIcon className="sidebarIcon" />
+                Categories
+              </li>
+            </Link>
           </ul>
         </div>
 
