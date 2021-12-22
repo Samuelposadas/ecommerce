@@ -26,6 +26,7 @@ export const ButtonPage = styled.button`
   border-radius: ${({ radius }) => (radius ? radius : "none")};
   border-left: ${({ left }) => (left ? left : "none")};
   border-right: ${({ right }) => (right ? right : "none")};
+
   &:hover {
     cursor: pointer;
     background: linear-gradient(to bottom, #b5b4b832, #ddd);
@@ -44,6 +45,7 @@ export const LabelPage = styled.label`
   align-self: center;
   padding: 10px;
   width: 40px;
+  padding-bottom: 10px;
 `;
 
 export const OutOf = styled.div`
