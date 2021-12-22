@@ -5,11 +5,36 @@ import styled from "styled-components";
 import { Toaster, toast } from "react-hot-toast";
 
 const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  & h2 {
-    font-size: 30px;
+  display: grid;
+  grid-template-areas:
+    "image name name price"
+    "image quantity quantity price"
+    "image delete delete price";
+  p {
+    font-size: 15px;
+    grid-area: name;
+  }
+  input {
+    height: 20px;
+    width: 50px;
+    grid-area: quantity;
+  }
+  button {
+    height: 30px;
+    width: 30px;
+    grid-area: delete;
+  }
+  h3 {
+    grid-area: price;
+    font-size: 15px;
+    justify-self: end;
+  }
+
+  img {
+    height: 170px;
+    width: 200px;
+    object-fit: contain;
+    grid-area: image;
   }
 `;
 
@@ -26,11 +51,12 @@ const CartItem = ({ img, name, salePrice, id, quantity }) => {
   };
   return (
     <Container>
-      <button onClick={() => deleteItem(id)}>X</button>
       <img src={img}></img>
-      <h2>{name}</h2>
-      <h2>{salePrice}</h2>
+      <p>{name}</p>
       <input value={input} min="1" type="number" onChange={handleChange} />
+      <button onClick={() => deleteItem(id)}></button>
+
+      <h3>{salePrice}</h3>
       <Toaster />
     </Container>
   );

@@ -69,10 +69,12 @@ export const Modal = ({ showModal, setShowModal }) => {
 
   const animation = useSpring({
     config: {
-      duration: 500,
+      duration: 250,
+      precision: 100,
     },
-    opacity: showModal ? 1 : 1,
-    transform: showModal ? "translateX(0%)" : "translateX(+100%)",
+    opacity: showModal ? 1 : 0,
+    from: { transform: "translateX(0)" },
+    to: { transform: showModal ? "translateX(0)" : "translateX(100%)" },
   });
 
   const closeModal = (e) => {
