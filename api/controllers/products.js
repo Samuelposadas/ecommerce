@@ -1,4 +1,10 @@
-const { Product, Op, Category, /* User, */ Supplier } = require("../db/db");
+const {
+  Product,
+  Op,
+  Category,
+  /* User, */ Supplier,
+  Comment,
+} = require("../db/db");
 
 const getProductsAll = async (req, res) => {
   let { category, orderPrice, page, nameproduct } = req.query;
@@ -93,6 +99,7 @@ const findProductById = async (req, res) => {
       include: [
         { model: Category },
         { model: Supplier, attributes: ["name", "id"] },
+        { model: Comment },
       ],
     });
     if (data) {
