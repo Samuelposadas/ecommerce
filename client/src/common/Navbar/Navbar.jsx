@@ -37,7 +37,6 @@ const Container = styled.div`
 `;
 const Banner = styled.div`
   height: 45px;
-  /* background-color: #147ce5cc; */
   background-color: #232f3e;
   color: #e9e0e0ee;
   font-size: 12px;
@@ -81,13 +80,6 @@ const MenuItem = styled.li`
   text-decoration: ${(props) => (props.bd ? "underline solid" : "none")};
 `;
 
-/* const MobileIconOne = styled.div`
-  display: none;
-`; */
-// const MobileIconOne = styled.div`
-//   display: none;
-
-// `;
 
 const MobileIcon = styled.div`
   display: none;
@@ -126,7 +118,7 @@ const MobileDropdown = styled.ul`
     position: relative;
     z-index: 100;
 
-    animation: ${({ open }) => (open ? "box 0.7s ease" : "box1 0.7s ease")};
+    animation: ${({ open }) => (open ? "box 0.7s ease" : "null")};
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
 

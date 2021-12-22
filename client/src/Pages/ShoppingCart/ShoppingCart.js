@@ -4,14 +4,19 @@ import styled from "styled-components";
 import CartItem from "../../Components/CartItem/CartItem";
 import CartSumary from "../../Components/CartSumary/CartSumary";
 
-const Products = styled.div`
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-`;
 const Container = styled.div`
   display: flex;
-  flex-direction: column;
-  align-items: center;
+`;
+
+const Wrapper = styled.div`
+  display: grid;
+  grid-template-columns: 90% 20%;
+`;
+
+const Products = styled.div`
+  display: grid;
+  grid-template-columns: 60%;
+  grid-template-rows: repeat(auto, 400px);
 `;
 
 function ShoppingCart() {
@@ -19,11 +24,13 @@ function ShoppingCart() {
 
   return (
     <Container>
-      <CartSumary />
-      <Products>
-        {productsCart &&
-          productsCart.map((item) => <CartItem {...item} key={item.id} />)}
-      </Products>
+      <Wrapper>
+        <Products>
+          {productsCart &&
+            productsCart.map((item) => <CartItem {...item} key={item.id} />)}
+        </Products>
+        <CartSumary />
+      </Wrapper>
     </Container>
   );
 }

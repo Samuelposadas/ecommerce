@@ -19,7 +19,8 @@ export const InputStyled = styled.input`
     outline: none;
   }
   &:active {
-    outline: none;
+    border: yellow;
+    border-width: 4px;
   }
   &::placeholder {
     color: #2b2929;

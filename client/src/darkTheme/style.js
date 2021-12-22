@@ -8,6 +8,9 @@ export const Toggle = styled.button`
   border: none;
   color: ${(props) => props.theme.color};
   background-color: ${(props) => props.theme.fontColor};
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
 
   &:focus {
     outline: none;
