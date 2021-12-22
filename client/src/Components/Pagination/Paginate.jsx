@@ -26,12 +26,13 @@ export const Paginate = () => {
     }
   }, [totalPages]);
 
+  useEffect(() => setNumberPag(1), [order]);
+
   return (
     <Pagination>
       <ButtonPage
         left={"1px solid #2b2929"}
         radius={"3px 0px 0px 3px"}
-        l={true}
         onClick={() => setNumberPag(numberPag - 1)}
         disabled={numberPag <= 1}
       >
@@ -50,7 +51,6 @@ export const Paginate = () => {
       <ButtonPage
         right={"1px solid #2b2929"}
         radius={"0px 3px 3px 0px"}
-        r={true}
         onClick={() => setNumberPag(numberPag + 1)}
         disabled={numberPag >= totalPages}
       >
