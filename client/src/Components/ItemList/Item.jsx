@@ -1,6 +1,6 @@
 import React from "react";
 
-import { StyledItem } from "./styledItem";
+import { StyledItem } from "./styledItem.jsx";
 
 export default function Item({ row, columns }) {
   return (

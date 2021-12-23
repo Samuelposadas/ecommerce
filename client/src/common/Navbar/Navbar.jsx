@@ -12,11 +12,11 @@ import {
 } from "../../redux/actions/actionProducts";
 
 //components
-import Searchbar from "../../Components/Searchbar/Searchbar";
+import Searchbar from "../../Components/Searchbar/Searchbar.jsx";
 
-import { Modal } from "../../Components/Modal/Modal";
+import { Modal } from "../../Components/Modal/Modal.jsx";
 
-import Auth from "../../Components/Auth/Auth";
+import Auth from "../../Components/Auth/Auth.jsx";
 
 // const SelectStyled = styled.select`
 //   background-color: #2b2929;
