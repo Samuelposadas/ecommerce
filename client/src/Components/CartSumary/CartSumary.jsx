@@ -2,13 +2,36 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
 import { cleanCart } from "../../redux/actions/actionCart";
+
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  border: solid grey 2px;
-  & span {
-    font-size: 30px;
-  }
+  justify-items: center;
+  margin-left: 30px;
+
+`;
+const Title = styled.h2`
+  font-size: 25px;
+  margin-bottom: 20px;
+  color: black;
+`;
+const Items = styled.div`
+  font-size: 15px;
+  margin-bottom: 20px;
+`;
+const Total = styled.div`
+  font-size: 15px;
+  margin-bottom: 20px;
+`;
+const CleanCart = styled.button`
+  font-size: 15px;
+`;
+
+const LineBreak = styled.hr`
+  height: 4px;
+  color: #f5eded50;
+  margin-bottom: 30px;
+  margin-top: 30px;
 `;
 
 const CartSumary = () => {
@@ -28,9 +51,11 @@ const CartSumary = () => {
   }, [productsCart, totalItems, totalPrice, setTotalItems, setTotalPrice]);
   return (
     <Container>
-      <span>TOTAL: {totalItems} ITEMS</span>
-      <span>${totalPrice}</span>
-      <button onClick={() => dispatch(cleanCart())}>CLEAN CART</button>
+      <Title>Summary</Title>
+      <Items>Items: {totalItems}</Items>
+      <Total>Total: ${totalPrice}</Total>
+      <LineBreak />
+      <CleanCart onClick={() => dispatch(cleanCart())}>Clean Cart</CleanCart>
     </Container>
   );
 };

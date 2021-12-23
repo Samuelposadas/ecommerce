@@ -1,6 +1,6 @@
 import React from "react";
-import Item from "./Item";
-import { StyledItemList } from "./styledItemList";
+import Item from "./Item.jsx";
+import { StyledItemList } from "./styledItemList.jsx";
 
 export default function ItemList({ title, rows, columns }) {
   return (

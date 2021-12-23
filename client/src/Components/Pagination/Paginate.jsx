@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllProducts } from "../../redux/actions/actionProducts";
-import { ButtonPage, Pagination, LabelPage, OutOf } from "./stylePag";
+import { ButtonPage, Pagination, LabelPage, OutOf } from "./stylePag.jsx";
 
 export const Paginate = () => {
   const [numberPag, setNumberPag] = useState(1);

@@ -1,6 +1,6 @@
 import React from "react";
 
-import { StyledAdminUsers } from "./styledAdminUsers";
+import { StyledAdminUsers } from "./styledAdminUsers.jsx";
 
 export default function AdminUsers() {
   return (

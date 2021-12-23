@@ -7,7 +7,7 @@ import DynamicFeedOutlinedIcon from "@mui/icons-material/DynamicFeedOutlined";
 import MessageOutlinedIcon from "@mui/icons-material/MessageOutlined";
 import Inventory2OutlinedIcon from "@mui/icons-material/Inventory2Outlined";
 
-import { StyledAdminSidebar } from "./styledAdminSidebar";
+import { StyledAdminSidebar } from "./styledAdminSidebar.jsx";
 import { Link } from "react-router-dom";
 
 export default function AdminSidebar() {
