@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Container, Star } from "./styles";
 import StarIcon from "@mui/icons-material/Star";
 import { ButtonDetail } from "../../common/Btn/BtnStyled";
@@ -10,6 +10,7 @@ const AddComment = ({ id }) => {
   const [rating, setRating] = useState(null);
   const [hover, setHover] = useState(null);
   const [comment, setComment] = useState("");
+  const [errors, setErrors] = useState({});
   const handleClick = () => {
     const review = {
       content: comment,
@@ -21,14 +22,30 @@ const AddComment = ({ id }) => {
     setRating(null);
     setComment("");
   };
+  const validate = (input) => {
+    let errors = {};
+    if (input.length > 250) {
+      errors.comment = "Comment should be less than 250 characters";
+    } else {
+      errors.comment = "";
+    }
+    return errors;
+  };
+  const handleChange = (e) => {
+    setComment(e.target.value);
+  };
+  useEffect(() => {
+    setErrors(validate(comment));
+  }, [comment]);
   return (
     <Container>
       <input
         placeholder="Comment..."
         type="text"
         value={comment}
-        onChange={(e) => setComment(e.target.value)}
+        onChange={handleChange}
       />
+      {errors.comment && <p>{errors.comment}</p>}
       <div>
         {[...Array(5)].map((star, i) => {
           const ratingValue = i + 1;
@@ -55,6 +72,7 @@ const AddComment = ({ id }) => {
         backgroundColor={blue}
         width={"100px"}
         onClick={handleClick}
+        disabled={!rating || !comment || errors.comment ? true : false}
       >
         Add review
       </ButtonDetail>
