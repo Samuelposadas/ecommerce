@@ -17,7 +17,7 @@ const Footer = () => {
             <CardTitle>ABOUT US</CardTitle>
             <CardLink>Story</CardLink>
             <CardLink>Clients</CardLink>
-            <CardLink>Testimonials</CardLink>
+            <CardLink>Testimonial</CardLink>
             <CardLink>Our Team</CardLink>
           </Card>
           <Card>
