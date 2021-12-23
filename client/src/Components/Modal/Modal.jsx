@@ -49,7 +49,7 @@ const ModalContent = styled.div`
   max-width: 400px;
   margin-top: 10px;
   margin-bottom: 10px;
-  padding-bottom: 70px;
+  padding-bottom: 75px;
   padding-top: 170px;
 `;
 
@@ -71,10 +71,11 @@ const CloseModalButton = styled(MdClose)`
 // `;
 
 const Title = styled.h2`
-  margin-top: 18px;
+  margin-top: 10px;
   font-size: 25px;
-  margin-left: 10px;
   color: black;
+  align-self: center;
+  justify-self: center;
 `;
 const ItemWrapper = styled.div``;
 
