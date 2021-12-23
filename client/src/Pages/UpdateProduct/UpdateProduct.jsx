@@ -14,8 +14,8 @@ import {
   ShowCategories,
   StyledButton,
   StyledForm,
-} from "../createProduct/styled";
-import validate from "../createProduct/validate";
+} from "../createProduct/styled.jsx";
+import validate from "../createProduct/validate.jsx";
 import { Toaster, toast } from "react-hot-toast";
 
 const UpdateProduct = () => {
