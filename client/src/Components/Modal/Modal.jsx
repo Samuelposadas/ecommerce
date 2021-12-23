@@ -80,6 +80,10 @@ const LineBreak = styled.hr`
   margin-top: 30px;
 `;
 
+const Checkout = styled.div`
+  position: absolute;
+`;
+
 export const Modal = ({ showModal, setShowModal }) => {
   const modalRef = useRef();
 
@@ -129,9 +133,6 @@ export const Modal = ({ showModal, setShowModal }) => {
                   onClick={() => setShowModal((prev) => !prev)}
                 />
                 <Title>Shopping Cart</Title>
-                <Link to={"/shop"}>
-                  <ButtonDetail width={"380px"}>Checkout</ButtonDetail>
-                </Link>
                 <ModalContent>
                   <Products>
                     {productsCart &&
@@ -143,6 +144,11 @@ export const Modal = ({ showModal, setShowModal }) => {
                       ))}
                   </Products>
                 </ModalContent>
+                <Checkout>
+                  <Link to={"/shop"}>
+                    <ButtonDetail width={"380px"}>Checkout</ButtonDetail>
+                  </Link>
+                </Checkout>
               </ModalWrapper>
             </animated.div>
           </Background>
