@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import React from "react";
 import StarIcon from "@mui/icons-material/Star";
-import { Container, Image, Title, Price, Rating, StyledLink } from "./styles";
+import { Container, Image, Title, Price, Rating, StyledLink } from "./styled";
 
 const Card = ({ img, name, salePrice, rating, id }) => {
   return (

@@ -1,5 +1,5 @@
 import React from "react";
-import { CarStripe } from "./CarStripe";
+import { CardStripe } from "./cardStripe";
 import styled from "styled-components";
 
 const REACT_APP_STRIPE = process.env.REACT_APP_STRIPE;
@@ -37,7 +37,7 @@ export const Shopping = () => {
       <Elements stripe={stripePromise}>
         <TarjetStripe>
           <ImgCard />
-          <CarStripe />
+          <CardStripe />
         </TarjetStripe>
       </Elements>
     </ContentCard>

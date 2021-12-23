@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import ItemList from "../../Components/ItemList/ItemList.jsx";
+import ItemList from "../../Components/itemList/itemList.jsx";
 import { getAllProducts } from "../../redux/actions/actionProducts";
-import { StyledAdminProducts } from "./styledAdminProducts.jsx";
+import { StyledAdminProducts } from "./styled.jsx";
 import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
 import { Link } from "react-router-dom";
 

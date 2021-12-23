@@ -4,14 +4,14 @@ import styled from "styled-components";
 import "./App.css";
 import { createGlobalStyle } from "styled-components";
 import { ThemeProvider } from "styled-components";
-import { lightTheme, darkTheme } from "./darkTheme/themes.jsx";
+import { lightTheme, darkTheme } from "./themes/themes.jsx";
 
 import { MdDarkMode, MdOutlineDarkMode } from "react-icons/md";
-import { Toggle } from "./darkTheme/style.jsx";
+import { Toggle } from "./themes/styled.jsx";
 import { Toaster, toast } from "react-hot-toast";
 
 //components at the bottom of this line
-import RouterApp from "./Routes/RouterApp.jsx";
+import RouterApp from "./routes/RouterApp.jsx";
 
 const GlobalStyle = createGlobalStyle`
   body {

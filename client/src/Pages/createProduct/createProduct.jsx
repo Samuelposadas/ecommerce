@@ -16,7 +16,7 @@ import {
   Select,
   StyledButton,
   StyledForm,
-} from "./styles";
+} from "./styled";
 
 const CreateProduct = () => {
   const initialState = {
