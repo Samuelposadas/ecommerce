@@ -16,7 +16,7 @@ export const ButtonDetail = styled.button`
   background-color: ${({ backgroundColor }) => backgroundColor || "#202020"};
   color: ${({ color }) => color || "white"};
   width: ${({ width }) => width || "400px"};
-  min-width: 300px;
+  min-width: 150px;
   height: 40px;
   font-size: 17px;
   margin-top: 10px;
