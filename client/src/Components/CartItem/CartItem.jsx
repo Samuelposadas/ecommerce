@@ -7,39 +7,60 @@ import { FaRegTrashAlt } from "react-icons/fa";
 
 const Container = styled.div`
   display: grid;
-  grid-template-areas:
-    "image name name price"
-    "image quantity quantity price"
-    "image delete delete price";
+  grid-template-columns: 20% 70% 10%;
+  grid-template-rows: 60px 20%;
+
+  @media screen and (max-width: 500px) {
+    grid-template-columns: 25% 60% 15%;
+  }
 
   p {
     font-size: 15px;
     grid-area: name;
+    grid-column-start: 2;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 1;
   }
   input {
     height: 20px;
     width: 50px;
-    grid-area: quantity;
-	color: #636060e2;
+    color: #636060e2;
+    grid-column-start: 2;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 2;
   }
   svg {
     font-size: 20px;
     grid-area: delete;
     cursor: pointer;
-	color: #636060e2;
+    color: #636060e2;
+    grid-column-start: 2;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 2;
+    margin-left: 70px;
   }
   h3 {
     grid-area: price;
     font-size: 15px;
     justify-self: end;
+    grid-column-start: 3;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
   }
 
-
   img {
-    height: 150px;
-    width: 180px;
+    height: ${({ height }) => height || "100%"};
+    width: ${({ width }) => width || "100%"};
+    margin: 0;
     object-fit: contain;
-	grid-area: image;
+    grid-column-start: 1;
+    grid-column-end: 1;
+    grid-row-start: 1;
+    grid-row-end: 2;
   }
 `;
 
@@ -47,7 +68,7 @@ const CartItem = ({ img, name, salePrice, id, quantity }) => {
   const dispatch = useDispatch();
   const deleteItem = (id) => {
     dispatch(removeFromCart(id));
-    toast.success("Product Remove");
+    toast.success("Product Removed");
   };
   const [input, setInput] = useState(quantity);
   const handleChange = (e) => {
