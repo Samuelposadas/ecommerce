@@ -2,6 +2,10 @@ import React, { useRef, useEffect, useCallback } from "react";
 import { useSpring, animated } from "react-spring";
 import styled, { createGlobalStyle } from "styled-components";
 import { MdClose } from "react-icons/md";
+import CartItem from "../CartItem/CartItem";
+import { useSelector } from "react-redux";
+import { ButtonDetail } from "../../common/Btn/BtnStyled";
+import { Link } from "react-router-dom";
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -22,14 +26,14 @@ const Background = styled.div`
 `;
 
 const ModalWrapper = styled.div`
-  width: 350px;
+  width: 390px;
   height: 650px;
   box-shadow: 0 5px 16px rgba(0, 0, 0, 0.2);
-  background: #fff;
+  background: #ffffff;
   color: #000;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 1fr;
+  grid-template-rows: 60px;
   position: sticky;
   z-index: 50;
   border-radius: 1px;
@@ -38,19 +42,11 @@ const ModalWrapper = styled.div`
 const ModalContent = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   color: #141414;
-  p {
-    margin-bottom: 1rem;
-    font-size: 15px;
-  }
-  button {
-    padding: 10px 24px;
-    background: #141414;
-    color: #fff;
-    border: none;
-  }
+  overflow: scroll;
+  max-width: 400px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 `;
 
 const CloseModalButton = styled(MdClose)`
@@ -62,6 +58,26 @@ const CloseModalButton = styled(MdClose)`
   height: 32px;
   padding: 0;
   z-index: 50;
+`;
+const Products = styled.div`
+  display: grid;
+  grid-template-columns: 1fr;
+  margin-right: 5px;
+`;
+
+const Title = styled.h2`
+  margin-top: 18px;
+  font-size: 25px;
+  margin-left: 10px;
+  color: black;
+`;
+const ItemWrapper = styled.div``;
+
+const LineBreak = styled.hr`
+  height: 1px;
+  color: #f5eded50;
+  margin-bottom: 30px;
+  margin-top: 30px;
 `;
 
 export const Modal = ({ showModal, setShowModal }) => {
@@ -98,6 +114,8 @@ export const Modal = ({ showModal, setShowModal }) => {
     return () => document.removeEventListener("keydown", keyPress);
   }, [keyPress]);
 
+  const productsCart = useSelector((state) => state.cart.cart);
+
   return (
     <>
       {showModal ? (
@@ -106,14 +124,25 @@ export const Modal = ({ showModal, setShowModal }) => {
           <Background onClick={closeModal} ref={modalRef}>
             <animated.div style={animation}>
               <ModalWrapper showModal={showModal}>
-                <ModalContent>
-                  <p>Your shopping cart is empty.</p>
-                  <button>CHECKOUT</button>
-                </ModalContent>
                 <CloseModalButton
                   aria-label="Close modal"
                   onClick={() => setShowModal((prev) => !prev)}
                 />
+                <Title>Shopping Cart</Title>
+                <Link to={"/shop"}>
+                  <ButtonDetail width={"380px"}>Checkout</ButtonDetail>
+                </Link>
+                <ModalContent>
+                  <Products>
+                    {productsCart &&
+                      productsCart.map((item) => (
+                        <ItemWrapper key={item.id}>
+                          <CartItem {...item} key={item.id} />
+                          <LineBreak />
+                        </ItemWrapper>
+                      ))}
+                  </Products>
+                </ModalContent>
               </ModalWrapper>
             </animated.div>
           </Background>

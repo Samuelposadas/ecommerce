@@ -13,11 +13,12 @@ export const Btn = styled.div`
 `;
 
 export const ButtonDetail = styled.button`
-  background-color: ${({ backgroundColor }) => backgroundColor || "#202020"};
+  background-color: ${({ backgroundcolor }) => backgroundcolor || "#202020"};
   color: ${({ color }) => color || "white"};
   width: ${({ width }) => width || "400px"};
+  height: ${({ height }) => height || "40px"};
+  margin-bottom: 10px;
   min-width: 150px;
-  height: 40px;
   font-size: 17px;
   margin-top: 10px;
   border: none;
@@ -25,6 +26,6 @@ export const ButtonDetail = styled.button`
   font-weight: bold;
   &:hover {
     cursor: pointer;
-    box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
+    /* box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2); */
   }
 `;

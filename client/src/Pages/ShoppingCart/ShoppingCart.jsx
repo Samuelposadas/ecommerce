@@ -12,22 +12,20 @@ const Container = styled.div`
 `;
 
 const Wrapper = styled.div`
-  width: 850px;
+  width: 880px;
   display: grid;
-  grid-template-columns: 3fr 1fr;
+  grid-template-columns: 3fr 1.5fr;
 
   @media screen and (max-width: 800px) {
-		grid-template-columns: 100%;
-		margin-left: 10px;
-		margin-right: 10px;
-
-	}
+    grid-template-columns: 100%;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
 `;
 
 const Products = styled.div`
   display: grid;
   grid-template-columns: 1fr;
-
 `;
 
 const Title = styled.h2`
