@@ -1,9 +1,9 @@
 import React from "react";
-import AdminSidebar from "../../Components/AdminSidebar/AdminSidebar.jsx";
-import AdminTopbar from "../../Components/AdminTopbar/AdminTopbar.jsx";
+import AdminSidebar from "../../Components/adminSidebar/adminSidebar.jsx";
+import AdminTopbar from "../../Components/adminTopbar/adminTopbar.jsx";
 import { Outlet } from "react-router-dom";
 
-import { StyledAdminPanel } from "./styledAdminPanel.jsx";
+import { StyledAdminPanel } from "./styled.jsx";
 
 // Página principal del panel del administrador
 // Rendiriza un Topbar y un Sidebar en todas las ocaciones

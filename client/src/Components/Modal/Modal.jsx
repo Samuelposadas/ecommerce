@@ -1,84 +1,20 @@
 import React, { useRef, useEffect, useCallback } from "react";
 import { useSpring, animated } from "react-spring";
-import styled, { createGlobalStyle } from "styled-components";
-import { MdClose } from "react-icons/md";
-import CartItem from "../CartItem/CartItem";
+import CartItem from "../cartItem/cartItem";
 import { useSelector } from "react-redux";
-import { ButtonDetail } from "../../common/Btn/BtnStyled";
+import { ButtonDetail } from "../../common/button/button";
 import { Link } from "react-router-dom";
-
-const GlobalStyle = createGlobalStyle`
-  body {
-    overflow: hidden;
-    
-  }
-`;
-
-const Background = styled.div`
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.8);
-  position: absolute;
-  display: flex;
-  justify-content: end;
-  align-content: center;
-  z-index: 200;
-`;
-
-const ModalWrapper = styled.div`
-  width: 390px;
-  height: 650px;
-  box-shadow: 0 5px 16px rgba(0, 0, 0, 0.2);
-  background: #ffffff;
-  color: #000;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 60px;
-  position: sticky;
-  z-index: 50;
-  border-radius: 1px;
-`;
-
-const ModalContent = styled.div`
-  display: flex;
-  flex-direction: column;
-  color: #141414;
-  overflow: scroll;
-  max-width: 400px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-`;
-
-const CloseModalButton = styled(MdClose)`
-  cursor: pointer;
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  width: 32px;
-  height: 32px;
-  padding: 0;
-  z-index: 50;
-`;
-const Products = styled.div`
-  display: grid;
-  grid-template-columns: 1fr;
-  margin-right: 5px;
-`;
-
-const Title = styled.h2`
-  margin-top: 18px;
-  font-size: 25px;
-  margin-left: 10px;
-  color: black;
-`;
-const ItemWrapper = styled.div``;
-
-const LineBreak = styled.hr`
-  height: 1px;
-  color: #f5eded50;
-  margin-bottom: 30px;
-  margin-top: 30px;
-`;
+import {
+  GlobalStyle,
+  Background,
+  ModalWrapper,
+  ModalContent,
+  CloseModalButton,
+  Title,
+  ItemWrapper,
+  LineBreak,
+  Message,
+} from "./styled";
 
 export const Modal = ({ showModal, setShowModal }) => {
   const modalRef = useRef();
@@ -129,19 +65,20 @@ export const Modal = ({ showModal, setShowModal }) => {
                   onClick={() => setShowModal((prev) => !prev)}
                 />
                 <Title>Shopping Cart</Title>
-                <Link to={"/shop"}>
-                  <ButtonDetail width={"380px"}>Checkout</ButtonDetail>
-                </Link>
                 <ModalContent>
-                  <Products>
-                    {productsCart &&
-                      productsCart.map((item) => (
-                        <ItemWrapper key={item.id}>
-                          <CartItem {...item} key={item.id} />
-                          <LineBreak />
-                        </ItemWrapper>
-                      ))}
-                  </Products>
+                  {productsCart.length > 0 ? (
+                    productsCart.map((item) => (
+                      <ItemWrapper key={item.id}>
+                        <CartItem {...item} key={item.id} />
+                        <LineBreak />
+                      </ItemWrapper>
+                    ))
+                  ) : (
+                    <Message>Your shopping cart is empty.</Message>
+                  )}
+                  <Link to={"/shop"}>
+                    <ButtonDetail width={"360px"}>Checkout</ButtonDetail>
+                  </Link>
                 </ModalContent>
               </ModalWrapper>
             </animated.div>

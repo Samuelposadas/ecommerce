@@ -1,6 +1,6 @@
 import React from "react";
 import { useAuth0 } from "@auth0/auth0-react";
-import { Container } from "./style.jsx";
+import { Container } from "./styled.jsx";
 import { AiOutlineUser } from "react-icons/ai";
 
 const Auth = () => {

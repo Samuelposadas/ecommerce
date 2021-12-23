@@ -1,7 +1,7 @@
 import React from "react";
 import NotificationsNoneOutlinedIcon from "@mui/icons-material/NotificationsNoneOutlined";
 import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
-import { StyledAdminTopbar } from "./styledAdminTopbar.jsx";
+import { StyledAdminTopbar } from "./styled.jsx";
 
 export default function AdminTopbar() {
   return (

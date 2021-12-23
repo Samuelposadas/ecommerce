@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { getAllProducts, saveName } from "../../redux/actions/actionProducts";
-import { InputStyled, FormSt, LogoContainer } from "./styles.jsx";
+import { InputStyled, FormSt, LogoContainer } from "./styled.jsx";
 import { AiOutlineSearch } from "react-icons/ai";
 
 const Searchbar = (props) => {

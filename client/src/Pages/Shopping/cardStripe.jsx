@@ -3,7 +3,7 @@ import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 import axios from "axios";
 import { Toaster, toast } from "react-hot-toast";
 
-export const CarStripe = () => {
+export const CardStripe = () => {
   const stripe = useStripe();
   const elements = useElements();
 

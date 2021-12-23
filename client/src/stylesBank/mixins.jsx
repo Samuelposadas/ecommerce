@@ -1,5 +1,5 @@
 import { css } from "styled-components";
-import { blue } from "./variables";
+import { blue } from "./Variables";
 
 export const displayGrid = () => css`
   display: grid;
