@@ -10,7 +10,7 @@ import Paypal from "../Components/paypal/paypal.jsx";
 import CreateProduct from "../Pages/createProduct/createProduct.jsx";
 
 //components
-import Home from "../Pages/home/home";
+import Home from "../Pages/home/home.jsx";
 
 import ProductDetail from "../Pages/productDetail/productDetail.jsx";
 import UpdateProduct from "../Pages/updateProduct/updateProduct.jsx";
