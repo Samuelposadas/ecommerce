@@ -42,6 +42,10 @@ const LineBreak = styled.hr`
   margin-top: 30px;
 `;
 
+const Message = styled.div`
+  margin-bottom: 60px;
+`;
+
 function ShoppingCart() {
   const productsCart = useSelector((state) => state.cart.cart);
 
@@ -50,13 +54,16 @@ function ShoppingCart() {
       <Wrapper>
         <Products>
           <Title>Shopping Cart</Title>
-          {productsCart &&
+          {productsCart.length > 0 ? (
             productsCart.map((item) => (
               <ItemWrapper key={item.id}>
                 <CartItem {...item} key={item.id} />
                 <LineBreak />
               </ItemWrapper>
-            ))}
+            ))
+          ) : (
+            <Message>Your shopping cart is empty.</Message>
+          )}
         </Products>
         <CartSumary />
       </Wrapper>

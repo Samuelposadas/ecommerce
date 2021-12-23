@@ -42,11 +42,15 @@ const ModalWrapper = styled.div`
 const ModalContent = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   color: #141414;
   overflow: scroll;
   max-width: 400px;
   margin-top: 10px;
   margin-bottom: 10px;
+  padding-bottom: 70px;
+  padding-top: 170px;
 `;
 
 const CloseModalButton = styled(MdClose)`
@@ -59,11 +63,12 @@ const CloseModalButton = styled(MdClose)`
   padding: 0;
   z-index: 50;
 `;
-const Products = styled.div`
-  display: grid;
-  grid-template-columns: 1fr;
-  margin-right: 5px;
-`;
+// const Products = styled.div`
+//   display: flex;
+//   flex-direction: column;
+//   align-content: flex-start;
+//   margin-right: 5px;
+// `;
 
 const Title = styled.h2`
   margin-top: 18px;
@@ -78,6 +83,11 @@ const LineBreak = styled.hr`
   color: #f5eded50;
   margin-bottom: 30px;
   margin-top: 30px;
+`;
+
+const Message = styled.div`
+  margin-left: 10px;
+  font-size: 12px;
 `;
 
 export const Modal = ({ showModal, setShowModal }) => {
@@ -129,19 +139,20 @@ export const Modal = ({ showModal, setShowModal }) => {
                   onClick={() => setShowModal((prev) => !prev)}
                 />
                 <Title>Shopping Cart</Title>
-                <Link to={"/shop"}>
-                  <ButtonDetail width={"380px"}>Checkout</ButtonDetail>
-                </Link>
                 <ModalContent>
-                  <Products>
-                    {productsCart &&
-                      productsCart.map((item) => (
-                        <ItemWrapper key={item.id}>
-                          <CartItem {...item} key={item.id} />
-                          <LineBreak />
-                        </ItemWrapper>
-                      ))}
-                  </Products>
+                  {productsCart.length > 0 ? (
+                    productsCart.map((item) => (
+                      <ItemWrapper key={item.id}>
+                        <CartItem {...item} key={item.id} />
+                        <LineBreak />
+                      </ItemWrapper>
+                    ))
+                  ) : (
+                    <Message>Your shopping cart is empty.</Message>
+                  )}
+                  <Link to={"/shop"}>
+                    <ButtonDetail width={"360px"}>Checkout</ButtonDetail>
+                  </Link>
                 </ModalContent>
               </ModalWrapper>
             </animated.div>

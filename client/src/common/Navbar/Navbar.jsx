@@ -80,7 +80,6 @@ const MenuItem = styled.li`
   text-decoration: ${(props) => (props.bd ? "underline solid" : "none")};
 `;
 
-
 const MobileIcon = styled.div`
   display: none;
 
