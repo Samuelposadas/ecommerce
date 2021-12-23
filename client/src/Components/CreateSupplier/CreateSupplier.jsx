@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { StyledCreateSupplier } from "./styledCreateSupplier.jsx";
+import { StyledCreateSupplier } from "./styled.jsx";
 import { validate } from "./validate.jsx";
 import axios from "axios";
 import { URL_BASE } from "../../redux/constants/index";

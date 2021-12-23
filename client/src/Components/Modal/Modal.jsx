@@ -1,95 +1,20 @@
 import React, { useRef, useEffect, useCallback } from "react";
 import { useSpring, animated } from "react-spring";
-import styled, { createGlobalStyle } from "styled-components";
-import { MdClose } from "react-icons/md";
-import CartItem from "../CartItem/CartItem";
+import CartItem from "../cartItem/cartItem";
 import { useSelector } from "react-redux";
-import { ButtonDetail } from "../../common/Btn/BtnStyled";
+import { ButtonDetail } from "../../common/button/button";
 import { Link } from "react-router-dom";
-
-const GlobalStyle = createGlobalStyle`
-  body {
-    overflow: hidden;
-    
-  }
-`;
-
-const Background = styled.div`
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.8);
-  position: absolute;
-  display: flex;
-  justify-content: end;
-  align-content: center;
-  z-index: 200;
-`;
-
-const ModalWrapper = styled.div`
-  width: 390px;
-  height: 650px;
-  box-shadow: 0 5px 16px rgba(0, 0, 0, 0.2);
-  background: #ffffff;
-  color: #000;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 60px;
-  position: sticky;
-  z-index: 50;
-  border-radius: 1px;
-`;
-
-const ModalContent = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: #141414;
-  overflow: scroll;
-  max-width: 400px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  padding-bottom: 75px;
-  padding-top: 170px;
-`;
-
-const CloseModalButton = styled(MdClose)`
-  cursor: pointer;
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  width: 32px;
-  height: 32px;
-  padding: 0;
-  z-index: 50;
-`;
-// const Products = styled.div`
-//   display: flex;
-//   flex-direction: column;
-//   align-content: flex-start;
-//   margin-right: 5px;
-// `;
-
-const Title = styled.h2`
-  margin-top: 10px;
-  font-size: 25px;
-  color: black;
-  align-self: center;
-  justify-self: center;
-`;
-const ItemWrapper = styled.div``;
-
-const LineBreak = styled.hr`
-  height: 1px;
-  color: #f5eded50;
-  margin-bottom: 30px;
-  margin-top: 30px;
-`;
-
-const Message = styled.div`
-  margin-left: 10px;
-  font-size: 12px;
-`;
+import {
+  GlobalStyle,
+  Background,
+  ModalWrapper,
+  ModalContent,
+  CloseModalButton,
+  Title,
+  ItemWrapper,
+  LineBreak,
+  Message,
+} from "./styled";
 
 export const Modal = ({ showModal, setShowModal }) => {
   const modalRef = useRef();

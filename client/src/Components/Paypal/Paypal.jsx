@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { DivPay } from "./styledPaypal.jsx";
+import { DivPay } from "./styled.jsx";
 
 export const PayPalButton = window.paypal.Buttons.driver("react", {
   React,

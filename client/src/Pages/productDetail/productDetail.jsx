@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import StarIcon from "@mui/icons-material/Star";
-import { ButtonDetail } from "../../common/Btn/BtnStyled";
-import { blue, lightBlue } from "../../bankStyles/variables";
+import { ButtonDetail } from "../../common/button/button.jsx";
+import { blue, lightBlue } from "../../stylesBank/variables.jsx";
 import { useDispatch, useSelector } from "react-redux";
 import { getProductDetail } from "../../redux/actions/actionProducts";
 import { addToCart } from "../../redux/actions/actionCart";
@@ -14,8 +14,8 @@ import {
   ProductInfo,
   ProductDescription,
   ProductRating,
-} from "./styles";
-import AddComment from "../../Components/AddComment/AddComment";
+} from "./styled";
+import AddComment from "../../Components/addComment/addComment";
 
 const ProductDetail = () => {
   const { id } = useParams();

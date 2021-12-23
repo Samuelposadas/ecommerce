@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { Container, Star } from "./styles";
+import { Container, Star } from "./styled";
 import StarIcon from "@mui/icons-material/Star";
-import { ButtonDetail } from "../../common/Btn/BtnStyled";
-import { blue } from "../../bankStyles/variables";
+import { ButtonDetail } from "../../common/button/button.jsx";
+import { blue } from "../../stylesBank/variables";
 import { addComment } from "../../redux/actions/actionProducts";
 import { useDispatch } from "react-redux";
 const AddComment = ({ id }) => {
