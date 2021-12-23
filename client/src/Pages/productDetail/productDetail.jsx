@@ -15,7 +15,7 @@ import {
   ProductDescription,
   ProductRating,
 } from "./styled";
-import AddComment from "../../Components/addComment/addComment";
+import AddComment from "../../Components/addComment/addComment.jsx";
 
 const ProductDetail = () => {
   const { id } = useParams();

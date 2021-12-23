@@ -1,5 +1,3 @@
-import React, { useState } from "react";
-import { Container, Star } from "./styled";
 import React, { useEffect, useState } from "react";
 import { Container, Star } from "./styled.jsx";
 import StarIcon from "@mui/icons-material/Star";
