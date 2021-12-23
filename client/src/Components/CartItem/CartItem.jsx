@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { editQuantity, removeFromCart } from "../../redux/actions/actionCart";
 import styled from "styled-components";
 import { Toaster, toast } from "react-hot-toast";
+import { FaRegTrashAlt } from "react-icons/fa";
 
 const Container = styled.div`
   display: grid;
@@ -10,6 +11,7 @@ const Container = styled.div`
     "image name name price"
     "image quantity quantity price"
     "image delete delete price";
+
   p {
     font-size: 15px;
     grid-area: name;
@@ -18,11 +20,13 @@ const Container = styled.div`
     height: 20px;
     width: 50px;
     grid-area: quantity;
+	color: #636060e2;
   }
-  button {
-    height: 30px;
-    width: 30px;
+  svg {
+    font-size: 20px;
     grid-area: delete;
+    cursor: pointer;
+	color: #636060e2;
   }
   h3 {
     grid-area: price;
@@ -30,11 +34,12 @@ const Container = styled.div`
     justify-self: end;
   }
 
+
   img {
-    height: 170px;
-    width: 200px;
+    height: 150px;
+    width: 180px;
     object-fit: contain;
-    grid-area: image;
+	grid-area: image;
   }
 `;
 
@@ -54,9 +59,9 @@ const CartItem = ({ img, name, salePrice, id, quantity }) => {
       <img src={img}></img>
       <p>{name}</p>
       <input value={input} min="1" type="number" onChange={handleChange} />
-      <button onClick={() => deleteItem(id)}></button>
+      <FaRegTrashAlt onClick={() => deleteItem(id)}></FaRegTrashAlt>
 
-      <h3>{salePrice}</h3>
+      <h3>${salePrice}</h3>
       <Toaster />
     </Container>
   );

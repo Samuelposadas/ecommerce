@@ -4,18 +4,19 @@ import styled from "styled-components";
 import "./App.css";
 import { createGlobalStyle } from "styled-components";
 import { ThemeProvider } from "styled-components";
-import { lightTheme, darkTheme } from "./darkTheme/themes";
+import { lightTheme, darkTheme } from "./darkTheme/themes.jsx";
 
 import { MdDarkMode, MdOutlineDarkMode } from "react-icons/md";
-import { Toggle } from "./darkTheme/style.js";
+import { Toggle } from "./darkTheme/style.jsx";
 import { Toaster, toast } from "react-hot-toast";
 
 //components at the bottom of this line
-import RouterApp from "./Routes/RouterApp";
+import RouterApp from "./Routes/RouterApp.jsx";
 
 const GlobalStyle = createGlobalStyle`
   body {
     font-family: 'Trebuchet MS', sans-serif;
+	font:menu;
     background-color : ${(props) => props.theme.body};
     color : ${(props) => props.theme.fontColor};
   }
