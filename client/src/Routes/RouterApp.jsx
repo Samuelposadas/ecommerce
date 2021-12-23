@@ -12,7 +12,7 @@ import CreateProduct from "../Pages/CreateProduct/CreateProduct.jsx";
 //components
 import Home from "../Pages/Home/Home";
 
-import ProductDetail from "../Pages/ProductDetail/ProductDetail.jsx";
+import ProductDetail from "../Pages/ProductDetail/ProductDetail";
 import UpdateProduct from "../Pages/UpdateProduct/UpdateProduct.jsx";
 import ShoppingCart from "../Pages/ShoppingCart/ShoppingCart.jsx";
 import AdminPanel from "../Pages/AdminPanel/AdminPanel.jsx";
