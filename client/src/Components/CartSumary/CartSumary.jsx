@@ -12,23 +12,23 @@ const Container = styled.div`
 `;
 const Title = styled.h2`
   font-size: 25px;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   color: black;
 `;
 const Items = styled.div`
   font-size: 15px;
-  margin-bottom: 20px;
+
 `;
 const Total = styled.div`
   font-size: 15px;
-  margin-bottom: 20px;
 `;
 const CleanCart = styled.button`
   font-size: 15px;
 `;
 
 const LineBreak = styled.hr`
-  height: 4px;
+width: 100%;
+  height: 1px;
   color: #f5eded50;
   margin-bottom: 30px;
   margin-top: 30px;
@@ -53,6 +53,7 @@ const CartSumary = () => {
     <Container>
       <Title>Summary</Title>
       <Items>Items: {totalItems}</Items>
+	  <LineBreak />
       <Total>Total: ${totalPrice}</Total>
       <LineBreak />
       <CleanCart onClick={() => dispatch(cleanCart())}>Clean Cart</CleanCart>
