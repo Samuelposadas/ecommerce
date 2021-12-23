@@ -15,6 +15,7 @@ import {
   ProductDescription,
   ProductRating,
 } from "./styles";
+import AddComment from "../../Components/AddComment/AddComment";
 
 const ProductDetail = () => {
   const { id } = useParams();
@@ -23,6 +24,7 @@ const ProductDetail = () => {
   useEffect(() => {
     dispatch(getProductDetail(id));
   }, []);
+
   const productComplete = {
     ...product,
     comments: [
@@ -92,8 +94,11 @@ const ProductDetail = () => {
           <p>{description}</p>
         </ProductDescription>
         <ProductRating>
-          <h1>Rating</h1>
-          {comments.map((comment, index) => (
+          <h1>Add review</h1>
+          <AddComment id={id} />
+
+          <h1>Reviews</h1>
+          {comments?.map((comment, index) => (
             <div key={index}>
               {Array(Math.round(comment.stars)).fill(
                 <StarIcon color="yellow" />,
