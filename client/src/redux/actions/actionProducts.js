@@ -237,11 +237,7 @@ export const updateProduct = (payload) => {
 export const addComment = (review) => {
   return async () => {
     try {
-      console.log("si");
-      const { data } = await axios.post(
-        "http://localhost:3001/comments/",
-        review
-      );
+      await axios.post("http://localhost:3001/comments/", review);
       return;
     } catch (e) {
       console.log(e);
