@@ -3,11 +3,11 @@ import { useSelector } from "react-redux";
 import { CardsContainer, ContainerDisplay } from "./styled";
 
 //components
-import Card from "../../Components/card/card.jsx";
-import Navbar from "../../common/navbar/navbar.jsx";
-import Footer from "../../common/footer/footer.jsx";
-import { Paginate } from "../../Components/pagination/pagination.jsx";
-import { SideBarFilters } from "../../common/sidebar/sidebar.jsx";
+import Card from "../../Components/Card/Card.jsx";
+import Navbar from "../../common/Navbar/Navbar.jsx";
+import Footer from "../../common/Footer/Footer.jsx";
+import { Paginate } from "../../Components/Pagination/pagination.jsx";
+import { SideBarFilters } from "../../common/Sidebar/Sidebar.jsx";
 
 // import Login from "../Login/Login";
 

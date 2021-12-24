@@ -9,7 +9,7 @@ import {
   LineBreak,
   Message,
 } from "./styled.jsx";
-import CartItem from "../../Components/cartItem/cartItem.jsx";
+import CartItem from "../../Components/CartItem/CartItem.jsx";
 import CartSumary from "../../Components/cartSummary/cartSummary.jsx";
 
 function ShoppingCart() {

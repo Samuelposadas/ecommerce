@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useCallback } from "react";
 import { useSpring, animated } from "react-spring";
-import CartItem from "../cartItem/cartItem";
+import CartItem from "../CartItem/CartItem";
 import { useSelector } from "react-redux";
 import { ButtonDetail } from "../../common/button/button";
 import { Link } from "react-router-dom";
