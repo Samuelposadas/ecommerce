@@ -1,6 +1,6 @@
 import React from "react";
-import AdminSidebar from "../../Components/adminSidebar/adminSidebar.jsx";
-import AdminTopbar from "../../Components/adminTopbar/adminTopbar.jsx";
+import AdminSidebar from "../../Components/AdminSidebar/AdminSidebar.jsx";
+import AdminTopbar from "../../Components/AdminTopbar/AdminTopbar.jsx";
 import { Outlet } from "react-router-dom";
 
 import { StyledAdminPanel } from "./styled.jsx";

@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import ItemList from "../../Components/itemList/itemList.jsx";
+import ItemList from "../../Components/ItemList/ItemList.jsx";
 import { useDispatch, useSelector } from "react-redux";
 import { StyledAdminCategories } from "./styled.jsx";
 import { getAllCategories } from "../../redux/actions/actionProducts";

@@ -2,23 +2,23 @@ import React from "react";
 
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
-import { Shopping } from "../Pages/shopping/shopping.jsx";
+import { Shopping } from "../Pages/Shopping/Shopping.jsx";
 
-import CreateSupplier from "../Components/createSupplier/createSupplier.jsx";
-import Paypal from "../Components/paypal/paypal.jsx";
+import CreateSupplier from "../Components/CreateSupplier/CreateSupplier.jsx";
+import Paypal from "../Components/Paypal/Paypal.jsx";
 
 import CreateProduct from "../Pages/createProduct/createProduct.jsx";
 
 //components
-import Home from "../Pages/home/home.jsx";
+import Home from "../Pages/Home/Home.jsx";
 
 import ProductDetail from "../Pages/productDetail/productDetail.jsx";
-import UpdateProduct from "../Pages/updateProduct/updateProduct.jsx";
-import ShoppingCart from "../Pages/shoppingCart/shoppingCart.jsx";
-import AdminPanel from "../Pages/adminPanel/adminPanel.jsx";
-import AdminUsers from "../Pages/adminUsers/adminUsers.jsx";
-import AdminCategories from "../Pages/adminCategories/adminCategories.jsx";
-import AdminProducts from "../Pages/adminProducts/adminProducts.jsx";
+import UpdateProduct from "../Pages/UpdateProduct/UpdateProduct.jsx";
+import ShoppingCart from "../Pages/ShoppingCart/ShoppingCart.jsx";
+import AdminPanel from "../Pages/AdminPanel/AdminPanel.jsx";
+import AdminUsers from "../Pages/AdminUsers/AdminUsers.jsx";
+import AdminCategories from "../Pages/AdminCategories/AdminCategories.jsx";
+import AdminProducts from "../Pages/AdminProducts/AdminProducts.jsx";
 
 const RouterApp = () => {
   return (

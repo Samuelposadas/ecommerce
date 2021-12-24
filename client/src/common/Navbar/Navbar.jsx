@@ -25,9 +25,9 @@ import {
 } from "./styled";
 
 //components
-import Searchbar from "../../Components/searchbar/searchbar.jsx";
-import { Modal } from "../../Components/modal/modal.jsx";
-import Auth from "../../Components/auth/auth.jsx";
+import Searchbar from "../../Components/Searchbar/Searchbar.jsx";
+import { Modal } from "../../Components/Modal/Modal.jsx";
+import Auth from "../../Components/Auth/Auth.jsx";
 
 const Navbar = () => {
   const categories = useSelector((state) => state.products.allCategories);
