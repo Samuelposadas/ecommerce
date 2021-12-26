@@ -10,7 +10,7 @@ import {
   Message,
 } from "./styled.jsx";
 import CartItem from "../../Components/CartItem/CartItem.jsx";
-import CartSumary from "../../Components/cartSummary/cartSummary.jsx";
+import CartSumary from "../../Components/CartSummary/CartSummary.jsx";
 
 function ShoppingCart() {
   const productsCart = useSelector((state) => state.cart.cart);

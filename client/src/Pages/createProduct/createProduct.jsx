@@ -16,7 +16,7 @@ import {
   Select,
   StyledButton,
   StyledForm,
-} from "./styled";
+} from "./styled.jsx";
 
 const CreateProduct = () => {
   const initialState = {

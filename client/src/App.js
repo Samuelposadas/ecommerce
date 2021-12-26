@@ -11,7 +11,7 @@ import { Toggle } from "./themes/styled.jsx";
 import { Toaster, toast } from "react-hot-toast";
 
 //components at the bottom of this line
-import RouterApp from "./Routes/RouterApp.jsx";
+import RouterApp from "./routes/RouterApp.jsx";
 
 const GlobalStyle = createGlobalStyle`
   body {
