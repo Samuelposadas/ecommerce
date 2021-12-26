@@ -1,16 +1,24 @@
 import React from "react";
 import styled from "styled-components";
 
-const Container = styled.div``;
-const Image = styled.img``;
+const Container = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 300px;
+  margin-bottom: 25px;
+`;
+const Image = styled.img`
+  width: 65px;
+  height: 65px;
+  object-fit: contain;
+`;
 
-const DetailsThumb = () => {
-  const { images, tab, myRef } = this.props;
-
+const DetailsThumb = (images) => {
   return (
-    <Container ref={myRef}>
+    <Container>
       {images.map((img, index) => (
-        <Image src={img} alt="" key={index} onClick={() => tab(index)} />
+        <Image src={img} alt="" key={index} />
       ))}
     </Container>
   );

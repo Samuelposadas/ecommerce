@@ -80,19 +80,6 @@ export const ProductInfo = styled.div`
     font-size: 25px;
     margin-bottom: 30px;
   }
-
-  span {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 300px;
-    margin-bottom: 25px;
-
-    img {
-      width: 65px;
-      height: 65px;
-    }
-  }
 `;
 export const ProductDescription = styled.div`
   grid-area: description;

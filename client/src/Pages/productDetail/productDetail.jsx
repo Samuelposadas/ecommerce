@@ -16,6 +16,7 @@ import {
   ProductRating,
 } from "./styled";
 import AddComment from "../../Components/AddComment/AddComment.jsx";
+// import DetailsThumb from "./detailsThumb.jsx";
 
 const ProductDetail = () => {
   const { id } = useParams();
@@ -66,12 +67,7 @@ const ProductDetail = () => {
               : null}
           </p>
           <div>${salePrice}</div>
-          <span>
-            <img></img>
-            <img></img>
-            <img></img>
-            <img></img>
-          </span>
+          {/* <DetailsThumb images={img[0]} /> */}
           <ButtonDetail backgroundColor={blue} width={"99%"}>
             Buy now
           </ButtonDetail>
