@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import StarIcon from "@mui/icons-material/Star";
 import { ButtonDetail } from "../../common/Button/Button.jsx";
@@ -14,9 +14,12 @@ import {
   ProductInfo,
   ProductDescription,
   ProductRating,
+  Name,
+  Rating,
+  SalePrice,
+  Images,
 } from "./styled";
 import AddComment from "../../Components/AddComment/AddComment.jsx";
-// import DetailsThumb from "./detailsThumb.jsx";
 
 const ProductDetail = () => {
   const { id } = useParams();
@@ -53,21 +56,28 @@ const ProductDetail = () => {
     dispatch(addToCart(id));
     toast.success("Added Product");
   };
+
+  const [image, setImage] = useState(img[0]);
+
   return (
     <Wrapper>
       <Container>
         <ProductImage>
-          <img src={img ? img[0] : null} alt="img not fund" />
+          <img src={image} alt="img not fund" />
         </ProductImage>
         <ProductInfo>
-          <h1>{name}</h1>
-          <p>
+          <Name>{name}</Name>
+          <Rating>
             {rating
               ? Array(Math.round(rating)).fill(<StarIcon fontSize="40px" />, 0)
               : null}
-          </p>
-          <div>${salePrice}</div>
-          {/* <DetailsThumb images={img[0]} /> */}
+          </Rating>
+          <SalePrice>${salePrice}</SalePrice>
+          <Images>
+            {img.map((item, index) => (
+              <img src={item} key={index} onClick={() => setImage(item)}></img>
+            ))}
+          </Images>
           <ButtonDetail backgroundColor={blue} width={"99%"}>
             Buy now
           </ButtonDetail>

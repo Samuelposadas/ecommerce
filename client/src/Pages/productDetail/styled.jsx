@@ -64,21 +64,37 @@ export const ProductInfo = styled.div`
   display: flex;
   flex-direction: column;
   margin-right: 15px;
+`;
 
-  h1 {
-    font-size: 18px;
-  }
+export const Name = styled.h1`
+  font-size: 18px;
+`;
 
-  p {
-    font-size: 15px;
-    margin-top: 5px;
-    margin-bottom: 20px;
-    color: #feb236;
-  }
+export const Rating = styled.p`
+  font-size: 15px;
+  margin-top: 5px;
+  margin-bottom: 20px;
+  color: #feb236;
+`;
 
-  div {
-    font-size: 25px;
-    margin-bottom: 30px;
+export const SalePrice = styled.div`
+  font-size: 25px;
+  margin-bottom: 20px;
+`;
+
+export const Images = styled.span`
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: start;
+  margin-bottom: 20px;
+
+  img {
+    width: 65px;
+    height: 65px;
+    margin-right: 25px;
+    object-fit: contain;
+    cursor: pointer;
   }
 `;
 export const ProductDescription = styled.div`
