@@ -18,6 +18,7 @@ import {
   Rating,
   SalePrice,
   Images,
+  Image,
 } from "./styled";
 import AddComment from "../../Components/AddComment/AddComment.jsx";
 
@@ -75,7 +76,11 @@ const ProductDetail = () => {
           <SalePrice>${salePrice}</SalePrice>
           <Images>
             {img.map((item, index) => (
-              <img src={item} key={index} onClick={() => setImage(item)}></img>
+              <Image
+                src={item}
+                key={index}
+                onClick={() => setImage(item)}
+              ></Image>
             ))}
           </Images>
           <ButtonDetail backgroundColor={blue} width={"99%"}>
