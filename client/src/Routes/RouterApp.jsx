@@ -7,12 +7,12 @@ import { Shopping } from "../Pages/Shopping/Shopping.jsx";
 import CreateSupplier from "../Components/CreateSupplier/CreateSupplier.jsx";
 import Paypal from "../Components/Paypal/Paypal.jsx";
 
-import CreateProduct from "../Pages/createProduct/createProduct.jsx";
+import CreateProduct from "../Pages/CreateProduct/CreateProduct.jsx";
 
 //components
 import Home from "../Pages/Home/Home.jsx";
 
-import ProductDetail from "../Pages/productDetail/productDetail.jsx";
+import ProductDetail from "../Pages/ProductDetail/ProductDetail.jsx";
 import UpdateProduct from "../Pages/UpdateProduct/UpdateProduct.jsx";
 import ShoppingCart from "../Pages/ShoppingCart/ShoppingCart.jsx";
 import AdminPanel from "../Pages/AdminPanel/AdminPanel.jsx";

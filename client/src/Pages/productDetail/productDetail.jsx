@@ -1,7 +1,8 @@
-import React, { useEffect } from "react";
+/* eslint-disable */
+import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import StarIcon from "@mui/icons-material/Star";
-import { ButtonDetail } from "../../common/button/button.jsx";
+import { ButtonDetail } from "../../common/Button/Button.jsx";
 import { blue, lightBlue } from "../../stylesBank/variables.jsx";
 import { useDispatch, useSelector } from "react-redux";
 import { getProductDetail } from "../../redux/actions/actionProducts";
@@ -14,8 +15,13 @@ import {
   ProductInfo,
   ProductDescription,
   ProductRating,
+  Name,
+  Rating,
+  SalePrice,
+  Images,
+  Image,
 } from "./styled";
-import AddComment from "../../Components/addComment/addComment.jsx";
+import AddComment from "../../Components/AddComment/AddComment.jsx";
 
 const ProductDetail = () => {
   const { id } = useParams();
@@ -52,26 +58,34 @@ const ProductDetail = () => {
     dispatch(addToCart(id));
     toast.success("Added Product");
   };
+
+  const [image, setImage] = useState(img ? img[0] : null);
+
   return (
     <Wrapper>
       <Container>
         <ProductImage>
-          <img src={img ? img[0] : null} alt="img not fund" />
+          <img src={image} alt="img not fund" />
         </ProductImage>
         <ProductInfo>
-          <h1>{name}</h1>
-          <p>
+          <Name>{name}</Name>
+          <Rating>
             {rating
               ? Array(Math.round(rating)).fill(<StarIcon fontSize="40px" />, 0)
               : null}
-          </p>
-          <div>${salePrice}</div>
-          <span>
-            <img></img>
-            <img></img>
-            <img></img>
-            <img></img>
-          </span>
+          </Rating>
+          <SalePrice>${salePrice}</SalePrice>
+          <Images>
+            {img
+              ? img.map((item, index) => (
+                  <Image
+                    src={item}
+                    key={index}
+                    onClick={() => setImage(item)}
+                  ></Image>
+                ))
+              : null}
+          </Images>
           <ButtonDetail backgroundColor={blue} width={"99%"}>
             Buy now
           </ButtonDetail>
