@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import StarIcon from "@mui/icons-material/Star";
@@ -58,7 +59,7 @@ const ProductDetail = () => {
     toast.success("Added Product");
   };
 
-  const [image, setImage] = useState(img[0]);
+  const [image, setImage] = useState(img ? img[0] : null);
 
   return (
     <Wrapper>
@@ -75,13 +76,15 @@ const ProductDetail = () => {
           </Rating>
           <SalePrice>${salePrice}</SalePrice>
           <Images>
-            {img.map((item, index) => (
-              <Image
-                src={item}
-                key={index}
-                onClick={() => setImage(item)}
-              ></Image>
-            ))}
+            {img
+              ? img.map((item, index) => (
+                  <Image
+                    src={item}
+                    key={index}
+                    onClick={() => setImage(item)}
+                  ></Image>
+                ))
+              : null}
           </Images>
           <ButtonDetail backgroundColor={blue} width={"99%"}>
             Buy now

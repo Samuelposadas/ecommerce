@@ -14,7 +14,8 @@ module.exports = {
   plugins: ["react"],
   rules: {
     "react/prop-types": "off",
-    indent: ["error", 2],
+    indent: ["error", 2, { ignoredNodes: ["JSXElement"] }],
+    "react/jsx-indent": ["error", 2],
     "linebreak-style": [0],
     quotes: ["error", "double"],
     semi: ["error", "always"],
