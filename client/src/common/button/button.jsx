@@ -13,7 +13,7 @@ export const Btn = styled.div`
 `;
 
 export const ButtonDetail = styled.button`
-  background-color: ${({ backgroundcolor }) => backgroundcolor || "#202020"};
+  background-color: ${({ backgroundcolor }) => backgroundcolor || "#0077ED"};
   color: ${({ color }) => color || "white"};
   width: ${({ width }) => width || "400px"};
   height: ${({ height }) => height || "40px"};
