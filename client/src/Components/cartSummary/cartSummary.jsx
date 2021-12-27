@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { ButtonDetail } from "../../common/Button/Button.jsx";
+import { ButtonDetail } from "../../common/button/button.jsx";
 import { cleanCart } from "../../redux/actions/actionCart";
 import Paypal from "../Paypal/Paypal.jsx";
 import { Container, Title, Items, LineBreak, Total } from "./styled";

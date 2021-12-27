@@ -6,7 +6,7 @@ import { CardsContainer, ContainerDisplay } from "./styled";
 import Card from "../../Components/Card/Card.jsx";
 import Navbar from "../../common/Navbar/Navbar.jsx";
 import Footer from "../../common/Footer/Footer.jsx";
-import { Paginate } from "../../Components/Pagination/Pagination.jsx";
+import { Paginate } from "../../Components/Pagination/pagination.jsx";
 import { SideBarFilters } from "../../common/Sidebar/Sidebar.jsx";
 
 // import Login from "../Login/Login";

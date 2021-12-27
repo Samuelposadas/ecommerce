@@ -1,5 +1,5 @@
 import React from "react";
-import { CardStripe } from "./CardStripe";
+import { CardStripe } from "./cardStripe";
 import styled from "styled-components";
 
 const REACT_APP_STRIPE = process.env.REACT_APP_STRIPE;
