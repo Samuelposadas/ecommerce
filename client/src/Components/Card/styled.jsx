@@ -5,6 +5,7 @@ export const Container = styled.div`
   background-color: white;
   display: flex;
   flex-direction: column;
+  justify-content: space-evenly;
   width: 310px;
   height: 330px;
   margin-top: 10px;
@@ -24,7 +25,7 @@ export const Image = styled.img`
   height: 190px;
   width: 240px;
   object-fit: contain;
-  margin: 20px;
+  padding: 20px;
 `;
 
 export const Title = styled.p`
@@ -38,19 +39,26 @@ export const Title = styled.p`
 export const Price = styled.p`
   font-size: 15px;
   font-weight: 400;
-  margin-top: 8px;
-  margin-bottom: 8px;
-  color: #147ce5;
-  margin-left: 20px;
-`;
 
-export const Rating = styled.div`
-  display: flex;
-  flex-direction: row;
-  margin-left: 20px;
-  color: #feb236;
+  color: #147ce5;
 `;
 
 export const StyledLink = styled(Link)`
   text-decoration: none;
+`;
+
+export const Wrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-left: 20px;
+  margin-right: 20px;
+  bottom: 40px;
+`;
+
+export const LogoContainer = styled.div`
+  font-size: 20px;
+  color: #0f1111;
+  margin-right: 10px;
+  cursor: pointer;
 `;
