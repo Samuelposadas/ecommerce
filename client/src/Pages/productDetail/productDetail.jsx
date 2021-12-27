@@ -36,7 +36,7 @@ const ProductDetail = () => {
     comments: [
       {
         content:
-          "This is a comment. This comment is supposed to be longer than one line. Just for testing.",
+          "This is a comment. This comment is supposed to be longer than one line. Just for testing purposes.",
         stars: 5,
       },
       {
@@ -74,7 +74,7 @@ const ProductDetail = () => {
               ? Array(Math.round(rating)).fill(<StarIcon fontSize="40px" />, 0)
               : null}
           </Rating>
-          <SalePrice>${salePrice}</SalePrice>
+          <SalePrice>{salePrice} USD</SalePrice>
           <Images>
             {img
               ? img.map((item, index) => (
@@ -86,21 +86,12 @@ const ProductDetail = () => {
                 ))
               : null}
           </Images>
-          <ButtonDetail backgroundColor={blue} width={"99%"}>
-            Buy now
-          </ButtonDetail>
-          <ButtonDetail
-            backgroundColor={lightBlue}
-            color={blue}
-            onClick={addCart}
-            width={"99%"}
-          >
+          <ButtonDetail width={"99%"}>Buy now</ButtonDetail>
+          <ButtonDetail onClick={addCart} width={"99%"}>
             Add to cart
           </ButtonDetail>
           <Link to={`/update/${id}`}>
-            <ButtonDetail backgroundColor={blue} width={"99%"}>
-              Edit
-            </ButtonDetail>
+            <ButtonDetail width={"99%"}>Edit</ButtonDetail>
           </Link>
         </ProductInfo>
         <ProductDescription>

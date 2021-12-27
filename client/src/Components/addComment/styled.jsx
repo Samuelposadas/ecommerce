@@ -4,7 +4,16 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: left;
-  width: 60%;
+  width: 100%;
+
+  input {
+    width: 100%;
+    height: 200px;
+  }
+
+  div {
+    margin-top: 15px;
+  }
 `;
 
 export const Star = styled.label`

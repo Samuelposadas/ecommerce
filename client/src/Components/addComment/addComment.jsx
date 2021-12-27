@@ -25,7 +25,7 @@ const AddComment = ({ id }) => {
   const validate = (input) => {
     let errors = {};
     if (input.length > 250) {
-      errors.comment = "Comment should be less than 250 characters";
+      errors.comment = "Comment should be less than 250 characters long";
     } else {
       errors.comment = "";
     }

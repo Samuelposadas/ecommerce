@@ -133,7 +133,7 @@ const CreateProduct = () => {
   return (
     <Container>
       <StyledForm onSubmit={handleSubmit}>
-        <Header>Create a product</Header>
+        <Header>Create product</Header>
         <Content>
           <input
             className={errors.name && "danger"}
