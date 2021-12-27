@@ -33,20 +33,22 @@ const Card = ({ img, name, salePrice, id }) => {
   //   };
   return (
     <>
-      <Container>
-        <StyledLink to={`/products/${id}`}>
-          <Title>{name}</Title>
-        </StyledLink>
-        <Image src={img[0]} alt="image not found" />
+      <StyledLink to={`/products/${id}`}>
+        <Container>
+          <StyledLink to={`/products/${id}`}>
+            <Title>{name}</Title>
+          </StyledLink>
+          <Image src={img ? img[0] : null} alt="image not found" />
 
-        <Wrapper>
-          <Price>{salePrice} USD</Price>
-          <LogoContainer>
-            <AiOutlineShoppingCart></AiOutlineShoppingCart>
-          </LogoContainer>
-        </Wrapper>
-        {/* <Rating>{Array(Math.round(rating)).fill(<StarIcon />, 0)}</Rating> */}
-      </Container>
+          <Wrapper>
+            <Price>{salePrice} USD</Price>
+            <LogoContainer>
+              <AiOutlineShoppingCart></AiOutlineShoppingCart>
+            </LogoContainer>
+          </Wrapper>
+          {/* <Rating>{Array(Math.round(rating)).fill(<StarIcon />, 0)}</Rating> */}
+        </Container>
+      </StyledLink>
     </>
   );
 };

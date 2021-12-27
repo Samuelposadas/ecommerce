@@ -51,6 +51,7 @@ const ProductDetail = () => {
       },
     ],
   };
+
   const { img, description, comments, name, salePrice, rating } =
     productComplete;
 
@@ -59,13 +60,13 @@ const ProductDetail = () => {
     toast.success("Added Product");
   };
 
-  const [image, setImage] = useState(img ? img[0] : null);
+  const [image, setImage] = useState(false);
 
   return (
     <Wrapper>
       <Container>
         <ProductImage>
-          <img src={image} alt="img not fund" />
+          <img src={image || img ? img[0] : null} alt="img not fund" />
         </ProductImage>
         <ProductInfo>
           <Name>{name}</Name>
