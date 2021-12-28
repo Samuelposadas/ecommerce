@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import React from "react";
 import { AiOutlineShoppingCart } from "react-icons/ai";
+import { useNavigate } from "react-router-dom";
 // import StarIcon from "@mui/icons-material/Star";
 import {
   Container,
@@ -31,16 +32,23 @@ const Card = ({ img, name, salePrice, id }) => {
   //     dispatch(addToCart(id));
   //     toast.success("Added Product");
   //   };
+  const navigate = useNavigate();
   return (
     <>
       <Container>
         <StyledLink to={`/products/${id}`}>
           <Title>{name}</Title>
         </StyledLink>
-        <Image src={img[0]} alt="image not found" />
+        <Image
+          onClick={() => navigate(`/products/${id}`)}
+          src={img[0]}
+          alt="image not found"
+        />
 
         <Wrapper>
-          <Price>{salePrice} USD</Price>
+          <Price onClick={() => navigate(`/products/${id}`)}>
+            {salePrice} USD
+          </Price>
           <LogoContainer>
             <AiOutlineShoppingCart></AiOutlineShoppingCart>
           </LogoContainer>
