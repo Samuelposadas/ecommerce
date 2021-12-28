@@ -28,8 +28,8 @@ export const CardStripe = () => {
     // eslint-disable-next-line no-undef
     toast.promise(saveSettings(settings), {
       loading: "Saving...",
-      success: <b>your purchase was successful!</b>,
-      error: <b>your purchase could not be made.</b>,
+      success: <b>Your purchase was successful!</b>,
+      error: <b>Your purchase could not be made.</b>,
     });
   };
   return (
