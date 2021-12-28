@@ -1,5 +1,10 @@
 const axios = require("axios");
-const { Product, Category, Supplier } = require("../db/db");
+const {
+  Product,
+  Category,
+  Supplier,
+  Specifict_Accesories,
+} = require("../db/db");
 const dataProducts = require("../productsDB/Products.json");
 const categories = require("../productsDB/Categories.json");
 const dataSuppliers = require("../productsDB/Suppliers.json");
@@ -78,6 +83,26 @@ const incomeComments = async () => {
   }
 };
 
+const addSpecifictAccesories = async () => {
+  const speAccesories = [
+    "HEADPHONE STAND",
+    "MOUSEPADS",
+    "LOADERS",
+    "SPEAKERS",
+    "MOUSE",
+    "PACKS",
+    "MICROPHONES",
+    "KEYBOARDS",
+    "BEDS",
+    " HEADPHONES",
+    "OTHERS",
+  ];
+
+  await speAccesories.map((element) => {
+    Specifict_Accesories.create({ name: element });
+  });
+};
+
 module.exports = {
   incomeCategory,
   incomeProductDB,
@@ -85,4 +110,5 @@ module.exports = {
   incomeUserTypes,
   incomeUsers,
   incomeComments,
+  addSpecifictAccesories,
 };
