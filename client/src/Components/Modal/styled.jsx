@@ -60,7 +60,6 @@ export const CloseModalButton = styled(MdClose)`
 
 export const Title = styled.h2`
   margin-top: 10px;
-  font-size: 25px;
   color: black;
   align-self: center;
   justify-self: center;
@@ -76,5 +75,4 @@ export const LineBreak = styled.hr`
 
 export const Message = styled.div`
   margin-left: 10px;
-  font-size: 12px;
 `;

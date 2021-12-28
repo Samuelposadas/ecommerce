@@ -12,11 +12,9 @@ export const StyledAdminSidebar = styled.div`
     .sidebarMenu {
       margin-bottom: 10px;
       .sidebarTitle {
-        font-size: 0.8em;
         color: #666;
       }
       .sidebarList {
-        font-size: 0.7em;
         padding: 10px;
         a {
           color: black;
@@ -35,7 +33,6 @@ export const StyledAdminSidebar = styled.div`
           }
           .sidebarIcon {
             margin-right: 5px;
-            font-size: 20px;
           }
         }
       }

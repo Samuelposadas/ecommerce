@@ -3,7 +3,6 @@ import styled from "styled-components";
 export const ContainerFilterMobile = styled.div`
   display: none;
   @media screen and (max-width: 768px) {
-    font-size: 30px;
     color: #2b2929;
     display: grid;
     grid-template-columns: 50% 50%;
@@ -59,7 +58,6 @@ export const OrderFilter = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  font-size: 15px;
   margin-left: 10px;
   margin-bottom: 40px;
   margin-top: 10px;

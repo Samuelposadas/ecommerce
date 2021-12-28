@@ -6,8 +6,6 @@ export const Pagination = styled.div`
   justify-content: center;
   height: 80px;
   align-items: center;
-  font-family: Georgia, "Times New Roman", Times, serif;
-  font-weight: lighter;
   color: #2b2929;
   background-color: #b5b4b832;
 `;
@@ -17,7 +15,6 @@ export const ButtonPage = styled.button`
   border-radius: none;
   color: #2b2929;
   background: none;
-  font-size: 17px;
   padding: 10px;
   height: 50%;
   width: 120px;
@@ -34,7 +31,6 @@ export const ButtonPage = styled.button`
 `;
 
 export const LabelPage = styled.label`
-  font-size: 20px;
   text-decoration: ${({ decoration }) => (decoration ? decoration : "none")};
   border: ${({ border }) => (border ? border : "none")};
   border-left: ${({ left }) => (left ? left : "none")};
@@ -49,7 +45,6 @@ export const LabelPage = styled.label`
 `;
 
 export const OutOf = styled.div`
-  font-size: 18px;
   background-color: ${({ br }) => (br ? br : "none")};
   border: ${({ border }) => (border ? border : "none")};
   border-left: ${({ left }) => (left ? left : "none")};

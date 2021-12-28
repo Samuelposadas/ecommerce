@@ -2,7 +2,7 @@ import React, { useRef, useEffect, useCallback } from "react";
 import { useSpring, animated } from "react-spring";
 import CartItem from "../CartItem/CartItem";
 import { useSelector } from "react-redux";
-import { ButtonDetail } from "../../common/button/button.jsx";
+import { ButtonDetail } from "../../common/Button/Button.jsx";
 import { Link } from "react-router-dom";
 import {
   GlobalStyle,

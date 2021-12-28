@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { ButtonDetail } from "../../common/button/button.jsx";
+import { ButtonDetail } from "../../common/Button/Button.jsx";
 import { cleanCart } from "../../redux/actions/actionCart";
 import Paypal from "../Paypal/Paypal.jsx";
 import { Container, Title, Items, LineBreak, Total } from "./styled";
@@ -25,7 +25,7 @@ const CartSumary = () => {
       <Title>Summary</Title>
       <Items>Items: {totalItems}</Items>
       <LineBreak />
-      <Total>Total: {totalPrice} USD</Total>
+      <Total>Total: ${totalPrice}</Total>
       <LineBreak />
       <ButtonDetail
         width={"max-width"}

@@ -12,16 +12,11 @@ export const Container = styled.div`
   }
 `;
 export const Title = styled.h2`
-  font-size: 25px;
   margin-bottom: 30px;
   color: black;
 `;
-export const Items = styled.div`
-  font-size: 15px;
-`;
-export const Total = styled.div`
-  font-size: 15px;
-`;
+export const Items = styled.div``;
+export const Total = styled.div``;
 
 export const LineBreak = styled.hr`
   width: 100%;

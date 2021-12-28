@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Container, Star } from "./styled.jsx";
 import StarIcon from "@mui/icons-material/Star";
-import { ButtonDetail } from "../../common/button/button.jsx";
+import { ButtonDetail } from "../../common/Button/Button.jsx";
 import { blue } from "../../stylesBank/variables";
 import { addComment } from "../../redux/actions/actionProducts";
 import { useDispatch } from "react-redux";

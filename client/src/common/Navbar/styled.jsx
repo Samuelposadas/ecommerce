@@ -8,8 +8,6 @@ export const Banner = styled.div`
   height: 45px;
   background-color: #232f3e;
   color: #e9e0e0ee;
-  font-size: 12px;
-  font-weight: 500;
   display: grid;
   align-items: center;
   justify-items: center;
@@ -25,8 +23,6 @@ export const Wrapper = styled.div`
 `;
 export const Space = styled.div``;
 export const Menu = styled.ul`
-  font-size: 12.5px;
-  font-weight: 610;
   color: #e9e0e0ee;
   display: grid;
   grid-template-columns: repeat(9, minmax(10px, auto));
@@ -35,7 +31,6 @@ export const Menu = styled.ul`
   align-items: center;
 `;
 export const LogoContainer = styled.div`
-  font-size: 25px;
   color: #e9e0e0ee;
   justify-self: center;
   align-self: center;
@@ -59,7 +54,6 @@ export const MobileIcon = styled.div`
 
     svg {
       fill: #e9e0e0ee;
-      font-size: 26px;
       cursor: pointer;
     }
   }
@@ -114,7 +108,6 @@ export const MobileDropdown = styled.ul`
   }
 `;
 export const MobileDropdownItem = styled.li`
-  font-size: 15px;
   border-bottom-style: solid;
   border-bottom-width: 1px;
   background-color: #2b2929;

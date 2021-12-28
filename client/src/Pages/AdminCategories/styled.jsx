@@ -19,7 +19,6 @@ export const StyledAdminCategories = styled.div`
       }
       .deleteItem {
         color: red;
-        font-size: 1.2em;
         cursor: pointer;
       }
     }

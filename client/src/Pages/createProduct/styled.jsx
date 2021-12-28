@@ -12,7 +12,6 @@ export const Container = styled.div`
 
 export const Header = styled.h2`
   width: 350px;
-  font-size: 35px;
   margin-bottom: 10px;
 `;
 
@@ -35,7 +34,6 @@ export const Content = styled.div`
   }
   & p.danger {
     color: red;
-    font-size: 15px;
     margin-top: 5px;
     width: 350px;
   }
@@ -43,16 +41,12 @@ export const Content = styled.div`
     border: 2px solid red;
   }
   & h3 {
-    font-size: 17px;
-    font-weight: bold;
     margin-bottom: 5px;
   }
 `;
 export const Select = styled.div`
   margin-top: 20px;
   & h3 {
-    font-size: 17px;
-    font-weight: bold;
     margin-bottom: 5px;
   }
   & select {
@@ -66,7 +60,6 @@ export const Select = styled.div`
   }
   & p.danger {
     color: red;
-    font-size: 15px;
   }
 `;
 
@@ -74,7 +67,6 @@ export const StyledButton = styled.button`
   margin-top: 40px;
   background-color: #060b26;
   border-radius: 10px;
-  font-size: 14px;
   padding: 20px;
   width: 350px;
   color: aliceblue;
@@ -113,7 +105,6 @@ export const InputImg = styled.div`
   }
   & p.danger {
     color: red;
-    font-size: 15px;
     margin-top: 5px;
     width: 350px;
   }

@@ -19,13 +19,11 @@ export const Container = styled.div`
 export const Star = styled.label`
   & .star {
     cursor: pointer;
-    font-size: 40px;
     transition: color 200ms;
   }
   & .starDisable {
     color: lightgrey;
     cursor: pointer;
-    font-size: 40px;
     transition: color 200ms;
   }
   & input[type="radio"] {

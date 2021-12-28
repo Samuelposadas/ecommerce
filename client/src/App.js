@@ -16,7 +16,8 @@ import RouterApp from "./Routes/RouterApp.jsx";
 const GlobalStyle = createGlobalStyle`
   body {
     font-family: 'Trebuchet MS', sans-serif;
-	font:menu;
+	font-size: 13px;
+	font-weight: normal;
     background-color : ${(props) => props.theme.body};
     color : ${(props) => props.theme.fontColor};
   }

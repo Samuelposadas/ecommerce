@@ -3,7 +3,6 @@ import styled from "styled-components";
 export const Container = styled.div`
   color: #e9e0e0ee;
   background-color: #0f1111;
-  font-size: 20px;
   padding-top: 15px;
   padding-bottom: 15px;
 `;
@@ -27,11 +26,9 @@ export const Card = styled.ul`
   width: 130px;
 `;
 export const CardTitle = styled.h1`
-  font-size: 21px;
   margin-bottom: 10px;
 `;
 export const CardLink = styled.li`
-  font-size: 14px;
   list-style-type: none;
   cursor: pointer;
   padding: 5px;

@@ -14,7 +14,6 @@ export const StyledAdminProducts = styled.div`
         object-fit: cover;
       }
       .productName {
-        font-size: 0.8em;
       }
     }
     .actionsColumn {
@@ -27,12 +26,10 @@ export const StyledAdminProducts = styled.div`
         color: green;
         padding: 5px 10px;
         margin-right: 5px;
-        font-size: 0.8em;
         cursor: pointer;
       }
       .deleteItem {
         color: red;
-        font-size: 1.2em;
         cursor: pointer;
       }
     }
