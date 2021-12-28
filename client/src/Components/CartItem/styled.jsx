@@ -10,7 +10,6 @@ export const Container = styled.div`
   }
 
   p {
-    font-size: 15px;
     grid-area: name;
     grid-column-start: 2;
     grid-column-end: 2;
@@ -27,7 +26,6 @@ export const Container = styled.div`
     grid-row-end: 2;
   }
   svg {
-    font-size: 20px;
     grid-area: delete;
     cursor: pointer;
     color: #636060e2;
@@ -39,7 +37,6 @@ export const Container = styled.div`
   }
   h3 {
     grid-area: price;
-    font-size: 15px;
     justify-self: end;
     grid-column-start: 3;
     grid-column-end: 3;

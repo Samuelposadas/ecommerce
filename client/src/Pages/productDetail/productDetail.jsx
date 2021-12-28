@@ -96,14 +96,14 @@ const ProductDetail = () => {
           </Link>
         </ProductInfo>
         <ProductDescription>
-          <h1>Description</h1>
+          <p>Description</p>
           <p>{description}</p>
         </ProductDescription>
         <ProductRating>
-          <h1>Add review</h1>
+          <p>Add review</p>
           <AddComment id={id} />
 
-          <h1>Reviews</h1>
+          <p>Reviews</p>
           {comments?.map((comment, index) => (
             <div key={index}>
               {Array(Math.round(comment.stars)).fill(

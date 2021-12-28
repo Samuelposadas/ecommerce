@@ -25,7 +25,6 @@ export const Products = styled.div`
 `;
 
 export const Title = styled.h2`
-  font-size: 25px;
   margin-bottom: 30px;
   color: black;
 `;

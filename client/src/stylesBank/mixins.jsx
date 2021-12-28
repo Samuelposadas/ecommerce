@@ -8,7 +8,6 @@ export const displayGrid = () => css`
   gap: 5px;
 `;
 export const basicStyle = () => css`
-  font-weight: bold;
   padding: 8px;
   border-radius: 15px;
   border: none;

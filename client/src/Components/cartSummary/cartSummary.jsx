@@ -25,7 +25,7 @@ const CartSumary = () => {
       <Title>Summary</Title>
       <Items>Items: {totalItems}</Items>
       <LineBreak />
-      <Total>Total: {totalPrice} USD</Total>
+      <Total>Total: ${totalPrice}</Total>
       <LineBreak />
       <ButtonDetail
         width={"max-width"}

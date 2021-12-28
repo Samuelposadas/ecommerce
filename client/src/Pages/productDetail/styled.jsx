@@ -67,19 +67,15 @@ export const ProductInfo = styled.div`
   margin-right: 15px;
 `;
 
-export const Name = styled.h1`
-  font-size: 18px;
-`;
+export const Name = styled.p``;
 
 export const Rating = styled.p`
-  font-size: 17px;
   margin-top: 5px;
   margin-bottom: 20px;
   color: #feb236;
 `;
 
 export const SalePrice = styled.div`
-  font-size: 17px;
   margin-bottom: 20px;
 `;
 
@@ -100,19 +96,15 @@ export const Image = styled.img`
 `;
 export const ProductDescription = styled.div`
   grid-area: description;
-  font-size: 15px;
 
-  h1 {
-    font-size: 20px;
+  p {
     margin-bottom: 10px;
   }
 `;
 export const ProductRating = styled.div`
   grid-area: rating;
-  font-size: 15px;
 
-  h1 {
-    font-size: 20px;
+  p {
     margin-bottom: 10px;
   }
   div {

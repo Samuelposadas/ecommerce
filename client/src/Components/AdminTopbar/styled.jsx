@@ -15,7 +15,6 @@ export const StyledAdminTopbar = styled.div`
     border-bottom: 1px #555 dotted;
     .topLeft {
       .logo {
-        font-weight: bold;
         cursor: pointer;
       }
     }
@@ -28,13 +27,11 @@ export const StyledAdminTopbar = styled.div`
         position: relative;
         cursor: pointer;
         .icon {
-          font-size: 25px;
         }
         .topIconBadge {
           position: absolute;
           top: -5px;
           right: 0px;
-          font-size: 0.7em;
           color: white;
           width: 15px;
           height: 15px;

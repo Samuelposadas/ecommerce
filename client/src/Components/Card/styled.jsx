@@ -29,17 +29,12 @@ export const Image = styled.img`
 `;
 
 export const Title = styled.p`
-  font-size: 15px;
-  font-weight: 200;
   margin-left: 20px;
   margin-right: 20px;
   color: black;
 `;
 
 export const Price = styled.p`
-  font-size: 15px;
-  font-weight: 400;
-
   color: #147ce5;
 `;
 
@@ -57,7 +52,6 @@ export const Wrapper = styled.div`
 `;
 
 export const LogoContainer = styled.div`
-  font-size: 20px;
   color: #0f1111;
   margin-right: 10px;
   cursor: pointer;

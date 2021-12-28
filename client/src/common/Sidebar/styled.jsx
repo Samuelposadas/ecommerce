@@ -34,14 +34,12 @@ export const FilterDiv = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  font-size: 15px;
   margin-left: 30px;
   margin-bottom: 40px;
 `;
 
 export const ItemLi = styled.li`
   padding: 10px;
-  font-weight: 300;
   cursor: pointer;
   color: #999999;
   &:hover {
@@ -51,20 +49,14 @@ export const ItemLi = styled.li`
 `;
 
 export const Title = styled.div`
-  font-weight: 900;
-  font-size: 15px;
   margin-bottom: 5px;
 `;
 
 export const Category = styled.div`
-  font-weight: 900;
-  font-size: 20px;
-
   margin-left: 30px;
 `;
 
 export const LabelStyled = styled.label`
-  font-size: 15px;
   margin-right: -15px;
   margin-bottom: 10px;
   @media screen and (max-width: 768px) {
@@ -77,7 +69,6 @@ export const SelectStyled = styled.select`
   background-color: transparent;
   color: #999999;
   border: none;
-  font-size: 15px;
   cursor: pointer;
 `;
 
