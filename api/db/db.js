@@ -10,8 +10,10 @@ const modelOrder = require("../models/Order");
 const modelOrderDetail = require("../models/Order_Detail");
 const modelComment = require("../models/Comment");
 const modelTypeOrder = require("../models/Type_Order");
+const modelBrands = require("../model/Brands");
 const { DB_USER, DB_PASSWORD, DB_HOST, DB_NAME } = process.env;
 
+/* eslint-disable */
 const sequelize =
   process.env.NODE_ENV === "production"
     ? new Sequelize({
@@ -55,6 +57,7 @@ modelOrder(sequelize);
 modelOrderDetail(sequelize);
 modelComment(sequelize);
 modelTypeOrder(sequelize);
+modelBrands(sequelize);
 
 // En sequelize.models están todos los modelos importados como propiedades
 // Para relacionarlos hacemos un destructuring
@@ -71,6 +74,7 @@ const {
   Order_Detail,
   Comment,
   Type_Order,
+  Brands,
 } = sequelize.models;
 
 // Aca vendrian las relaciones
@@ -123,6 +127,9 @@ Comment.belongsTo(User, { foreignKey: "id_User" });
 
 Type_Order.hasMany(Order, { foreignKey: "id_Type_Order" });
 Order.belongsTo(Type_Order, { foreignKey: "id_Type_Order" });
+
+Brands.hasMany(Product, { foreignKey: "id_Brand" });
+Product.belongsTo(Brands, { foreignKey: "id_Brand" });
 
 module.exports = {
   ...sequelize.models, // para poder importar los modelos así: const { Product, User } = require('./db.js');
