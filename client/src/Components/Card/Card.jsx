@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import React from "react";
 import { AiOutlineShoppingCart } from "react-icons/ai";
+import { useNavigate } from "react-router-dom";
 // import StarIcon from "@mui/icons-material/Star";
 import {
   Container,
@@ -31,24 +32,29 @@ const Card = ({ img, name, salePrice, id }) => {
   //     dispatch(addToCart(id));
   //     toast.success("Added Product");
   //   };
+  const navigate = useNavigate();
   return (
     <>
-      <StyledLink to={`/products/${id}`}>
-        <Container>
-          <StyledLink to={`/products/${id}`}>
-            <Title>{name}</Title>
-          </StyledLink>
-          <Image src={img ? img[0] : null} alt="image not found" />
+      <Container>
+        <StyledLink to={`/products/${id}`}>
+          <Title>{name}</Title>
+        </StyledLink>
+        <Image
+          onClick={() => navigate(`/products/${id}`)}
+          src={img[0]}
+          alt="image not found"
+        />
 
-          <Wrapper>
-            <Price>{salePrice} USD</Price>
-            <LogoContainer>
-              <AiOutlineShoppingCart></AiOutlineShoppingCart>
-            </LogoContainer>
-          </Wrapper>
-          {/* <Rating>{Array(Math.round(rating)).fill(<StarIcon />, 0)}</Rating> */}
-        </Container>
-      </StyledLink>
+        <Wrapper>
+          <Price onClick={() => navigate(`/products/${id}`)}>
+            {salePrice} USD
+          </Price>
+          <LogoContainer>
+            <AiOutlineShoppingCart></AiOutlineShoppingCart>
+          </LogoContainer>
+        </Wrapper>
+        {/* <Rating>{Array(Math.round(rating)).fill(<StarIcon />, 0)}</Rating> */}
+      </Container>
     </>
   );
 };
