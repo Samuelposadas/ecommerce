@@ -42,6 +42,7 @@ export const LabelPage = styled.label`
   padding: 10px;
   width: 40px;
   padding-bottom: 10px;
+  padding-top: 13px;
 `;
 
 export const OutOf = styled.div`
@@ -53,4 +54,5 @@ export const OutOf = styled.div`
   height: 50%;
   text-align: center;
   padding: 10px;
+  padding-top: 13px;
 `;

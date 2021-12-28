@@ -10,7 +10,7 @@ const modelOrder = require("../models/Order");
 const modelOrderDetail = require("../models/Order_Detail");
 const modelComment = require("../models/Comment");
 const modelTypeOrder = require("../models/Type_Order");
-const modelBrands = require("../model/Brands");
+const modelBrands = require("../models/Brands");
 const { DB_USER, DB_PASSWORD, DB_HOST, DB_NAME } = process.env;
 
 /* eslint-disable */
