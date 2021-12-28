@@ -8,7 +8,6 @@ import {
   Image,
   Title,
   Price,
-  StyledLink,
   LogoContainer,
   Wrapper,
 } from "./styled";
@@ -36,9 +35,7 @@ const Card = ({ img, name, salePrice, id }) => {
   return (
     <>
       <Container>
-        <StyledLink to={`/products/${id}`}>
-          <Title>{name}</Title>
-        </StyledLink>
+        <Title onClick={() => navigate(`/products/${id}`)}>{name}</Title>
         <Image
           onClick={() => navigate(`/products/${id}`)}
           src={img[0]}

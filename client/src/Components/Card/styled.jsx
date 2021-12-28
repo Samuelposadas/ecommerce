@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { Link } from "react-router-dom";
 
 export const Container = styled.div`
   background-color: white;
@@ -17,6 +16,7 @@ export const Container = styled.div`
   &:hover {
     transform: scale(1.01, 1.01);
     box-shadow: 0 0 10px #d8d8d8;
+    cursor: pointer;
   }
 `;
 
@@ -36,16 +36,14 @@ export const Title = styled.p`
 
 export const Price = styled.p`
   color: #147ce5;
-`;
-
-export const StyledLink = styled(Link)`
-  text-decoration: none;
+  font-size: 13.5px;
 `;
 
 export const Wrapper = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
   margin-left: 20px;
   margin-right: 20px;
   bottom: 40px;
@@ -54,5 +52,6 @@ export const Wrapper = styled.div`
 export const LogoContainer = styled.div`
   color: #0f1111;
   margin-right: 10px;
+  font-size: 21px;
   cursor: pointer;
 `;

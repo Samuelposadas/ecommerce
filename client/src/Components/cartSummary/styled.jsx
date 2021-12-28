@@ -25,3 +25,8 @@ export const LineBreak = styled.hr`
   margin-bottom: 30px;
   margin-top: 30px;
 `;
+
+export const CleanCart = styled.div`
+  text-decoration: underline;
+  cursor: pointer;
+`;

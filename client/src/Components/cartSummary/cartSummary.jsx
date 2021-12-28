@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { ButtonDetail } from "../../common/button/button.jsx";
 import { cleanCart } from "../../redux/actions/actionCart";
 import Paypal from "../Paypal/Paypal.jsx";
-import { Container, Title, Items, LineBreak, Total } from "./styled";
+import { Container, Title, Items, LineBreak, Total, CleanCart } from "./styled";
 
 const CartSumary = () => {
   const dispatch = useDispatch();
@@ -27,13 +27,8 @@ const CartSumary = () => {
       <LineBreak />
       <Total>Total: ${totalPrice}</Total>
       <LineBreak />
-      <ButtonDetail
-        width={"max-width"}
-        backgroundcolor={"#d60a0ad1"}
-        onClick={() => dispatch(cleanCart())}
-      >
-        Clean Cart
-      </ButtonDetail>
+      <CleanCart onClick={() => dispatch(cleanCart())}>Clean Cart</CleanCart>
+      <LineBreak />
       <Paypal></Paypal>
       <ButtonDetail width={"max-width"} backgroundcolor={"#0077ED"}>
         Bitcoin
