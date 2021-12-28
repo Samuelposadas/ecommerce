@@ -76,7 +76,10 @@ export const Modal = ({ showModal, setShowModal }) => {
                       </ItemWrapper>
                     ))
                   ) : (
-                    <Message>Your shopping cart is empty.</Message>
+                    <Message>
+                      Your shopping cart is empty. Go to home page to add
+                      products.
+                    </Message>
                   )}
                   <Link to={"/shop"}>
                     <ButtonDetail width={"365px"}>Checkout</ButtonDetail>
