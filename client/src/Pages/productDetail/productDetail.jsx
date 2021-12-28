@@ -66,7 +66,7 @@ const ProductDetail = () => {
     <Wrapper>
       <Container>
         <ProductImage>
-          <img src={image || img ? img[0] : null} alt="img not fund" />
+          <img src={image || (img ? img[0] : null)} alt="img not fund" />
         </ProductImage>
         <ProductInfo>
           <Name>{name}</Name>
