@@ -8,7 +8,7 @@ module.exports = (sequelize) => {
     {
       ram: {
         type: DataTypes.ENUM,
-        values: [1, 2, 4, 8, 16, 32],
+        values: ["1", "2", "4", "8", "16", "32"],
       },
       processor: {
         type: DataTypes.STRING,
