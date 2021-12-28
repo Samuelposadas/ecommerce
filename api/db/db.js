@@ -68,7 +68,6 @@ modelSubCategories(sequelize);
 
 modelSpecifict_Accesories(sequelize);
 
-
 // En sequelize.models están todos los modelos importados como propiedades
 // Para relacionarlos hacemos un destructuring
 
@@ -89,7 +88,6 @@ const {
   Sub_Categories,
 
   Specifict_Accesories,
-
 } = sequelize.models;
 
 // Aca vendrian las relaciones
@@ -143,16 +141,14 @@ Comment.belongsTo(User, { foreignKey: "id_User" });
 Type_Order.hasMany(Order, { foreignKey: "id_Type_Order" });
 Order.belongsTo(Type_Order, { foreignKey: "id_Type_Order" });
 
-
 Brands.hasMany(Product, { foreignKey: "id_Brand" });
 Product.belongsTo(Brands, { foreignKey: "id_Brand" });
 
-Product.hasOne(Sub_Categories, { foreignKey: "id_Sub_Categories" });
-Sub_Categories.belongsTo(Product, { foreignKey: "id_Sub_Categories" });
+Sub_Categories.hasOne(Product, { foreignKey: "id_Sub_Categories" });
+Product.belongsTo(Sub_Categories, { foreignKey: "id_Sub_Categories" });
 
 Specifict_Accesories.hasMany(Product, { foreignKey: "id_Accesories" });
 Product.belongsTo(Specifict_Accesories, { foreignKey: "id_Accesories" });
-
 
 module.exports = {
   ...sequelize.models, // para poder importar los modelos así: const { Product, User } = require('./db.js');
