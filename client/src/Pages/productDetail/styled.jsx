@@ -18,7 +18,7 @@ export const Container = styled.div`
   max-width: 950px;
 
   background-color: white;
-  border-radius: 20px;
+  border-radius: 0px;
 
   display: grid;
   gap: 2rem;
