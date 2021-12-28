@@ -4,10 +4,11 @@ const { DataTypes } = require("sequelize");
 module.exports = (sequelize) => {
   // defino el modelo
   sequelize.define(
-    "Filter_Products",
+    "Sub_Categories",
     {
       ram: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.ENUM,
+        values: [1, 2, 4, 8, 16, 32],
       },
       processor: {
         type: DataTypes.STRING,
@@ -22,13 +23,22 @@ module.exports = (sequelize) => {
         type: DataTypes.BOOLEAN,
       },
       opeSystem: {
-        type: DataTypes.STRING,
+        type: DataTypes.ENUM,
+        values: ["Linux", "Windows", "Mac OS", "Android", "iOS"],
       },
       resolution: {
         type: DataTypes.STRING,
       },
       typeScreen: {
-        type: DataTypes.STRING,
+        type: DataTypes.ENUM,
+        values: [
+          "LCD",
+          "LED",
+          "TouchScreen",
+          "Amoled",
+          "OLED",
+          "Gorilla Glass",
+        ],
       },
     },
     { timestamps: false }
