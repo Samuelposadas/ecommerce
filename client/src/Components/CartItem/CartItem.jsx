@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { editQuantity, removeFromCart } from "../../redux/actions/actionCart";
-import { Toaster, toast } from "react-hot-toast";
+import { toast } from "react-hot-toast";
 import { FaRegTrashAlt } from "react-icons/fa";
 import { Container } from "./styled.jsx";
 
@@ -24,7 +24,6 @@ const CartItem = ({ img, name, salePrice, id, quantity }) => {
       <FaRegTrashAlt onClick={() => deleteItem(id)}></FaRegTrashAlt>
 
       <h3>{salePrice}</h3>
-      <Toaster />
     </Container>
   );
 };

@@ -37,14 +37,13 @@ export const ModalContent = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: start;
   color: #141414;
   overflow: scroll;
   max-width: 400px;
   margin-top: 10px;
   margin-bottom: 10px;
   padding-bottom: 75px;
-  padding-top: 300px;
 `;
 
 export const CloseModalButton = styled(MdClose)`
@@ -71,6 +70,11 @@ export const LineBreak = styled.hr`
   color: #f5eded50;
   margin-bottom: 30px;
   margin-top: 30px;
+`;
+
+export const LineBreakTop = styled.hr`
+  height: 1px;
+  color: #f5eded50;
 `;
 
 export const Message = styled.div`
