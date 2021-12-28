@@ -44,7 +44,7 @@ export const ModalContent = styled.div`
   margin-top: 10px;
   margin-bottom: 10px;
   padding-bottom: 75px;
-  padding-top: 170px;
+  padding-top: 300px;
 `;
 
 export const CloseModalButton = styled(MdClose)`

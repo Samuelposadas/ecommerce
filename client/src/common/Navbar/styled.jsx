@@ -34,6 +34,7 @@ export const LogoContainer = styled.div`
   color: #e9e0e0ee;
   justify-self: center;
   align-self: center;
+  font-size: 22px;
   cursor: pointer;
 `;
 export const MenuItem = styled.li`
@@ -51,6 +52,7 @@ export const MobileIcon = styled.div`
     display: grid;
     align-items: center;
     justify-items: center;
+    font-size: 25px;
 
     svg {
       fill: #e9e0e0ee;

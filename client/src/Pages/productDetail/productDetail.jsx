@@ -3,7 +3,6 @@ import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import StarIcon from "@mui/icons-material/Star";
 import { ButtonDetail } from "../../common/button/button.jsx";
-import { blue, lightBlue } from "../../stylesBank/variables.jsx";
 import { useDispatch, useSelector } from "react-redux";
 import { getProductDetail } from "../../redux/actions/actionProducts";
 import { addToCart } from "../../redux/actions/actionCart";
@@ -87,12 +86,12 @@ const ProductDetail = () => {
                 ))
               : null}
           </Images>
-          <ButtonDetail width={"99%"}>Buy now</ButtonDetail>
-          <ButtonDetail onClick={addCart} width={"99%"}>
+          <ButtonDetail width={"100%"}>Buy now</ButtonDetail>
+          <ButtonDetail onClick={addCart} width={"100%"}>
             Add to cart
           </ButtonDetail>
           <Link to={`/update/${id}`}>
-            <ButtonDetail width={"99%"}>Edit</ButtonDetail>
+            <ButtonDetail width={"100%"}>Edit</ButtonDetail>
           </Link>
         </ProductInfo>
         <ProductDescription>

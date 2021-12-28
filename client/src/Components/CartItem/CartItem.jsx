@@ -9,7 +9,7 @@ const CartItem = ({ img, name, salePrice, id, quantity }) => {
   const dispatch = useDispatch();
   const deleteItem = (id) => {
     dispatch(removeFromCart(id));
-    toast.success("Product Remove");
+    toast.success("Product Removed");
   };
   const [input, setInput] = useState(quantity);
   const handleChange = (e) => {
@@ -23,7 +23,7 @@ const CartItem = ({ img, name, salePrice, id, quantity }) => {
       <input value={input} min="1" type="number" onChange={handleChange} />
       <FaRegTrashAlt onClick={() => deleteItem(id)}></FaRegTrashAlt>
 
-      <h3>${salePrice}</h3>
+      <h3>{salePrice}</h3>
       <Toaster />
     </Container>
   );

@@ -65,6 +65,10 @@ export const ProductInfo = styled.div`
   display: flex;
   flex-direction: column;
   margin-right: 15px;
+
+  @media screen and (max-width: 900px) {
+    margin-right: 0px;
+  }
 `;
 
 export const Name = styled.p``;
@@ -96,13 +100,19 @@ export const Image = styled.img`
 `;
 export const ProductDescription = styled.div`
   grid-area: description;
+  margin-right: 20px;
 
   p {
     margin-bottom: 10px;
   }
+
+  @media screen and (max-width: 900px) {
+    margin-right: 0px;
+  }
 `;
 export const ProductRating = styled.div`
   grid-area: rating;
+  margin-right: 20px;
 
   p {
     margin-bottom: 10px;
@@ -112,5 +122,8 @@ export const ProductRating = styled.div`
     svg {
       color: #feb236;
     }
+  }
+  @media screen and (max-width: 900px) {
+    margin-right: 0px;
   }
 `;

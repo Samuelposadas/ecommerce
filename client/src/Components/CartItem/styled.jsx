@@ -2,12 +2,8 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   display: grid;
-  grid-template-columns: 20% 70% 10%;
-  grid-template-rows: 60px 20%;
-
-  @media screen and (max-width: 500px) {
-    grid-template-columns: 25% 60% 15%;
-  }
+  grid-template-columns: 25% 55% 15%;
+  grid-template-rows: 60px 1fr;
 
   p {
     grid-area: name;
@@ -24,6 +20,7 @@ export const Container = styled.div`
     grid-column-end: 2;
     grid-row-start: 2;
     grid-row-end: 2;
+    -moz-appearance: textfield;w
   }
   svg {
     grid-area: delete;
@@ -33,6 +30,7 @@ export const Container = styled.div`
     grid-column-end: 2;
     grid-row-start: 2;
     grid-row-end: 2;
+    font-size: 18px;
     margin-left: 70px;
   }
   h3 {
