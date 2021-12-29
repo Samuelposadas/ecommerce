@@ -65,11 +65,11 @@ const CreateProduct = () => {
       }));
     }
 
-    if (e.target.value !== "") {
-      setIsActive(true);
-    } else {
-      setIsActive(false);
-    }
+    // if (e.target.value !== "") {
+    //   setIsActive(true);
+    // } else {
+    //   setIsActive(false);
+    // }
   }
   useEffect(() => {
     setErrors(validate(input));
@@ -140,8 +140,6 @@ const CreateProduct = () => {
     }
   };
 
-  const [isActive, setIsActive] = useState(false);
-
   return (
     <Container>
       <StyledForm onSubmit={handleSubmit}>
@@ -154,7 +152,7 @@ const CreateProduct = () => {
             value={input.name}
             onChange={handleChange}
           />
-          <Label active={isActive}>Name</Label>
+          <Label active={input.name}>Name</Label>
           {errors.name && <Danger>{errors.name}</Danger>}
         </Content>
         <Content>
@@ -165,7 +163,7 @@ const CreateProduct = () => {
             value={input.description}
             onChange={handleChange}
           />
-          <Label active={isActive}>Description</Label>
+          <Label active={input.description}>Description</Label>
           {errors.description && <Danger>{errors.description}</Danger>}
         </Content>
         <Content>
@@ -176,7 +174,7 @@ const CreateProduct = () => {
             value={input.salePrice}
             onChange={handleChange}
           />
-          <Label active={isActive}>Sale Price</Label>
+          <Label active={input.salePrice}>Sale Price</Label>
           {errors.salePrice && <Danger>{errors.salePrice}</Danger>}
         </Content>
         <Content>
@@ -187,7 +185,7 @@ const CreateProduct = () => {
             value={input.rating}
             onChange={handleChange}
           />
-          <Label active={isActive}>Rating</Label>
+          <Label active={input.rating}>Rating</Label>
           {errors.rating && <Danger>{errors.rating}</Danger>}
         </Content>
         <Content>
@@ -198,7 +196,7 @@ const CreateProduct = () => {
             value={input.stock}
             onChange={handleChange}
           />
-          <Label active={isActive}>Stock</Label>
+          <Label active={input.stock}>Stock</Label>
           {errors.stock && <Danger>{errors.stock}</Danger>}
         </Content>
         <Content>
@@ -209,7 +207,7 @@ const CreateProduct = () => {
             value={input.imgTotal}
             onChange={handleChange}
           />
-          <Label active={isActive}>Images</Label>
+          <Label active={input.imgTotal}>Images</Label>
           <button onClick={handleClickImg}>Add img</button>
           {errors.img && <Danger>{errors.img}</Danger>}
         </Content>
@@ -221,7 +219,7 @@ const CreateProduct = () => {
             value={input.discount}
             onChange={handleChange}
           />
-          <Label active={isActive}>Discount</Label>
+          <Label active={input.discount}>Discount</Label>
           {errors.discount && <Danger>{errors.discount}</Danger>}
         </Content>
         <Content>
@@ -232,7 +230,7 @@ const CreateProduct = () => {
             value={input.purchasePrice}
             onChange={handleChange}
           />
-          <Label active={isActive}>Purchase Price</Label>
+          <Label active={input.purchasePrice}>Purchase Price</Label>
           {errors.purchasePrice && <Danger>{errors.purchasePrice}</Danger>}
         </Content>
         <Select>
