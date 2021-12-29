@@ -14,13 +14,13 @@ export const Container = styled.div`
   }
   input {
     height: 20px;
-    width: 50px;
+    width: 30px;
     color: #636060e2;
     grid-column-start: 2;
     grid-column-end: 2;
     grid-row-start: 2;
     grid-row-end: 2;
-    -moz-appearance: textfield;w
+    -moz-appearance: textfield;
   }
   svg {
     grid-area: delete;
@@ -43,9 +43,9 @@ export const Container = styled.div`
   }
 
   img {
-    height: ${({ height }) => height || "100%"};
-    width: ${({ width }) => width || "100%"};
-    margin: 0;
+    height: ${({ height }) => height || "95%"};
+    width: ${({ width }) => width || "95%"};
+    margin: 0px;
     object-fit: contain;
     grid-column-start: 1;
     grid-column-end: 1;

@@ -11,26 +11,18 @@ import {
   LogoContainer,
   Wrapper,
 } from "./styled";
-// import { addToCart } from "../../redux/actions/actionCart";
-// import { Toaster, toast } from "react-hot-toast";
-// import { useDispatch } from "react-redux";
-// import { useParams } from "react-router-dom";
-// import { useEffect } from "react";
-// import { getProductDetail } from "../../redux/actions/actionProducts";
+import { addToCart } from "../../redux/actions/actionCart";
+import { toast } from "react-hot-toast";
+import { useDispatch } from "react-redux";
 
 const Card = ({ img, name, salePrice, id }) => {
-  //   const { id } = useParams();
+  const dispatch = useDispatch();
 
-  //   const dispatch = useDispatch();
+  const addCart = () => {
+    dispatch(addToCart(id));
+    toast.success("Added Product");
+  };
 
-  //   useEffect(() => {
-  //     dispatch(getProductDetail(id));
-  //   }, []);
-
-  //   const addCart = () => {
-  //     dispatch(addToCart(id));
-  //     toast.success("Added Product");
-  //   };
   const navigate = useNavigate();
   return (
     <>
@@ -47,7 +39,7 @@ const Card = ({ img, name, salePrice, id }) => {
             {salePrice} USD
           </Price>
           <LogoContainer>
-            <AiOutlineShoppingCart></AiOutlineShoppingCart>
+            <AiOutlineShoppingCart onClick={addCart}></AiOutlineShoppingCart>
           </LogoContainer>
         </Wrapper>
         {/* <Rating>{Array(Math.round(rating)).fill(<StarIcon />, 0)}</Rating> */}

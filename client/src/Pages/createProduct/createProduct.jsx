@@ -16,6 +16,9 @@ import {
   Select,
   StyledButton,
   StyledForm,
+  Input,
+  Label,
+  Danger,
 } from "./styled.jsx";
 
 const CreateProduct = () => {
@@ -61,6 +64,12 @@ const CreateProduct = () => {
         [e.target.name]: parseInt(e.target.value),
       }));
     }
+
+    // if (e.target.value !== "") {
+    //   setIsActive(true);
+    // } else {
+    //   setIsActive(false);
+    // }
   }
   useEffect(() => {
     setErrors(validate(input));
@@ -130,100 +139,99 @@ const CreateProduct = () => {
       }));
     }
   };
+
   return (
     <Container>
       <StyledForm onSubmit={handleSubmit}>
         <Header>Create product</Header>
         <Content>
-          <input
-            className={errors.name && "danger"}
+          <Input
+            error={errors.name}
             type="text"
             name="name"
             value={input.name}
             onChange={handleChange}
-            placeholder="product name"
           />
-          {errors.name && <p className="danger">{errors.name}</p>}
+          <Label active={input.name}>Name</Label>
+          {errors.name && <Danger>{errors.name}</Danger>}
         </Content>
         <Content>
-          <input
-            className={errors.description && "danger"}
+          <Input
+            error={errors.description}
             type="text"
             name="description"
-            placeholder="product description"
             value={input.description}
             onChange={handleChange}
           />
-          {errors.description && <p className="danger">{errors.description}</p>}
+          <Label active={input.description}>Description</Label>
+          {errors.description && <Danger>{errors.description}</Danger>}
         </Content>
         <Content>
-          <input
-            className={errors.salePrice && "danger"}
+          <Input
+            error={errors.salePrice}
             type="number"
             name="salePrice"
-            placeholder="product salePrice"
             value={input.salePrice}
             onChange={handleChange}
           />
-          {errors.salePrice && <p className="danger">{errors.salePrice}</p>}
+          <Label active={input.salePrice}>Sale Price</Label>
+          {errors.salePrice && <Danger>{errors.salePrice}</Danger>}
         </Content>
         <Content>
-          <input
-            className={errors.rating && "danger"}
+          <Input
+            error={errors.rating}
             type="number"
             name="rating"
-            placeholder="product rating"
             value={input.rating}
             onChange={handleChange}
           />
-          {errors.rating && <p className="danger">{errors.rating}</p>}
+          <Label active={input.rating}>Rating</Label>
+          {errors.rating && <Danger>{errors.rating}</Danger>}
         </Content>
         <Content>
-          <input
-            className={errors.stock && "danger"}
+          <Input
+            error={errors.stock}
             type="number"
             name="stock"
-            placeholder="product stock"
             value={input.stock}
             onChange={handleChange}
           />
-          {errors.stock && <p className="danger">{errors.stock}</p>}
+          <Label active={input.stock}>Stock</Label>
+          {errors.stock && <Danger>{errors.stock}</Danger>}
         </Content>
         <Content>
-          <input
-            className={errors.img && "danger"}
-            type="text"
+          <Input
+            error={errors.img}
+            type="image"
             name="imgTotal"
-            placeholder="products img"
             value={input.imgTotal}
             onChange={handleChange}
           />
+          <Label active={input.imgTotal}>Images</Label>
           <button onClick={handleClickImg}>Add img</button>
-          {errors.img && <p className="danger">{errors.img}</p>}
+          {errors.img && <Danger>{errors.img}</Danger>}
         </Content>
         <Content>
-          <input
-            className={errors.discount && "danger"}
+          <Input
+            error={errors.discount}
             type="number"
             name="discount"
             value={input.discount}
             onChange={handleChange}
-            placeholder="product discount"
           />
-          {errors.discount && <p className="danger">{errors.discount}</p>}
+          <Label active={input.discount}>Discount</Label>
+          {errors.discount && <Danger>{errors.discount}</Danger>}
         </Content>
         <Content>
-          <input
-            className={errors.purchasePrice && "danger"}
+          <Input
+            error={errors.purchasePrice}
             type="number"
             name="purchasePrice"
-            placeholder="product purchasePrice"
             value={input.purchasePrice}
             onChange={handleChange}
           />
-          {errors.purchasePrice && (
-            <p className="danger">{errors.purchasePrice}</p>
-          )}
+          <Label active={input.purchasePrice}>Purchase Price</Label>
+          {errors.purchasePrice && <Danger>{errors.purchasePrice}</Danger>}
         </Content>
         <Select>
           <h3>Categories:</h3>

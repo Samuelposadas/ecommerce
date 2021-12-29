@@ -14,6 +14,7 @@ import {
   ItemWrapper,
   LineBreak,
   Message,
+  LineBreakTop,
 } from "./styled";
 
 export const Modal = ({ showModal, setShowModal }) => {
@@ -65,6 +66,7 @@ export const Modal = ({ showModal, setShowModal }) => {
                   onClick={() => setShowModal((prev) => !prev)}
                 />
                 <Title>Shopping Cart</Title>
+                <LineBreakTop />
                 <ModalContent>
                   {productsCart.length > 0 ? (
                     productsCart.map((item) => (
@@ -74,10 +76,13 @@ export const Modal = ({ showModal, setShowModal }) => {
                       </ItemWrapper>
                     ))
                   ) : (
-                    <Message>Your shopping cart is empty.</Message>
+                    <Message>
+                      Your shopping cart is empty. Go to home page to add
+                      products.
+                    </Message>
                   )}
                   <Link to={"/shop"}>
-                    <ButtonDetail width={"360px"}>Checkout</ButtonDetail>
+                    <ButtonDetail width={"365px"}>Checkout</ButtonDetail>
                   </Link>
                 </ModalContent>
               </ModalWrapper>

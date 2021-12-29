@@ -5,14 +5,9 @@ export const Container = styled.div`
   justify-content: center;
   align-content: center;
   width: 100%;
-  background-color: #b5b4b832;
+  background-color: white;
   height: 100%;
   padding-bottom: 50px;
-`;
-
-export const Header = styled.h2`
-  width: 350px;
-  margin-bottom: 10px;
 `;
 
 export const StyledForm = styled.form`
@@ -21,29 +16,57 @@ export const StyledForm = styled.form`
   margin-top: 20px;
   width: auto;
 `;
+
+export const Header = styled.h2`
+  width: 350px;
+  margin-bottom: 10px;
+`;
 export const Content = styled.div`
-  height: 70px;
+  height: max-content;
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  & input {
-    border-radius: 10px;
-    margin-top: 10px;
-    height: 40px;
-    width: 350px;
-  }
-  & p.danger {
-    color: red;
-    margin-top: 5px;
-    width: 350px;
-  }
-  & input.danger {
-    border: 2px solid red;
-  }
-  & h3 {
-    margin-bottom: 5px;
+  flex-direction: column;
+  position: relative;
+
+  :focus-within label {
+    transform: translate(0, 12px) scale(0.75);
   }
 `;
+
+export const Input = styled.input`
+  border-radius: 10px;
+  margin-top: 10px;
+  margin-left: 5px;
+  padding: 14px 16px 0 10px;
+  border: ${({ error }) => (error ? "1.5px solid red" : "1px solid #b9babbb8")};
+  width: 100%;
+  height: 53px;
+  color: #242323d8;
+  -moz-appearance: textfield;
+
+  :focus-within {
+    outline: 4px solid #0076ed6a;
+  }
+`;
+
+export const Label = styled.label`
+  font-size: 16px;
+  color: #999;
+  margin-left: 15px;
+  pointer-events: none;
+  position: absolute;
+  transform: ${({ active }) =>
+    active ? "translate(0, 12px) scale(0.75)" : "translate(0, 26px) scale(1)"};
+  transform-origin: top left;
+  transition: all 0.2s ease-out;
+`;
+
+export const Danger = styled.p`
+  color: red;
+  margin-top: 5px;
+  margin-left: 8px;
+  width: 350px;
+`;
+
 export const Select = styled.div`
   margin-top: 20px;
   & h3 {
