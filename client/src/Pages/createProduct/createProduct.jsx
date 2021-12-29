@@ -125,20 +125,20 @@ const CreateProduct = () => {
     });
   };
 
-  const handleClickImg = (e) => {
-    e.preventDefault();
-    if (
-      !errors.imgTotal &&
-      !input.img.includes(input.imgTotal) &&
-      input.imgTotal
-    ) {
-      setInput((input) => ({
-        ...input,
-        img: [...input.img, input.imgTotal],
-        imgTotal: "",
-      }));
-    }
-  };
+  //   const handleClickImg = (e) => {
+  //     e.preventDefault();
+  //     if (
+  //       !errors.imgTotal &&
+  //       !input.img.includes(input.imgTotal) &&
+  //       input.imgTotal
+  //     ) {
+  //       setInput((input) => ({
+  //         ...input,
+  //         img: [...input.img, input.imgTotal],
+  //         imgTotal: "",
+  //       }));
+  //     }
+  //   };
 
   return (
     <Container>
@@ -199,10 +199,10 @@ const CreateProduct = () => {
           <Label active={input.stock}>Stock</Label>
           {errors.stock && <Danger>{errors.stock}</Danger>}
         </Content>
-        <Content>
+        {/* <Content>
           <Input
             error={errors.img}
-            type="image"
+            type="text"
             name="imgTotal"
             value={input.imgTotal}
             onChange={handleChange}
@@ -210,7 +210,7 @@ const CreateProduct = () => {
           <Label active={input.imgTotal}>Images</Label>
           <button onClick={handleClickImg}>Add img</button>
           {errors.img && <Danger>{errors.img}</Danger>}
-        </Content>
+        </Content> */}
         <Content>
           <Input
             error={errors.discount}
@@ -266,7 +266,6 @@ const CreateProduct = () => {
             errors.salePrice ||
             errors.rating ||
             errors.stock ||
-            errors.img ||
             errors.discount ||
             errors.purchasePrice ||
             errors.categories ||

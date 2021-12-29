@@ -14,7 +14,7 @@ export const StyledForm = styled.form`
   background-size: cover;
   height: auto;
   margin-top: 20px;
-  width: auto;
+  width: 400px;
 `;
 
 export const Header = styled.h2`
@@ -35,7 +35,7 @@ export const Content = styled.div`
 export const Input = styled.input`
   border-radius: 10px;
   margin-top: 10px;
-  margin-left: 5px;
+  margin-left: 0px;
   padding: 14px 16px 0 10px;
   border: ${({ error }) => (error ? "1.5px solid red" : "1px solid #b9babbb8")};
   width: 100%;
@@ -51,7 +51,7 @@ export const Input = styled.input`
 export const Label = styled.label`
   font-size: 16px;
   color: #999;
-  margin-left: 15px;
+  margin-left: 10px;
   pointer-events: none;
   position: absolute;
   transform: ${({ active }) =>
@@ -73,33 +73,35 @@ export const Select = styled.div`
     margin-bottom: 5px;
   }
   & select {
-    background-color: #060b26;
-    color: aliceblue;
+    background-color: white;
+    color: #242323d8;
     cursor: pointer;
     height: 25px;
     width: 90px;
     border-radius: 7px;
-    border: none;
+    border: 1px solid #b9babbb8;
   }
   & p.danger {
     color: red;
+    margin-top: 5px;
   }
 `;
 
 export const StyledButton = styled.button`
   margin-top: 40px;
-  background-color: #060b26;
+  background-color: #1a83ff;
   border-radius: 10px;
   padding: 20px;
-  width: 350px;
+  width: 400px;
   color: aliceblue;
   cursor: pointer;
   border: none;
   &:hover {
-    background-color: #1a83ff;
+    background-color: #1a85ffe4;
   }
   &:disabled {
-    background-color: grey;
+    background-color: #1a85ff8b;
+    cursor: auto;
   }
 `;
 
@@ -109,7 +111,6 @@ export const ShowCategories = styled.div`
   align-items: center;
   margin-top: 5px;
   & button {
-    /* border: none; */
     border-radius: 10px;
     margin-left: 5px;
   }
