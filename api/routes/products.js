@@ -7,9 +7,11 @@ const {
   createProduct,
   updateProduct,
   addOrRemoveCategoryProduct,
+  newgetProductsAll,
 } = require("../controllers/products");
 
 router.route("/").get(getProductsAll);
+router.route("/pro").get(newgetProductsAll);
 router.route("/search").get(searchProducts);
 router.route("/create").post(createProduct);
 router.route("/update/:id").put(updateProduct);

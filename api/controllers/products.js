@@ -4,6 +4,7 @@ const {
   Category,
   /* User, */ Supplier,
   Comment,
+  Sub_Categories,
 } = require("../db/db");
 
 const getProductsAll = async (req, res) => {
@@ -88,6 +89,105 @@ const getProductsAll = async (req, res) => {
     totalPages: Math.ceil(resultData.length / PRODUCTS_PER_PAGE),
     products: result,
   });
+};
+
+const newgetProductsAll = async (req, res) => {
+  let { Pcategory, page, order, typeOrder, nameProduct } = req.query;
+  /*
+  category---- se desglosa a multiples
+  page
+  order - asc-des
+  typeOrder - Price | Raiting
+  marca
+  */
+  try {
+    //Valores por defecto si no vienen por query
+    const PRODUCTS_PER_PAGE = 5;
+    page = page ? page : 1;
+    order = order ? order : "DESC";
+    typeOrder = typeOrder ? typeOrder : "rating";
+
+    //Inicio de la paginación
+    let offsetPagination = (page - 1) * PRODUCTS_PER_PAGE;
+
+    if (!Pcategory) {
+      try {
+        //Datos con todas las categorías
+        const conditionDataProducts = {
+          attributes: ["id", "name", "salePrice", "img", "rating", "discount"],
+          offset: offsetPagination,
+          limit: PRODUCTS_PER_PAGE,
+          order: [[typeOrder, order]],
+        };
+        const dataProducts = await Product.findAll(conditionDataProducts);
+        res.json(dataProducts);
+      } catch (error) {
+        console.log(error);
+      }
+    } else {
+      try {
+        const findCategory = await Category.findOne({
+          where: { id: Pcategory },
+          attributes: ["name"],
+        });
+
+        switch (findCategory.name) {
+          case "Computer":
+            // -RAM
+            // -TAMAÑO
+            // -SIN O CON MONITOR
+            // -PROCESADOR
+            // -ESPACIO DISCO DURO
+            const conditionByComputer = {
+              include: [
+                {
+                  model: Category,
+                  where: { id: Pcategory },
+                },
+                {
+                  model: Sub_Categories,
+                  // where: { RAM: 5 },
+                },
+              ],
+              attributes: [
+                "id",
+                "name",
+                "salePrice",
+                "img",
+                "rating",
+                "discount",
+              ],
+              offset: offsetPagination,
+              limit: PRODUCTS_PER_PAGE,
+              order: [[typeOrder, order]],
+            };
+            const findByComputer = await Product.findAll(conditionByComputer);
+
+            res.json(findByComputer);
+            break;
+          case "TV":
+            res.json(findCategory);
+            break;
+          case "Mobile":
+            res.json(findCategory);
+            break;
+          case "Tablet":
+            res.json(findCategory);
+            break;
+          case "Laptop":
+            res.json(findCategory);
+            break;
+          case "Accessory":
+            res.json(findCategory);
+            break;
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    }
+  } catch (error) {
+    console.log(error);
+  }
 };
 
 const findProductById = async (req, res) => {
@@ -245,4 +345,5 @@ module.exports = {
   createProduct,
   addOrRemoveCategoryProduct,
   updateProduct,
+  newgetProductsAll,
 };
