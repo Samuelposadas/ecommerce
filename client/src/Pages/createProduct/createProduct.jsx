@@ -33,7 +33,7 @@ const CreateProduct = () => {
     purchasePrice: "",
     discount: "",
     categories: [],
-    supplier: "",
+    supplier: 0,
   };
   const dispatch = useDispatch();
   const allCategories = useSelector((state) => state.products.allCategories);
@@ -43,7 +43,6 @@ const CreateProduct = () => {
   const [input, setInput] = useState(initialState);
 
   useEffect(() => {
-    console.log("hola");
     dispatch(getAllCategories());
   }, []);
 
@@ -115,6 +114,9 @@ const CreateProduct = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (!input.discount) {
+      input.discount = 0;
+    }
     dispatch(postProducts(input));
     setInput(initialState);
     // eslint-disable-next-line no-undef
@@ -125,20 +127,20 @@ const CreateProduct = () => {
     });
   };
 
-  //   const handleClickImg = (e) => {
-  //     e.preventDefault();
-  //     if (
-  //       !errors.imgTotal &&
-  //       !input.img.includes(input.imgTotal) &&
-  //       input.imgTotal
-  //     ) {
-  //       setInput((input) => ({
-  //         ...input,
-  //         img: [...input.img, input.imgTotal],
-  //         imgTotal: "",
-  //       }));
-  //     }
-  //   };
+  const handleClickImg = (e) => {
+    e.preventDefault();
+    if (
+      !errors.imgTotal &&
+      !input.img.includes(input.imgTotal) &&
+      input.imgTotal
+    ) {
+      setInput((input) => ({
+        ...input,
+        img: [...input.img, input.imgTotal],
+        imgTotal: "",
+      }));
+    }
+  };
 
   return (
     <Container>
@@ -199,7 +201,7 @@ const CreateProduct = () => {
           <Label active={input.stock}>Stock</Label>
           {errors.stock && <Danger>{errors.stock}</Danger>}
         </Content>
-        {/* <Content>
+        <Content>
           <Input
             error={errors.img}
             type="text"
@@ -210,7 +212,7 @@ const CreateProduct = () => {
           <Label active={input.imgTotal}>Images</Label>
           <button onClick={handleClickImg}>Add img</button>
           {errors.img && <Danger>{errors.img}</Danger>}
-        </Content> */}
+        </Content>
         <Content>
           <Input
             error={errors.discount}
