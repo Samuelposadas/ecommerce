@@ -18,6 +18,7 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Trebuchet MS', sans-serif;
 	font-size: 13px;
 	font-weight: normal;
+	color: #242323dd;
     background-color : ${(props) => props.theme.body};
     color : ${(props) => props.theme.fontColor};
   }

@@ -18,6 +18,7 @@ export const ButtonDetail = styled.button`
   height: ${({ height }) => height || "40px"};
   margin-bottom: 10px;
   min-width: 150px;
+  font-size: 16px;
   margin-top: 10px;
   border: none;
   border-radius: 3px;

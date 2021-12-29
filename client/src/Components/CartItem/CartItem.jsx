@@ -22,8 +22,7 @@ const CartItem = ({ img, name, salePrice, id, quantity }) => {
       <p>{name}</p>
       <input value={input} min="1" type="number" onChange={handleChange} />
       <FaRegTrashAlt onClick={() => deleteItem(id)}></FaRegTrashAlt>
-
-      <h3>{salePrice}</h3>
+      <h3>{salePrice} USD</h3>
     </Container>
   );
 };
