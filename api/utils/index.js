@@ -26,9 +26,44 @@ const incomeProductDB = async () => {
       discount: elementProduct.discount,
       id_Supplier: elementProduct.supplier,
     });
+
     elementProduct.Categories.map((el) => {
       product.addCategory(el);
     });
+    if (elementProduct.Categories[0] !== 4) {
+      /* const subCategory = await Sub_Categories.create({
+        ram: elementProduct.ram ? elementProduct.ram : null,
+        storage: elementProduct.storage ? elementProduct.storage : null,
+        processor: elementProduct.processor ? elementProduct.processor : null,
+        sizeScreen: elementProduct.sizeScreen
+          ? elementProduct.sizeScreen
+          : null,
+        display: elementProduct.display ? elementProduct.display : null,
+        opeSystem: elementProduct.opeSystem ? elementProduct.opeSystem : null,
+        resolution: elementProduct.resolution
+          ? elementProduct.resolution
+          : null,
+        typeScreen: elementProduct.typeScreen
+          ? elementProduct.typeScreen
+          : null,
+      }); */
+      product.createSubCategory({
+        ram: elementProduct.ram ? elementProduct.ram : null,
+        storage: elementProduct.storage ? elementProduct.storage : null,
+        processor: elementProduct.processor ? elementProduct.processor : null,
+        sizeScreen: elementProduct.sizeScreen
+          ? elementProduct.sizeScreen
+          : null,
+        display: elementProduct.display ? elementProduct.display : null,
+        opeSystem: elementProduct.opeSystem ? elementProduct.opeSystem : null,
+        resolution: elementProduct.resolution
+          ? elementProduct.resolution
+          : null,
+        typeScreen: elementProduct.typeScreen
+          ? elementProduct.typeScreen
+          : null,
+      });
+    }
   });
 };
 
