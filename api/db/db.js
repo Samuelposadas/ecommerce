@@ -85,7 +85,7 @@ const {
   Type_Order,
 
   Brands,
-  Sub_Categories,
+  SubCategory,
 
   Specifict_Accesories,
 } = sequelize.models;
@@ -144,8 +144,8 @@ Order.belongsTo(Type_Order, { foreignKey: "id_Type_Order" });
 Brands.hasMany(Product, { foreignKey: "id_Brand" });
 Product.belongsTo(Brands, { foreignKey: "id_Brand" });
 
-Sub_Categories.hasOne(Product, { foreignKey: "id_Sub_Categories" });
-Product.belongsTo(Sub_Categories, { foreignKey: "id_Sub_Categories" });
+SubCategory.hasOne(Product, { foreignKey: "id_Sub_Categories" });
+Product.belongsTo(SubCategory, { foreignKey: "id_Sub_Categories" });
 
 Specifict_Accesories.hasMany(Product, { foreignKey: "id_Accesories" });
 Product.belongsTo(Specifict_Accesories, { foreignKey: "id_Accesories" });

@@ -4,7 +4,7 @@ const { DataTypes } = require("sequelize");
 module.exports = (sequelize) => {
   // defino el modelo
   sequelize.define(
-    "Sub_Categories",
+    "SubCategory",
     {
       ram: {
         type: DataTypes.ENUM,
