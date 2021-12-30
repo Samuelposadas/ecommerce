@@ -14,7 +14,6 @@ const CartSumary = () => {
     let items = 0;
     let price = 0;
     productsCart.forEach((item) => {
-      console.log(item);
       items += item.quantity;
       if (item.discount) {
         price +=
