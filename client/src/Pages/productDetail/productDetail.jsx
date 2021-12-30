@@ -19,6 +19,7 @@ import {
   SalePrice,
   Images,
   Image,
+  OldSalePrice,
 } from "./styled";
 import AddComment from "../../Components/addComment/addComment.jsx";
 
@@ -51,7 +52,7 @@ const ProductDetail = () => {
     ],
   };
 
-  const { img, description, comments, name, salePrice, rating } =
+  const { img, description, comments, name, salePrice, rating, discount } =
     productComplete;
 
   const addCart = () => {
@@ -74,7 +75,16 @@ const ProductDetail = () => {
               ? Array(Math.round(rating)).fill(<StarIcon fontSize="40px" />, 0)
               : null}
           </Rating>
-          <SalePrice>{salePrice} USD</SalePrice>
+          {discount ? (
+            <>
+              <OldSalePrice>{salePrice} USD</OldSalePrice>
+              <SalePrice>
+                {salePrice - (salePrice * discount) / 100} USD
+              </SalePrice>
+            </>
+          ) : (
+            <SalePrice>{salePrice} USD</SalePrice>
+          )}
           <Images>
             {img
               ? img.map((item, index) => (
