@@ -8,19 +8,17 @@
       "https://m.media-amazon.com/images/I/714K3sfx+oL._AC_SX466_.jpg"
     ],
     "purchasePrice": 539,
-    "rating": 3,
     "stock": 10,
     "discount": 0,
     "supplier": 3,
     "Categories": [6],
-    "ram" : "16",
+    "ram": "16",
     "processor": "AMD Athlon Silver",
-    "storage" : 512, 
-    "opeSystem" : "Windows",
-    "sizeScreen" : " 14 pulgadas",
-    "resolution" : "HD",
-    "typeScreen" : "LCD"
-    
+    "storage": 512,
+    "opeSystem": "Windows",
+    "sizeScreen": " 14 pulgadas",
+    "resolution": "HD",
+    "typeScreen": "LCD"
   },
 
   {
@@ -32,19 +30,18 @@
       "https://m.media-amazon.com/images/I/81cWK1vPMpS._AC_SX466_.jpg"
     ],
     "purchasePrice": 320,
-    "rating": 2,
     "stock": 7,
     "discount": 0,
     "supplier": 3,
     "Categories": [6],
-    "ram" : "4",
+    "ram": "4",
     "processor": "AMD Athlon",
-    "storage" : 128, 
-    
-    "opeSystem" : "Linux",
-    "sizeScreen" : "14 pulgadas",
-    "resolution" : "HD",
-    "typeScreen" : "LED"
+    "storage": 128,
+
+    "opeSystem": "Linux",
+    "sizeScreen": "14 pulgadas",
+    "resolution": "HD",
+    "typeScreen": "LED"
   },
 
   {
@@ -56,7 +53,6 @@
       "https://m.media-amazon.com/images/I/71sgEIlSvfL._AC_SX679_.jpg"
     ],
     "purchasePrice": 15,
-    "rating": 4,
     "stock": 18,
     "discount": 0,
     "supplier": 2,
@@ -72,7 +68,6 @@
       "https://m.media-amazon.com/images/I/61F5snpV2pL._AC_SX466_.jpg"
     ],
     "purchasePrice": 22,
-    "rating": 2,
     "stock": 8,
     "discount": 20,
     "supplier": 2,
@@ -88,7 +83,6 @@
       "https://m.media-amazon.com/images/I/71MBSFzNoPL._AC_SX466_.jpg"
     ],
     "purchasePrice": 14,
-    "rating": 4,
     "stock": 22,
     "discount": 5,
     "supplier": 2,
@@ -104,7 +98,6 @@
       "https://m.media-amazon.com/images/I/61iQKeTVdML._AC_SY741_.jpg"
     ],
     "purchasePrice": 13,
-    "rating": 5,
     "stock": 5,
     "discount": 0,
     "supplier": 2,
@@ -120,20 +113,18 @@
       "https://m.media-amazon.com/images/I/915laS+ZbEL._AC_SX466_.jpg"
     ],
     "purchasePrice": 1100,
-    "rating": 2,
     "stock": 3,
     "discount": 10,
     "supplier": 7,
     "Categories": [1],
-    "ram" : "16",
+    "ram": "16",
     "processor": "AMD B550 Chipset",
-    "storage" : 1024, 
+    "storage": 1024,
     "display": true,
-    "opeSystem" : "Windows",
-    "sizeScreen" : "32 pulgadas",
-    "resolution" : "full HD",
-    "typeScreen" : "LED"
-
+    "opeSystem": "Windows",
+    "sizeScreen": "32 pulgadas",
+    "resolution": "full HD",
+    "typeScreen": "LED"
   },
 
   {
@@ -145,7 +136,6 @@
       "https://i.ebayimg.com/images/g/mz4AAOSwheBeTddK/s-l1600.jpg"
     ],
     "purchasePrice": 30,
-    "rating": 1,
     "stock": 12,
     "discount": 0,
     "supplier": 2,
@@ -160,19 +150,18 @@
       "https://m.media-amazon.com/images/I/71OoV+eGT4L._AC_SX466_.jpg"
     ],
     "purchasePrice": 1470,
-    "rating": 2,
     "stock": 2,
     "discount": 0,
     "supplier": 6,
     "Categories": [1],
-    "ram" : "32",
+    "ram": "32",
     "processor": "Intel Core i7-10700",
-    "storage" : 512, 
+    "storage": 512,
     "display": false,
-    "opeSystem" : "Windows",
-    "sizeScreen" : "",
-    "resolution" : "",
-    "typeScreen" : ""
+    "opeSystem": "Windows",
+    "sizeScreen": "",
+    "resolution": "",
+    "typeScreen": ""
   },
   {
     "name": "SAMSUNG Galaxy Tab S7 11-inch Android Tablet 128GB",
@@ -183,19 +172,18 @@
       "https://m.media-amazon.com/images/I/51cHlU-HGVL._AC_SX679_.jpg"
     ],
     "purchasePrice": 220,
-    "rating": 3,
     "stock": 10,
     "discount": 0,
     "supplier": 2,
     "Categories": [5],
-    "ram" : "8",
+    "ram": "8",
     "processor": "Exyno 4core",
-    "storage" : 512, 
- 
-    "opeSystem" : "Android",
-    "sizeScreen" : "5.8 pulgadas",
-    "resolution" : "HD",
-    "typeScreen" : "LCD"
+    "storage": 512,
+
+    "opeSystem": "Android",
+    "sizeScreen": "5.8 pulgadas",
+    "resolution": "HD",
+    "typeScreen": "LCD"
   },
   {
     "name": "Lenovo Tab M8 Tablet",
@@ -206,19 +194,18 @@
       "https://m.media-amazon.com/images/I/71GaizJ+LuL._AC_SX679_.jpg"
     ],
     "purchasePrice": 45,
-    "rating": 1,
     "stock": 22,
     "discount": 0,
     "supplier": 2,
     "Categories": [5],
-    "ram" : "8",
+    "ram": "8",
     "processor": "powered by a Quad-Core",
-    "storage" : 128, 
+    "storage": 128,
 
-    "opeSystem" : "Android",
-    "sizeScreen" : "8 pulgadas",
-    "resolution" : "HD",
-    "typeScreen" : "Amoled"
+    "opeSystem": "Android",
+    "sizeScreen": "8 pulgadas",
+    "resolution": "HD",
+    "typeScreen": "Amoled"
   },
   {
     "name": "VASTKING KingPad K10 Pro",
@@ -229,19 +216,18 @@
       "https://m.media-amazon.com/images/I/71bp66cEFML._AC_SX466_.jpg"
     ],
     "purchasePrice": 120,
-    "rating": 2,
     "stock": 5,
     "discount": 0,
     "supplier": 6,
     "Categories": [5, 6],
-    "ram" : "4",
+    "ram": "4",
     "processor": "powered by a Quad-Core",
-    "storage" : 128, 
-    
-    "opeSystem" : "iOS",
-    "sizeScreen" : "7 pulgadas",
-    "resolution" : "HD",
-    "typeScreen" : "Gorilla Glass"
+    "storage": 128,
+
+    "opeSystem": "iOS",
+    "sizeScreen": "7 pulgadas",
+    "resolution": "HD",
+    "typeScreen": "Gorilla Glass"
   },
   {
     "name": "All-New Insignia 55 inch NS-55F301NA22 F30 Series",
@@ -252,14 +238,13 @@
       "https://m.media-amazon.com/images/I/81FO8c5zphL._AC_SX466_.jpg"
     ],
     "purchasePrice": 245,
-    "rating": 5,
     "stock": 4,
     "discount": 0,
     "supplier": 2,
     "Categories": [3],
-    "sizeScreen" : "55 pulgadas",
-    "resolution" : "4K Ultra HD",
-    "typeScreen" : "LED"
+    "sizeScreen": "55 pulgadas",
+    "resolution": "4K Ultra HD",
+    "typeScreen": "LED"
   },
   {
     "name": "SAMSUNG 60-Inch Class QLED Q60A Series - 4K",
@@ -270,14 +255,13 @@
       "https://m.media-amazon.com/images/I/610aLMLkSSL._AC_SX466_.jpg"
     ],
     "purchasePrice": 380,
-    "rating": 2,
     "stock": 7,
     "discount": 0,
     "supplier": 2,
     "Categories": [3],
-    "sizeScreen" : "60 pulgadas",
-    "resolution" : "Full HD",
-    "typeScreen" : "LED"
+    "sizeScreen": "60 pulgadas",
+    "resolution": "Full HD",
+    "typeScreen": "LED"
   },
   {
     "name": "Havit RGB Gaming Mouse Pad & Headset Stand Combo Set",
@@ -288,7 +272,6 @@
       "https://m.media-amazon.com/images/I/716EubBwADS._AC_SX466_.jpg"
     ],
     "purchasePrice": 28,
-    "rating": 1,
     "stock": 22,
     "discount": 0,
     "supplier": 2,
@@ -303,7 +286,6 @@
       "https://m.media-amazon.com/images/I/51NQLqfrG4L._AC_.jpg"
     ],
     "purchasePrice": 8,
-    "rating": 2,
     "stock": 14,
     "discount": 0,
     "supplier": 2,
@@ -318,7 +300,6 @@
       "https://m.media-amazon.com/images/I/71gOPICK1-L._AC_SX679_.jpg"
     ],
     "purchasePrice": 15,
-    "rating": 3,
     "stock": 6,
     "discount": 0,
     "supplier": 2,
@@ -333,7 +314,6 @@
       "https://m.media-amazon.com/images/I/71mD6PmY4UL._AC_SX466_.jpg"
     ],
     "purchasePrice": 10,
-    "rating": 4,
     "stock": 30,
     "discount": 0,
     "supplier": 2,
@@ -348,7 +328,6 @@
       "https://m.media-amazon.com/images/I/81ed1kU5AKL._AC_SX466_.jpg"
     ],
     "purchasePrice": 12,
-    "rating": 5,
     "stock": 14,
     "discount": 0,
     "supplier": 2,
@@ -363,19 +342,18 @@
       "https://m.media-amazon.com/images/I/717KHGCJ6eL._AC_SX679_.jpg"
     ],
     "purchasePrice": 270,
-    "rating": 1,
     "stock": 20,
     "discount": 0,
     "supplier": 2,
     "Categories": [2],
-    "ram" : "16",
+    "ram": "16",
     "processor": "4 core",
-    "storage" : 512, 
-    
-    "opeSystem" : "iOS",
-    "sizeScreen" : "7.8 pulgadas",
-    "resolution" : "HD",
-    "typeScreen" : "LCD"
+    "storage": 512,
+
+    "opeSystem": "iOS",
+    "sizeScreen": "7.8 pulgadas",
+    "resolution": "HD",
+    "typeScreen": "LCD"
   },
   {
     "name": "Xiaomi Mi 10T - Smartphone",
@@ -386,19 +364,18 @@
       "https://m.media-amazon.com/images/I/710VBlX63PL._AC_SY741_.jpg"
     ],
     "purchasePrice": 310,
-    "rating": 2,
     "stock": 5,
     "discount": 0,
     "supplier": 6,
     "Categories": [2],
-    "ram" : "8",
+    "ram": "8",
     "processor": "8core",
-    "storage" : 256, 
-   
-    "opeSystem" : "Android",
-    "sizeScreen" : "6 pulgadas",
-    "resolution" : "HD",
-    "typeScreen" : "LCD"
+    "storage": 256,
+
+    "opeSystem": "Android",
+    "sizeScreen": "6 pulgadas",
+    "resolution": "HD",
+    "typeScreen": "LCD"
   },
   {
     "name": "TCL 20 Pro 5G Unlocked Android Smartphone",
@@ -409,19 +386,18 @@
       "https://m.media-amazon.com/images/I/71jHq+OJjkS._AC_SX679_.jpg"
     ],
     "purchasePrice": 380,
-    "rating": 3,
     "stock": 4,
     "discount": 0,
     "supplier": 7,
     "Categories": [2],
-    "ram" : "16",
+    "ram": "16",
     "processor": "8core",
-    "storage" : 1024, 
+    "storage": 1024,
 
-    "opeSystem" : "Android",
-    "sizeScreen" : "7.8 pulgadas",
-    "resolution" : "Full HD",
-    "typeScreen" : "Gorilla Glass"
+    "opeSystem": "Android",
+    "sizeScreen": "7.8 pulgadas",
+    "resolution": "Full HD",
+    "typeScreen": "Gorilla Glass"
   },
   {
     "name": "OnePlus Nord N200 | 5G Unlocked Android Smartphone U.S Version",
@@ -432,19 +408,18 @@
       "https://m.media-amazon.com/images/I/71hCU6s3AWS._AC_SX679_.jpg"
     ],
     "purchasePrice": 155,
-    "rating": 2,
     "stock": 12,
     "discount": 0,
     "supplier": 2,
     "Categories": [2],
-    "ram" : "8",
+    "ram": "8",
     "processor": "4core",
-    "storage" : 128, 
-  
-    "opeSystem" : "Android",
-    "sizeScreen" : "6.8 pulgadas",
-    "resolution" : "HD",
-    "typeScreen" : "LCD"
+    "storage": 128,
+
+    "opeSystem": "Android",
+    "sizeScreen": "6.8 pulgadas",
+    "resolution": "HD",
+    "typeScreen": "LCD"
   },
   {
     "name": "Razer Tartarus v2 Gaming Keypad",
@@ -455,7 +430,6 @@
       "https://m.media-amazon.com/images/I/713vwx2+XUL._AC_SX679_.jpg"
     ],
     "purchasePrice": 42,
-    "rating": 5,
     "stock": 9,
     "discount": 0,
     "supplier": 4,
@@ -470,7 +444,6 @@
       "https://m.media-amazon.com/images/I/7123ke9WaUL._SX522_.jpg"
     ],
     "purchasePrice": 85,
-    "rating": 5,
     "stock": 5,
     "discount": 0,
     "supplier": 4,
@@ -485,7 +458,6 @@
       "https://m.media-amazon.com/images/I/71jc4tto8qL._AC_SX679_.jpg"
     ],
     "purchasePrice": 30,
-    "rating": 1,
     "stock": 18,
     "discount": 0,
     "supplier": 5,
@@ -500,16 +472,15 @@
       "https://m.media-amazon.com/images/I/81x7ocu2O9L._AC_SX466_.jpg"
     ],
     "purchasePrice": 760,
-    "rating": 1,
     "stock": 4,
     "discount": 10,
     "supplier": 7,
     "Categories": [1],
-    "ram" : "8",
+    "ram": "8",
     "processor": "AMD Ryzen 3 3100 4-Core",
-    "storage" : 512, 
+    "storage": 512,
     "display": false,
-    "opeSystem" : "Windows"
+    "opeSystem": "Windows"
   },
   {
     "name": "Alienware 7.1 PC Gaming Headset",
@@ -520,7 +491,6 @@
       "https://m.media-amazon.com/images/I/71WucjWZrUL._AC_SX679_.jpg"
     ],
     "purchasePrice": 45,
-    "rating": 2,
     "stock": 17,
     "discount": 0,
     "supplier": 2,
@@ -535,19 +505,18 @@
       "https://m.media-amazon.com/images/I/71v1QCyt2yL._AC_SX466_.jpg"
     ],
     "purchasePrice": 2150,
-    "rating": 2,
     "stock": 2,
     "discount": 0,
     "supplier": 5,
     "Categories": [1],
-    "ram" : "16",
+    "ram": "16",
     "processor": "Intel Core",
-    "storage" : 1024, 
+    "storage": 1024,
     "display": true,
-    "opeSystem" : "Windows",
-    "sizeScreen" : "28 pulgadas",
-    "resolution" : "Full HD",
-    "typeScreen" : "LED"
+    "opeSystem": "Windows",
+    "sizeScreen": "28 pulgadas",
+    "resolution": "Full HD",
+    "typeScreen": "LED"
   },
   {
     "name": "Apple MacBook Pro 13",
@@ -558,19 +527,18 @@
       "https://m.media-amazon.com/images/I/61aIxbma5SL._AC_SY355_.jpg"
     ],
     "purchasePrice": 1250,
-    "rating": 4,
     "stock": 5,
     "discount": 0,
     "supplier": 5,
     "Categories": [6],
-    "ram" : "16",
+    "ram": "16",
     "processor": "AMD",
-    "storage" : 512, 
-    
-    "opeSystem" : "Mac OS",
-    "sizeScreen" : "13 pulgadas",
-    "resolution" : "HD",
-    "typeScreen" : "LED"
+    "storage": 512,
+
+    "opeSystem": "Mac OS",
+    "sizeScreen": "13 pulgadas",
+    "resolution": "HD",
+    "typeScreen": "LED"
   },
   {
     "name": "Apple MacBook Pro 2021",
@@ -581,19 +549,18 @@
       "https://m.media-amazon.com/images/I/71AKE565U4L._AC_SX342_.jpg"
     ],
     "purchasePrice": 1800,
-    "rating": 5,
     "stock": 3,
     "discount": 0,
     "supplier": 3,
     "Categories": [6],
-    "ram" : "16",
+    "ram": "16",
     "processor": "Apple M1 Pro",
-    "storage" : 1024, 
+    "storage": 1024,
 
-    "opeSystem" : "Mac OS",
-    "sizeScreen" : "14 pulgadas",
-    "resolution" : "Full HD",
-    "typeScreen" : "LED"
+    "opeSystem": "Mac OS",
+    "sizeScreen": "14 pulgadas",
+    "resolution": "Full HD",
+    "typeScreen": "LED"
   },
   {
     "name": "Samsung Galaxy Z Flip 3 5G Factory Unlocked",
@@ -604,19 +571,18 @@
       "https://m.media-amazon.com/images/I/71FegtQDBTL._AC_SY355_.jpg"
     ],
     "purchasePrice": 600,
-    "rating": 3,
     "stock": 7,
     "discount": 0,
     "supplier": 3,
     "Categories": [2],
-    "ram" : "8",
+    "ram": "8",
     "processor": "8core",
-    "storage" : 512, 
+    "storage": 512,
 
-    "opeSystem" : "Android",
-    "sizeScreen" : "8.2 pulgadas",
-    "resolution" : "HD",
-    "typeScreen" : "OLED"
+    "opeSystem": "Android",
+    "sizeScreen": "8.2 pulgadas",
+    "resolution": "HD",
+    "typeScreen": "OLED"
   },
   {
     "name": "Samsung Galaxy S21 5G | Factory unlocked Android phone",
@@ -627,19 +593,18 @@
       "https://m.media-amazon.com/images/I/61wmqK1hlRL._AC_SX425_.jpg"
     ],
     "purchasePrice": 550,
-    "rating": 4,
     "stock": 2,
     "discount": 0,
     "supplier": 1,
     "Categories": [2],
-    "ram" : "8",
+    "ram": "8",
     "processor": "4core",
-    "storage" : 128, 
+    "storage": 128,
 
-    "opeSystem" : "Android",
-    "sizeScreen" : "9 pulgadas",
-    "resolution" : "Full HD",
-    "typeScreen" : "Amoled"
+    "opeSystem": "Android",
+    "sizeScreen": "9 pulgadas",
+    "resolution": "Full HD",
+    "typeScreen": "Amoled"
   },
   {
     "name": "Apple iPhone 12 Pro",
@@ -650,19 +615,18 @@
       "https://m.media-amazon.com/images/I/51IS48kzwvL._AC_SY550_.jpg"
     ],
     "purchasePrice": 1000,
-    "rating": 5,
     "stock": 4,
     "discount": 0,
     "supplier": 6,
     "Categories": [2],
-    "ram" : "16",
+    "ram": "16",
     "processor": "8core",
-    "storage" : 128, 
+    "storage": 128,
 
-    "opeSystem" : "iOS",
-    "sizeScreen" : "7.8 pulgadas",
-    "resolution" : "Full HD",
-    "typeScreen" : "Amoled"
+    "opeSystem": "iOS",
+    "sizeScreen": "7.8 pulgadas",
+    "resolution": "Full HD",
+    "typeScreen": "Amoled"
   },
   {
     "name": "Samsung Electronics Tablet Android Galaxy Tab S7 FE 2021",
@@ -673,19 +637,18 @@
       "https://m.media-amazon.com/images/I/61yA3Ls+4US._AC_SY450_.jpg"
     ],
     "purchasePrice": 400,
-    "rating": 3,
     "stock": 5,
     "discount": 5,
     "supplier": 2,
     "Categories": [5],
-    "ram" : "8",
+    "ram": "8",
     "processor": "4core",
-    "storage" : 128, 
-    
-    "opeSystem" : "Android",
-    "sizeScreen" : "10 pulgadas",
-    "resolution" : "HD",
-    "typeScreen" : "TouchScreen"
+    "storage": 128,
+
+    "opeSystem": "Android",
+    "sizeScreen": "10 pulgadas",
+    "resolution": "HD",
+    "typeScreen": "TouchScreen"
   },
   {
     "name": "65-inch Sony TV X85J: 4K Ultra HD LED Smart Google TV",
@@ -696,14 +659,13 @@
       "https://m.media-amazon.com/images/I/81PRHCsCIlL._AC_SX466_.jpg"
     ],
     "purchasePrice": 900,
-    "rating": 4,
     "stock": 7,
     "discount": 0,
     "supplier": 4,
     "Categories": [3],
-    "sizeScreen" : "65 pulgadas",
-    "resolution" : "4K ultra HD",
-    "typeScreen" : "LED"
+    "sizeScreen": "65 pulgadas",
+    "resolution": "4K ultra HD",
+    "typeScreen": "LED"
   },
   {
     "name": "LG Smart TV OLED A1 Series 48 Integrated Alexa 4K",
@@ -714,14 +676,13 @@
       "https://m.media-amazon.com/images/I/61U2jBF5npS._AC_SX355_.jpg"
     ],
     "purchasePrice": 950,
-    "rating": 2,
     "stock": 4,
     "discount": 0,
     "supplier": 5,
     "Categories": [3],
-    "sizeScreen" : "40 pulgadas",
-    "resolution" : "4K ultra HD",
-    "typeScreen" : "TouchScreen"
+    "sizeScreen": "40 pulgadas",
+    "resolution": "4K ultra HD",
+    "typeScreen": "TouchScreen"
   },
   {
     "name": "Skytech Gaming Archangel Desktop Computer for Gaming",
@@ -732,16 +693,15 @@
       "https://m.media-amazon.com/images/I/71hDxaPOPnL._AC_SY879_.jpg"
     ],
     "purchasePrice": 1200,
-    "rating": 5,
     "stock": 5,
     "discount": 0,
     "supplier": 5,
     "Categories": [1],
-    "ram" : "16",
+    "ram": "16",
     "processor": "Ryzen 5 5600X",
-    "storage" : 1024, 
+    "storage": 1024,
     "display": false,
-    "opeSystem" : "Windows"
+    "opeSystem": "Windows"
   },
   {
     "name": "Desktop PC Gamer Skytech Blaze 3.0",
@@ -752,16 +712,15 @@
       "https://m.media-amazon.com/images/I/81hMsMRooqL._AC_SY879_.jpg"
     ],
     "purchasePrice": 1000,
-    "rating": 4,
     "stock": 3,
     "discount": 0,
     "supplier": 4,
     "Categories": [1],
-    "ram" : "16",
+    "ram": "16",
     "processor": "Intel i5-11400F",
-    "storage" : 1024, 
+    "storage": 1024,
     "display": false,
-    "opeSystem" : "Windows"
+    "opeSystem": "Windows"
   },
   {
     "name": "ASUS VivoBook 15 Thin and Light Laptop",
@@ -772,18 +731,17 @@
       "https://m.media-amazon.com/images/I/816ioPpcNEL._AC_SY450_.jpg"
     ],
     "purchasePrice": 200,
-    "rating": 5,
     "stock": 2,
     "discount": 10,
     "supplier": 4,
     "Categories": [6],
-    "ram" : "8",
+    "ram": "8",
     "processor": "AMD Quad Core R7-3700U",
-    "storage" : 512, 
-    
-    "opeSystem" : "Windows",
-    "sizeScreen" : "15.6 pulgadas",
-    "resolution" : "HD",
-    "typeScreen" : "LCD"
+    "storage": 512,
+
+    "opeSystem": "Windows",
+    "sizeScreen": "15.6 pulgadas",
+    "resolution": "HD",
+    "typeScreen": "LCD"
   }
 ]
