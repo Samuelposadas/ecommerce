@@ -8,6 +8,7 @@ const {
   updateProduct,
   addOrRemoveCategoryProduct,
   newgetProductsAll,
+  updateRating,
 } = require("../controllers/products");
 
 router.route("/").get(getProductsAll);
