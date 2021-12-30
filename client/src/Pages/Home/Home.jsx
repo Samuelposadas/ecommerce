@@ -13,16 +13,17 @@ import { SideBarFilters } from "../../common/Sidebar/Sidebar.jsx";
 
 const Home = () => {
   const allProducts = useSelector((state) => state.products.allProducts);
-
   return (
     <>
       <Navbar />
       <ContainerDisplay>
         <SideBarFilters />
         <CardsContainer>
-          {allProducts?.map((product) => (
-            <Card key={product.id} {...product} />
-          ))}
+          {allProducts.length > 0 ? (
+            allProducts.map((product) => <Card key={product.id} {...product} />)
+          ) : (
+            <p>Product not found...</p>
+          )}
         </CardsContainer>
       </ContainerDisplay>
 

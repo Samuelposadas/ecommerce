@@ -5,7 +5,7 @@ import { toast } from "react-hot-toast";
 import { FaRegTrashAlt } from "react-icons/fa";
 import { Container } from "./styled.jsx";
 
-const CartItem = ({ img, name, salePrice, id, quantity }) => {
+const CartItem = ({ img, name, salePrice, id, quantity, discount }) => {
   const dispatch = useDispatch();
   const deleteItem = (id) => {
     dispatch(removeFromCart(id));
@@ -22,7 +22,11 @@ const CartItem = ({ img, name, salePrice, id, quantity }) => {
       <p>{name}</p>
       <input value={input} min="1" type="number" onChange={handleChange} />
       <FaRegTrashAlt onClick={() => deleteItem(id)}></FaRegTrashAlt>
-      <h3>{salePrice} USD</h3>
+      {discount ? (
+        <h3>{salePrice - (salePrice * discount) / 100} USD</h3>
+      ) : (
+        <h3>{salePrice} USD</h3>
+      )}
     </Container>
   );
 };
