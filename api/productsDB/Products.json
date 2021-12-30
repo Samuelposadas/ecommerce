@@ -12,7 +12,15 @@
     "stock": 10,
     "discount": 0,
     "supplier": 3,
-    "Categories": [6]
+    "Categories": [6],
+    "ram" : "16",
+    "processor": "AMD Athlon Silver",
+    "storage" : 512, 
+    "opeSystem" : "Windows",
+    "sizeScreen" : " 14 pulgadas",
+    "resolution" : "HD",
+    "typeScreen" : "LCD"
+    
   },
 
   {
@@ -28,7 +36,15 @@
     "stock": 7,
     "discount": 0,
     "supplier": 3,
-    "Categories": [6]
+    "Categories": [6],
+    "ram" : "4",
+    "processor": "AMD Athlon",
+    "storage" : 128, 
+    
+    "opeSystem" : "Linux",
+    "sizeScreen" : "14 pulgadas",
+    "resolution" : "HD",
+    "typeScreen" : "LED"
   },
 
   {
@@ -58,7 +74,7 @@
     "purchasePrice": 22,
     "rating": 2,
     "stock": 8,
-    "discount": 0,
+    "discount": 20,
     "supplier": 2,
     "Categories": [4]
   },
@@ -74,7 +90,7 @@
     "purchasePrice": 14,
     "rating": 4,
     "stock": 22,
-    "discount": 0,
+    "discount": 5,
     "supplier": 2,
     "Categories": [4]
   },
@@ -106,9 +122,18 @@
     "purchasePrice": 1100,
     "rating": 2,
     "stock": 3,
-    "discount": 0,
+    "discount": 10,
     "supplier": 7,
-    "Categories": [1]
+    "Categories": [1],
+    "ram" : "16",
+    "processor": "AMD B550 Chipset",
+    "storage" : 1024, 
+    "display": true,
+    "opeSystem" : "Windows",
+    "sizeScreen" : "32 pulgadas",
+    "resolution" : "full HD",
+    "typeScreen" : "LED"
+
   },
 
   {
@@ -139,7 +164,15 @@
     "stock": 2,
     "discount": 0,
     "supplier": 6,
-    "Categories": [1]
+    "Categories": [1],
+    "ram" : "32",
+    "processor": "Intel Core i7-10700",
+    "storage" : 512, 
+    "display": false,
+    "opeSystem" : "Windows",
+    "sizeScreen" : "",
+    "resolution" : "",
+    "typeScreen" : ""
   },
   {
     "name": "SAMSUNG Galaxy Tab S7 11-inch Android Tablet 128GB",
@@ -149,12 +182,20 @@
       "https://m.media-amazon.com/images/I/51fPuFND28L._AC_SY741_.jpg",
       "https://m.media-amazon.com/images/I/51cHlU-HGVL._AC_SX679_.jpg"
     ],
-    "purchasePrice": 320,
+    "purchasePrice": 220,
     "rating": 3,
     "stock": 10,
     "discount": 0,
     "supplier": 2,
-    "Categories": [5]
+    "Categories": [5],
+    "ram" : "8",
+    "processor": "Exyno 4core",
+    "storage" : 512, 
+ 
+    "opeSystem" : "Android",
+    "sizeScreen" : "5.8 pulgadas",
+    "resolution" : "HD",
+    "typeScreen" : "LCD"
   },
   {
     "name": "Lenovo Tab M8 Tablet",
@@ -169,7 +210,15 @@
     "stock": 22,
     "discount": 0,
     "supplier": 2,
-    "Categories": [5]
+    "Categories": [5],
+    "ram" : "8",
+    "processor": "powered by a Quad-Core",
+    "storage" : 128, 
+
+    "opeSystem" : "Android",
+    "sizeScreen" : "8 pulgadas",
+    "resolution" : "HD",
+    "typeScreen" : "Amoled"
   },
   {
     "name": "VASTKING KingPad K10 Pro",
@@ -184,7 +233,15 @@
     "stock": 5,
     "discount": 0,
     "supplier": 6,
-    "Categories": [5, 6]
+    "Categories": [5, 6],
+    "ram" : "4",
+    "processor": "powered by a Quad-Core",
+    "storage" : 128, 
+    
+    "opeSystem" : "iOS",
+    "sizeScreen" : "7 pulgadas",
+    "resolution" : "HD",
+    "typeScreen" : "Gorilla Glass"
   },
   {
     "name": "All-New Insignia 55 inch NS-55F301NA22 F30 Series",
@@ -199,7 +256,10 @@
     "stock": 4,
     "discount": 0,
     "supplier": 2,
-    "Categories": [3]
+    "Categories": [3],
+    "sizeScreen" : "55 pulgadas",
+    "resolution" : "4K Ultra HD",
+    "typeScreen" : "LED"
   },
   {
     "name": "SAMSUNG 60-Inch Class QLED Q60A Series - 4K",
@@ -214,7 +274,10 @@
     "stock": 7,
     "discount": 0,
     "supplier": 2,
-    "Categories": [3]
+    "Categories": [3],
+    "sizeScreen" : "60 pulgadas",
+    "resolution" : "Full HD",
+    "typeScreen" : "LED"
   },
   {
     "name": "Havit RGB Gaming Mouse Pad & Headset Stand Combo Set",
@@ -304,7 +367,15 @@
     "stock": 20,
     "discount": 0,
     "supplier": 2,
-    "Categories": [2]
+    "Categories": [2],
+    "ram" : "16",
+    "processor": "4 core",
+    "storage" : 512, 
+    
+    "opeSystem" : "iOS",
+    "sizeScreen" : "7.8 pulgadas",
+    "resolution" : "HD",
+    "typeScreen" : "LCD"
   },
   {
     "name": "Xiaomi Mi 10T - Smartphone",
@@ -319,7 +390,15 @@
     "stock": 5,
     "discount": 0,
     "supplier": 6,
-    "Categories": [2]
+    "Categories": [2],
+    "ram" : "8",
+    "processor": "8core",
+    "storage" : 256, 
+   
+    "opeSystem" : "Android",
+    "sizeScreen" : "6 pulgadas",
+    "resolution" : "HD",
+    "typeScreen" : "LCD"
   },
   {
     "name": "TCL 20 Pro 5G Unlocked Android Smartphone",
@@ -334,7 +413,15 @@
     "stock": 4,
     "discount": 0,
     "supplier": 7,
-    "Categories": [2]
+    "Categories": [2],
+    "ram" : "16",
+    "processor": "8core",
+    "storage" : 1024, 
+
+    "opeSystem" : "Android",
+    "sizeScreen" : "7.8 pulgadas",
+    "resolution" : "Full HD",
+    "typeScreen" : "Gorilla Glass"
   },
   {
     "name": "OnePlus Nord N200 | 5G Unlocked Android Smartphone U.S Version",
@@ -349,7 +436,15 @@
     "stock": 12,
     "discount": 0,
     "supplier": 2,
-    "Categories": [2]
+    "Categories": [2],
+    "ram" : "8",
+    "processor": "4core",
+    "storage" : 128, 
+  
+    "opeSystem" : "Android",
+    "sizeScreen" : "6.8 pulgadas",
+    "resolution" : "HD",
+    "typeScreen" : "LCD"
   },
   {
     "name": "Razer Tartarus v2 Gaming Keypad",
@@ -407,9 +502,14 @@
     "purchasePrice": 760,
     "rating": 1,
     "stock": 4,
-    "discount": 0,
+    "discount": 10,
     "supplier": 7,
-    "Categories": [1]
+    "Categories": [1],
+    "ram" : "8",
+    "processor": "AMD Ryzen 3 3100 4-Core",
+    "storage" : 512, 
+    "display": false,
+    "opeSystem" : "Windows"
   },
   {
     "name": "Alienware 7.1 PC Gaming Headset",
@@ -439,7 +539,15 @@
     "stock": 2,
     "discount": 0,
     "supplier": 5,
-    "Categories": [1]
+    "Categories": [1],
+    "ram" : "16",
+    "processor": "Intel Core",
+    "storage" : 1024, 
+    "display": true,
+    "opeSystem" : "Windows",
+    "sizeScreen" : "28 pulgadas",
+    "resolution" : "Full HD",
+    "typeScreen" : "LED"
   },
   {
     "name": "Apple MacBook Pro 13",
@@ -454,7 +562,15 @@
     "stock": 5,
     "discount": 0,
     "supplier": 5,
-    "Categories": [6]
+    "Categories": [6],
+    "ram" : "16",
+    "processor": "AMD",
+    "storage" : 512, 
+    
+    "opeSystem" : "Mac OS",
+    "sizeScreen" : "13 pulgadas",
+    "resolution" : "HD",
+    "typeScreen" : "LED"
   },
   {
     "name": "Apple MacBook Pro 2021",
@@ -469,7 +585,15 @@
     "stock": 3,
     "discount": 0,
     "supplier": 3,
-    "Categories": [6]
+    "Categories": [6],
+    "ram" : "16",
+    "processor": "Apple M1 Pro",
+    "storage" : 1024, 
+
+    "opeSystem" : "Mac OS",
+    "sizeScreen" : "14 pulgadas",
+    "resolution" : "Full HD",
+    "typeScreen" : "LED"
   },
   {
     "name": "Samsung Galaxy Z Flip 3 5G Factory Unlocked",
@@ -484,7 +608,15 @@
     "stock": 7,
     "discount": 0,
     "supplier": 3,
-    "Categories": [2]
+    "Categories": [2],
+    "ram" : "8",
+    "processor": "8core",
+    "storage" : 512, 
+
+    "opeSystem" : "Android",
+    "sizeScreen" : "8.2 pulgadas",
+    "resolution" : "HD",
+    "typeScreen" : "OLED"
   },
   {
     "name": "Samsung Galaxy S21 5G | Factory unlocked Android phone",
@@ -499,7 +631,15 @@
     "stock": 2,
     "discount": 0,
     "supplier": 1,
-    "Categories": [2]
+    "Categories": [2],
+    "ram" : "8",
+    "processor": "4core",
+    "storage" : 128, 
+
+    "opeSystem" : "Android",
+    "sizeScreen" : "9 pulgadas",
+    "resolution" : "Full HD",
+    "typeScreen" : "Amoled"
   },
   {
     "name": "Apple iPhone 12 Pro",
@@ -514,7 +654,15 @@
     "stock": 4,
     "discount": 0,
     "supplier": 6,
-    "Categories": [2]
+    "Categories": [2],
+    "ram" : "16",
+    "processor": "8core",
+    "storage" : 128, 
+
+    "opeSystem" : "iOS",
+    "sizeScreen" : "7.8 pulgadas",
+    "resolution" : "Full HD",
+    "typeScreen" : "Amoled"
   },
   {
     "name": "Samsung Electronics Tablet Android Galaxy Tab S7 FE 2021",
@@ -527,9 +675,17 @@
     "purchasePrice": 400,
     "rating": 3,
     "stock": 5,
-    "discount": 0,
+    "discount": 5,
     "supplier": 2,
-    "Categories": [5]
+    "Categories": [5],
+    "ram" : "8",
+    "processor": "4core",
+    "storage" : 128, 
+    
+    "opeSystem" : "Android",
+    "sizeScreen" : "10 pulgadas",
+    "resolution" : "HD",
+    "typeScreen" : "TouchScreen"
   },
   {
     "name": "65-inch Sony TV X85J: 4K Ultra HD LED Smart Google TV",
@@ -544,7 +700,10 @@
     "stock": 7,
     "discount": 0,
     "supplier": 4,
-    "Categories": [3]
+    "Categories": [3],
+    "sizeScreen" : "65 pulgadas",
+    "resolution" : "4K ultra HD",
+    "typeScreen" : "LED"
   },
   {
     "name": "LG Smart TV OLED A1 Series 48 Integrated Alexa 4K",
@@ -559,7 +718,10 @@
     "stock": 4,
     "discount": 0,
     "supplier": 5,
-    "Categories": [3]
+    "Categories": [3],
+    "sizeScreen" : "40 pulgadas",
+    "resolution" : "4K ultra HD",
+    "typeScreen" : "TouchScreen"
   },
   {
     "name": "Skytech Gaming Archangel Desktop Computer for Gaming",
@@ -574,7 +736,12 @@
     "stock": 5,
     "discount": 0,
     "supplier": 5,
-    "Categories": [1]
+    "Categories": [1],
+    "ram" : "16",
+    "processor": "Ryzen 5 5600X",
+    "storage" : 1024, 
+    "display": false,
+    "opeSystem" : "Windows"
   },
   {
     "name": "Desktop PC Gamer Skytech Blaze 3.0",
@@ -589,12 +756,17 @@
     "stock": 3,
     "discount": 0,
     "supplier": 4,
-    "Categories": [1]
+    "Categories": [1],
+    "ram" : "16",
+    "processor": "Intel i5-11400F",
+    "storage" : 1024, 
+    "display": false,
+    "opeSystem" : "Windows"
   },
   {
     "name": "ASUS VivoBook 15 Thin and Light Laptop",
     "description": "15.6-inch FHD Display, AMD Quad Core R7-3700U CPU, 8GB DDR4 RAM, 512GB PCIe SSD, AMD Radeon Vega 10 Graphics, Fingerprint, Windows 10 Home, Slate Gray , F512DA-NH77",
-    "salePrice": 695,
+    "salePrice": 895,
     "img": [
       "https://m.media-amazon.com/images/I/81fstJkUlaL._AC_SX679_.jpg",
       "https://m.media-amazon.com/images/I/816ioPpcNEL._AC_SY450_.jpg"
@@ -602,8 +774,16 @@
     "purchasePrice": 200,
     "rating": 5,
     "stock": 2,
-    "discount": 0,
+    "discount": 10,
     "supplier": 4,
-    "Categories": [6]
+    "Categories": [6],
+    "ram" : "8",
+    "processor": "AMD Quad Core R7-3700U",
+    "storage" : 512, 
+    
+    "opeSystem" : "Windows",
+    "sizeScreen" : "15.6 pulgadas",
+    "resolution" : "HD",
+    "typeScreen" : "LCD"
   }
 ]
