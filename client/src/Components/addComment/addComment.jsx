@@ -40,7 +40,7 @@ const AddComment = ({ id }) => {
   return (
     <Container>
       <input
-        placeholder="Comment..."
+        placeholder=""
         type="text"
         value={comment}
         onChange={handleChange}
