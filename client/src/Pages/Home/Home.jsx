@@ -13,7 +13,6 @@ import { SideBarFilters } from "../../common/Sidebar/Sidebar.jsx";
 
 const Home = () => {
   const allProducts = useSelector((state) => state.products.allProducts);
-  console.log(allProducts);
   return (
     <>
       <Navbar />
