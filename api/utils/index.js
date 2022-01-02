@@ -36,7 +36,7 @@ const incomeProductDB = async () => {
         sizeScreen: elementProduct.sizeScreen
           ? elementProduct.sizeScreen
           : null,
-        display: elementProduct.display ? elementProduct.display : null,
+        display: elementProduct.display ? elementProduct.display : 0,
         opeSystem: elementProduct.opeSystem ? elementProduct.opeSystem : null,
         resolution: elementProduct.resolution
           ? elementProduct.resolution

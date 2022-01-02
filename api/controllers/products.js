@@ -5,6 +5,7 @@ const {
   /* User, */ Supplier,
   Comment,
   SubCategory,
+  Specifict_Accesory,
 } = require("../db/db");
 
 const getProductsAll = async (req, res) => {
@@ -98,13 +99,15 @@ const newgetProductsAll = async (req, res) => {
     order,
     typeOrder,
     nameProduct,
+    catSpecifict,
     ram,
-    TypeScreen,
-    Resolution,
-    Tsize,
-    monitor,
-    discSpace,
+    typeScreen,
+    sizeScreen,
+    display,
+    storage,
     processor,
+    opeSystem,
+    resolution,
   } = req.query;
   /*
   category---- se desglosa a multiples
@@ -121,19 +124,29 @@ const newgetProductsAll = async (req, res) => {
     typeOrder = typeOrder ? typeOrder : "rating";
 
     //Inicio de la paginación
-    let offsetPagination = (page - 1) * PRODUCTS_PER_PAGE;
+    // let offsetPagination = (page - 1) * PRODUCTS_PER_PAGE;
 
     if (!Pcategory) {
       try {
         //Datos con todas las categorías
         const conditionDataProducts = {
           attributes: ["id", "name", "salePrice", "img", "rating", "discount"],
-          offset: offsetPagination,
-          limit: PRODUCTS_PER_PAGE,
+          // offset: offsetPagination,
+          // limit: PRODUCTS_PER_PAGE,
           order: [[typeOrder, order]],
         };
         const dataProducts = await Product.findAll(conditionDataProducts);
-        res.json(dataProducts);
+
+        //Código de paginado
+        const result = dataProducts.slice(
+          PRODUCTS_PER_PAGE * (page - 1),
+          PRODUCTS_PER_PAGE * (page - 1) + PRODUCTS_PER_PAGE
+        );
+        res.json({
+          count: dataProducts.length,
+          totalPages: Math.ceil(dataProducts.length / PRODUCTS_PER_PAGE),
+          products: result,
+        });
       } catch (error) {
         console.log(error);
       }
@@ -153,6 +166,9 @@ const newgetProductsAll = async (req, res) => {
             {
               model: SubCategory,
             },
+            {
+              model: Specifict_Accesory,
+            },
           ],
           attributes: ["id", "name", "salePrice", "img", "rating", "discount"],
           order: [[typeOrder, order]],
@@ -160,39 +176,106 @@ const newgetProductsAll = async (req, res) => {
 
         let findByProduct = await Product.findAll(conditionByProduct);
 
-        switch (findCategory.name) {
-          case "Computer":
-            if (findByProduct.length > 0) {
-              // -RAM
-              // -TAMAÑO
-              // -SIN O CON MONITOR
-              // -PROCESADOR
-              // -ESPACIO DISCO DURO
-              // ram, Tsize, monitor, discSpace, processor,TypeScreen, Resolution
-              if (ram) {
-                findByProduct = findByProduct.filter(
-                  (elem) => elem.SubCategory.ram == ram
-                );
-              }
+        if (findCategory.name !== "Accessory") {
+          if (findByProduct.length > 0) {
+            // -RAM
+            // -TAMAÑO
+            // -SIN O CON MONITOR
+            // -PROCESADOR
+            // -ESPACIO DISCO DURO
 
-              res.json(findByProduct);
+            // ram, sizeScreen, monitor, storage, processor,TypeScreen, Resolution
+
+            //FILTRO POR RAM
+            if (ram) {
+              findByProduct = findByProduct.filter(
+                (elem) => elem.SubCategory.ram == ram
+              );
             }
-            break;
-          case "TV":
-            res.json(findCategory);
-            break;
-          case "Mobile":
-            res.json(findCategory);
-            break;
-          case "Tablet":
-            res.json(findCategory);
-            break;
-          case "Laptop":
-            res.json(findCategory);
-            break;
-          case "Accessory":
-            res.json(findCategory);
-            break;
+
+            //FILTRO POR ALMACENAMIENTO
+            if (storage) {
+              findByProduct = findByProduct.filter(
+                (elem) => elem.SubCategory.storage == storage
+              );
+            }
+
+            //FILTRO POR SI EXISTE MONITOR
+            if (display) {
+              findByProduct = findByProduct.filter(
+                (elem) => elem.SubCategory.display == display
+              );
+            }
+
+            //FILTRO POR TAMAÑO DE PANTALLA
+            if (sizeScreen) {
+              findByProduct = findByProduct.filter(
+                (elem) => elem.SubCategory.sizeScreen == sizeScreen
+              );
+            }
+
+            //FILTRO DE RESOLUCION
+            if (resolution) {
+              findByProduct = findByProduct.filter(
+                (elem) => elem.SubCategory.resolution == resolution
+              );
+            }
+
+            //FILTRO DE TIPO DE PANTALLA
+            if (typeScreen) {
+              findByProduct = findByProduct.filter(
+                (elem) => elem.SubCategory.typeScreen == typeScreen
+              );
+            }
+
+            //FILTRO POR PROCESADOR
+            if (processor) {
+              findByProduct = findByProduct.filter(
+                (elem) => elem.SubCategory.processor == processor
+              );
+            }
+
+            //FILTRO PORT SISTEMA OPERATIVO
+            if (opeSystem) {
+              findByProduct = findByProduct.filter(
+                (elem) => elem.SubCategory.opeSystem == opeSystem
+              );
+            }
+
+            //Código de paginado
+            const result = findByProduct.slice(
+              PRODUCTS_PER_PAGE * (page - 1),
+              PRODUCTS_PER_PAGE * (page - 1) + PRODUCTS_PER_PAGE
+            );
+            res.json({
+              count: findByProduct.length,
+              totalPages: Math.ceil(findByProduct.length / PRODUCTS_PER_PAGE),
+              products: result,
+            });
+          } else {
+            res.json({
+              count: 0,
+              totalPages: 0,
+              products: [],
+            });
+          }
+        } else if (findCategory.name == "Accessory") {
+          if (catSpecifict) {
+            findByProduct = findByProduct.filter(
+              (elem) => elem.Specifict_Accesory.id == catSpecifict
+            );
+          }
+
+          //Código de paginado
+          const result = findByProduct.slice(
+            PRODUCTS_PER_PAGE * (page - 1),
+            PRODUCTS_PER_PAGE * (page - 1) + PRODUCTS_PER_PAGE
+          );
+          res.json({
+            count: findByProduct.length,
+            totalPages: Math.ceil(findByProduct.length / PRODUCTS_PER_PAGE),
+            products: result,
+          });
         }
       } catch (error) {
         console.log(error);

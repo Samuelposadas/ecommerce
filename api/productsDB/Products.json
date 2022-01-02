@@ -17,7 +17,7 @@
     "processor": "AMD Athlon Silver",
     "storage" : 512,
     "opeSystem" : "Windows",
-    "sizeScreen" : " 14 pulgadas",
+    "sizeScreen" : 14,
     "resolution" : "HD",
     "typeScreen" : "LCD"
   },
@@ -41,7 +41,7 @@
     "storage" : 128, 
     
     "opeSystem" : "Linux",
-    "sizeScreen" : "14 pulgadas",
+    "sizeScreen" : 14,
     "resolution" : "HD",
     "typeScreen" : "LED"
   },
@@ -130,10 +130,10 @@
     "Categories": [1],
     "ram" : "16",
     "processor": "AMD B550 Chipset",
-    "storage" : 1024, 
-    "display": true,
+    "storage" : 512,
+    "display": 1,
     "opeSystem" : "Windows",
-    "sizeScreen" : "32 pulgadas",
+    "sizeScreen" : 32,
     "resolution" : "full HD",
     "typeScreen" : "LED"
 
@@ -172,7 +172,7 @@
     "ram" : "32",
     "processor": "Intel Core i7-10700",
     "storage" : 512, 
-    "display": false,
+    "display": 0,
     "opeSystem" : "Windows",
     "sizeScreen" : "",
     "resolution" : "",
@@ -197,7 +197,7 @@
     "storage" : 512, 
  
     "opeSystem" : "Android",
-    "sizeScreen" : "5.8 pulgadas",
+    "sizeScreen" : 5.8,
     "resolution" : "HD",
     "typeScreen" : "LCD"
   },
@@ -220,7 +220,7 @@
     "storage" : 128, 
 
     "opeSystem" : "Android",
-    "sizeScreen" : "8 pulgadas",
+    "sizeScreen" : 8,
     "resolution" : "HD",
     "typeScreen" : "Amoled"
   },
@@ -243,7 +243,7 @@
     "storage" : 128, 
     
     "opeSystem" : "iOS",
-    "sizeScreen" : "7 pulgadas",
+    "sizeScreen" : 7,
     "resolution" : "HD",
     "typeScreen" : "Gorilla Glass"
   },
@@ -261,7 +261,7 @@
     "discount": 0,
     "supplier": 2,
     "Categories": [3],
-    "sizeScreen" : "55 pulgadas",
+    "sizeScreen" : 55,
     "resolution" : "4K Ultra HD",
     "typeScreen" : "LED"
   },
@@ -279,7 +279,7 @@
     "discount": 0,
     "supplier": 2,
     "Categories": [3],
-    "sizeScreen" : "60 pulgadas",
+    "sizeScreen" : 60,
     "resolution" : "Full HD",
     "typeScreen" : "LED"
   },
@@ -382,7 +382,7 @@
     "storage" : 512, 
     
     "opeSystem" : "iOS",
-    "sizeScreen" : "7.8 pulgadas",
+    "sizeScreen" : 7.8,
     "resolution" : "HD",
     "typeScreen" : "LCD"
   },
@@ -405,7 +405,7 @@
     "storage" : 256, 
    
     "opeSystem" : "Android",
-    "sizeScreen" : "6 pulgadas",
+    "sizeScreen" : 6,
     "resolution" : "HD",
     "typeScreen" : "LCD"
   },
@@ -428,7 +428,7 @@
     "storage" : 1024, 
 
     "opeSystem" : "Android",
-    "sizeScreen" : "7.8 pulgadas",
+    "sizeScreen" : 7.8,
     "resolution" : "Full HD",
     "typeScreen" : "Gorilla Glass"
   },
@@ -451,7 +451,7 @@
     "storage" : 128, 
   
     "opeSystem" : "Android",
-    "sizeScreen" : "6.8 pulgadas",
+    "sizeScreen" : 6.8,
     "resolution" : "HD",
     "typeScreen" : "LCD"
   },
@@ -520,7 +520,7 @@
     "ram" : "8",
     "processor": "AMD Ryzen 3 3100 4-Core",
     "storage" : 512, 
-    "display": false,
+    "display": 0,
     "opeSystem" : "Windows"
   },
   {
@@ -556,9 +556,9 @@
     "ram" : "16",
     "processor": "Intel Core",
     "storage" : 1024, 
-    "display": true,
+    "display": 1,
     "opeSystem" : "Windows",
-    "sizeScreen" : "28 pulgadas",
+    "sizeScreen" : 28,
     "resolution" : "Full HD",
     "typeScreen" : "LED"
   },
@@ -581,7 +581,7 @@
     "storage" : 512, 
     
     "opeSystem" : "Mac OS",
-    "sizeScreen" : "13 pulgadas",
+    "sizeScreen" : 13,
     "resolution" : "HD",
     "typeScreen" : "LED"
   },
@@ -604,7 +604,7 @@
     "storage" : 1024, 
 
     "opeSystem" : "Mac OS",
-    "sizeScreen" : "14 pulgadas",
+    "sizeScreen" : 14,
     "resolution" : "Full HD",
     "typeScreen" : "LED"
   },
@@ -627,7 +627,7 @@
     "storage" : 512, 
 
     "opeSystem" : "Android",
-    "sizeScreen" : "8.2 pulgadas",
+    "sizeScreen" : 8.2,
     "resolution" : "HD",
     "typeScreen" : "OLED"
   },
@@ -650,7 +650,7 @@
     "storage" : 128, 
 
     "opeSystem" : "Android",
-    "sizeScreen" : "9 pulgadas",
+    "sizeScreen" : 9,
     "resolution" : "Full HD",
     "typeScreen" : "Amoled"
   },
@@ -673,7 +673,7 @@
     "storage" : 128, 
 
     "opeSystem" : "iOS",
-    "sizeScreen" : "7.8 pulgadas",
+    "sizeScreen" : 7.8,
     "resolution" : "Full HD",
     "typeScreen" : "Amoled"
   },
@@ -696,7 +696,7 @@
     "storage" : 128, 
     
     "opeSystem" : "Android",
-    "sizeScreen" : "10 pulgadas",
+    "sizeScreen" : 10,
     "resolution" : "HD",
     "typeScreen" : "TouchScreen"
   },
@@ -714,7 +714,7 @@
     "discount": 0,
     "supplier": 4,
     "Categories": [3],
-    "sizeScreen" : "65 pulgadas",
+    "sizeScreen" : 65,
     "resolution" : "4K ultra HD",
     "typeScreen" : "LED"
   },
@@ -732,7 +732,7 @@
     "discount": 0,
     "supplier": 5,
     "Categories": [3],
-    "sizeScreen" : "40 pulgadas",
+    "sizeScreen" : 40,
     "resolution" : "4K ultra HD",
     "typeScreen" : "TouchScreen"
   },
@@ -753,7 +753,7 @@
     "ram" : "16",
     "processor": "Ryzen 5 5600X",
     "storage" : 1024, 
-    "display": false,
+    "display": 0,
     "opeSystem" : "Windows"
   },
   {
@@ -773,7 +773,7 @@
     "ram" : "16",
     "processor": "Intel i5-11400F",
     "storage" : 1024, 
-    "display": false,
+    "display": 0,
     "opeSystem" : "Windows"
   },
   {
@@ -794,7 +794,7 @@
     "processor": "AMD Quad Core R7-3700U",
     "storage" : 512,
     "opeSystem" : "Windows",
-    "sizeScreen" : "15.6 pulgadas",
+    "sizeScreen" : 15.6,
     "resolution" : "HD",
     "typeScreen" : "LCD"
   }
