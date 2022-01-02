@@ -1,10 +1,5 @@
 const axios = require("axios");
-const {
-  Product,
-  Category,
-  Supplier,
-  Specifict_Accesories,
-} = require("../db/db");
+const { Product, Category, Supplier, Specifict_Accesory } = require("../db/db");
 const dataProducts = require("../productsDB/Products.json");
 const categories = require("../productsDB/Categories.json");
 const dataSuppliers = require("../productsDB/Suppliers.json");
@@ -25,28 +20,15 @@ const incomeProductDB = async () => {
       stock: elementProduct.stock,
       discount: elementProduct.discount,
       id_Supplier: elementProduct.supplier,
+      id_Accesories: elementProduct.SpeAccesory
+        ? elementProduct.SpeAccesory
+        : null,
     });
 
     elementProduct.Categories.map((el) => {
       product.addCategory(el);
     });
     if (elementProduct.Categories[0] !== 4) {
-      /* const subCategory = await Sub_Categories.create({
-        ram: elementProduct.ram ? elementProduct.ram : null,
-        storage: elementProduct.storage ? elementProduct.storage : null,
-        processor: elementProduct.processor ? elementProduct.processor : null,
-        sizeScreen: elementProduct.sizeScreen
-          ? elementProduct.sizeScreen
-          : null,
-        display: elementProduct.display ? elementProduct.display : null,
-        opeSystem: elementProduct.opeSystem ? elementProduct.opeSystem : null,
-        resolution: elementProduct.resolution
-          ? elementProduct.resolution
-          : null,
-        typeScreen: elementProduct.typeScreen
-          ? elementProduct.typeScreen
-          : null,
-      }); */
       product.createSubCategory({
         ram: elementProduct.ram ? elementProduct.ram : null,
         storage: elementProduct.storage ? elementProduct.storage : null,
@@ -134,7 +116,7 @@ const addSpecifictAccesories = async () => {
   ];
 
   await speAccesories.map((element) => {
-    Specifict_Accesories.create({ name: element });
+    Specifict_Accesory.create({ name: element });
   });
 };
 
