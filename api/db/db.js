@@ -12,7 +12,7 @@ const modelComment = require("../models/Comment");
 const modelTypeOrder = require("../models/Type_Order");
 
 const modelBrands = require("../models/Brands");
-const modelSubCategories = require("../models/Sub_Categories");
+const modelSubCategories = require("../models/SubCategory");
 
 const modelSpecifict_Accesories = require("../models/Specifict_Accesories");
 
@@ -87,7 +87,7 @@ const {
   Brands,
   SubCategory,
 
-  Specifict_Accesories,
+  Specifict_Accesory,
 } = sequelize.models;
 
 // Aca vendrian las relaciones
@@ -147,8 +147,8 @@ Product.belongsTo(Brands, { foreignKey: "id_Brand" });
 SubCategory.hasOne(Product, { foreignKey: "id_Sub_Categories" });
 Product.belongsTo(SubCategory, { foreignKey: "id_Sub_Categories" });
 
-Specifict_Accesories.hasMany(Product, { foreignKey: "id_Accesories" });
-Product.belongsTo(Specifict_Accesories, { foreignKey: "id_Accesories" });
+Specifict_Accesory.hasMany(Product, { foreignKey: "id_Accesories" });
+Product.belongsTo(Specifict_Accesory, { foreignKey: "id_Accesories" });
 
 module.exports = {
   ...sequelize.models, // para poder importar los modelos así: const { Product, User } = require('./db.js');

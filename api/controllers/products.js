@@ -4,7 +4,7 @@ const {
   Category,
   /* User, */ Supplier,
   Comment,
-  Sub_Categories,
+  SubCategory,
 } = require("../db/db");
 
 const getProductsAll = async (req, res) => {
@@ -92,7 +92,20 @@ const getProductsAll = async (req, res) => {
 };
 
 const newgetProductsAll = async (req, res) => {
-  let { Pcategory, page, order, typeOrder, nameProduct } = req.query;
+  let {
+    Pcategory,
+    page,
+    order,
+    typeOrder,
+    nameProduct,
+    ram,
+    TypeScreen,
+    Resolution,
+    Tsize,
+    monitor,
+    discSpace,
+    processor,
+  } = req.query;
   /*
   category---- se desglosa a multiples
   page
@@ -131,39 +144,39 @@ const newgetProductsAll = async (req, res) => {
           attributes: ["name"],
         });
 
+        const conditionByProduct = {
+          include: [
+            {
+              model: Category,
+              where: { id: Pcategory },
+            },
+            {
+              model: SubCategory,
+            },
+          ],
+          attributes: ["id", "name", "salePrice", "img", "rating", "discount"],
+          order: [[typeOrder, order]],
+        };
+
+        let findByProduct = await Product.findAll(conditionByProduct);
+
         switch (findCategory.name) {
           case "Computer":
-            // -RAM
-            // -TAMAÑO
-            // -SIN O CON MONITOR
-            // -PROCESADOR
-            // -ESPACIO DISCO DURO
-            const conditionByComputer = {
-              include: [
-                {
-                  model: Category,
-                  where: { id: Pcategory },
-                },
-                {
-                  model: Sub_Categories,
-                  // where: { RAM: 5 },
-                },
-              ],
-              attributes: [
-                "id",
-                "name",
-                "salePrice",
-                "img",
-                "rating",
-                "discount",
-              ],
-              offset: offsetPagination,
-              limit: PRODUCTS_PER_PAGE,
-              order: [[typeOrder, order]],
-            };
-            const findByComputer = await Product.findAll(conditionByComputer);
+            if (findByProduct.length > 0) {
+              // -RAM
+              // -TAMAÑO
+              // -SIN O CON MONITOR
+              // -PROCESADOR
+              // -ESPACIO DISCO DURO
+              // ram, Tsize, monitor, discSpace, processor,TypeScreen, Resolution
+              if (ram) {
+                findByProduct = findByProduct.filter(
+                  (elem) => elem.SubCategory.ram == ram
+                );
+              }
 
-            res.json(findByComputer);
+              res.json(findByProduct);
+            }
             break;
           case "TV":
             res.json(findCategory);
