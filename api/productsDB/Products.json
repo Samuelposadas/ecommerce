@@ -16,7 +16,7 @@
     "processor": "AMD Athlon Silver",
     "storage" : 512,
     "opeSystem" : "Windows",
-    "sizeScreen" : " 14 pulgadas",
+    "sizeScreen" : 14,
     "resolution" : "HD",
     "typeScreen" : "LCD"
   },
@@ -36,12 +36,12 @@
     "Categories": [6],
     "ram": "4",
     "processor": "AMD Athlon",
-    "storage": 128,
-
-    "opeSystem": "Linux",
-    "sizeScreen": "14 pulgadas",
-    "resolution": "HD",
-    "typeScreen": "LED"
+    "storage" : 128, 
+    
+    "opeSystem" : "Linux",
+    "sizeScreen" : 14,
+    "resolution" : "HD",
+    "typeScreen" : "LED"
   },
 
   {
@@ -123,12 +123,15 @@
     "Categories": [1],
     "ram": "16",
     "processor": "AMD B550 Chipset",
-    "storage": 1024,
-    "display": true,
-    "opeSystem": "Windows",
-    "sizeScreen": "32 pulgadas",
-    "resolution": "full HD",
-    "typeScreen": "LED"
+
+    "storage" : 512,
+    "display": 1,
+    "opeSystem" : "Windows",
+    "sizeScreen" : 32,
+    "resolution" : "full HD",
+    "typeScreen" : "LED"
+
+
   },
 
   {
@@ -161,12 +164,14 @@
     "Categories": [1],
     "ram": "32",
     "processor": "Intel Core i7-10700",
-    "storage": 512,
-    "display": false,
-    "opeSystem": "Windows",
-    "sizeScreen": "",
-    "resolution": "",
-    "typeScreen": ""
+
+    "storage" : 512, 
+    "display": 0,
+    "opeSystem" : "Windows",
+    "sizeScreen" : "",
+    "resolution" : "",
+    "typeScreen" : ""
+
   },
   {
     "name": "SAMSUNG Galaxy Tab S7 11-inch Android Tablet 128GB",
@@ -183,12 +188,13 @@
     "Categories": [5],
     "ram": "8",
     "processor": "Exyno 4core",
-    "storage": 512,
+    "storage" : 512, 
+ 
+    "opeSystem" : "Android",
+    "sizeScreen" : 5.8,
+    "resolution" : "HD",
+    "typeScreen" : "LCD"
 
-    "opeSystem": "Android",
-    "sizeScreen": "5.8 pulgadas",
-    "resolution": "HD",
-    "typeScreen": "LCD"
   },
   {
     "name": "Lenovo Tab M8 Tablet",
@@ -206,11 +212,11 @@
     "ram": "8",
     "processor": "powered by a Quad-Core",
     "storage": 128,
+    "opeSystem" : "Android",
+    "sizeScreen" : 8,
+    "resolution" : "HD",
+    "typeScreen" : "Amoled"
 
-    "opeSystem": "Android",
-    "sizeScreen": "8 pulgadas",
-    "resolution": "HD",
-    "typeScreen": "Amoled"
   },
   {
     "name": "VASTKING KingPad K10 Pro",
@@ -227,12 +233,11 @@
     "Categories": [5, 6],
     "ram": "4",
     "processor": "powered by a Quad-Core",
-    "storage": 128,
-
-    "opeSystem": "iOS",
-    "sizeScreen": "7 pulgadas",
-    "resolution": "HD",
-    "typeScreen": "Gorilla Glass"
+    "storage" : 128, 
+    "opeSystem" : "iOS",
+    "sizeScreen" : 7,
+    "resolution" : "HD",
+    "typeScreen" : "Gorilla Glass"
   },
   {
     "name": "All-New Insignia 55 inch NS-55F301NA22 F30 Series",
@@ -247,9 +252,10 @@
     "discount": 0,
     "supplier": 2,
     "Categories": [3],
-    "sizeScreen": "55 pulgadas",
-    "resolution": "4K Ultra HD",
-    "typeScreen": "LED"
+    "sizeScreen" : 55,
+    "resolution" : "4K Ultra HD",
+    "typeScreen" : "LED"
+
   },
   {
     "name": "SAMSUNG 60-Inch Class QLED Q60A Series - 4K",
@@ -264,9 +270,9 @@
     "discount": 0,
     "supplier": 2,
     "Categories": [3],
-    "sizeScreen": "60 pulgadas",
-    "resolution": "Full HD",
-    "typeScreen": "LED"
+    "sizeScreen" : 60,
+    "resolution" : "Full HD",
+    "typeScreen" : "LED"
   },
   {
     "name": "Havit RGB Gaming Mouse Pad & Headset Stand Combo Set",
@@ -358,12 +364,11 @@
     "Categories": [2],
     "ram": "16",
     "processor": "4 core",
-    "storage": 512,
-
-    "opeSystem": "iOS",
-    "sizeScreen": "7.8 pulgadas",
-    "resolution": "HD",
-    "typeScreen": "LCD"
+    "storage" : 512, 
+    "opeSystem" : "iOS",
+    "sizeScreen" : 7.8,
+    "resolution" : "HD",
+    "typeScreen" : "LCD"
   },
   {
     "name": "Xiaomi Mi 10T - Smartphone",
@@ -380,12 +385,12 @@
     "Categories": [2],
     "ram": "8",
     "processor": "8core",
-    "storage": 256,
+    "storage" : 256, 
+    "opeSystem" : "Android",
+    "sizeScreen" : 6,
+    "resolution" : "HD",
+    "typeScreen" : "LCD"
 
-    "opeSystem": "Android",
-    "sizeScreen": "6 pulgadas",
-    "resolution": "HD",
-    "typeScreen": "LCD"
   },
   {
     "name": "TCL 20 Pro 5G Unlocked Android Smartphone",
@@ -403,11 +408,10 @@
     "ram": "16",
     "processor": "8core",
     "storage": 1024,
-
-    "opeSystem": "Android",
-    "sizeScreen": "7.8 pulgadas",
-    "resolution": "Full HD",
-    "typeScreen": "Gorilla Glass"
+    "opeSystem" : "Android",
+    "sizeScreen" : 7.8,
+    "resolution" : "Full HD",
+    "typeScreen" : "Gorilla Glass"
   },
   {
     "name": "OnePlus Nord N200 | 5G Unlocked Android Smartphone U.S Version",
@@ -424,12 +428,11 @@
     "Categories": [2],
     "ram": "8",
     "processor": "4core",
-    "storage": 128,
-
-    "opeSystem": "Android",
-    "sizeScreen": "6.8 pulgadas",
-    "resolution": "HD",
-    "typeScreen": "LCD"
+    "storage" : 128, 
+    "opeSystem" : "Android",
+    "sizeScreen" : 6.8,
+    "resolution" : "HD",
+    "typeScreen" : "LCD"
   },
   {
     "name": "Razer Tartarus v2 Gaming Keypad",
@@ -491,9 +494,9 @@
     "Categories": [1],
     "ram": "8",
     "processor": "AMD Ryzen 3 3100 4-Core",
-    "storage": 512,
-    "display": false,
-    "opeSystem": "Windows"
+    "storage" : 512, 
+    "display": 0,
+    "opeSystem" : "Windows"
   },
   {
     "name": "Alienware 7.1 PC Gaming Headset",
@@ -525,12 +528,12 @@
     "Categories": [1],
     "ram": "16",
     "processor": "Intel Core",
-    "storage": 1024,
-    "display": true,
-    "opeSystem": "Windows",
-    "sizeScreen": "28 pulgadas",
-    "resolution": "Full HD",
-    "typeScreen": "LED"
+    "storage" : 1024, 
+    "display": 1,
+    "opeSystem" : "Windows",
+    "sizeScreen" : 28,
+    "resolution" : "Full HD",
+    "typeScreen" : "LED"
   },
   {
     "name": "Apple MacBook Pro 13",
@@ -547,12 +550,11 @@
     "Categories": [6],
     "ram": "16",
     "processor": "AMD",
-    "storage": 512,
-
-    "opeSystem": "Mac OS",
-    "sizeScreen": "13 pulgadas",
-    "resolution": "HD",
-    "typeScreen": "LED"
+    "storage" : 512, 
+    "opeSystem" : "Mac OS",
+    "sizeScreen" : 13,
+    "resolution" : "HD",
+    "typeScreen" : "LED"
   },
   {
     "name": "Apple MacBook Pro 2021",
@@ -570,11 +572,10 @@
     "ram": "16",
     "processor": "Apple M1 Pro",
     "storage": 1024,
-
-    "opeSystem": "Mac OS",
-    "sizeScreen": "14 pulgadas",
-    "resolution": "Full HD",
-    "typeScreen": "LED"
+    "opeSystem" : "Mac OS",
+    "sizeScreen" : 14,
+    "resolution" : "Full HD",
+    "typeScreen" : "LED"
   },
   {
     "name": "Samsung Galaxy Z Flip 3 5G Factory Unlocked",
@@ -592,11 +593,10 @@
     "ram": "8",
     "processor": "8core",
     "storage": 512,
-
-    "opeSystem": "Android",
-    "sizeScreen": "8.2 pulgadas",
-    "resolution": "HD",
-    "typeScreen": "OLED"
+    "opeSystem" : "Android",
+    "sizeScreen" : 8.2,
+    "resolution" : "HD",
+    "typeScreen" : "OLED"
   },
   {
     "name": "Samsung Galaxy S21 5G | Factory unlocked Android phone",
@@ -614,11 +614,10 @@
     "ram": "8",
     "processor": "4core",
     "storage": 128,
-
-    "opeSystem": "Android",
-    "sizeScreen": "9 pulgadas",
-    "resolution": "Full HD",
-    "typeScreen": "Amoled"
+    "opeSystem" : "Android",
+    "sizeScreen" : 9,
+    "resolution" : "Full HD",
+    "typeScreen" : "Amoled"
   },
   {
     "name": "Apple iPhone 12 Pro",
@@ -636,11 +635,10 @@
     "ram": "16",
     "processor": "8core",
     "storage": 128,
-
-    "opeSystem": "iOS",
-    "sizeScreen": "7.8 pulgadas",
-    "resolution": "Full HD",
-    "typeScreen": "Amoled"
+    "opeSystem" : "iOS",
+    "sizeScreen" : 7.8,
+    "resolution" : "Full HD",
+    "typeScreen" : "Amoled"
   },
   {
     "name": "Samsung Electronics Tablet Android Galaxy Tab S7 FE 2021",
@@ -657,12 +655,11 @@
     "Categories": [5],
     "ram": "8",
     "processor": "4core",
-    "storage": 128,
-
-    "opeSystem": "Android",
-    "sizeScreen": "10 pulgadas",
-    "resolution": "HD",
-    "typeScreen": "TouchScreen"
+    "storage" : 128, 
+    "opeSystem" : "Android",
+    "sizeScreen" : 10,
+    "resolution" : "HD",
+    "typeScreen" : "TouchScreen"
   },
   {
     "name": "65-inch Sony TV X85J: 4K Ultra HD LED Smart Google TV",
@@ -677,9 +674,9 @@
     "discount": 0,
     "supplier": 4,
     "Categories": [3],
-    "sizeScreen": "65 pulgadas",
-    "resolution": "4K ultra HD",
-    "typeScreen": "LED"
+    "sizeScreen" : 65,
+    "resolution" : "4K ultra HD",
+    "typeScreen" : "LED"
   },
   {
     "name": "LG Smart TV OLED A1 Series 48 Integrated Alexa 4K",
@@ -694,9 +691,9 @@
     "discount": 0,
     "supplier": 5,
     "Categories": [3],
-    "sizeScreen": "40 pulgadas",
-    "resolution": "4K ultra HD",
-    "typeScreen": "TouchScreen"
+    "sizeScreen" : 40,
+    "resolution" : "4K ultra HD",
+    "typeScreen" : "TouchScreen"
   },
   {
     "name": "Skytech Gaming Archangel Desktop Computer for Gaming",
@@ -713,9 +710,9 @@
     "Categories": [1],
     "ram": "16",
     "processor": "Ryzen 5 5600X",
-    "storage": 1024,
-    "display": false,
-    "opeSystem": "Windows"
+    "storage" : 1024, 
+    "display": 0,
+    "opeSystem" : "Windows"
   },
   {
     "name": "Desktop PC Gamer Skytech Blaze 3.0",
@@ -732,9 +729,9 @@
     "Categories": [1],
     "ram": "16",
     "processor": "Intel i5-11400F",
-    "storage": 1024,
-    "display": false,
-    "opeSystem": "Windows"
+    "storage" : 1024, 
+    "display": 0,
+    "opeSystem" : "Windows"
   },
   {
     "name": "ASUS VivoBook 15 Thin and Light Laptop",
@@ -753,7 +750,7 @@
     "processor": "AMD Quad Core R7-3700U",
     "storage" : 512,
     "opeSystem" : "Windows",
-    "sizeScreen" : "15.6 pulgadas",
+    "sizeScreen" : 15.6,
     "resolution" : "HD",
     "typeScreen" : "LCD"
   }

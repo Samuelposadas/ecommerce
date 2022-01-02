@@ -17,10 +17,11 @@ module.exports = (sequelize) => {
         type: DataTypes.INTEGER,
       },
       sizeScreen: {
-        type: DataTypes.STRING,
+        type: DataTypes.REAL,
       },
       display: {
-        type: DataTypes.BOOLEAN,
+        type: DataTypes.INTEGER,
+        defaultValue: 0,
       },
       opeSystem: {
         type: DataTypes.ENUM,
