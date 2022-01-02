@@ -24,6 +24,6 @@ export const ButtonDetail = styled.button`
   border-radius: 3px;
   &:hover {
     cursor: pointer;
-    /* box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2); */
+    background-color: #1a85ffe4;
   }
 `;

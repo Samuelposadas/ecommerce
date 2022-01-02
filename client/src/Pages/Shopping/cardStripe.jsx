@@ -2,6 +2,10 @@ import React from "react";
 import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 import axios from "axios";
 import { Toaster, toast } from "react-hot-toast";
+import styled from "styled-components";
+import { ButtonDetail } from "../../common/button/button";
+
+const Form = styled.form``;
 
 export const CardStripe = () => {
   const stripe = useStripe();
@@ -34,10 +38,10 @@ export const CardStripe = () => {
   };
   return (
     <>
-      <form onSubmit={handleSubmit}>
+      <Form onSubmit={handleSubmit}>
         <CardElement />
-        <button>BUY</button>
-      </form>
+        <ButtonDetail width={"100%"}>Place Order</ButtonDetail>
+      </Form>
       <Toaster />
     </>
   );
