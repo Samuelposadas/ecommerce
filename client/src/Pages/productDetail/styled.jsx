@@ -83,6 +83,11 @@ export const SalePrice = styled.div`
   margin-bottom: 20px;
 `;
 
+export const OldSalePrice = styled.div`
+  margin-bottom: 20px;
+  text-decoration: line-through;
+`;
+
 export const Images = styled.span`
   display: flex;
   flex-direction: row;

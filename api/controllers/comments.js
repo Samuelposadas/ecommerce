@@ -1,4 +1,5 @@
 const { Comment, Product, User } = require("../db/db");
+const { updateRating } = require("./products");
 
 const createComment = async (req, res) => {
   let { content, stars, id_Product, id_User } = req.body;
@@ -7,8 +8,9 @@ const createComment = async (req, res) => {
       content,
       stars,
     });
-    comment.setProduct(id_Product);
-    comment.setUser(id_User);
+    await comment.setProduct(id_Product);
+    await comment.setUser(id_User);
+    await updateRating({ id: id_Product, rating: stars });
     res.json(comment);
   } catch (e) {
     console.log(e);
