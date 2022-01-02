@@ -434,6 +434,26 @@ const updateProduct = async (req, res) => {
   }
 };
 
+const updateRating = async ({ id, rating }) => {
+  try {
+    const product = await Product.findByPk(id, { include: Comment });
+    let newRating;
+    if (product.rating !== null) {
+      let addRating = 0;
+      for (let i = 0; i < product.Comments.length; i++) {
+        const productRating = product.Comments[i].stars;
+        addRating += productRating;
+      }
+      newRating = Math.round(addRating / product.Comments.length);
+    } else {
+      newRating = rating;
+    }
+    await product.update({ rating: newRating });
+  } catch (e) {
+    console.log(e);
+  }
+};
+
 module.exports = {
   getProductsAll,
   findProductById,
@@ -442,4 +462,5 @@ module.exports = {
   addOrRemoveCategoryProduct,
   updateProduct,
   newgetProductsAll,
+  updateRating,
 };

@@ -14,7 +14,7 @@ const AddComment = ({ id }) => {
   const handleClick = () => {
     const review = {
       content: comment,
-      stars: rating,
+      stars: +rating,
       id_Product: id,
       id_User: 1, // aca iria el id del usuario q hace el comment, por ahora harcodeado
     };

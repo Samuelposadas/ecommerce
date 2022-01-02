@@ -10,14 +10,14 @@ import {
   Price,
   LogoContainer,
   Wrapper,
+  OldPrice,
 } from "./styled";
 import { addToCart } from "../../redux/actions/actionCart";
 import { toast } from "react-hot-toast";
 import { useDispatch } from "react-redux";
 
-const Card = ({ img, name, salePrice, id }) => {
+const Card = ({ img, name, salePrice, id, discount }) => {
   const dispatch = useDispatch();
-
   const addCart = () => {
     dispatch(addToCart(id));
     toast.success("Added Product");
@@ -35,9 +35,20 @@ const Card = ({ img, name, salePrice, id }) => {
         />
 
         <Wrapper>
-          <Price onClick={() => navigate(`/products/${id}`)}>
-            {salePrice} USD
-          </Price>
+          {discount ? (
+            <>
+              <OldPrice onClick={() => navigate(`/products/${id}`)}>
+                {salePrice} USD
+              </OldPrice>
+              <Price onClick={() => navigate(`/products/${id}`)}>
+                {salePrice - (salePrice * discount) / 100} USD
+              </Price>
+            </>
+          ) : (
+            <Price onClick={() => navigate(`/products/${id}`)}>
+              {salePrice} USD
+            </Price>
+          )}
           <LogoContainer>
             <AiOutlineShoppingCart onClick={addCart}></AiOutlineShoppingCart>
           </LogoContainer>
