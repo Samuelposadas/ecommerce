@@ -47,23 +47,20 @@ const Home = () => {
       </ContainerDisplay>
 
       <Paginate />
-      <div>
-        <Carousel
-          swipeable={false}
-          draggable={false}
-          responsive={responsive}
-          ssr={true} // means to render carousel on server-side.
-          infinite={true}
-          keyBoardControl={true}
-          customTransition="transform 300ms ease-in-out"
-          transitionDuration={500}
-        >
-          {allProducts.map((product) => (
-            <Card key={product.id} {...product} />
-          ))}
-        </Carousel>
-      </div>
-
+      <Carousel
+        swipeable={false}
+        draggable={false}
+        responsive={responsive}
+        ssr={true} // means to render carousel on server-side.
+        infinite={true}
+        keyBoardControl={true}
+        customTransition="transform 300ms ease-in-out"
+        transitionDuration={500}
+      >
+        {allProducts.map((product) => (
+          <Card key={product.id} {...product} />
+        ))}
+      </Carousel>
       <Footer />
     </>
   );

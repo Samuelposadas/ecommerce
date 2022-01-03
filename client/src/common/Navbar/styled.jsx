@@ -135,6 +135,6 @@ export const CartQuantity = styled.div`
   height: 14px;
   color: #2b2929;
   background-color: #e9e0e0ee;
+  top: 27px;
   margin-left: 9px;
-  top: 66px;
 `;
