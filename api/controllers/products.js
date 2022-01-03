@@ -191,16 +191,38 @@ const newgetProductsAll = async (req, res) => {
 
             //FILTRO POR RAM
             if (ram && ram !== "false") {
-              findByProduct = findByProduct.filter(
-                (elem) => elem.SubCategory.ram == ram
-              );
+              if (ram < 4) {
+                findByProduct = findByProduct.filter(
+                  (elem) => elem.SubCategory.ram < 4
+                );
+              }
+              if (ram > 16) {
+                findByProduct = findByProduct.filter(
+                  (elem) => elem.SubCategory.ram > 16
+                );
+              } else {
+                findByProduct = findByProduct.filter(
+                  (elem) => elem.SubCategory.ram == ram
+                );
+              }
             }
 
             //FILTRO POR ALMACENAMIENTO
             if (storage && storage !== "false") {
-              findByProduct = findByProduct.filter(
-                (elem) => elem.SubCategory.storage == storage
-              );
+              if (storage < 256) {
+                findByProduct = findByProduct.filter(
+                  (elem) => elem.SubCategory.storage < 256
+                );
+              }
+              if (storage >= 1024) {
+                findByProduct = findByProduct.filter(
+                  (elem) => elem.SubCategory.storage >= 1024
+                );
+              } else {
+                findByProduct = findByProduct.filter(
+                  (elem) => elem.SubCategory.storage == storage
+                );
+              }
             }
 
             //FILTRO POR SI EXISTE MONITOR
@@ -263,7 +285,7 @@ const newgetProductsAll = async (req, res) => {
             });
           }
         } else if (findCategory.name == "Accessory") {
-          if (catSpecifict) {
+          if (catSpecifict && catSpecifict !== "false") {
             findByProduct = findByProduct.filter(
               (elem) => elem.Specifict_Accesory.id == catSpecifict
             );

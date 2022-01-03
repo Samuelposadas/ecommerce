@@ -1,17 +1,16 @@
 export const ramDate = [
-  { id: 3, name: "-4 GB" },
+  { id: 3, name: "from 1 GB to 4 GB" },
   { id: 4, name: "4 GB" },
   { id: 8, name: "8 GB" },
   { id: 16, name: "16 GB" },
-  { id: 20, name: "+16 GB" },
+  { id: 20, name: "Over 16 GB" },
 ];
 
 export const storageDate = [
-  { id: 250, name: "-256" },
+  { id: 250, name: "Less than 256 GB" },
   { id: 256, name: "256 GB" },
   { id: 512, name: "512 GB" },
-  { id: 1024, name: "1 TB" },
-  { id: 1025, name: "+1 TB" },
+  { id: 1024, name: "Over 1 TB" },
 ];
 
 export const opeSystemDate = [
@@ -79,10 +78,10 @@ export const resolutionDate = [
 ];
 
 export const sizeScreenDate = [
-  { id: 7, name: "- 8'' " },
+  { id: 7, name: "Less than 8'' " },
   { id: 8, name: "From 8'' to 16''" },
   { id: 17, name: "From 16'' to 32''" },
-  { id: 33, name: "+ 32''" },
+  { id: 33, name: "Over 32''" },
 ];
 
 export const processorDate = [

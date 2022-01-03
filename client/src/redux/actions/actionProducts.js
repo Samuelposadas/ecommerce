@@ -14,6 +14,7 @@ import {
   ORDER,
   GET_PRODUCTS_DEFAULT,
   SAVENAME,
+  GET_ACCESORIES,
   GET_PRODUCTS_BY_FILTERS,
 } from "../constants/index";
 import { actionGenerator, reqGetAxios } from "./metodos";
@@ -259,10 +260,11 @@ export const getProductByFilter = (payload) => {
       resolution,
       sizeScreen,
       category,
+      accessories,
     } = payload;
     try {
       let products = await axios.get(
-        `${URL_BASE}/products/pro?Pcategory=${category}&ram=${ram}&storage=${storage}&opeSystem=${opeSystem}&processor=${processor}&display=${display}&typescreen=${typeScreen}&resolution=${resolution}&sizeScreen=${sizeScreen}`
+        `${URL_BASE}/products/pro?Pcategory=${category}&ram=${ram}&catSpecifict=${accessories}&storage=${storage}&opeSystem=${opeSystem}&processor=${processor}&display=${display}&typescreen=${typeScreen}&resolution=${resolution}&sizeScreen=${sizeScreen}`
       );
 
       dispatch({
@@ -276,5 +278,18 @@ export const getProductByFilter = (payload) => {
     } catch (error) {
       console.log(error);
     }
+  };
+};
+
+export const get_accesories = () => {
+  return async (dispatch) => {
+    let accesories = await (
+      await axios.get("http://localhost:3001/categories/accesory")
+    ).data;
+
+    dispatch({
+      type: GET_ACCESORIES,
+      payload: accesories,
+    });
   };
 };

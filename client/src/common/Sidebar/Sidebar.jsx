@@ -43,6 +43,7 @@ import {
   getAllProducts,
   order,
   getProductByFilter,
+  get_accesories,
 } from "../../redux/actions/actionProducts";
 
 export const SideBarFilters = () => {
@@ -79,8 +80,14 @@ export const SideBarFilters = () => {
   //trayendo la categoria en donde el usuario esta parado.
   const category = useSelector((state) => state.products.category);
 
-  // useEffect para mostrar los filtros segun la categoria,
+  // useEffect para traer los accesorios
   useEffect(() => {
+    dispatch(get_accesories());
+  }, []);
+  const accessories = useSelector((state) => state.products.accessories);
+
+  // useEffect para mostrar los filtros segun la categoria,
+  useEffect(async () => {
     if (category === "") {
       setSubFilters((e) => {
         return {
@@ -126,21 +133,7 @@ export const SideBarFilters = () => {
         };
       });
     }
-    if (category === 4) {
-      setSubFilters((e) => {
-        return {
-          ...e,
-          ram: false,
-          storage: false,
-          opeSystem: false,
-          processor: false,
-          display: false,
-          typeScreen: false,
-          resolution: false,
-          sizeScreen: false,
-        };
-      });
-    }
+
     if (category === 3) {
       setSubFilters((e) => {
         return {
@@ -156,6 +149,23 @@ export const SideBarFilters = () => {
         };
       });
     }
+    if (category === 4) {
+      setSubFilters((e) => {
+        return {
+          ...e,
+          ram: false,
+          storage: false,
+          opeSystem: false,
+          processor: false,
+          display: false,
+          typeScreen: false,
+          resolution: false,
+          sizeScreen: false,
+          accessories: true,
+        };
+      });
+    }
+
     setArrFilters([]);
   }, [category]);
 
@@ -201,6 +211,7 @@ export const SideBarFilters = () => {
     typeScreen: false,
     resolution: false,
     sizeScreen: false,
+    accessories: false,
   });
   // useEffect para despachar los filtros
 
@@ -434,6 +445,29 @@ export const SideBarFilters = () => {
                   {element.name}
                 </ItemLi>
               ))}
+            </ul>
+          </FilterDiv>
+        ) : null}
+        {subFilters.accessories ? (
+          <FilterDiv>
+            <Title>Accessory type:</Title>
+            <Space />
+            <ul>
+              {accessories
+                ? accessories.map((element) => {
+                    return (
+                      <ItemLi
+                        id={element.id}
+                        title="accessories"
+                        value={element.name}
+                        onClick={clickFilter}
+                        key={element.id}
+                      >
+                        {element.name}
+                      </ItemLi>
+                    );
+                  })
+                : null}
             </ul>
           </FilterDiv>
         ) : null}
