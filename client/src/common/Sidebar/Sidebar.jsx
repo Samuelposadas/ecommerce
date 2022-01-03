@@ -25,6 +25,10 @@ import {
   ClearButton,
 } from "./styledMobile";
 
+//import array con datos de los filtros;
+
+import { ramDate, storageDate } from "./utils";
+
 import { useSelector, useDispatch } from "react-redux";
 import { getAllProducts, order } from "../../redux/actions/actionProducts";
 
@@ -47,6 +51,85 @@ export const SideBarFilters = () => {
   const [filter, setFilter] = useState({ discount: true, brand: true });
   const [arrFilters, setArrFilters] = useState([]);
   const [openBarMobile, setOpenBarMobile] = useState(false);
+
+  //agregando los filtros especificos
+  const [subFilters, setSubFilters] = useState({
+    ram: false,
+    storage: false,
+    opeSystem: false,
+    processor: false,
+    display: false,
+    typeScreen: false,
+    resolution: false,
+    sizeScreen: false,
+  });
+
+  //trayendo la categoria en donde el usuario esta parado.
+  const category = useSelector((state) => state.products.category);
+
+  // useEffect para mostrar los filtros segun la categoria,
+  useEffect(() => {
+    if (category === 1) {
+      setSubFilters((e) => {
+        return {
+          ...e,
+          ram: true,
+          storage: true,
+          opeSystem: true,
+          processor: true,
+          display: true,
+          typeScreen: true,
+          resolution: true,
+          sizeScreen: true,
+        };
+      });
+    }
+    if (category === 2 || category === 5 || category === 6) {
+      setSubFilters((e) => {
+        return {
+          ...e,
+          ram: true,
+          storage: true,
+          opeSystem: true,
+          processor: true,
+          display: false,
+          typeScreen: true,
+          resolution: true,
+          sizeScreen: true,
+        };
+      });
+    }
+    if (category === 4) {
+      setSubFilters((e) => {
+        return {
+          ...e,
+          ram: false,
+          storage: false,
+          opeSystem: false,
+          processor: false,
+          display: false,
+          typeScreen: false,
+          resolution: false,
+          sizeScreen: false,
+        };
+      });
+    }
+    if (category === 3) {
+      setSubFilters((e) => {
+        return {
+          ...e,
+          ram: false,
+          storage: false,
+          opeSystem: false,
+          processor: false,
+          display: false,
+          typeScreen: true,
+          resolution: true,
+          sizeScreen: true,
+        };
+      });
+    }
+  }, [category]);
 
   return (
     <Container>
@@ -117,6 +200,19 @@ export const SideBarFilters = () => {
               <ItemLi>20% OFF</ItemLi>
               <ItemLi>30% OFF</ItemLi>
               <ItemLi>40% OFF</ItemLi>
+            </ul>
+          </FilterDiv>
+        ) : null}
+
+        {/*subCategorias de filtros */}
+
+        {subFilters.ram ? (
+          <FilterDiv>
+            <Title>Ram</Title>
+            <ul>
+              {ramDate.map((element) => (
+                <ItemLi>{element.name}</ItemLi>
+              ))}
             </ul>
           </FilterDiv>
         ) : null}

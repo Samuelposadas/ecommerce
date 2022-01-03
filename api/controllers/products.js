@@ -1,3 +1,4 @@
+/* eslint-disable */
 const {
   Product,
   Op,
@@ -187,56 +188,56 @@ const newgetProductsAll = async (req, res) => {
             // ram, sizeScreen, monitor, storage, processor,TypeScreen, Resolution
 
             //FILTRO POR RAM
-            if (ram) {
+            if (ram && ram !== "false") {
               findByProduct = findByProduct.filter(
                 (elem) => elem.SubCategory.ram == ram
               );
             }
 
             //FILTRO POR ALMACENAMIENTO
-            if (storage) {
+            if (storage && storage !== "false") {
               findByProduct = findByProduct.filter(
                 (elem) => elem.SubCategory.storage == storage
               );
             }
 
             //FILTRO POR SI EXISTE MONITOR
-            if (display) {
+            if (display && display !== "false") {
               findByProduct = findByProduct.filter(
                 (elem) => elem.SubCategory.display == display
               );
             }
 
             //FILTRO POR TAMAÑO DE PANTALLA
-            if (sizeScreen) {
+            if (sizeScreen && sizeScreen !== "false") {
               findByProduct = findByProduct.filter(
                 (elem) => elem.SubCategory.sizeScreen == sizeScreen
               );
             }
 
             //FILTRO DE RESOLUCION
-            if (resolution) {
+            if (resolution && resolution !== "false") {
               findByProduct = findByProduct.filter(
                 (elem) => elem.SubCategory.resolution == resolution
               );
             }
 
             //FILTRO DE TIPO DE PANTALLA
-            if (typeScreen) {
+            if (typeScreen && typeScreen !== "false") {
               findByProduct = findByProduct.filter(
                 (elem) => elem.SubCategory.typeScreen == typeScreen
               );
             }
 
             //FILTRO POR PROCESADOR
-            if (processor) {
+            if (processor && processor !== "false") {
               findByProduct = findByProduct.filter(
                 (elem) => elem.SubCategory.processor == processor
               );
             }
 
             //FILTRO PORT SISTEMA OPERATIVO
-            if (opeSystem) {
+            if (opeSystem && opeSystem !== "false") {
               findByProduct = findByProduct.filter(
                 (elem) => elem.SubCategory.opeSystem == opeSystem
               );
