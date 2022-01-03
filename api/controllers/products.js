@@ -98,7 +98,7 @@ const newgetProductsAll = async (req, res) => {
     page,
     order,
     typeOrder,
-    nameProduct,
+    NProduct,
     catSpecifict,
     ram,
     typeScreen,
@@ -126,7 +126,20 @@ const newgetProductsAll = async (req, res) => {
     //Inicio de la paginación
     // let offsetPagination = (page - 1) * PRODUCTS_PER_PAGE;
 
-    if (!Pcategory) {
+    //Data Products
+    let findByProduct;
+
+    if (NProduct && NProduct !== "") {
+      findByProduct = await Product.findAll({
+        where: {
+          name: { [Op.iLike]: `%${NProduct}%` },
+        },
+        attributes: ["id", "name", "salePrice", "img", "rating", "discount"],
+        order: [[typeOrder, order]],
+      });
+    }
+
+    if (!Pcategory && !NProduct) {
       try {
         //Datos con todas las categorías
         const conditionDataProducts = {
@@ -135,22 +148,11 @@ const newgetProductsAll = async (req, res) => {
           // limit: PRODUCTS_PER_PAGE,
           order: [[typeOrder, order]],
         };
-        const dataProducts = await Product.findAll(conditionDataProducts);
-
-        //Código de paginado
-        const result = dataProducts.slice(
-          PRODUCTS_PER_PAGE * (page - 1),
-          PRODUCTS_PER_PAGE * (page - 1) + PRODUCTS_PER_PAGE
-        );
-        res.json({
-          count: dataProducts.length,
-          totalPages: Math.ceil(dataProducts.length / PRODUCTS_PER_PAGE),
-          products: result,
-        });
+        findByProduct = await Product.findAll(conditionDataProducts);
       } catch (error) {
         console.log(error);
       }
-    } else {
+    } else if (!NProduct) {
       try {
         const findCategory = await Category.findOne({
           where: { id: Pcategory },
@@ -174,7 +176,7 @@ const newgetProductsAll = async (req, res) => {
           order: [[typeOrder, order]],
         };
 
-        let findByProduct = await Product.findAll(conditionByProduct);
+        findByProduct = await Product.findAll(conditionByProduct);
 
         if (findCategory.name !== "Accessory") {
           if (findByProduct.length > 0) {
@@ -265,22 +267,24 @@ const newgetProductsAll = async (req, res) => {
               (elem) => elem.Specifict_Accesory.id == catSpecifict
             );
           }
-
-          //Código de paginado
-          const result = findByProduct.slice(
-            PRODUCTS_PER_PAGE * (page - 1),
-            PRODUCTS_PER_PAGE * (page - 1) + PRODUCTS_PER_PAGE
-          );
-          res.json({
-            count: findByProduct.length,
-            totalPages: Math.ceil(findByProduct.length / PRODUCTS_PER_PAGE),
-            products: result,
-          });
         }
       } catch (error) {
         console.log(error);
       }
     }
+
+    // if(findByProduct.length>0)
+
+    //Código de paginado
+    const result = findByProduct.slice(
+      PRODUCTS_PER_PAGE * (page - 1),
+      PRODUCTS_PER_PAGE * (page - 1) + PRODUCTS_PER_PAGE
+    );
+    res.json({
+      count: findByProduct.length,
+      totalPages: Math.ceil(findByProduct.length / PRODUCTS_PER_PAGE),
+      products: result,
+    });
   } catch (error) {
     console.log(error);
   }
