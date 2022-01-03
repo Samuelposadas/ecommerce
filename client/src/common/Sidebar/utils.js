@@ -86,6 +86,9 @@ export const sizeScreenDate = [
 ];
 
 export const processorDate = [
-  { name: "Intel", id: "Intel" },
-  { name: "AMD", id: "AMD" },
+  { name: "Intel", id: "Intel", type: 1 },
+  { name: "AMD", id: "AMD", type: 1 },
+  { name: "Apple", id: "Apple", type: 1 },
+  { name: "4 core", id: "4 core", type: 2 },
+  { name: "8 core", id: "8 core", type: 2 },
 ];
