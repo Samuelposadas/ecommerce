@@ -13,6 +13,7 @@ import {
   ORDER,
   GET_PRODUCTS_DEFAULT,
   SAVENAME,
+  GET_PRODUCTS_BY_FILTERS,
 } from "../constants/index";
 
 const initialState = {
@@ -100,6 +101,11 @@ export const reducer = (state = initialState, { type, payload }) => {
         ...state,
         nameProduct: payload,
         category: "",
+      };
+    case GET_PRODUCTS_BY_FILTERS:
+      return {
+        ...state,
+        allProducts: payload,
       };
     default:
       return state;

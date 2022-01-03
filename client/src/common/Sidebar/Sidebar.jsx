@@ -25,8 +25,25 @@ import {
   ClearButton,
 } from "./styledMobile";
 
+//import array con datos de los filtros;
+
+import {
+  ramDate,
+  storageDate,
+  opeSystemDate,
+  displayDate,
+  typeScreenDate,
+  resolutionDate,
+  processorDate,
+  sizeScreenDate,
+} from "./utils";
+
 import { useSelector, useDispatch } from "react-redux";
-import { getAllProducts, order } from "../../redux/actions/actionProducts";
+import {
+  getAllProducts,
+  order,
+  getProductByFilter,
+} from "../../redux/actions/actionProducts";
 
 export const SideBarFilters = () => {
   const idCategory = useSelector((state) => state.products.category);
@@ -44,9 +61,171 @@ export const SideBarFilters = () => {
     dispatch(order(valueOrder));
   }, [valueOrder]);
 
-  const [filter, setFilter] = useState({ discount: true, brand: true });
   const [arrFilters, setArrFilters] = useState([]);
   const [openBarMobile, setOpenBarMobile] = useState(false);
+
+  //agregando los filtros especificos
+  const [subFilters, setSubFilters] = useState({
+    ram: "false",
+    storage: "false",
+    opeSystem: "false",
+    processor: "false",
+    display: "false",
+    typeScreen: "false",
+    resolution: "false",
+    sizeScreen: "false",
+  });
+
+  //trayendo la categoria en donde el usuario esta parado.
+  const category = useSelector((state) => state.products.category);
+
+  // useEffect para mostrar los filtros segun la categoria,
+  useEffect(() => {
+    if (category === "") {
+      setSubFilters((e) => {
+        return {
+          ...e,
+          ram: false,
+          storage: false,
+          opeSystem: false,
+          processor: false,
+          display: false,
+          typeScreen: false,
+          resolution: false,
+          sizeScreen: false,
+        };
+      });
+    }
+    if (category === 1) {
+      setSubFilters((e) => {
+        return {
+          ...e,
+          ram: true,
+          storage: true,
+          opeSystem: true,
+          processor: true,
+          display: true,
+          typeScreen: false,
+          resolution: false,
+          sizeScreen: false,
+        };
+      });
+    }
+    if (category === 2 || category === 5 || category === 6) {
+      setSubFilters((e) => {
+        return {
+          ...e,
+          ram: true,
+          storage: true,
+          opeSystem: true,
+          processor: category === 2 ? false : true,
+          display: false,
+          typeScreen: true,
+          resolution: true,
+          sizeScreen: true,
+        };
+      });
+    }
+    if (category === 4) {
+      setSubFilters((e) => {
+        return {
+          ...e,
+          ram: false,
+          storage: false,
+          opeSystem: false,
+          processor: false,
+          display: false,
+          typeScreen: false,
+          resolution: false,
+          sizeScreen: false,
+        };
+      });
+    }
+    if (category === 3) {
+      setSubFilters((e) => {
+        return {
+          ...e,
+          ram: false,
+          storage: false,
+          opeSystem: false,
+          processor: false,
+          display: false,
+          typeScreen: true,
+          resolution: true,
+          sizeScreen: true,
+        };
+      });
+    }
+    setArrFilters([]);
+  }, [category]);
+
+  //funcion para crear boton de filtro y desaparecer el filtro clickeado
+
+  const clickFilter = (e) => {
+    setQueryFilters({
+      ...queryFilters,
+      [e.target.title]: e.target.id,
+    });
+    setArrFilters((filters) => [
+      ...filters,
+      { name: e.target.innerText, type: e.target.title },
+    ]);
+    setSubFilters({
+      ...subFilters,
+      [e.target.title]: !subFilters[e.target.title],
+    });
+  };
+
+  //funcion para quitar el filtro
+
+  const removeFilter = (element) => {
+    setQueryFilters({
+      ...queryFilters,
+      [element.target.title]: "false",
+    });
+    setSubFilters({
+      ...subFilters,
+      [element.target.title]: !subFilters[element.target.title],
+    });
+    setArrFilters(arrFilters.filter((e) => e.name !== element.target.value));
+  };
+
+  //objeto que se va despachar para filtrar
+
+  const [queryFilters, setQueryFilters] = useState({
+    ram: false,
+    storage: false,
+    opeSystem: false,
+    processor: false,
+    display: false,
+    typeScreen: false,
+    resolution: false,
+    sizeScreen: false,
+  });
+  // useEffect para despachar los filtros
+
+  useEffect(() => {
+    dispatch(getProductByFilter({ ...queryFilters, category }));
+  }, [queryFilters]);
+
+  // useEffect cuando se filtra por monitor en la categoria computer se necesita renderizar filtros de monitores
+  useEffect(() => {
+    if (category === 1) {
+      subFilters.display
+        ? setSubFilters({
+            ...subFilters,
+            typeScreen: false,
+            resolution: false,
+            sizeScreen: false,
+          })
+        : setSubFilters({
+            ...subFilters,
+            typeScreen: true,
+            resolution: true,
+            sizeScreen: true,
+          });
+    }
+  }, [subFilters.display]);
 
   return (
     <Container>
@@ -59,7 +238,6 @@ export const SideBarFilters = () => {
             <OptionStyled value={"DESC"}>Higher price</OptionStyled>
           </SelectStyled>
           <Space />
-          <Space />
         </FilterDiv>
         <Space />
         {arrFilters.length ? <Category>Filters</Category> : null}
@@ -68,59 +246,183 @@ export const SideBarFilters = () => {
           {arrFilters.length
             ? arrFilters.map((element) => (
                 <ButtonFilter
-                  key={element}
-                  onClick={() => {
-                    element === "Lenovo"
-                      ? setFilter({ ...filter, brand: !filter.brand })
-                      : setFilter({ ...filter, discount: !filter.discount });
-                    setArrFilters(arrFilters.filter((e) => e !== element));
-                  }}
+                  title={element.type}
+                  key={element.name}
+                  onClick={removeFilter}
+                  value={element.name}
                 >
-                  {element} x
+                  {element.name}
                 </ButtonFilter>
               ))
             : null}
         </ButtonContainer>
         <Space />
         <Space />
-        {filter.brand ? (
+
+        {/*subCategorias de filtros */}
+
+        {subFilters.ram ? (
           <FilterDiv>
-            <Title>Brands</Title>
+            <Title>Ram</Title>
             <ul>
-              <ItemLi
-                onClick={() => {
-                  setFilter({ ...filter, brand: !filter.brand });
-                  setArrFilters([...arrFilters, "Lenovo"]);
-                }}
-              >
-                Lenovo
-              </ItemLi>
-              <ItemLi>Asus</ItemLi>
-              <ItemLi>HP</ItemLi>
-              <ItemLi>Sony</ItemLi>
+              {ramDate.map((element) => (
+                <ItemLi
+                  key={element.id}
+                  id={element.id}
+                  title="ram"
+                  value={element.name}
+                  onClick={clickFilter}
+                >
+                  {element.name}
+                </ItemLi>
+              ))}
             </ul>
           </FilterDiv>
         ) : null}
-
-        {filter.discount ? (
+        {subFilters.storage ? (
           <FilterDiv>
-            <Title>Discount</Title>
+            <Title>Storage</Title>
             <ul>
-              <ItemLi
-                onClick={() => {
-                  setFilter({ ...filter, discount: !filter.discount });
-                  setArrFilters([...arrFilters, "10% OFF"]);
-                }}
-              >
-                10% OFF
-              </ItemLi>
-              <ItemLi>20% OFF</ItemLi>
-              <ItemLi>30% OFF</ItemLi>
-              <ItemLi>40% OFF</ItemLi>
+              {storageDate.map((element) => (
+                <ItemLi
+                  id={element.id}
+                  title="storage"
+                  value={element.name}
+                  onClick={clickFilter}
+                  key={element.id}
+                >
+                  {element.name}
+                </ItemLi>
+              ))}
+            </ul>
+          </FilterDiv>
+        ) : null}
+        {subFilters.opeSystem ? (
+          <FilterDiv>
+            <Title>Operator System</Title>
+            <ul>
+              {category === 1 || category === 6
+                ? opeSystemDate
+                    .filter((e) => e.type === 1)
+                    .map((element) => (
+                      <ItemLi
+                        id={element.id}
+                        title="opeSystem"
+                        value={element.name}
+                        onClick={clickFilter}
+                        key={element.id}
+                      >
+                        {element.name}
+                      </ItemLi>
+                    ))
+                : opeSystemDate
+                    .filter((e) => e.type === 2)
+                    .map((element) => (
+                      <ItemLi
+                        id={element.id}
+                        title="opeSystem"
+                        value={element.name}
+                        onClick={clickFilter}
+                        key={element.id}
+                      >
+                        {element.name}
+                      </ItemLi>
+                    ))}
+            </ul>
+          </FilterDiv>
+        ) : null}
+        {subFilters.processor ? (
+          <FilterDiv>
+            <Title>Processor</Title>
+            <ul>
+              {processorDate.map((element) => (
+                <ItemLi
+                  id={element.id}
+                  title="processor"
+                  value={element.name}
+                  onClick={clickFilter}
+                  key={element.id}
+                >
+                  {element.name}
+                </ItemLi>
+              ))}
+            </ul>
+          </FilterDiv>
+        ) : null}
+        {subFilters.display ? (
+          <FilterDiv>
+            <Title>Display</Title>
+            <ul>
+              {displayDate.map((element) => (
+                <ItemLi
+                  id={element.id}
+                  title="display"
+                  value={element.id}
+                  onClick={clickFilter}
+                  key={element.id}
+                >
+                  {element.name}
+                </ItemLi>
+              ))}
+            </ul>
+          </FilterDiv>
+        ) : null}
+        {subFilters.typeScreen ? (
+          <FilterDiv>
+            <Title>Type Screen</Title>
+            <ul>
+              {typeScreenDate.map((element) => (
+                <ItemLi
+                  id={element.id}
+                  title="typeScreen"
+                  value={element.name}
+                  onClick={clickFilter}
+                  key={element.id}
+                >
+                  {element.name}
+                </ItemLi>
+              ))}
+            </ul>
+          </FilterDiv>
+        ) : null}
+        {subFilters.resolution ? (
+          <FilterDiv>
+            <Title>Resolution</Title>
+            <ul>
+              {resolutionDate.map((element) => (
+                <ItemLi
+                  id={element.id}
+                  title="resolution"
+                  value={element.name}
+                  onClick={clickFilter}
+                  key={element.id}
+                >
+                  {element.name}
+                </ItemLi>
+              ))}
+            </ul>
+          </FilterDiv>
+        ) : null}
+        {subFilters.sizeScreen ? (
+          <FilterDiv>
+            <Title>Size Screen</Title>
+            <ul>
+              {sizeScreenDate.map((element) => (
+                <ItemLi
+                  id={element.id}
+                  title="sizeScreen"
+                  value={element.name}
+                  onClick={clickFilter}
+                  key={element.id}
+                >
+                  {element.name}
+                </ItemLi>
+              ))}
             </ul>
           </FilterDiv>
         ) : null}
       </ContainerFilter>
+      {/* Responsive */}
       <ContainerFilterMobile open={openBarMobile}>
         <IconContainer>
           <BiFilter onClick={() => setOpenBarMobile(!openBarMobile)} />

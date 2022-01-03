@@ -18,12 +18,15 @@ export const ContainerFilter = styled.div`
   grid-column: 1/2;
   display: ${({ boolean }) => (boolean ? "none" : "flex")};
   flex-direction: column;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   grid-row: 1/2;
   justify-content: center;
   background-color: none;
   margin-top: 45px;
   justify-content: center;
+  align-self: flex-end;
+  width: 200px;
+
   @media screen and (max-width: 768px) {
     display: none;
   }
@@ -33,7 +36,7 @@ export const FilterDiv = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: flex-start;
+  align-items: flex-flex-end;
   margin-left: 30px;
   margin-bottom: 40px;
 `;
@@ -96,4 +99,6 @@ export const ButtonContainer = styled.div`
   display: flex;
   flex-direction: row;
   margin: 10px;
+  flex-wrap: wrap;
+  justify-content: space-around;
 `;
