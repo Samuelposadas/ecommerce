@@ -22,6 +22,7 @@ import {
   MobileWrapper,
   MobileDropdown,
   MobileDropdownItem,
+  CartQuantity,
 } from "./styled";
 
 //components
@@ -53,6 +54,8 @@ const Navbar = () => {
     setShowModal((prev) => !prev);
   };
 
+  const productsCart = useSelector((state) => state.cart.cart);
+
   return (
     <Container>
       <MobileWrapper>
@@ -73,6 +76,11 @@ const Navbar = () => {
         </MobileIcon>
         <MobileIcon>
           <AiOutlineShopping onClick={openModal} />
+          {productsCart.length > 0 ? (
+            <CartQuantity onClick={openModal}>
+              {productsCart.length}
+            </CartQuantity>
+          ) : null}
         </MobileIcon>
       </MobileWrapper>
       <Wrapper>
@@ -105,6 +113,11 @@ const Navbar = () => {
 
           <LogoContainer>
             <AiOutlineShopping onClick={openModal} />
+            {productsCart.length > 0 ? (
+              <CartQuantity onClick={openModal}>
+                {productsCart.length}
+              </CartQuantity>
+            ) : null}
           </LogoContainer>
         </Menu>
         <Space />

@@ -22,6 +22,7 @@ export const Wrapper = styled.div`
 export const Products = styled.div`
   display: grid;
   grid-template-columns: 1fr;
+  align-content: flex-start;
 `;
 
 export const Title = styled.h2`

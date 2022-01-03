@@ -1,6 +1,8 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { CardsContainer, ContainerDisplay } from "./styled";
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
 
 //components
 import Card from "../../Components/Card/Card.jsx";
@@ -10,6 +12,23 @@ import { Paginate } from "../../Components/Pagination/pagination.jsx";
 import { SideBarFilters } from "../../common/Sidebar/Sidebar.jsx";
 
 // import Login from "../Login/Login";
+const responsive = {
+  desktop: {
+    breakpoint: { max: 3000, min: 1024 },
+    items: 3,
+    slidesToSlide: 3, // optional, default to 1.
+  },
+  tablet: {
+    breakpoint: { max: 1024, min: 464 },
+    items: 2,
+    slidesToSlide: 2, // optional, default to 1.
+  },
+  mobile: {
+    breakpoint: { max: 464, min: 0 },
+    items: 1,
+    slidesToSlide: 1, // optional, default to 1.
+  },
+};
 
 const Home = () => {
   const allProducts = useSelector((state) => state.products.allProducts);
@@ -28,6 +47,22 @@ const Home = () => {
       </ContainerDisplay>
 
       <Paginate />
+      <div>
+        <Carousel
+          swipeable={false}
+          draggable={false}
+          responsive={responsive}
+          ssr={true} // means to render carousel on server-side.
+          infinite={true}
+          keyBoardControl={true}
+          customTransition="transform 300ms ease-in-out"
+          transitionDuration={500}
+        >
+          {allProducts.map((product) => (
+            <Card key={product.id} {...product} />
+          ))}
+        </Carousel>
+      </div>
 
       <Footer />
     </>
