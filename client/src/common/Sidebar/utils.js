@@ -15,11 +15,23 @@ export const storageDate = [
 ];
 
 export const opeSystemDate = [
-  { name: "Windows", id: 1 },
-  { name: "Linux", id: 1 },
-  { name: "Mac OS", id: 1 },
-  { name: "Android", id: 2 },
-  { name: "iOS", id: 2 },
+  {
+    name: "Windows",
+    id: "Windows",
+    type: 1,
+  },
+  {
+    name: "Linux",
+    id: "Linux",
+    type: 1,
+  },
+  {
+    name: "Mac OS",
+    id: "Mac OS",
+    type: 1,
+  },
+  { name: "Android", id: "Android", type: 2 },
+  { name: "iOS", id: "iOS", type: 2 },
 ];
 
 export const displayDate = [
@@ -34,18 +46,36 @@ export const displayDate = [
 ];
 
 export const typeScreenDate = [
-  { name: "LCD" },
-  { name: "LED" },
-  { name: "TouchScreen" },
-  { name: "OLED" },
-  { name: "Gorilla Glass" },
-  { name: "Amoled" },
+  {
+    name: "LCD",
+    id: "LCD",
+  },
+  {
+    name: "LED",
+    id: "LED",
+  },
+  {
+    name: "TouchScreen",
+    id: "TouchScreen",
+  },
+  {
+    name: "OLED",
+    id: "OLED",
+  },
+  {
+    name: "Gorilla Glass",
+    id: "Gorilla Glass",
+  },
+  {
+    name: "Amoled",
+    id: "Amoled",
+  },
 ];
 
 export const resolutionDate = [
-  { name: "HD" },
-  { name: "Full HD" },
-  { name: "4K Ultra HD" },
+  { name: "HD", id: "HD" },
+  { name: "Full HD", id: "Full HD" },
+  { name: "4K Ultra HD", id: "4k Ultra HD" },
 ];
 
 export const sizeScreenDate = [
@@ -55,4 +85,7 @@ export const sizeScreenDate = [
   { id: 33, name: "+ 32''" },
 ];
 
-export const processorDate = [{ name: "Intel" }, { name: "AMD" }];
+export const processorDate = [
+  { name: "Intel", id: "Intel" },
+  { name: "AMD", id: "AMD" },
+];

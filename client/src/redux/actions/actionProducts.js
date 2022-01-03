@@ -14,6 +14,7 @@ import {
   ORDER,
   GET_PRODUCTS_DEFAULT,
   SAVENAME,
+  GET_PRODUCTS_BY_FILTERS,
 } from "../constants/index";
 import { actionGenerator, reqGetAxios } from "./metodos";
 
@@ -242,6 +243,38 @@ export const addComment = (review) => {
       return;
     } catch (e) {
       console.log(e);
+    }
+  };
+};
+
+export const getProductByFilter = (payload) => {
+  return async function (dispatch) {
+    const {
+      ram,
+      storage,
+      opeSystem,
+      processor,
+      display,
+      typeScreen,
+      resolution,
+      sizeScreen,
+      category,
+    } = payload;
+    try {
+      let products = await axios.get(
+        `${URL_BASE}/products/pro?Pcategory=${category}&ram=${ram}&storage=${storage}&opeSystem=${opeSystem}&processor=${processor}&display=${display}&typescreen=${typeScreen}&resolution=${resolution}&sizeScreen=${sizeScreen}`
+      );
+
+      dispatch({
+        type: GET_PRODUCTS_BY_FILTERS,
+        payload: products.data.products,
+      });
+      dispatch({
+        type: TOTAL_PAGES,
+        payload: products.data.totalPages,
+      });
+    } catch (error) {
+      console.log(error);
     }
   };
 };

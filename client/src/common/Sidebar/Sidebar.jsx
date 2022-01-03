@@ -39,7 +39,11 @@ import {
 } from "./utils";
 
 import { useSelector, useDispatch } from "react-redux";
-import { getAllProducts, order } from "../../redux/actions/actionProducts";
+import {
+  getAllProducts,
+  order,
+  getProductByFilter,
+} from "../../redux/actions/actionProducts";
 
 export const SideBarFilters = () => {
   const idCategory = useSelector((state) => state.products.category);
@@ -57,20 +61,19 @@ export const SideBarFilters = () => {
     dispatch(order(valueOrder));
   }, [valueOrder]);
 
-  const [filter, setFilter] = useState({ discount: true, brand: true });
   const [arrFilters, setArrFilters] = useState([]);
   const [openBarMobile, setOpenBarMobile] = useState(false);
 
   //agregando los filtros especificos
   const [subFilters, setSubFilters] = useState({
-    ram: false,
-    storage: false,
-    opeSystem: false,
-    processor: false,
-    display: false,
-    typeScreen: false,
-    resolution: false,
-    sizeScreen: false,
+    ram: "false",
+    storage: "false",
+    opeSystem: "false",
+    processor: "false",
+    display: "false",
+    typeScreen: "false",
+    resolution: "false",
+    sizeScreen: "false",
   });
 
   //trayendo la categoria en donde el usuario esta parado.
@@ -153,11 +156,16 @@ export const SideBarFilters = () => {
         };
       });
     }
+    setArrFilters([]);
   }, [category]);
 
   //funcion para crear boton de filtro y desaparecer el filtro clickeado
 
   const clickFilter = (e) => {
+    setQueryFilters({
+      ...queryFilters,
+      [e.target.title]: e.target.id,
+    });
     setArrFilters((filters) => [
       ...filters,
       { name: e.target.innerText, type: e.target.title },
@@ -171,12 +179,53 @@ export const SideBarFilters = () => {
   //funcion para quitar el filtro
 
   const removeFilter = (element) => {
+    setQueryFilters({
+      ...queryFilters,
+      [element.target.title]: "false",
+    });
     setSubFilters({
       ...subFilters,
       [element.target.title]: !subFilters[element.target.title],
     });
     setArrFilters(arrFilters.filter((e) => e.name !== element.target.value));
   };
+
+  //objeto que se va despachar para filtrar
+
+  const [queryFilters, setQueryFilters] = useState({
+    ram: false,
+    storage: false,
+    opeSystem: false,
+    processor: false,
+    display: false,
+    typeScreen: false,
+    resolution: false,
+    sizeScreen: false,
+  });
+  // useEffect para despachar los filtros
+
+  useEffect(() => {
+    dispatch(getProductByFilter({ ...queryFilters, category }));
+  }, [queryFilters]);
+
+  // useEffect cuando se filtra por monitor en la categoria computer se necesita renderizar filtros de monitores
+  useEffect(() => {
+    if (category === 1) {
+      subFilters.display
+        ? setSubFilters({
+            ...subFilters,
+            typeScreen: false,
+            resolution: false,
+            sizeScreen: false,
+          })
+        : setSubFilters({
+            ...subFilters,
+            typeScreen: true,
+            resolution: true,
+            sizeScreen: true,
+          });
+    }
+  }, [subFilters.display]);
 
   return (
     <Container>
@@ -209,43 +258,6 @@ export const SideBarFilters = () => {
         </ButtonContainer>
         <Space />
         <Space />
-        {filter.brand ? (
-          <FilterDiv>
-            <Title>Brands</Title>
-            <ul>
-              <ItemLi
-                onClick={() => {
-                  setFilter({ ...filter, brand: !filter.brand });
-                  setArrFilters([...arrFilters, "Lenovo"]);
-                }}
-              >
-                Lenovo
-              </ItemLi>
-              <ItemLi>Asus</ItemLi>
-              <ItemLi>HP</ItemLi>
-              <ItemLi>Sony</ItemLi>
-            </ul>
-          </FilterDiv>
-        ) : null}
-
-        {filter.discount ? (
-          <FilterDiv>
-            <Title>Discount</Title>
-            <ul>
-              <ItemLi
-                onClick={() => {
-                  setFilter({ ...filter, discount: !filter.discount });
-                  setArrFilters([...arrFilters, "10% OFF"]);
-                }}
-              >
-                10% OFF
-              </ItemLi>
-              <ItemLi>20% OFF</ItemLi>
-              <ItemLi>30% OFF</ItemLi>
-              <ItemLi>40% OFF</ItemLi>
-            </ul>
-          </FilterDiv>
-        ) : null}
 
         {/*subCategorias de filtros */}
 
@@ -254,7 +266,13 @@ export const SideBarFilters = () => {
             <Title>Ram</Title>
             <ul>
               {ramDate.map((element) => (
-                <ItemLi title="ram" value={element.name} onClick={clickFilter}>
+                <ItemLi
+                  key={element.id}
+                  id={element.id}
+                  title="ram"
+                  value={element.name}
+                  onClick={clickFilter}
+                >
                   {element.name}
                 </ItemLi>
               ))}
@@ -267,9 +285,11 @@ export const SideBarFilters = () => {
             <ul>
               {storageDate.map((element) => (
                 <ItemLi
+                  id={element.id}
                   title="storage"
                   value={element.name}
                   onClick={clickFilter}
+                  key={element.id}
                 >
                   {element.name}
                 </ItemLi>
@@ -283,23 +303,27 @@ export const SideBarFilters = () => {
             <ul>
               {category === 1 || category === 6
                 ? opeSystemDate
-                    .filter((e) => e.id === 1)
+                    .filter((e) => e.type === 1)
                     .map((element) => (
                       <ItemLi
+                        id={element.id}
                         title="opeSystem"
                         value={element.name}
                         onClick={clickFilter}
+                        key={element.id}
                       >
                         {element.name}
                       </ItemLi>
                     ))
                 : opeSystemDate
-                    .filter((e) => e.id === 2)
+                    .filter((e) => e.type === 2)
                     .map((element) => (
                       <ItemLi
+                        id={element.id}
                         title="opeSystem"
                         value={element.name}
                         onClick={clickFilter}
+                        key={element.id}
                       >
                         {element.name}
                       </ItemLi>
@@ -313,9 +337,11 @@ export const SideBarFilters = () => {
             <ul>
               {processorDate.map((element) => (
                 <ItemLi
+                  id={element.id}
                   title="processor"
                   value={element.name}
                   onClick={clickFilter}
+                  key={element.id}
                 >
                   {element.name}
                 </ItemLi>
@@ -329,9 +355,11 @@ export const SideBarFilters = () => {
             <ul>
               {displayDate.map((element) => (
                 <ItemLi
+                  id={element.id}
                   title="display"
-                  value={element.name}
+                  value={element.id}
                   onClick={clickFilter}
+                  key={element.id}
                 >
                   {element.name}
                 </ItemLi>
@@ -345,9 +373,11 @@ export const SideBarFilters = () => {
             <ul>
               {typeScreenDate.map((element) => (
                 <ItemLi
+                  id={element.id}
                   title="typeScreen"
                   value={element.name}
                   onClick={clickFilter}
+                  key={element.id}
                 >
                   {element.name}
                 </ItemLi>
@@ -361,9 +391,11 @@ export const SideBarFilters = () => {
             <ul>
               {resolutionDate.map((element) => (
                 <ItemLi
+                  id={element.id}
                   title="resolution"
                   value={element.name}
                   onClick={clickFilter}
+                  key={element.id}
                 >
                   {element.name}
                 </ItemLi>
@@ -377,9 +409,11 @@ export const SideBarFilters = () => {
             <ul>
               {sizeScreenDate.map((element) => (
                 <ItemLi
+                  id={element.id}
                   title="sizeScreen"
                   value={element.name}
                   onClick={clickFilter}
+                  key={element.id}
                 >
                   {element.name}
                 </ItemLi>
