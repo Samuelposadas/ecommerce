@@ -5,6 +5,8 @@ export const Container = styled.div`
   align-content: center;
   justify-content: center;
   color: black;
+  margin-top: 50px;
+  margin-bottom: 50px;
 `;
 
 export const Wrapper = styled.div`
@@ -22,6 +24,7 @@ export const Wrapper = styled.div`
 export const Products = styled.div`
   display: grid;
   grid-template-columns: 1fr;
+  align-content: flex-start;
 `;
 
 export const Title = styled.h2`

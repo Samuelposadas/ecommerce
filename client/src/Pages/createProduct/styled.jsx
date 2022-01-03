@@ -88,7 +88,8 @@ export const Select = styled.div`
 `;
 
 export const StyledButton = styled.button`
-  margin-top: 40px;
+  margin-top: 10px;
+  margin-bottom: 10px;
   background-color: #1a83ff;
   border-radius: 10px;
   padding: 20px;
@@ -100,7 +101,7 @@ export const StyledButton = styled.button`
     background-color: #1a85ffe4;
   }
   &:disabled {
-    background-color: #1a85ff8b;
+    background-color: #1a85ff49;
     cursor: auto;
   }
 `;
@@ -111,8 +112,11 @@ export const ShowCategories = styled.div`
   align-items: center;
   margin-top: 5px;
   & button {
-    border-radius: 10px;
-    margin-left: 5px;
+    cursor: pointer;
+    background-color: white;
+    border: none;
+    font-size: 12px;
+    font-weight: bold;
   }
 `;
 
@@ -140,8 +144,17 @@ export const InputImg = styled.div`
 export const ImgContainer = styled.div`
   display: flex;
   flex-direction: row;
+  align-items: center;
   & img {
     height: 60px;
     width: 60px;
+    margin-top: 10px;
+  }
+  & button {
+    cursor: pointer;
+    background-color: white;
+    border: none;
+    font-size: 12px;
+    font-weight: bold;
   }
 `;

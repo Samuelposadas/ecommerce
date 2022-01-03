@@ -121,3 +121,20 @@ export const MobileDropdownItem = styled.li`
   justify-content: center;
   align-items: center;
 `;
+
+export const CartQuantity = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+  position: absolute;
+  z-index: 200;
+  font-size: 10px;
+  font-weight: bold;
+  padding: 4px;
+  height: 14px;
+  color: #2b2929;
+  background-color: #e9e0e0ee;
+  top: 27px;
+  margin-left: 9px;
+`;

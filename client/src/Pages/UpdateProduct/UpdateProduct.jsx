@@ -14,6 +14,9 @@ import {
   ShowCategories,
   StyledButton,
   StyledForm,
+  Input,
+  Label,
+  Danger,
 } from "../createProduct/styled.jsx";
 import validate from "../createProduct/validate.jsx";
 import { Toaster, toast } from "react-hot-toast";
@@ -60,8 +63,8 @@ const UpdateProduct = () => {
     // eslint-disable-next-line no-undef
     toast.promise(saveSettings(settings), {
       loading: "Saving...",
-      success: <b>Product edit Successfully!</b>,
-      error: <b>Error could not edit the product.</b>,
+      success: <b>Product edited successfully!</b>,
+      error: <b>Product could not be edited(</b>,
     });
   };
 
@@ -161,70 +164,72 @@ const UpdateProduct = () => {
       <StyledForm onSubmit={handleSubmit}>
         <Header>Update product</Header>
         <Content>
-          <h3>Name</h3>
-          <input
-            className={errors.name && "danger"}
+          <Input
+            error={errors.name}
             type="text"
             name="name"
             value={input.name}
             onChange={handleChange}
           />
-          {errors.name && <p className="danger">{errors.name}</p>}
+          <Label active={input.name}>Name</Label>
+          {errors.name && <Danger>{errors.name}</Danger>}
         </Content>
         <Content>
-          <h3>Description</h3>
-          <input
-            className={errors.description && "danger"}
+          <Input
+            error={errors.description}
             type="text"
             name="description"
             value={input.description}
             onChange={handleChange}
           />
-          {errors.description && <p className="danger">{errors.description}</p>}
+          <Label active={input.description}>Description</Label>
+          {errors.description && <Danger>{errors.description}</Danger>}
         </Content>
         <Content>
-          <h3>Sale price</h3>
-          <input
-            className={errors.salePrice && "danger"}
+          <Input
+            error={errors.salePrice}
             type="number"
             name="salePrice"
             value={input.salePrice}
             onChange={handleChange}
           />
-          {errors.salePrice && <p className="danger">{errors.salePrice}</p>}
+          <Label active={input.salePrice}>Sale Price</Label>
+          {errors.salePrice && <Danger>{errors.salePrice}</Danger>}
         </Content>
         <Content>
-          <h3>Rating</h3>
-          <input
-            className={errors.rating && "danger"}
+          <Input
+            error={errors.rating}
             type="number"
             name="rating"
             value={input.rating}
             onChange={handleChange}
           />
-          {errors.rating && <p className="danger">{errors.rating}</p>}
+          <Label active={input.rating}>Rating</Label>
+          {errors.rating && <Danger>{errors.rating}</Danger>}
         </Content>
         <Content>
-          <h3>Stock</h3>
-          <input
-            className={errors.stock && "danger"}
+          <Input
+            error={errors.stock}
             type="number"
             name="stock"
             value={input.stock}
             onChange={handleChange}
           />
-          {errors.stock && <p className="danger">{errors.stock}</p>}
+          <Label active={input.stock}>Stock</Label>
+          {errors.stock && <Danger>{errors.stock}</Danger>}
         </Content>
+        <Content></Content>
         <Content>
-          <h3>Images</h3>
-          <input
-            className={errors.img && "danger"}
+          <Input
+            error={errors.img}
             type="text"
             name="imgTotal"
             value={input.imgTotal}
             onChange={handleChange}
           />
-          <button onClick={handleClickImg}>Add img</button>
+          <Label active={input.imgTotal}>Images</Label>
+          <StyledButton onClick={handleClickImg}>Add img</StyledButton>
+          {errors.img && <Danger>{errors.img}</Danger>}
           {input.img?.map((img) => (
             <ImgContainer key={img}>
               <img src={img} />
@@ -236,28 +241,26 @@ const UpdateProduct = () => {
           {errors.img && <p className="danger">{errors.img}</p>}
         </Content>
         <Content>
-          <h3>Discount</h3>
-          <input
-            className={errors.discount && "danger"}
+          <Input
+            error={errors.discount}
             type="number"
             name="discount"
             value={input.discount}
             onChange={handleChange}
           />
-          {errors.discount && <p className="danger">{errors.discount}</p>}
+          <Label active={input.discount}>Discount</Label>
+          {errors.discount && <Danger>{errors.discount}</Danger>}
         </Content>
         <Content>
-          <h3>Purchase price</h3>
-          <input
-            className={errors.purchasePrice && "danger"}
+          <Input
+            error={errors.purchasePrice}
             type="number"
             name="purchasePrice"
             value={input.purchasePrice}
             onChange={handleChange}
           />
-          {errors.purchasePrice && (
-            <p className="danger">{errors.purchasePrice}</p>
-          )}
+          <Label active={input.purchasePrice}>Purchase Price</Label>
+          {errors.purchasePrice && <Danger>{errors.purchasePrice}</Danger>}
         </Content>
         <Select>
           <h3>Categories:</h3>

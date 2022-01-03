@@ -91,7 +91,7 @@ const ProductDetail = () => {
                   <Image
                     src={item}
                     key={index}
-                    onClick={() => setImage(item)}
+                    onMouseEnter={() => setImage(item)}
                   ></Image>
                 ))
               : null}

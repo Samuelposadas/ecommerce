@@ -1,14 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 
 import "./App.css";
 import { createGlobalStyle } from "styled-components";
-import { ThemeProvider } from "styled-components";
-import { lightTheme, darkTheme } from "./themes/themes.jsx";
+// import { ThemeProvider } from "styled-components";
+// import { lightTheme, darkTheme } from "./themes/themes.jsx";
 
-import { MdDarkMode, MdOutlineDarkMode } from "react-icons/md";
-import { Toggle } from "./themes/styled.jsx";
-import { Toaster, toast } from "react-hot-toast";
+// import { MdDarkMode, MdOutlineDarkMode } from "react-icons/md";
+// import { Toggle } from "./themes/styled.jsx";
+// import { Toaster, toast } from "react-hot-toast";
 
 //components at the bottom of this line
 import RouterApp from "./Routes/RouterApp.jsx";
@@ -19,8 +19,6 @@ const GlobalStyle = createGlobalStyle`
 	font-size: 13px;
 	font-weight: normal;
 	color: #242323dd;
-    background-color : ${(props) => props.theme.body};
-    color : ${(props) => props.theme.fontColor};
   }
 `;
 const Wrapper = styled.div`
@@ -29,46 +27,46 @@ const Wrapper = styled.div`
 `;
 
 const App = () => {
-  const [theme, setTheme] = useState("light");
+  //   const [theme, setTheme] = useState("light");
 
-  const themeToggle = () => {
-    theme === "light" ? setTheme("dark") : setTheme("light");
-    if (theme === "dark") {
-      toast("dark mode!", {
-        icon: "🌙",
-        style: {
-          borderRadius: "10px",
-          background: "#333",
-          color: "#fff",
-        },
-      });
-    }
-    if (theme === "light") {
-      toast("light mode!", {
-        icon: "🌞",
-        style: {
-          borderRadius: "10px",
-          background: "white",
-          color: "black",
-        },
-      });
-    }
-  };
-  const icon =
-    theme == "light" ? (
-      <MdOutlineDarkMode size={30} />
-    ) : (
-      <MdDarkMode size={30} />
-    );
+  //   const themeToggle = () => {
+  //     theme === "light" ? setTheme("dark") : setTheme("light");
+  //     if (theme === "dark") {
+  //       toast("dark mode!", {
+  //         icon: "🌙",
+  //         style: {
+  //           borderRadius: "10px",
+  //           background: "#333",
+  //           color: "#fff",
+  //         },
+  //       });
+  //     }
+  //     if (theme === "light") {
+  //       toast("light mode!", {
+  //         icon: "🌞",
+  //         style: {
+  //           borderRadius: "10px",
+  //           background: "white",
+  //           color: "black",
+  //         },
+  //       });
+  //     }
+  //   };
+  //   const icon =
+  //     theme == "light" ? (
+  //       <MdOutlineDarkMode size={30} />
+  //     ) : (
+  //       <MdDarkMode size={30} />
+  //     );
   return (
-    <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
-      <Wrapper>
-        <Toggle onClick={themeToggle}>{icon}</Toggle>
-        <RouterApp />
-        <GlobalStyle />
-      </Wrapper>
-      <Toaster />
-    </ThemeProvider>
+    // <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
+    <Wrapper>
+      {/* <Toggle onClick={themeToggle}>{icon}</Toggle> */}
+      <RouterApp />
+      <GlobalStyle />
+    </Wrapper>
+    //   <Toaster />
+    // </ThemeProvider>
   );
 };
 
