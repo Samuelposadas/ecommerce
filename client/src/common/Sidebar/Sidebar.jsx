@@ -27,7 +27,16 @@ import {
 
 //import array con datos de los filtros;
 
-import { ramDate, storageDate } from "./utils";
+import {
+  ramDate,
+  storageDate,
+  opeSystemDate,
+  displayDate,
+  typeScreenDate,
+  resolutionDate,
+  processorDate,
+  sizeScreenDate,
+} from "./utils";
 
 import { useSelector, useDispatch } from "react-redux";
 import { getAllProducts, order } from "../../redux/actions/actionProducts";
@@ -69,6 +78,21 @@ export const SideBarFilters = () => {
 
   // useEffect para mostrar los filtros segun la categoria,
   useEffect(() => {
+    if (category === "") {
+      setSubFilters((e) => {
+        return {
+          ...e,
+          ram: false,
+          storage: false,
+          opeSystem: false,
+          processor: false,
+          display: false,
+          typeScreen: false,
+          resolution: false,
+          sizeScreen: false,
+        };
+      });
+    }
     if (category === 1) {
       setSubFilters((e) => {
         return {
@@ -78,9 +102,9 @@ export const SideBarFilters = () => {
           opeSystem: true,
           processor: true,
           display: true,
-          typeScreen: true,
-          resolution: true,
-          sizeScreen: true,
+          typeScreen: false,
+          resolution: false,
+          sizeScreen: false,
         };
       });
     }
@@ -91,7 +115,7 @@ export const SideBarFilters = () => {
           ram: true,
           storage: true,
           opeSystem: true,
-          processor: true,
+          processor: category === 2 ? false : true,
           display: false,
           typeScreen: true,
           resolution: true,
@@ -131,6 +155,29 @@ export const SideBarFilters = () => {
     }
   }, [category]);
 
+  //funcion para crear boton de filtro y desaparecer el filtro clickeado
+
+  const clickFilter = (e) => {
+    setArrFilters((filters) => [
+      ...filters,
+      { name: e.target.innerText, type: e.target.title },
+    ]);
+    setSubFilters({
+      ...subFilters,
+      [e.target.title]: !subFilters[e.target.title],
+    });
+  };
+
+  //funcion para quitar el filtro
+
+  const removeFilter = (element) => {
+    setSubFilters({
+      ...subFilters,
+      [element.target.title]: !subFilters[element.target.title],
+    });
+    setArrFilters(arrFilters.filter((e) => e.name !== element.target.value));
+  };
+
   return (
     <Container>
       <ContainerFilter>
@@ -142,7 +189,6 @@ export const SideBarFilters = () => {
             <OptionStyled value={"DESC"}>Higher price</OptionStyled>
           </SelectStyled>
           <Space />
-          <Space />
         </FilterDiv>
         <Space />
         {arrFilters.length ? <Category>Filters</Category> : null}
@@ -151,15 +197,12 @@ export const SideBarFilters = () => {
           {arrFilters.length
             ? arrFilters.map((element) => (
                 <ButtonFilter
-                  key={element}
-                  onClick={() => {
-                    element === "Lenovo"
-                      ? setFilter({ ...filter, brand: !filter.brand })
-                      : setFilter({ ...filter, discount: !filter.discount });
-                    setArrFilters(arrFilters.filter((e) => e !== element));
-                  }}
+                  title={element.type}
+                  key={element.name}
+                  onClick={removeFilter}
+                  value={element.name}
                 >
-                  {element} x
+                  {element.name}
                 </ButtonFilter>
               ))
             : null}
@@ -211,12 +254,141 @@ export const SideBarFilters = () => {
             <Title>Ram</Title>
             <ul>
               {ramDate.map((element) => (
-                <ItemLi>{element.name}</ItemLi>
+                <ItemLi title="ram" value={element.name} onClick={clickFilter}>
+                  {element.name}
+                </ItemLi>
+              ))}
+            </ul>
+          </FilterDiv>
+        ) : null}
+        {subFilters.storage ? (
+          <FilterDiv>
+            <Title>Storage</Title>
+            <ul>
+              {storageDate.map((element) => (
+                <ItemLi
+                  title="storage"
+                  value={element.name}
+                  onClick={clickFilter}
+                >
+                  {element.name}
+                </ItemLi>
+              ))}
+            </ul>
+          </FilterDiv>
+        ) : null}
+        {subFilters.opeSystem ? (
+          <FilterDiv>
+            <Title>Operator System</Title>
+            <ul>
+              {category === 1 || category === 6
+                ? opeSystemDate
+                    .filter((e) => e.id === 1)
+                    .map((element) => (
+                      <ItemLi
+                        title="opeSystem"
+                        value={element.name}
+                        onClick={clickFilter}
+                      >
+                        {element.name}
+                      </ItemLi>
+                    ))
+                : opeSystemDate
+                    .filter((e) => e.id === 2)
+                    .map((element) => (
+                      <ItemLi
+                        title="opeSystem"
+                        value={element.name}
+                        onClick={clickFilter}
+                      >
+                        {element.name}
+                      </ItemLi>
+                    ))}
+            </ul>
+          </FilterDiv>
+        ) : null}
+        {subFilters.processor ? (
+          <FilterDiv>
+            <Title>Processor</Title>
+            <ul>
+              {processorDate.map((element) => (
+                <ItemLi
+                  title="processor"
+                  value={element.name}
+                  onClick={clickFilter}
+                >
+                  {element.name}
+                </ItemLi>
+              ))}
+            </ul>
+          </FilterDiv>
+        ) : null}
+        {subFilters.display ? (
+          <FilterDiv>
+            <Title>Display</Title>
+            <ul>
+              {displayDate.map((element) => (
+                <ItemLi
+                  title="display"
+                  value={element.name}
+                  onClick={clickFilter}
+                >
+                  {element.name}
+                </ItemLi>
+              ))}
+            </ul>
+          </FilterDiv>
+        ) : null}
+        {subFilters.typeScreen ? (
+          <FilterDiv>
+            <Title>Type Screen</Title>
+            <ul>
+              {typeScreenDate.map((element) => (
+                <ItemLi
+                  title="typeScreen"
+                  value={element.name}
+                  onClick={clickFilter}
+                >
+                  {element.name}
+                </ItemLi>
+              ))}
+            </ul>
+          </FilterDiv>
+        ) : null}
+        {subFilters.resolution ? (
+          <FilterDiv>
+            <Title>Resolution</Title>
+            <ul>
+              {resolutionDate.map((element) => (
+                <ItemLi
+                  title="resolution"
+                  value={element.name}
+                  onClick={clickFilter}
+                >
+                  {element.name}
+                </ItemLi>
+              ))}
+            </ul>
+          </FilterDiv>
+        ) : null}
+        {subFilters.sizeScreen ? (
+          <FilterDiv>
+            <Title>Size Screen</Title>
+            <ul>
+              {sizeScreenDate.map((element) => (
+                <ItemLi
+                  title="sizeScreen"
+                  value={element.name}
+                  onClick={clickFilter}
+                >
+                  {element.name}
+                </ItemLi>
               ))}
             </ul>
           </FilterDiv>
         ) : null}
       </ContainerFilter>
+      {/* Responsive */}
       <ContainerFilterMobile open={openBarMobile}>
         <IconContainer>
           <BiFilter onClick={() => setOpenBarMobile(!openBarMobile)} />

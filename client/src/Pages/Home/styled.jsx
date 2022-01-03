@@ -8,7 +8,7 @@ export const CardsContainer = styled.div`
   grid-template-columns: repeat(auto-fit, minmax(200px, 320px));
   gap: 0.1rem;
   justify-content: center;
-  align-content: center;
+  align-content: start;
   justify-items: center;
   align-items: center;
   z-index: 1;

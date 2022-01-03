@@ -48,7 +48,7 @@ export const resolutionDate = [
   { name: "4K Ultra HD" },
 ];
 
-export const sizeScreeDate = [
+export const sizeScreenDate = [
   { id: 7, name: "- 8'' " },
   { id: 8, name: "From 8'' to 16''" },
   { id: 17, name: "From 16'' to 32''" },

@@ -204,6 +204,7 @@ export const action_defaul_values = () => {
         payload: {
           products: product.data.products,
           totalPages: product.data.totalPages,
+          category: "",
         },
       });
     } catch (error) {
