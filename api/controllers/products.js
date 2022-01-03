@@ -119,7 +119,7 @@ const newgetProductsAll = async (req, res) => {
   */
   try {
     //Valores por defecto si no vienen por query
-    const PRODUCTS_PER_PAGE = 5;
+    const PRODUCTS_PER_PAGE = 12;
     page = page ? page : 1;
     order = order ? order : "DESC";
     typeOrder = typeOrder ? typeOrder : "rating";
