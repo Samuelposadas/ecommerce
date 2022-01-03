@@ -37,12 +37,12 @@ export const Title = styled.p`
 
 export const Price = styled.p`
   color: #147ce5;
-  font-size: 13.5px;
+  font-size: 15.5px;
 `;
 
 export const OldPrice = styled.p`
   text-decoration: line-through;
-  color: #147ce5;
+  color: #535a61ac;
   font-size: 13.5px;
 `;
 
