@@ -57,9 +57,11 @@ const Home = () => {
         customTransition="transform 300ms ease-in-out"
         transitionDuration={500}
       >
-        {allProducts.map((product) => (
-          <Card key={product.id} {...product} />
-        ))}
+        {allProducts.length > 0 ? (
+          allProducts.map((product) => <Card key={product.id} {...product} />)
+        ) : (
+          <p>Product not found...</p>
+        )}
       </Carousel>
       <Footer />
     </>

@@ -210,7 +210,7 @@ const CreateProduct = () => {
             onChange={handleChange}
           />
           <Label active={input.imgTotal}>Images</Label>
-          <button onClick={handleClickImg}>Add img</button>
+          <StyledButton onClick={handleClickImg}>Add img</StyledButton>
           {errors.img && <Danger>{errors.img}</Danger>}
         </Content>
         <Content>

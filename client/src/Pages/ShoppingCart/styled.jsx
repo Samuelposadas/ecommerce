@@ -5,6 +5,8 @@ export const Container = styled.div`
   align-content: center;
   justify-content: center;
   color: black;
+  margin-top: 50px;
+  margin-bottom: 50px;
 `;
 
 export const Wrapper = styled.div`
