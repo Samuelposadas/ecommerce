@@ -6,7 +6,7 @@ const {
   /* User, */ Supplier,
   Comment,
   SubCategory,
-  Specifict_Accesory,
+  Specifict_Category,
 } = require("../db/db");
 
 const getProductsAll = async (req, res) => {
@@ -159,7 +159,6 @@ const newgetProductsAll = async (req, res) => {
           where: { id: Pcategory },
           attributes: ["name"],
         });
-
         const conditionByProduct = {
           include: [
             {
@@ -170,7 +169,7 @@ const newgetProductsAll = async (req, res) => {
               model: SubCategory,
             },
             {
-              model: Specifict_Accesory,
+              model: Specifict_Category,
             },
           ],
           attributes: ["id", "name", "salePrice", "img", "rating", "discount"],
@@ -208,7 +207,7 @@ const newgetProductsAll = async (req, res) => {
             }
 
             //FILTRO POR ALMACENAMIENTO
-            if (storage && storage !== "false") {
+            if (storage && storage !== "") {
               if (storage < 256) {
                 findByProduct = findByProduct.filter(
                   (elem) => elem.SubCategory.storage < 256
@@ -266,28 +265,11 @@ const newgetProductsAll = async (req, res) => {
                 (elem) => elem.SubCategory.opeSystem == opeSystem
               );
             }
-
-            //Código de paginado
-            const result = findByProduct.slice(
-              PRODUCTS_PER_PAGE * (page - 1),
-              PRODUCTS_PER_PAGE * (page - 1) + PRODUCTS_PER_PAGE
-            );
-            res.json({
-              count: findByProduct.length,
-              totalPages: Math.ceil(findByProduct.length / PRODUCTS_PER_PAGE),
-              products: result,
-            });
-          } else {
-            res.json({
-              count: 0,
-              totalPages: 0,
-              products: [],
-            });
           }
         } else if (findCategory.name == "Accessory") {
-          if (catSpecifict && catSpecifict !== "false") {
+          if (catSpecifict && catSpecifict !== "") {
             findByProduct = findByProduct.filter(
-              (elem) => elem.Specifict_Accesory.id == catSpecifict
+              (elem) => elem.Specifict_Category.id == catSpecifict
             );
           }
         }
@@ -295,8 +277,6 @@ const newgetProductsAll = async (req, res) => {
         console.log(error);
       }
     }
-
-    // if(findByProduct.length>0)
 
     //Código de paginado
     const result = findByProduct.slice(
