@@ -461,6 +461,16 @@ const updateRating = async ({ id, rating }) => {
   }
 };
 
+const getAllProducts = async (req, res) => {
+  try {
+    const products = await Product.findAll({ attributes: ["name"] });
+    res.json(products);
+  } catch (e) {
+    console.log(e);
+    res.error(e);
+  }
+};
+
 module.exports = {
   getProductsAll,
   findProductById,
@@ -470,4 +480,5 @@ module.exports = {
   updateProduct,
   newgetProductsAll,
   updateRating,
+  getAllProducts,
 };

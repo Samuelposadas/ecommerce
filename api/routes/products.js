@@ -9,9 +9,11 @@ const {
   addOrRemoveCategoryProduct,
   newgetProductsAll,
   updateRating,
+  getAllProducts,
 } = require("../controllers/products");
 
 router.route("/").get(getProductsAll);
+router.route("/all").get(getAllProducts);
 router.route("/pro").get(newgetProductsAll);
 router.route("/search").get(searchProducts);
 router.route("/create").post(createProduct);

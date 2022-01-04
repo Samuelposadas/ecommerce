@@ -16,6 +16,7 @@ import {
   SAVENAME,
   GET_ACCESORIES,
   GET_PRODUCTS_BY_FILTERS,
+  GET_ALL_PRODUCTS_NAMES,
 } from "../constants/index";
 import { actionGenerator, reqGetAxios } from "./metodos";
 
@@ -280,6 +281,18 @@ export const getProductByFilter = (payload) => {
     }
   };
 };
+
+export const getProductsNames = () => {
+  return async function (dispatch) {
+    try {
+      const products = await axios.get(`${URL_BASE}/products/all`);
+      dispatch({
+        type: GET_ALL_PRODUCTS_NAMES,
+        payload: products.data,
+      });
+    } catch (e) {
+      console.log(e);
+    }
 
 export const get_accesories = () => {
   return async (dispatch) => {

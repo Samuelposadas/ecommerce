@@ -1,5 +1,17 @@
 import styled from "styled-components";
 
+export const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+export const Suggestion = styled.div`
+  background-color: white;
+  color: black;
+  border: 1px solid black;
+  z-index: 2;
+`;
+
 export const FormSt = styled.form`
   display: flex;
   flex-direction: row;
