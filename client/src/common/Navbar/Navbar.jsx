@@ -6,8 +6,8 @@ import { GoThreeBars, GoX } from "react-icons/go";
 import {
   getCategory,
   getCategoryAll,
-  getAllProducts,
   action_defaul_values,
+  getProductByFilter,
 } from "../../redux/actions/actionProducts";
 
 import {
@@ -39,7 +39,23 @@ const Navbar = () => {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
   const categoryChange = (categoryId) => {
     dispatch(getCategory(categoryId));
-    dispatch(getAllProducts(1, categoryId));
+    //dispatch(getAllProducts(1, categoryId));
+    dispatch(
+      getProductByFilter({
+        ram: false,
+        storage: false,
+        opeSystem: false,
+        processor: false,
+        display: false,
+        typeScreen: false,
+        resolution: false,
+        sizeScreen: false,
+        accessories: false,
+        order: "ASC",
+        typeOrder: "salePrice",
+        category: categoryId,
+      })
+    );
   };
 
   const [style, setStyle] = useState("");

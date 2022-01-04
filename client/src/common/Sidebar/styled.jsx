@@ -93,6 +93,7 @@ export const ButtonFilter = styled.button`
   border-radius: 5px;
   border: none;
   margin: 10px;
+  cursor: pointer;
 `;
 
 export const ButtonContainer = styled.div`

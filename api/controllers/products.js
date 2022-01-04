@@ -233,9 +233,30 @@ const newgetProductsAll = async (req, res) => {
 
             //FILTRO POR TAMAÑO DE PANTALLA
             if (sizeScreen && sizeScreen !== "false") {
-              findByProduct = findByProduct.filter(
-                (elem) => elem.SubCategory.sizeScreen == sizeScreen
-              );
+              if (sizeScreen < 8) {
+                findByProduct = findByProduct.filter(
+                  (elem) => elem.SubCategory.sizeScreen < 8
+                );
+              }
+              if (sizeScreen >= 8 && sizeScreen < 16) {
+                findByProduct = findByProduct.filter(
+                  (elem) =>
+                    elem.SubCategory.sizeScreen >= 8 &&
+                    elem.SubCategory.sizeScreen < 16
+                );
+              }
+              if (sizeScreen >= 16 && sizeScreen < 32) {
+                findByProduct = findByProduct.filter(
+                  (elem) =>
+                    elem.SubCategory.sizeScreen >= 16 &&
+                    elem.SubCategory.sizeScreen < 32
+                );
+              }
+              if (sizeScreen >= 32) {
+                findByProduct = findByProduct.filter(
+                  (elem) => elem.SubCategory.sizeScreen >= 32
+                );
+              }
             }
 
             //FILTRO DE RESOLUCION

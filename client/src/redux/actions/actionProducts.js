@@ -262,11 +262,21 @@ export const getProductByFilter = (payload) => {
       sizeScreen,
       category,
       accessories,
+      order,
+      typeOrder,
     } = payload;
     try {
-      let products = await axios.get(
-        `${URL_BASE}/products/pro?Pcategory=${category}&ram=${ram}&catSpecifict=${accessories}&storage=${storage}&opeSystem=${opeSystem}&processor=${processor}&display=${display}&typescreen=${typeScreen}&resolution=${resolution}&sizeScreen=${sizeScreen}`
-      );
+      let products;
+      if (category.length === 0) {
+        products = await axios.get(
+          `${URL_BASE}/products/pro?order=${order}&typeOrder=${typeOrder}&ram=${ram}&catSpecifict=${accessories}&storage=${storage}&opeSystem=${opeSystem}&processor=${processor}&display=${display}&typeScreen=${typeScreen}&resolution=${resolution}&sizeScreen=${sizeScreen}`
+        );
+      } else {
+        products = await axios.get(
+          `${URL_BASE}/products/pro?order=${order}&typeOrder=${typeOrder}&Pcategory=${category}&ram=${ram}&catSpecifict=${accessories}&storage=${storage}&opeSystem=${opeSystem}&processor=${processor}&display=${display}&typeScreen=${typeScreen}&resolution=${resolution}&sizeScreen=${sizeScreen}`
+        );
+        console.log(payload);
+      }
 
       dispatch({
         type: GET_PRODUCTS_BY_FILTERS,

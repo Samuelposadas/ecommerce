@@ -253,7 +253,7 @@
     "supplier": 2,
     "Categories": 3,
     "sizeScreen" : 55,
-    "resolution" : "4K Ultra HD",
+    "resolution" : "4K ultra HD",
     "typeScreen" : "LED"
 
   },
@@ -693,7 +693,7 @@
     "Categories": 3,
     "sizeScreen" : 40,
     "resolution" : "4K ultra HD",
-    "typeScreen" : "TouchScreen"
+    "typeScreen" : "OLED"
   },
   {
     "name": "Skytech Gaming Archangel Desktop Computer for Gaming",

@@ -74,7 +74,7 @@ export const typeScreenDate = [
 export const resolutionDate = [
   { name: "HD", id: "HD" },
   { name: "Full HD", id: "Full HD" },
-  { name: "4K Ultra HD", id: "4k Ultra HD" },
+  { name: "4K ultra HD", id: "4K ultra HD" },
 ];
 
 export const sizeScreenDate = [
