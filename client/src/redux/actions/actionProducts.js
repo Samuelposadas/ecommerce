@@ -305,6 +305,7 @@ export const getProductsNames = () => {
     }
   };
 };
+
 export const get_accesories = () => {
   return async (dispatch) => {
     let accesories = await axios.get(
