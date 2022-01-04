@@ -1,5 +1,5 @@
 const axios = require("axios");
-const { Product, Category, Supplier, Specifict_Accesory } = require("../db/db");
+const { Product, Category, Supplier, Specifict_Category } = require("../db/db");
 const dataProducts = require("../productsDB/Products.json");
 const categories = require("../productsDB/Categories.json");
 const dataSuppliers = require("../productsDB/Suppliers.json");
@@ -20,15 +20,17 @@ const incomeProductDB = async () => {
       stock: elementProduct.stock,
       discount: elementProduct.discount,
       id_Supplier: elementProduct.supplier,
-      id_Accesories: elementProduct.SpeAccesory
+      id_SpeCategory: elementProduct.SpeAccesory
         ? elementProduct.SpeAccesory
         : null,
+      id_Category: elementProduct.Categories,
     });
 
-    elementProduct.Categories.map((el) => {
-      product.addCategory(el);
-    });
-    if (elementProduct.Categories[0] !== 4) {
+    // elementProduct.Categories.map((el) => {
+    //   product.addCategory(el);
+    // });
+
+    if (elementProduct.Categories !== 4) {
       product.createSubCategory({
         ram: elementProduct.ram ? elementProduct.ram : null,
         storage: elementProduct.storage ? elementProduct.storage : null,
@@ -116,7 +118,7 @@ const addSpecifictAccesories = async () => {
   ];
 
   await speAccesories.map((element) => {
-    Specifict_Accesory.create({ name: element });
+    Specifict_Category.create({ name: element, id_Category: 4 });
   });
 };
 

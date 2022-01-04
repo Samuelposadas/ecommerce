@@ -1,5 +1,5 @@
-const { response } = require("express");
-const { Category } = require("../db/db");
+/* const { response } = require("express"); */
+const { Category, Specifict_Category } = require("../db/db");
 
 const getCategory = async (req, res) => {
   try {
@@ -48,4 +48,18 @@ const deleteCategory = async (req, res, next) => {
   }
 };
 
-module.exports = { getCategory, createCategory, deleteCategory };
+const getSpecifictCategory = async (req, res) => {
+  try {
+    const accesories = await Specifict_Category.findAll();
+    res.json(accesories);
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+module.exports = {
+  getCategory,
+  createCategory,
+  deleteCategory,
+  getSpecifictCategory,
+};

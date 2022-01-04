@@ -3,6 +3,7 @@ const {
   getCategory,
   createCategory,
   deleteCategory,
+  getSpecifictCategory,
 } = require("../controllers/categories");
 const router = express.Router();
 
@@ -11,4 +12,7 @@ router.get("/", getCategory);
 router.post("/", createCategory);
 router.delete("/", deleteCategory);
 
+// get a los sub categorias de accesorios
+
+router.get("/accesory", getSpecifictCategory);
 module.exports = router;

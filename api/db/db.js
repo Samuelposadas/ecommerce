@@ -14,7 +14,7 @@ const modelTypeOrder = require("../models/Type_Order");
 const modelBrands = require("../models/Brands");
 const modelSubCategories = require("../models/SubCategory");
 
-const modelSpecifict_Accesories = require("../models/Specifict_Accesories");
+const modelSpecifict_Category = require("../models/Specifict_Category");
 
 const { DB_USER, DB_PASSWORD, DB_HOST, DB_NAME } = process.env;
 
@@ -66,7 +66,7 @@ modelTypeOrder(sequelize);
 modelBrands(sequelize);
 modelSubCategories(sequelize);
 
-modelSpecifict_Accesories(sequelize);
+modelSpecifict_Category(sequelize);
 
 // En sequelize.models están todos los modelos importados como propiedades
 // Para relacionarlos hacemos un destructuring
@@ -83,27 +83,16 @@ const {
   Order_Detail,
   Comment,
   Type_Order,
-
   Brands,
   SubCategory,
-
-  Specifict_Accesory,
+  Specifict_Category,
 } = sequelize.models;
 
 // Aca vendrian las relaciones
 // Product.hasMany(Reviews);
 
-//Creando tabla intermedia de muchos a muchos de productos y categorías de productos
-Product.belongsToMany(Category, {
-  through: "Product_Category",
-  foreignKey: "id_Product",
-  timestamps: false,
-});
-Category.belongsToMany(Product, {
-  through: "Product_Category",
-  foreignKey: "id_Category",
-  timestamps: false,
-});
+Category.hasMany(Product, { foreignKey: "id_Category" });
+Product.belongsTo(Category, { foreignKey: "id_Category" });
 
 Supplier.hasMany(Product, { foreignKey: "id_Supplier" });
 Product.belongsTo(Supplier, { foreignKey: "id_Supplier" });
@@ -147,8 +136,11 @@ Product.belongsTo(Brands, { foreignKey: "id_Brand" });
 SubCategory.hasOne(Product, { foreignKey: "id_Sub_Categories" });
 Product.belongsTo(SubCategory, { foreignKey: "id_Sub_Categories" });
 
-Specifict_Accesory.hasMany(Product, { foreignKey: "id_Accesories" });
-Product.belongsTo(Specifict_Accesory, { foreignKey: "id_Accesories" });
+Category.hasMany(Specifict_Category, { foreignKey: "id_Category" });
+Specifict_Category.belongsTo(Category, { foreignKey: "id_Category" });
+
+Specifict_Category.hasMany(Product, { foreignKey: "id_SpeCategory" });
+Product.belongsTo(Specifict_Category, { foreignKey: "id_SpeCategory" });
 
 module.exports = {
   ...sequelize.models, // para poder importar los modelos así: const { Product, User } = require('./db.js');

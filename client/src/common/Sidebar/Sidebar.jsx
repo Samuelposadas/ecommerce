@@ -43,6 +43,7 @@ import {
   getAllProducts,
   order,
   getProductByFilter,
+  get_accesories,
 } from "../../redux/actions/actionProducts";
 
 export const SideBarFilters = () => {
@@ -79,8 +80,14 @@ export const SideBarFilters = () => {
   //trayendo la categoria en donde el usuario esta parado.
   const category = useSelector((state) => state.products.category);
 
-  // useEffect para mostrar los filtros segun la categoria,
+  // useEffect para traer los accesorios
   useEffect(() => {
+    dispatch(get_accesories());
+  }, []);
+  const accessories = useSelector((state) => state.products.accessories);
+
+  // useEffect para mostrar los filtros segun la categoria,
+  useEffect(async () => {
     if (category === "") {
       setSubFilters((e) => {
         return {
@@ -118,7 +125,23 @@ export const SideBarFilters = () => {
           ram: true,
           storage: true,
           opeSystem: true,
-          processor: category === 2 ? false : true,
+          processor: true,
+          display: false,
+          typeScreen: true,
+          resolution: true,
+          sizeScreen: true,
+        };
+      });
+    }
+
+    if (category === 3) {
+      setSubFilters((e) => {
+        return {
+          ...e,
+          ram: false,
+          storage: false,
+          opeSystem: false,
+          processor: false,
           display: false,
           typeScreen: true,
           resolution: true,
@@ -138,24 +161,11 @@ export const SideBarFilters = () => {
           typeScreen: false,
           resolution: false,
           sizeScreen: false,
+          accessories: true,
         };
       });
     }
-    if (category === 3) {
-      setSubFilters((e) => {
-        return {
-          ...e,
-          ram: false,
-          storage: false,
-          opeSystem: false,
-          processor: false,
-          display: false,
-          typeScreen: true,
-          resolution: true,
-          sizeScreen: true,
-        };
-      });
-    }
+
     setArrFilters([]);
   }, [category]);
 
@@ -201,6 +211,7 @@ export const SideBarFilters = () => {
     typeScreen: false,
     resolution: false,
     sizeScreen: false,
+    accessories: false,
   });
   // useEffect para despachar los filtros
 
@@ -335,17 +346,33 @@ export const SideBarFilters = () => {
           <FilterDiv>
             <Title>Processor</Title>
             <ul>
-              {processorDate.map((element) => (
-                <ItemLi
-                  id={element.id}
-                  title="processor"
-                  value={element.name}
-                  onClick={clickFilter}
-                  key={element.id}
-                >
-                  {element.name}
-                </ItemLi>
-              ))}
+              {category === 1 || category === 6
+                ? processorDate
+                    .filter((e) => e.type === 1)
+                    .map((element) => (
+                      <ItemLi
+                        id={element.id}
+                        title="processor"
+                        value={element.name}
+                        onClick={clickFilter}
+                        key={element.id}
+                      >
+                        {element.name}
+                      </ItemLi>
+                    ))
+                : processorDate
+                    .filter((e) => e.type === 2)
+                    .map((element) => (
+                      <ItemLi
+                        id={element.id}
+                        title="processor"
+                        value={element.name}
+                        onClick={clickFilter}
+                        key={element.id}
+                      >
+                        {element.name}
+                      </ItemLi>
+                    ))}
             </ul>
           </FilterDiv>
         ) : null}
@@ -421,6 +448,29 @@ export const SideBarFilters = () => {
             </ul>
           </FilterDiv>
         ) : null}
+        {subFilters.accessories ? (
+          <FilterDiv>
+            <Title>Accessory type:</Title>
+            <Space />
+            <ul>
+              {accessories
+                ? accessories.map((element) => {
+                    return (
+                      <ItemLi
+                        id={element.id}
+                        title="accessories"
+                        value={element.name}
+                        onClick={clickFilter}
+                        key={element.id}
+                      >
+                        {element.name}
+                      </ItemLi>
+                    );
+                  })
+                : null}
+            </ul>
+          </FilterDiv>
+        ) : null}
       </ContainerFilter>
       {/* Responsive */}
       <ContainerFilterMobile open={openBarMobile}>
@@ -449,68 +499,8 @@ export const SideBarFilters = () => {
               </ClearButton>
             </OrderFilter>
 
-            <ButtonMobile>
-              {arrFilters.length
-                ? arrFilters.map((element) => (
-                    <ButtonFilter
-                      key={element}
-                      onClick={() => {
-                        element === "Lenovo"
-                          ? setFilter({ ...filter, brand: !filter.brand })
-                          : setFilter({
-                              ...filter,
-                              discount: !filter.discount,
-                            });
-                        setArrFilters(arrFilters.filter((e) => e !== element));
-                      }}
-                    >
-                      {element} x
-                    </ButtonFilter>
-                  ))
-                : null}
-            </ButtonMobile>
-            <DivMobile>
-              <div>
-                {filter.discount ? (
-                  <FilterDiv>
-                    <Title>Discount</Title>
-                    <ul>
-                      <ItemLi
-                        onClick={() => {
-                          setFilter({ ...filter, discount: !filter.discount });
-                          setArrFilters([...arrFilters, "10% OFF"]);
-                        }}
-                      >
-                        10% OFF
-                      </ItemLi>
-                      <ItemLi>20% OFF</ItemLi>
-                      <ItemLi>30% OFF</ItemLi>
-                      <ItemLi>40% OFF</ItemLi>
-                    </ul>
-                  </FilterDiv>
-                ) : null}
-              </div>
-              <div>
-                {filter.brand ? (
-                  <FilterDiv>
-                    <Title>Brands</Title>
-                    <ul>
-                      <ItemLi
-                        onClick={() => {
-                          setFilter({ ...filter, brand: !filter.brand });
-                          setArrFilters([...arrFilters, "Lenovo"]);
-                        }}
-                      >
-                        Lenovo
-                      </ItemLi>
-                      <ItemLi>Asus</ItemLi>
-                      <ItemLi>HP</ItemLi>
-                      <ItemLi>Sony</ItemLi>
-                    </ul>
-                  </FilterDiv>
-                ) : null}
-              </div>
-            </DivMobile>
+            <ButtonMobile></ButtonMobile>
+            <DivMobile></DivMobile>
           </>
         ) : null}
       </ContainerFilterMobile>

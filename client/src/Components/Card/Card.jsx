@@ -36,14 +36,14 @@ const Card = ({ img, name, salePrice, id, discount }) => {
 
         <Wrapper>
           {discount ? (
-            <>
+            <div>
               <OldPrice onClick={() => navigate(`/products/${id}`)}>
                 {salePrice} USD
               </OldPrice>
               <Price onClick={() => navigate(`/products/${id}`)}>
                 {salePrice - (salePrice * discount) / 100} USD
               </Price>
-            </>
+            </div>
           ) : (
             <Price onClick={() => navigate(`/products/${id}`)}>
               {salePrice} USD
