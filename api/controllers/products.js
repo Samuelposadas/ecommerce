@@ -11,7 +11,7 @@ const {
 
 const getProductsAll = async (req, res) => {
   let { category, orderPrice, page, nameproduct } = req.query;
-
+  console.log("Hola1");
   //variable para mandar a paginar
   let resultData;
 
@@ -110,6 +110,7 @@ const newgetProductsAll = async (req, res) => {
     opeSystem,
     resolution,
   } = req.query;
+  console.log("Hola2");
   /*
   category---- se desglosa a multiples
   page
@@ -207,7 +208,7 @@ const newgetProductsAll = async (req, res) => {
             }
 
             //FILTRO POR ALMACENAMIENTO
-            if (storage && storage !== "") {
+            if (storage && storage !== "false") {
               if (storage < 256) {
                 findByProduct = findByProduct.filter(
                   (elem) => elem.SubCategory.storage < 256
@@ -288,7 +289,7 @@ const newgetProductsAll = async (req, res) => {
             }
           }
         } else if (findCategory.name == "Accessory") {
-          if (catSpecifict && catSpecifict !== "") {
+          if (catSpecifict && catSpecifict !== "false") {
             findByProduct = findByProduct.filter(
               (elem) => elem.Specifict_Category.id == catSpecifict
             );
