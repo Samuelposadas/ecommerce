@@ -11,7 +11,7 @@
     "stock": 10,
     "discount": 0,
     "supplier": 3,
-    "Categories": [6],
+    "Categories": 6,
     "ram": "16",
     "processor": "AMD",
     "storage" : 512,
@@ -33,7 +33,7 @@
     "stock": 7,
     "discount": 0,
     "supplier": 3,
-    "Categories": [6],
+    "Categories": 6,
     "ram": "4",
     "processor": "AMD",
     "storage" : 128, 
@@ -56,7 +56,7 @@
     "stock": 18,
     "discount": 0,
     "supplier": 2,
-    "Categories": [4],
+    "Categories": 4,
     "SpeAccesory": 5
   },
 
@@ -72,7 +72,7 @@
     "stock": 8,
     "discount": 20,
     "supplier": 2,
-    "Categories": [4],
+    "Categories": 4,
     "SpeAccesory": 5
   },
 
@@ -88,7 +88,7 @@
     "stock": 22,
     "discount": 5,
     "supplier": 2,
-    "Categories": [4],
+    "Categories": 4,
     "SpeAccesory": 5
   },
 
@@ -104,7 +104,7 @@
     "stock": 5,
     "discount": 0,
     "supplier": 2,
-    "Categories": [4],
+    "Categories": 4,
     "SpeAccesory": 5
   },
 
@@ -120,7 +120,7 @@
     "stock": 3,
     "discount": 10,
     "supplier": 7,
-    "Categories": [1],
+    "Categories": 1,
     "ram": "16",
     "processor": "AMD",
 
@@ -146,7 +146,7 @@
     "stock": 12,
     "discount": 0,
     "supplier": 2,
-    "Categories": [4],
+    "Categories": 4,
     "SpeAccesory": 6
   },
   {
@@ -161,7 +161,7 @@
     "stock": 2,
     "discount": 0,
     "supplier": 6,
-    "Categories": [1],
+    "Categories": 1,
     "ram": "32",
     "processor": "Intel",
 
@@ -185,7 +185,7 @@
     "stock": 10,
     "discount": 0,
     "supplier": 2,
-    "Categories": [5],
+    "Categories": 5,
     "ram": "8",
     "processor": "4 core",
     "storage" : 512, 
@@ -208,7 +208,7 @@
     "stock": 22,
     "discount": 0,
     "supplier": 2,
-    "Categories": [5],
+    "Categories": 5,
     "ram": "8",
     "processor": "4 core",
     "storage": 128,
@@ -230,10 +230,10 @@
     "stock": 5,
     "discount": 0,
     "supplier": 6,
-    "Categories": [5, 6],
+    "Categories": 6,
     "ram": "4",
     "processor": "4 core",
-    "storage" : 128, 
+    "storage" : 128,
     "opeSystem" : "iOS",
     "sizeScreen" : 7,
     "resolution" : "HD",
@@ -251,7 +251,7 @@
     "stock": 4,
     "discount": 0,
     "supplier": 2,
-    "Categories": [3],
+    "Categories": 3,
     "sizeScreen" : 55,
     "resolution" : "4K Ultra HD",
     "typeScreen" : "LED"
@@ -269,7 +269,7 @@
     "stock": 7,
     "discount": 0,
     "supplier": 2,
-    "Categories": [3],
+    "Categories": 3,
     "sizeScreen" : 60,
     "resolution" : "Full HD",
     "typeScreen" : "LED"
@@ -286,7 +286,7 @@
     "stock": 22,
     "discount": 0,
     "supplier": 2,
-    "Categories": [4],
+    "Categories": 4,
     "SpeAccesory": 6
   },
   {
@@ -301,7 +301,7 @@
     "stock": 14,
     "discount": 0,
     "supplier": 2,
-    "Categories": [4],
+    "Categories": 4,
     "SpeAccesory": 2
   },
   {
@@ -316,7 +316,7 @@
     "stock": 6,
     "discount": 0,
     "supplier": 2,
-    "Categories": [4],
+    "Categories": 4,
     "SpeAccesory": 7
   },
   {
@@ -331,7 +331,7 @@
     "stock": 30,
     "discount": 0,
     "supplier": 2,
-    "Categories": [4],
+    "Categories": 4,
     "SpeAccesory": 4
   },
   {
@@ -346,7 +346,7 @@
     "stock": 14,
     "discount": 0,
     "supplier": 2,
-    "Categories": [4],
+    "Categories": 4,
     "SpeAccesory": 2
   },
   {
@@ -361,7 +361,7 @@
     "stock": 20,
     "discount": 0,
     "supplier": 2,
-    "Categories": [2],
+    "Categories": 2,
     "ram": "16",
     "processor": "4 core",
     "storage" : 512, 
@@ -382,7 +382,7 @@
     "stock": 5,
     "discount": 0,
     "supplier": 6,
-    "Categories": [2],
+    "Categories": 2,
     "ram": "8",
     "processor": "8 core",
     "storage" : 256, 
@@ -404,7 +404,7 @@
     "stock": 4,
     "discount": 0,
     "supplier": 7,
-    "Categories": [2],
+    "Categories": 2,
     "ram": "16",
     "processor": "8 core",
     "storage": 1024,
@@ -425,7 +425,7 @@
     "stock": 12,
     "discount": 0,
     "supplier": 2,
-    "Categories": [2],
+    "Categories": 2,
     "ram": "8",
     "processor": "4 core",
     "storage" : 128, 
@@ -446,7 +446,7 @@
     "stock": 9,
     "discount": 0,
     "supplier": 4,
-    "Categories": [4],
+    "Categories": 4,
     "SpeAccesory": 2
   },
   {
@@ -461,7 +461,7 @@
     "stock": 5,
     "discount": 0,
     "supplier": 4,
-    "Categories": [4],
+    "Categories":4,
     "SpeAccesory": 11
   },
   {
@@ -476,7 +476,7 @@
     "stock": 18,
     "discount": 0,
     "supplier": 5,
-    "Categories": [4],
+    "Categories": 4,
     "SpeAccesory": 11
   },
   {
@@ -491,10 +491,10 @@
     "stock": 4,
     "discount": 10,
     "supplier": 7,
-    "Categories": [1],
+    "Categories": 1,
     "ram": "8",
     "processor": "AMD",
-    "storage" : 512, 
+    "storage" : 512,
     "display": 0,
     "opeSystem" : "Windows"
   },
@@ -510,7 +510,7 @@
     "stock": 17,
     "discount": 0,
     "supplier": 2,
-    "Categories": [4],
+    "Categories": 4,
     "SpeAccesory": 10
   },
   {
@@ -525,10 +525,10 @@
     "stock": 2,
     "discount": 0,
     "supplier": 5,
-    "Categories": [1],
+    "Categories": 1,
     "ram": "16",
     "processor": "Intel",
-    "storage" : 1024, 
+    "storage" : 1024,
     "display": 1,
     "opeSystem" : "Windows",
     "sizeScreen" : 28,
@@ -547,7 +547,7 @@
     "stock": 5,
     "discount": 0,
     "supplier": 5,
-    "Categories": [6],
+    "Categories": 6,
     "ram": "16",
     "processor": "AMD",
     "storage" : 512, 
@@ -568,7 +568,7 @@
     "stock": 3,
     "discount": 0,
     "supplier": 3,
-    "Categories": [6],
+    "Categories": 6,
     "ram": "16",
     "processor": "Apple",
     "storage": 1024,
@@ -589,7 +589,7 @@
     "stock": 7,
     "discount": 0,
     "supplier": 3,
-    "Categories": [2],
+    "Categories": 2,
     "ram": "8",
     "processor": "8 core",
     "storage": 512,
@@ -610,7 +610,7 @@
     "stock": 2,
     "discount": 0,
     "supplier": 1,
-    "Categories": [2],
+    "Categories": 2,
     "ram": "8",
     "processor": "4 core",
     "storage": 128,
@@ -631,7 +631,7 @@
     "stock": 4,
     "discount": 0,
     "supplier": 6,
-    "Categories": [2],
+    "Categories": 2,
     "ram": "16",
     "processor": "8 core",
     "storage": 128,
@@ -652,10 +652,10 @@
     "stock": 5,
     "discount": 5,
     "supplier": 2,
-    "Categories": [5],
+    "Categories": 5,
     "ram": "8",
     "processor": "4 core",
-    "storage" : 128, 
+    "storage" : 128,
     "opeSystem" : "Android",
     "sizeScreen" : 10,
     "resolution" : "HD",
@@ -673,7 +673,7 @@
     "stock": 7,
     "discount": 0,
     "supplier": 4,
-    "Categories": [3],
+    "Categories": 3,
     "sizeScreen" : 65,
     "resolution" : "4K ultra HD",
     "typeScreen" : "LED"
@@ -690,7 +690,7 @@
     "stock": 4,
     "discount": 0,
     "supplier": 5,
-    "Categories": [3],
+    "Categories": 3,
     "sizeScreen" : 40,
     "resolution" : "4K ultra HD",
     "typeScreen" : "TouchScreen"
@@ -707,10 +707,10 @@
     "stock": 5,
     "discount": 0,
     "supplier": 5,
-    "Categories": [1],
+    "Categories": 1,
     "ram": "16",
     "processor": "AMD",
-    "storage" : 1024, 
+    "storage" : 1024,
     "display": 0,
     "opeSystem" : "Windows"
   },
@@ -726,10 +726,10 @@
     "stock": 3,
     "discount": 0,
     "supplier": 4,
-    "Categories": [1],
+    "Categories": 1,
     "ram": "16",
     "processor": "Intel",
-    "storage" : 1024, 
+    "storage" : 1024,
     "display": 0,
     "opeSystem" : "Windows"
   },
@@ -745,7 +745,7 @@
     "stock": 2,
     "discount": 10,
     "supplier": 4,
-    "Categories": [6],
+    "Categories": 6,
     "ram": "8",
     "processor": "AMD",
     "storage" : 512,
