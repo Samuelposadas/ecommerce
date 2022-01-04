@@ -115,6 +115,7 @@ export const reducer = (state = initialState, { type, payload }) => {
       return {
         ...state,
         allProductsNames: payload,
+      };
     case GET_ACCESORIES:
       return {
         ...state,
