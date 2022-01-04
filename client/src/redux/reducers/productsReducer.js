@@ -14,6 +14,7 @@ import {
   GET_PRODUCTS_DEFAULT,
   SAVENAME,
   GET_PRODUCTS_BY_FILTERS,
+  GET_ALL_PRODUCTS_NAMES,
 } from "../constants/index";
 
 const initialState = {
@@ -23,7 +24,7 @@ const initialState = {
   copyAllProducts: [],
   allCategories: [],
   filterProducts: [],
-
+  allProductsNames: [],
   allSuppliers: [],
 
   totalPages: 1,
@@ -106,6 +107,11 @@ export const reducer = (state = initialState, { type, payload }) => {
       return {
         ...state,
         allProducts: payload,
+      };
+    case GET_ALL_PRODUCTS_NAMES:
+      return {
+        ...state,
+        allProductsNames: payload,
       };
     default:
       return state;

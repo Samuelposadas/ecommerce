@@ -15,6 +15,7 @@ import {
   GET_PRODUCTS_DEFAULT,
   SAVENAME,
   GET_PRODUCTS_BY_FILTERS,
+  GET_ALL_PRODUCTS_NAMES,
 } from "../constants/index";
 import { actionGenerator, reqGetAxios } from "./metodos";
 
@@ -275,6 +276,20 @@ export const getProductByFilter = (payload) => {
       });
     } catch (error) {
       console.log(error);
+    }
+  };
+};
+
+export const getProductsNames = () => {
+  return async function (dispatch) {
+    try {
+      const products = await axios.get(`${URL_BASE}/products/all`);
+      dispatch({
+        type: GET_ALL_PRODUCTS_NAMES,
+        payload: products.data,
+      });
+    } catch (e) {
+      console.log(e);
     }
   };
 };

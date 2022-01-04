@@ -1,5 +1,5 @@
-import React from "react";
-import { useSelector } from "react-redux";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { CardsContainer, ContainerDisplay } from "./styled";
 // import Carousel from "react-multi-carousel";
 // import "react-multi-carousel/lib/styles.css";
@@ -10,6 +10,7 @@ import Navbar from "../../common/Navbar/Navbar.jsx";
 import Footer from "../../common/Footer/Footer.jsx";
 import { Paginate } from "../../Components/Pagination/pagination.jsx";
 import { SideBarFilters } from "../../common/Sidebar/Sidebar.jsx";
+import { getProductsNames } from "../../redux/actions/actionProducts";
 
 // const responsive = {
 //   desktop: {
@@ -30,6 +31,10 @@ import { SideBarFilters } from "../../common/Sidebar/Sidebar.jsx";
 // };
 
 const Home = () => {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getProductsNames());
+  }, []);
   const allProducts = useSelector((state) => state.products.allProducts);
   return (
     <>
