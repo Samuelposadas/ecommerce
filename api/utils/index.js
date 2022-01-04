@@ -102,17 +102,17 @@ const incomeComments = async () => {
 
 const addSpecifictAccesories = async () => {
   const speAccesories = [
-    "HEADPHONE STAND",
-    "MOUSEPADS",
-    "LOADERS",
-    "SPEAKERS",
-    "MOUSE",
-    "PACKS",
-    "MICROPHONES",
-    "KEYBOARDS",
-    "BEDS",
-    " HEADPHONES",
-    "OTHERS",
+    "Headphone Stand",
+    "Mousepads",
+    "Loaders",
+    "Speakers",
+    "Mouse",
+    "Packs",
+    "Microphones",
+    "Keyboards",
+    "Beds",
+    "Headphones",
+    "Others",
   ];
 
   await speAccesories.map((element) => {
