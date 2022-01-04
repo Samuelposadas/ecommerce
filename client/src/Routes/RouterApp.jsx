@@ -19,6 +19,7 @@ import AdminPanel from "../Pages/AdminPanel/AdminPanel.jsx";
 import AdminUsers from "../Pages/AdminUsers/AdminUsers.jsx";
 import AdminCategories from "../Pages/AdminCategories/AdminCategories.jsx";
 import AdminProducts from "../Pages/AdminProducts/AdminProducts.jsx";
+import Landing from "../Pages/Landing/Landing.jsx";
 
 const RouterApp = () => {
   return (
@@ -39,6 +40,7 @@ const RouterApp = () => {
           <Route path="products" element={<AdminProducts />} />
         </Route>
         <Route path="/shop" element={<ShoppingCart />} />
+        <Route path="/landing" element={<Landing />} />
       </Routes>
     </BrowserRouter>
   );

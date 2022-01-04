@@ -303,6 +303,8 @@ export const getProductsNames = () => {
     } catch (e) {
       console.log(e);
     }
+  };
+};
 
 export const get_accesories = () => {
   return async (dispatch) => {
