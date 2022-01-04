@@ -308,13 +308,12 @@ export const getProductsNames = () => {
 
 export const get_accesories = () => {
   return async (dispatch) => {
-    let accesories = await (
-      await axios.get("http://localhost:3001/categories/accesory")
-    ).data;
-
+    let accesories = await axios.get(
+      "http://localhost:3001/categories/accesory"
+    );
     dispatch({
       type: GET_ACCESORIES,
-      payload: accesories,
+      payload: accesories.data,
     });
   };
 };
