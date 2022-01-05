@@ -32,12 +32,12 @@ export const Title = styled.p`
   margin-left: 20px;
   margin-right: 20px;
   color: black;
-  font-size: 16px;
+  font-size: 13px;
 `;
 
 export const Price = styled.p`
   color: #147ce5;
-  font-size: 15.5px;
+  font-size: 13px;
 `;
 
 export const OldPrice = styled.p`

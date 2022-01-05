@@ -3,21 +3,14 @@ import styled from "styled-components";
 
 import "./App.css";
 import { createGlobalStyle } from "styled-components";
-// import { ThemeProvider } from "styled-components";
-// import { lightTheme, darkTheme } from "./themes/themes.jsx";
 
-// import { MdDarkMode, MdOutlineDarkMode } from "react-icons/md";
-// import { Toggle } from "./themes/styled.jsx";
-// import { Toaster, toast } from "react-hot-toast";
-
-//components at the bottom of this line
 import RouterApp from "./Routes/RouterApp.jsx";
 
 const GlobalStyle = createGlobalStyle`
   body {
-    font-family: 'Trebuchet MS', sans-serif;
-	font-size: 13px;
-	font-weight: normal;
+    font-family: 'Open Sans', sans-serif;
+	font-size: 11px;
+	font-weight: lighter;
 	color: #242323dd;
   }
 `;
@@ -27,46 +20,11 @@ const Wrapper = styled.div`
 `;
 
 const App = () => {
-  //   const [theme, setTheme] = useState("light");
-
-  //   const themeToggle = () => {
-  //     theme === "light" ? setTheme("dark") : setTheme("light");
-  //     if (theme === "dark") {
-  //       toast("dark mode!", {
-  //         icon: "🌙",
-  //         style: {
-  //           borderRadius: "10px",
-  //           background: "#333",
-  //           color: "#fff",
-  //         },
-  //       });
-  //     }
-  //     if (theme === "light") {
-  //       toast("light mode!", {
-  //         icon: "🌞",
-  //         style: {
-  //           borderRadius: "10px",
-  //           background: "white",
-  //           color: "black",
-  //         },
-  //       });
-  //     }
-  //   };
-  //   const icon =
-  //     theme == "light" ? (
-  //       <MdOutlineDarkMode size={30} />
-  //     ) : (
-  //       <MdDarkMode size={30} />
-  //     );
   return (
-    // <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
     <Wrapper>
-      {/* <Toggle onClick={themeToggle}>{icon}</Toggle> */}
       <RouterApp />
       <GlobalStyle />
     </Wrapper>
-    //   <Toaster />
-    // </ThemeProvider>
   );
 };
 
