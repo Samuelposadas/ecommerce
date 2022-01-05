@@ -7,6 +7,8 @@ import Footer from "../../common/Footer/Footer";
 import apple1 from "./img/apple1.png";
 import apple2 from "./img/apple2.png";
 import apple3 from "./img/apple3.png";
+import apple4 from "./img/apple4.png";
+import apple5 from "./img/apple5.png";
 import { ButtonDetail } from "../../common/button/button";
 
 const Container = styled.section`
@@ -21,7 +23,7 @@ const LargeSection = styled.div`
   display: grid;
   grid-template-columns: 1fr;
   width: auto;
-  height: 500px;
+  height: 550px;
   margin-left: 35px;
   margin-right: 35px;
   background-color: #5c5af01d;
@@ -67,7 +69,7 @@ const LargeSection2 = styled.div`
   display: grid;
   grid-template-columns: 40% 60%;
   width: auto;
-  height: 500px;
+  height: 550px;
   margin-left: 35px;
   margin-right: 35px;
   background-color: #5c5af01d;
@@ -162,6 +164,12 @@ const MediumSection = styled.div`
   width: auto;
   height: 485px;
   background-color: #5c5af01d;
+  img {
+    align-self: center;
+    justify-self: center;
+    height: 450px;
+    width: 550px;
+  }
 `;
 
 const MediumSection2 = styled.div`
@@ -214,10 +222,14 @@ const Landing = () => {
           </Fade>
           <SubWrapper>
             <Fade right fraction={0.3}>
-              <MediumSection />
+              <MediumSection>
+                <img src={apple4} />
+              </MediumSection>
             </Fade>
             <Rotate bottom right fraction={0.3}>
-              <MediumSection />
+              <MediumSection>
+                <img src={apple5} />
+              </MediumSection>
             </Rotate>
           </SubWrapper>
         </Wrapper>
