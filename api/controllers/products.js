@@ -136,7 +136,15 @@ const newgetProductsAll = async (req, res) => {
         where: {
           name: { [Op.iLike]: `%${NProduct}%` },
         },
-        attributes: ["id", "name", "salePrice", "img", "rating", "discount"],
+        attributes: [
+          "id",
+          "name",
+          "salePrice",
+          "img",
+          "rating",
+          "discount",
+          "stock",
+        ],
         order: [[typeOrder, order]],
       });
     }
@@ -145,7 +153,15 @@ const newgetProductsAll = async (req, res) => {
       try {
         //Datos con todas las categorías
         const conditionDataProducts = {
-          attributes: ["id", "name", "salePrice", "img", "rating", "discount"],
+          attributes: [
+            "id",
+            "name",
+            "salePrice",
+            "img",
+            "rating",
+            "discount",
+            "stock",
+          ],
           // offset: offsetPagination,
           // limit: PRODUCTS_PER_PAGE,
           order: [[typeOrder, order]],
@@ -173,7 +189,15 @@ const newgetProductsAll = async (req, res) => {
               model: Specifict_Category,
             },
           ],
-          attributes: ["id", "name", "salePrice", "img", "rating", "discount"],
+          attributes: [
+            "id",
+            "name",
+            "salePrice",
+            "img",
+            "rating",
+            "discount",
+            "stock",
+          ],
           order: [[typeOrder, order]],
         };
 
