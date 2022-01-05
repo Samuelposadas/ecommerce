@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "latest": "^0.2.0",
     "react-reveal": "^1.2.2"
   }
 }
