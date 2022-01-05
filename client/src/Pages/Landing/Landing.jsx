@@ -14,9 +14,11 @@ import { ButtonDetail } from "../../common/button/button";
 const Container = styled.section`
   display: grid;
   grid-template-columns: 1fr;
+  align-items: center;
+  justify-content: center;
   gap: 3rem;
   margin-bottom: 50px;
-  margin-top: 80px;
+  margin-top: 70px;
 `;
 
 const LargeSection = styled.div`
@@ -26,15 +28,16 @@ const LargeSection = styled.div`
   height: 550px;
   margin-left: 35px;
   margin-right: 35px;
+  padding: 10px;
   background-color: #5c5af01d;
 
   h1 {
     display: flex;
     align-self: center;
     justify-self: center;
-    flex-wrap: wrap;
     font-size: 35px;
-    margin-top: 30px;
+    margin-top: 10px;
+    padding: 20px;
   }
 
   button {
@@ -57,10 +60,9 @@ const LargeSection = styled.div`
     margin-right: 20px;
     h1 {
       font-size: 25px;
-      margin-left: 20px;
     }
     img {
-      height: 200px;
+      height: 160px;
     }
   }
 `;
@@ -68,6 +70,10 @@ const LargeSection = styled.div`
 const LargeSection2 = styled.div`
   display: grid;
   grid-template-columns: 40% 60%;
+  align-content: center;
+  justify-content: center;
+  padding: 10px;
+
   width: auto;
   height: 550px;
   margin-left: 35px;
@@ -79,7 +85,8 @@ const LargeSection2 = styled.div`
     align-self: flex-end;
     object-fit: contain;
     height: 500px;
-    margin-bottom: 50px;
+    margin-bottom: 10px;
+    padding: 10px;
   }
 
   div {
@@ -93,7 +100,7 @@ const LargeSection2 = styled.div`
       display: flex;
       align-self: center;
       justify-self: center;
-      width: 420px;
+      width: 400px;
       font-size: 35px;
       margin-top: 30px;
     }
@@ -101,7 +108,7 @@ const LargeSection2 = styled.div`
     p {
       align-self: center;
       justify-self: center;
-      width: 420px;
+      width: 400px;
       margin-top: 30px;
     }
     button {
@@ -112,7 +119,7 @@ const LargeSection2 = styled.div`
     }
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 800px) {
     grid-template-columns: 1fr;
 
     margin-left: 20px;
@@ -120,16 +127,19 @@ const LargeSection2 = styled.div`
 
     img {
       height: 250px;
-      margin-bottom: 0px;
+      margin-top: 70px;
     }
 
     div {
-      margin-left: 10px;
       h1 {
-        width: 80%;
+        width: 95%;
+        padding-left: 20px;
+        padding-right: 20px;
       }
       p {
-        width: 80%;
+        width: 95%;
+        padding-left: 20px;
+        padding-right: 20px;
       }
     }
   }
@@ -143,8 +153,10 @@ const Wrapper = styled.div`
   margin-left: 35px;
   margin-right: 35px;
 
-  @media screen and (max-width: 700px) {
+  @media screen and (max-width: 800px) {
     grid-template-columns: 1fr;
+    margin-left: 20px;
+    margin-right: 20px;
   }
 `;
 
@@ -153,7 +165,7 @@ const SubWrapper = styled.div`
   grid-template-columns: 1fr;
   gap: 3rem;
 
-  @media screen and (max-width: 700px) {
+  @media screen and (max-width: 800px) {
     grid-template-columns: 1fr;
   }
 `;
@@ -170,6 +182,12 @@ const MediumSection = styled.div`
     height: 450px;
     width: 550px;
   }
+  @media screen and (max-width: 768px) {
+    img {
+      height: 300px;
+      width: 350px;
+    }
+  }
 `;
 
 const MediumSection2 = styled.div`
@@ -179,11 +197,30 @@ const MediumSection2 = styled.div`
   height: 1000px;
   background-color: #5c5af01d;
 
+  button {
+    color: #0077ed;
+    background-color: transparent;
+    border: none;
+    font-size: 15px;
+    padding: 10px;
+    height: 35px;
+    width: auto;
+    align-self: center;
+  }
+
   img {
     align-self: center;
     justify-self: center;
     height: 650px;
     width: 350px;
+    margin-bottom: 50px;
+  }
+
+  @media screen and (max-width: 768px) {
+    img {
+      height: 600px;
+      width: 300px;
+    }
   }
 `;
 
@@ -217,6 +254,7 @@ const Landing = () => {
         <Wrapper>
           <Fade left fraction={0.3}>
             <MediumSection2>
+              <button>{"Find your accessory >"}</button>
               <img src={apple3} />
             </MediumSection2>
           </Fade>
