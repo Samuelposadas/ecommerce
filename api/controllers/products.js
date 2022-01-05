@@ -21,7 +21,7 @@ const getProductsAll = async (req, res) => {
 
   const PRODUCTS_PER_PAGE = 12;
 
-  if (category) {
+  if (category !== "false") {
     try {
       const products = await Product.findAll({
         attributes: { exclude: ["id_Supplier"] },
