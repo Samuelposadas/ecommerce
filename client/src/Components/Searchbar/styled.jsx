@@ -5,11 +5,35 @@ export const Container = styled.div`
   flex-direction: column;
 `;
 
+export const SuggestionsWrapper = styled.div`
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 0.3px solid #9898c4a7;
+  border-radius: 0px 0px 15px 15px;
+  z-index: 2;
+`;
+
 export const Suggestion = styled.div`
+  display: flex;
+  align-content: center;
   background-color: white;
   color: black;
-  border: 1px solid black;
   z-index: 2;
+  font-size: 12px;
+  height: 40px;
+  width: 100%;
+  padding-bottom: 15px;
+  padding-top: 15px;
+  padding-left: 5px;
+  margin-bottom: 5px;
+
+  &:hover {
+    cursor: pointer;
+    color: #1a85ffe4;
+    background-color: #c5c5f311;
+  }
 `;
 
 export const FormSt = styled.form`
