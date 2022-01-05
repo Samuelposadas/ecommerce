@@ -136,9 +136,20 @@ const LargeSection2 = styled.div`
 const Wrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
   gap: 3rem;
   margin-left: 35px;
   margin-right: 35px;
+
+  @media screen and (max-width: 700px) {
+    grid-template-columns: 1fr;
+  }
+`;
+
+const SubWrapper = styled.div`
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
 
   @media screen and (max-width: 700px) {
     grid-template-columns: 1fr;
@@ -149,11 +160,22 @@ const MediumSection = styled.div`
   display: grid;
   grid-template-columns: 1fr;
   width: auto;
-  height: 500px;
+  height: 485px;
+  background-color: #5c5af01d;
+`;
+
+const MediumSection2 = styled.div`
+  display: grid;
+  grid-template-columns: 1fr;
+  width: auto;
+  height: 1000px;
   background-color: #5c5af01d;
 
   img {
-    height: 800px;
+    align-self: center;
+    justify-self: center;
+    height: 650px;
+    width: 350px;
   }
 `;
 
@@ -186,21 +208,18 @@ const Landing = () => {
         </Fade>
         <Wrapper>
           <Fade left fraction={0.3}>
-            <MediumSection>
+            <MediumSection2>
               <img src={apple3} />
-            </MediumSection>
+            </MediumSection2>
           </Fade>
-          <Fade right fraction={0.3}>
-            <MediumSection />
-          </Fade>
-        </Wrapper>
-        <Wrapper>
-          <Rotate bottom left fraction={0.3}>
-            <MediumSection />
-          </Rotate>
-          <Rotate bottom right fraction={0.3}>
-            <MediumSection />
-          </Rotate>
+          <SubWrapper>
+            <Fade right fraction={0.3}>
+              <MediumSection />
+            </Fade>
+            <Rotate bottom right fraction={0.3}>
+              <MediumSection />
+            </Rotate>
+          </SubWrapper>
         </Wrapper>
       </Container>
       <Fade bottom fraction={0.3}>
