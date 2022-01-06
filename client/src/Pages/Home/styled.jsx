@@ -32,3 +32,8 @@ export const ContainerDisplay = styled.div`
     grid-template-rows: 51px 1fr;
   }
 `;
+export const NoProducts = styled.h1`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;

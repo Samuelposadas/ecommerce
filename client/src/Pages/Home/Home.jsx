@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { CardsContainer, ContainerDisplay } from "./styled";
+import { CardsContainer, ContainerDisplay, NoProducts } from "./styled";
 // import Carousel from "react-multi-carousel";
 // import "react-multi-carousel/lib/styles.css";
 
@@ -45,7 +45,7 @@ const Home = () => {
           {allProducts.length > 0 ? (
             allProducts.map((product) => <Card key={product.id} {...product} />)
           ) : (
-            <p>Product not found...</p>
+            <NoProducts>Product not found...</NoProducts>
           )}
         </CardsContainer>
       </ContainerDisplay>

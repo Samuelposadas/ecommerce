@@ -16,6 +16,7 @@ import {
   GET_PRODUCTS_BY_FILTERS,
   GET_ALL_PRODUCTS_NAMES,
   GET_ACCESORIES,
+  PRODUCTS_CONTROLLER,
 } from "../constants/index";
 
 const initialState = {
@@ -34,6 +35,23 @@ const initialState = {
   category: "",
   order: "",
   nameProduct: "",
+
+  productsControllers: {
+    ram: false,
+    storage: false,
+    opeSystem: false,
+    processor: false,
+    display: false,
+    typeScreen: false,
+    resolution: false,
+    sizeScreen: false,
+    accessories: false,
+    category: "",
+    nameProduct: "",
+    order: "ASC",
+    typeOrder: "salePrice",
+    page: 1,
+  },
 };
 
 export const reducer = (state = initialState, { type, payload }) => {
@@ -106,6 +124,11 @@ export const reducer = (state = initialState, { type, payload }) => {
         nameProduct: payload,
         category: "",
       };
+    case PRODUCTS_CONTROLLER:
+      return {
+        ...state,
+        productsControllers: { ...state.productsControllers, ...payload },
+      };
     case GET_PRODUCTS_BY_FILTERS:
       return {
         ...state,
@@ -121,6 +144,7 @@ export const reducer = (state = initialState, { type, payload }) => {
         ...state,
         accessories: payload,
       };
+
     default:
       return state;
   }

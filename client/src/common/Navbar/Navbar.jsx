@@ -4,10 +4,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { AiOutlineAppstore, AiOutlineShopping } from "react-icons/ai";
 import { GoThreeBars, GoX } from "react-icons/go";
 import {
-  getCategory,
   getCategoryAll,
-  action_defaul_values,
   getProductByFilter,
+  action_products_controllers,
 } from "../../redux/actions/actionProducts";
 
 import {
@@ -31,15 +30,51 @@ import { Modal } from "../../Components/Modal/Modal.jsx";
 import Auth from "../../Components/Auth/Auth.jsx";
 
 const Navbar = () => {
-  const categories = useSelector((state) => state.products.allCategories);
+  const productObj = useSelector((state) => state.products.productsControllers);
   const dispatch = useDispatch();
+
+  //reset categories y trae todos los productos
+  const resetProductController = (e) => {
+    e.preventDefault();
+    dispatch(
+      action_products_controllers({
+        category: "",
+        nameProduct: "",
+        page: 1,
+      })
+    );
+    dispatch(
+      getProductByFilter({
+        ...productObj,
+        category: "",
+        nameProduct: "",
+        page: 1,
+      })
+    );
+    setStyle("");
+  };
+
+  const categories = useSelector((state) => state.products.allCategories);
+
   useEffect(() => {
     dispatch(getCategoryAll());
   }, []);
   const [showMobileMenu, setShowMobileMenu] = useState(false);
-  const categoryChange = (categoryId) => {
-    dispatch(getCategory(categoryId));
-    //dispatch(getAllProducts(1, categoryId));
+
+  const [category, setCategory] = useState("");
+
+  const categoryChange = (id) => {
+    setCategory(id);
+  };
+  useEffect(() => {
+    dispatch(
+      action_products_controllers({
+        category,
+      })
+    );
+  }, [category]);
+
+  useEffect(() => {
     dispatch(
       getProductByFilter({
         ram: false,
@@ -51,12 +86,15 @@ const Navbar = () => {
         resolution: false,
         sizeScreen: false,
         accessories: false,
+        category: 1,
+        nameProduct: "",
         order: "ASC",
         typeOrder: "salePrice",
-        category: categoryId,
+        page: 1,
       })
     );
-  };
+    console.log(productObj);
+  }, [category]);
 
   const [style, setStyle] = useState("");
 
@@ -80,9 +118,8 @@ const Navbar = () => {
         </MobileIcon>
         <MobileIcon>
           <AiOutlineAppstore
-            onClick={() => {
-              resetValues();
-              dispatch(action_defaul_values());
+            onClick={(e) => {
+              resetProductController(e);
             }}
           />
         </MobileIcon>
@@ -104,9 +141,9 @@ const Navbar = () => {
         <Menu>
           <LogoContainer>
             <AiOutlineAppstore
-              onClick={() => {
+              onClick={(e) => {
                 resetValues();
-                dispatch(action_defaul_values());
+                resetProductController(e);
               }}
             />
           </LogoContainer>
