@@ -50,7 +50,7 @@ const CartSumary = () => {
           <Paypal></Paypal>
           <LineBreak />
           <ButtonDetail
-            width={"max-width"}
+            width={"350px"}
             backgroundcolor={"#0077ED"}
             onClick={() => setShowStripe(!showStripe)}
           >
