@@ -94,7 +94,7 @@ const Searchbar = (props) => {
     dispatch(
       action_products_controllers({
         ...products_controllers,
-        nameProduct: input,
+        nameProduct: name,
       })
     );
     dispatch(saveName(name));
