@@ -89,7 +89,7 @@ const Searchbar = (props) => {
 
   const onSuggest = (name) => {
     dispatch(
-      getProductByFilter({ ...products_controllers, nameProduct: input })
+      getProductByFilter({ ...products_controllers, nameProduct: name })
     );
     dispatch(
       action_products_controllers({
