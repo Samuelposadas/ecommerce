@@ -6,12 +6,20 @@ module.exports = (sequelize) => {
   sequelize.define(
     "Order_Detail",
     {
-      cant: {
+      productName: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
+      quantity: {
         type: DataTypes.INTEGER,
         allowNull: false,
       },
       priceCurrent: {
         type: DataTypes.DECIMAL,
+        allowNull: false,
+      },
+      productId: {
+        type: DataTypes.INTEGER,
         allowNull: false,
       },
     },

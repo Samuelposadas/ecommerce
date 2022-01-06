@@ -5,10 +5,12 @@ import {
   CLEAN_CART,
   EDIT_QUANTITY,
   REMOVE_FROM_CART,
+  SET_TOTAL_PRICE,
 } from "../constants/cartConstants";
 
 const cartInitialState = {
   cart: [],
+  totalPrice: 0,
 };
 
 export const cartReducer = (state = cartInitialState, action) => {
@@ -44,6 +46,11 @@ export const cartReducer = (state = cartInitialState, action) => {
       return {
         ...state,
         cart: state.cart.filter((item) => +item.id !== +action.payload),
+      };
+    case SET_TOTAL_PRICE:
+      return {
+        ...state,
+        totalPrice: action.payload,
       };
     default:
       return state;

@@ -20,6 +20,7 @@ import AdminUsers from "../Pages/AdminUsers/AdminUsers.jsx";
 import AdminCategories from "../Pages/AdminCategories/AdminCategories.jsx";
 import AdminProducts from "../Pages/AdminProducts/AdminProducts.jsx";
 import Landing from "../Pages/Landing/Landing.jsx";
+import Order from "../Pages/Order/Order.js";
 
 const RouterApp = () => {
   return (
@@ -41,6 +42,7 @@ const RouterApp = () => {
         </Route>
         <Route path="/shop" element={<ShoppingCart />} />
         <Route path="/landing" element={<Landing />} />
+        <Route path="/order" element={<Order />} />
       </Routes>
     </BrowserRouter>
   );
