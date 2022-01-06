@@ -76,7 +76,6 @@ const Navbar = () => {
 
   useEffect(() => {
     dispatch(getProductByFilter({ ...productObj, category }));
-    console.log(productObj);
   }, [category]);
 
   const [style, setStyle] = useState("");
