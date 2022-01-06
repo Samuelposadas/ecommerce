@@ -8,110 +8,13 @@ import {
   GET_ALL_CATEGORIES,
   TOTAL_PAGES,
   GET_CATEGORIES,
-  GET_CATEGORY,
-  ORDER,
   GET_PRODUCTS_DEFAULT,
-  SAVENAME,
   GET_ACCESORIES,
   GET_PRODUCTS_BY_FILTERS,
   GET_ALL_PRODUCTS_NAMES,
   PRODUCTS_CONTROLLER,
 } from "../constants/index";
 import { actionGenerator, reqGetAxios } from "./metodos";
-
-/* export const getProductByName = (name) => {
-  return async function (dispatch) {
-    try {
-      const product = await axios.get(
-        `${URL_BASE}/products/search?name=${name}`
-      );
-      return dispatch({
-        type: GET_PRODUCT_BY_NAME,
-        payload: {
-          products: product.data.products,
-          totalPages: product.data.totalPages,
-        },
-      });
-    } catch (error) {
-      console.log(error);
-    }
-  };
-};
-
-export const getAllProducts = (numPage, category, order, nameProduct) => {
-  return async function (dispatch) {
-    if (numPage && category) {
-      try {
-        let products;
-        if (!order) {
-          products = await axios.get(
-            `${URL_BASE}/products?page=${numPage}&category=${category}`
-          );
-        } else {
-          products = await axios.get(
-            `${URL_BASE}/products?page=${numPage}&category=${category}&orderPrice=${order}`
-          );
-        }
-
-        dispatch({
-          type: GET_ALL_PRODUCTS,
-          payload: products.data.products,
-        });
-        dispatch({
-          type: TOTAL_PAGES,
-          payload: products.data.totalPages,
-        });
-      } catch (error) {
-        console.log(error);
-      }
-    } else if (numPage && nameProduct) {
-      try {
-        let products;
-        if (!order) {
-          products = await axios.get(
-            `${URL_BASE}/products?page=${numPage}&nameproduct=${nameProduct}`
-          );
-        } else {
-          products = await axios.get(
-            `${URL_BASE}/products?page=${numPage}&nameproduct=${nameProduct}&orderPrice=${order}`
-          );
-        }
-
-        dispatch({
-          type: GET_ALL_PRODUCTS,
-          payload: products.data.products,
-        });
-        dispatch({
-          type: TOTAL_PAGES,
-          payload: products.data.totalPages,
-        });
-      } catch (error) {
-        console.log(error);
-      }
-    } else if (numPage && !nameProduct && !category) {
-      try {
-        let products;
-        if (!order) {
-          products = await axios.get(`${URL_BASE}/products?page=${numPage}`);
-        } else {
-          products = await axios.get(
-            `${URL_BASE}/products?page=${numPage}&orderPrice=${order}`
-          );
-        }
-        dispatch({
-          type: GET_ALL_PRODUCTS,
-          payload: products.data.products,
-        });
-        dispatch({
-          type: TOTAL_PAGES,
-          payload: products.data.totalPages,
-        });
-      } catch (error) {
-        console.log(error);
-      }
-    }
-  };
-}; */
 
 export const postProducts = (payload) => {
   return async function () {
@@ -183,19 +86,6 @@ export const getCategoryAll = () => {
     }
   };
 };
-export const getCategory = (payload) => {
-  return {
-    type: GET_CATEGORY,
-    payload,
-  };
-};
-
-export const order = (payload) => {
-  return {
-    type: ORDER,
-    payload,
-  };
-};
 
 export const action_defaul_values = () => {
   return async (dispatch) => {
@@ -212,13 +102,6 @@ export const action_defaul_values = () => {
     } catch (error) {
       console.log(error);
     }
-  };
-};
-
-export const saveName = (payload) => {
-  return {
-    type: SAVENAME,
-    payload,
   };
 };
 

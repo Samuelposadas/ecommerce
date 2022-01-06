@@ -1,5 +1,5 @@
 export const ramDate = [
-  { id: 3, name: "from 1 GB to 4 GB" },
+  { id: 3, name: "From 1 GB to 4 GB" },
   { id: 4, name: "4 GB" },
   { id: 8, name: "8 GB" },
   { id: 16, name: "16 GB" },

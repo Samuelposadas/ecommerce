@@ -34,24 +34,15 @@ const Navbar = () => {
   const dispatch = useDispatch();
 
   //reset categories y trae todos los productos
-  const resetProductController = (e) => {
-    e.preventDefault();
+  const resetProductController = () => {
     dispatch(
       action_products_controllers({
-        category: "",
+        category: false,
         nameProduct: "",
         page: 1,
+        accessories: false,
       })
     );
-    dispatch(
-      getProductByFilter({
-        ...productObj,
-        category: "",
-        nameProduct: "",
-        page: 1,
-      })
-    );
-    setStyle("");
   };
 
   const categories = useSelector((state) => state.products.allCategories);
