@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { ButtonDetail } from "../../common/button/button.jsx";
-import { cleanCart } from "../../redux/actions/actionCart";
+import { cleanCart, setCartTotalPrice } from "../../redux/actions/actionCart";
 import Paypal from "../Paypal/Paypal.jsx";
 import { Container, Title, Items, LineBreak, Total, CleanCart } from "./styled";
 
@@ -33,6 +33,7 @@ const CartSumary = () => {
       }
     });
     setTotalPrice(price);
+    dispatch(setCartTotalPrice(price));
     setTotalItems(items);
   }, [productsCart, totalItems, totalPrice, setTotalItems, setTotalPrice]);
   return (

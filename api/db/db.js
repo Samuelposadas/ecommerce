@@ -78,14 +78,13 @@ const {
   Category,
   Supplier,
   User,
-  Type_User,
   Order,
   Order_Detail,
   Comment,
-  Type_Order,
   Brands,
   SubCategory,
   Specifict_Category,
+  Type_User,
 } = sequelize.models;
 
 // Aca vendrian las relaciones
@@ -97,17 +96,14 @@ Product.belongsTo(Category, { foreignKey: "id_Category" });
 Supplier.hasMany(Product, { foreignKey: "id_Supplier" });
 Product.belongsTo(Supplier, { foreignKey: "id_Supplier" });
 
-Type_User.hasMany(User, { foreignKey: "id_Type_User" });
-User.belongsTo(Type_User, { foreignKey: "id_Type_User" });
-
 User.hasMany(Order, { foreignKey: "id_User" });
 Order.belongsTo(User, { foreignKey: "id_User" });
 
 Order.hasMany(Order_Detail, { foreignKey: "id_Order" });
 Order_Detail.belongsTo(Order, { foreignKey: "id_Order" });
 
-Product.hasMany(Order_Detail, { foreignKey: "id_Product" });
-Order_Detail.belongsTo(Product, { foreignKey: "id_Product" });
+Type_User.hasMany(User, { foreignKey: "id_Type_User" });
+User.belongsTo(Type_User, { foreignKey: "id_Type_User" });
 
 //Creando la tabla Favorites
 Product.belongsToMany(User, {
@@ -126,9 +122,6 @@ Comment.belongsTo(Product, { foreignKey: "id_Product" });
 
 User.hasMany(Comment, { foreignKey: "id_User" });
 Comment.belongsTo(User, { foreignKey: "id_User" });
-
-Type_Order.hasMany(Order, { foreignKey: "id_Type_Order" });
-Order.belongsTo(Type_Order, { foreignKey: "id_Type_Order" });
 
 Brands.hasMany(Product, { foreignKey: "id_Brand" });
 Product.belongsTo(Brands, { foreignKey: "id_Brand" });

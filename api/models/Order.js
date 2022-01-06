@@ -7,13 +7,18 @@ module.exports = (sequelize) => {
     "Order",
     {
       date: {
-        type: DataTypes.DATE,
+        type: DataTypes.DATEONLY,
+        // type: DataTypes.STRING,
+        allowNull: false,
+      },
+      hour: {
+        type: DataTypes.STRING,
         allowNull: false,
       },
       status: {
-        type: DataTypes.STRING,
+        type: DataTypes.ENUM("Processing", "Sent", "Completed"),
         allowNull: false,
-        defaultValue: "Send",
+        defaultValue: "Processing",
       },
       adress: {
         type: DataTypes.STRING,

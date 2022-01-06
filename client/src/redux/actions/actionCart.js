@@ -5,6 +5,7 @@ import {
   CLEAN_CART,
   EDIT_QUANTITY,
   REMOVE_FROM_CART,
+  SET_TOTAL_PRICE,
 } from "../constants/cartConstants";
 
 export const addToCart = (id) => {
@@ -41,5 +42,12 @@ export const editQuantity = (value, id) => {
 export const cleanCart = () => {
   return {
     type: CLEAN_CART,
+  };
+};
+
+export const setCartTotalPrice = (value) => {
+  return {
+    type: SET_TOTAL_PRICE,
+    payload: value,
   };
 };
