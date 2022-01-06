@@ -23,6 +23,9 @@ import {
 } from "./styled";
 import AddComment from "../../Components/addComment/addComment.jsx";
 import { Computer } from "./Detail/Computer.jsx";
+import { Mobile } from "./Detail/Mobile.jsx";
+import { Notebook } from "./Detail/Notebook.jsx";
+import { TV } from "./Detail/TV.jsx";
 
 const ProductDetail = () => {
   const { id } = useParams();
@@ -108,6 +111,10 @@ const ProductDetail = () => {
         </ProductInfo>
         <ProductDescription>
           {categoryPro == "Computer" && <Computer data={product.SubCategory} />}
+          {categoryPro == "Mobile" && <Mobile data={product.SubCategory} />}
+          {categoryPro == "Laptop" && <Notebook data={product.SubCategory} />}
+          {categoryPro == "TV" && <TV data={product.SubCategory} />}
+          {categoryPro == "Tablet" && <Notebook data={product.SubCategory} />}
           <br />
           <p>Description</p>
           <p>{description}</p>
