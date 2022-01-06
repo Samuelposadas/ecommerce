@@ -75,25 +75,7 @@ const Navbar = () => {
   }, [category]);
 
   useEffect(() => {
-    dispatch(
-      getProductByFilter({
-        ram: false,
-        storage: false,
-        opeSystem: false,
-        processor: false,
-        display: false,
-        typeScreen: false,
-        resolution: false,
-        sizeScreen: false,
-        accessories: false,
-        category: 1,
-        nameProduct: "",
-        order: "ASC",
-        typeOrder: "salePrice",
-        page: 1,
-      })
-    );
-    console.log(productObj);
+    dispatch(getProductByFilter({ ...productObj, category }));
   }, [category]);
 
   const [style, setStyle] = useState("");
