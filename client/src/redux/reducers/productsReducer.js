@@ -20,6 +20,7 @@ import {
 
 const initialState = {
   productDetail: {},
+  categoryProduct: "",
   allProducts: [],
   renderProducts: [],
   copyAllProducts: [],
@@ -52,6 +53,7 @@ export const reducer = (state = initialState, { type, payload }) => {
     case SET_PRODUCT_DETAIL:
       return {
         ...state,
+        categoryProduct: payload.Category.name,
         productDetail: payload,
       };
     case TOTAL_PAGES:

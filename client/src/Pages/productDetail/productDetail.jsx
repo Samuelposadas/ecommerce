@@ -22,11 +22,13 @@ import {
   OldSalePrice,
 } from "./styled";
 import AddComment from "../../Components/addComment/addComment.jsx";
+import { Computer } from "./Detail/Computer.jsx";
 
 const ProductDetail = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
   const product = useSelector((state) => state.products.productDetail);
+  const categoryPro = useSelector((state) => state.products.categoryProduct);
   useEffect(() => {
     dispatch(getProductDetail(id));
   }, []);
@@ -105,6 +107,8 @@ const ProductDetail = () => {
           </Link>
         </ProductInfo>
         <ProductDescription>
+          {categoryPro == "Computer" && <Computer data={product.SubCategory} />}
+          <br />
           <p>Description</p>
           <p>{description}</p>
         </ProductDescription>
