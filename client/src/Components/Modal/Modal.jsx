@@ -82,7 +82,12 @@ export const Modal = ({ showModal, setShowModal }) => {
                     </Message>
                   )}
                   <Link to={"/shop"}>
-                    <ButtonDetail width={"365px"}>Checkout</ButtonDetail>
+                    <ButtonDetail
+                      width={"365px"}
+                      disabled={!productsCart.length}
+                    >
+                      Checkout
+                    </ButtonDetail>
                   </Link>
                 </ModalContent>
               </ModalWrapper>

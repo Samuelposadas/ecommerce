@@ -7,6 +7,7 @@ import {
   LogoContainer,
   Container,
   Suggestion,
+  SuggestionsWrapper,
 } from "./styled.jsx";
 import { AiOutlineSearch } from "react-icons/ai";
 
@@ -72,12 +73,14 @@ const Searchbar = (props) => {
           <AiOutlineSearch onClick={handleSubmit} />
         </LogoContainer>
       </FormSt>
-      {suggestions &&
-        suggestions.map((suggestion, i) => (
-          <Suggestion key={i} onClick={() => onSuggest(suggestion.name)}>
-            {suggestion.name}
-          </Suggestion>
-        ))}
+      <SuggestionsWrapper>
+        {suggestions &&
+          suggestions.map((suggestion, i) => (
+            <Suggestion key={i} onClick={() => onSuggest(suggestion.name)}>
+              {suggestion.name}
+            </Suggestion>
+          ))}
+      </SuggestionsWrapper>
     </Container>
   );
 };

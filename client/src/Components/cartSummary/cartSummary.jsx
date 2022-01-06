@@ -44,20 +44,25 @@ const CartSumary = () => {
       <LineBreak />
       <CleanCart onClick={() => dispatch(cleanCart())}>Clean Cart</CleanCart>
       <LineBreak />
-      <Paypal></Paypal>
-      <LineBreak />
-      <ButtonDetail
-        width={"max-width"}
-        backgroundcolor={"#0077ED"}
-        onClick={() => setShowStripe(!showStripe)}
-      >
-        Credit Card
-      </ButtonDetail>
-      {showStripe ? (
-        <Elements stripe={stripePromise}>
-          <CardStripe />
-        </Elements>
-      ) : null}
+
+      {totalItems > 0 && (
+        <div>
+          <Paypal></Paypal>
+          <LineBreak />
+          <ButtonDetail
+            width={"max-width"}
+            backgroundcolor={"#0077ED"}
+            onClick={() => setShowStripe(!showStripe)}
+          >
+            Credit Card
+          </ButtonDetail>
+          {showStripe && (
+            <Elements stripe={stripePromise}>
+              <CardStripe />
+            </Elements>
+          )}
+        </div>
+      )}
     </Container>
   );
 };

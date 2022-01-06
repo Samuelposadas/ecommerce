@@ -206,6 +206,9 @@ const MediumSection2 = styled.div`
     height: 35px;
     width: auto;
     align-self: center;
+    &:hover {
+      cursor: pointer;
+    }
   }
 
   img {
