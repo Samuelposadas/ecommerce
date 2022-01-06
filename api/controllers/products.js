@@ -318,11 +318,13 @@ const newgetProductsAll = async (req, res) => {
 const findProductById = async (req, res) => {
   try {
     const { id } = req.params;
+
     const data = await Product.findOne({
       where: { id },
       attributes: { exclude: ["id_Supplier"] },
       include: [
         { model: Category },
+        { model: SubCategory },
         { model: Supplier, attributes: ["name", "id"] },
         { model: Comment },
       ],
