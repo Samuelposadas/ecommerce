@@ -5,6 +5,7 @@ export const Wrapper = styled.div`
   align-content: center;
   justify-content: center;
   background-color: #b5b4b832;
+  font-size: 14px;
 
   @media screen and (max-width: 900px) {
     background-color: white;
