@@ -1,20 +1,20 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getAllProducts } from "../../redux/actions/actionProducts";
+import { getProductByFilter } from "../../redux/actions/actionProducts";
 import { ButtonPage, Pagination, LabelPage, OutOf } from "./styled.jsx";
 
 export const Paginate = () => {
   const [numberPag, setNumberPag] = useState(1);
   const totalPages = useSelector((state) => state.products.totalPages);
-  const category = useSelector((state) => state.products.category);
+  const productController = useSelector(
+    (state) => state.products.productsControllers
+  );
 
   const dispatch = useDispatch();
-  const order = useSelector((state) => state.products.order);
-  const nameProduct = useSelector((state) => state.products.nameProduct);
 
   useEffect(() => {
-    dispatch(getAllProducts(numberPag, category, order, nameProduct));
+    dispatch(getProductByFilter({ ...productController, page: numberPag }));
   }, [numberPag]);
 
   useEffect(() => {
@@ -26,7 +26,7 @@ export const Paginate = () => {
     }
   }, [totalPages]);
 
-  useEffect(() => setNumberPag(1), [order]);
+  useEffect(() => setNumberPag(1), [productController]);
 
   return (
     <Pagination>

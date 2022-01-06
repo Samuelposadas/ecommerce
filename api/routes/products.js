@@ -8,7 +8,7 @@ const {
   updateProduct,
   addOrRemoveCategoryProduct,
   newgetProductsAll,
-  updateRating,
+
   getAllProducts,
 } = require("../controllers/products");
 

@@ -39,15 +39,14 @@ import {
 
 import { useSelector, useDispatch } from "react-redux";
 import {
-  getAllProducts,
-  order,
   getProductByFilter,
   get_accesories,
+  action_products_controllers,
 } from "../../redux/actions/actionProducts";
 
 export const SideBarFilters = () => {
   const nameProduct = useSelector((state) => state.products.nameProduct);
-  const [valueOrder, setValueOrder] = useState("ASC");
+
   const [orderAndType, setOrderAndType] = useState({
     order: "ASC",
     typeOrder: "rating",
@@ -68,19 +67,15 @@ export const SideBarFilters = () => {
     console.log(e);
   };
   const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(getAllProducts(1, category, valueOrder, nameProduct));
-    dispatch(order(valueOrder));
-  }, [valueOrder]);
 
   const [arrFilters, setArrFilters] = useState([]);
   const [openBarMobile, setOpenBarMobile] = useState(false);
 
   //Ordenamiento por rating o precio ambos ascen o descen
 
-  useEffect(() => {
+  /* useEffect(() => {
     dispatch(getProductByFilter({ ...orderAndType, ...queryFilters }));
-  }, [orderAndType]);
+  }, [orderAndType]); */
 
   //agregando los filtros especificos
   const [subFilters, setSubFilters] = useState({
@@ -95,7 +90,9 @@ export const SideBarFilters = () => {
   });
 
   //trayendo la categoria en donde el usuario esta parado.
-  const category = useSelector((state) => state.products.category);
+  const category = useSelector(
+    (state) => state.products.productsControllers.category
+  );
 
   // useEffect para traer los accesorios
   useEffect(() => {
@@ -231,7 +228,9 @@ export const SideBarFilters = () => {
     resolution: false,
     sizeScreen: false,
     accessories: false,
-    category: false,
+    category: "",
+    nameProduct: "",
+    page: 1,
   });
   // useEffect para despachar los filtros
 
@@ -257,6 +256,16 @@ export const SideBarFilters = () => {
           });
     }
   }, [subFilters.display]);
+
+  //traigo el obj controller product para poder usarlo
+  const product_controller = useSelector(
+    (state) => state.products.productsControllers
+  );
+  //useEffect para poder usar order en otros componentes
+  useEffect(() => {
+    dispatch(action_products_controllers({ ...orderAndType }));
+    dispatch(getProductByFilter({ ...product_controller, ...orderAndType }));
+  }, [orderAndType]);
 
   return (
     <Container>

@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getAllProducts, saveName } from "../../redux/actions/actionProducts";
+import {
+  action_products_controllers,
+  getProductByFilter,
+  saveName,
+} from "../../redux/actions/actionProducts";
 import {
   InputStyled,
   FormSt,
@@ -16,6 +20,11 @@ const Searchbar = (props) => {
   const [suggestions, setSuggestions] = useState([]);
   const products = useSelector((state) => state.products.allProductsNames);
   const dispatch = useDispatch();
+
+  //me traigo el obj controllers products para despachar el producto con el nombre buscado
+  const products_controllers = useSelector(
+    (state) => state.products.productsControllers
+  );
 
   const handleInputChange = (e) => {
     let matches = [];
@@ -36,15 +45,58 @@ const Searchbar = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (input === "") return;
-    dispatch(getAllProducts(1, null, null, input));
-    dispatch(saveName(input));
+
+    dispatch(
+      getProductByFilter({
+        ram: false,
+        storage: false,
+        opeSystem: false,
+        processor: false,
+        display: false,
+        typeScreen: false,
+        resolution: false,
+        sizeScreen: false,
+        accessories: false,
+        category: "",
+        order: "ASC",
+        typeOrder: "salePrice",
+        page: 1,
+        nameProduct: input,
+      })
+    );
+    dispatch(
+      action_products_controllers({
+        ram: false,
+        storage: false,
+        opeSystem: false,
+        processor: false,
+        display: false,
+        typeScreen: false,
+        resolution: false,
+        sizeScreen: false,
+        accessories: false,
+        order: "ASC",
+        typeOrder: "salePrice",
+        page: 1,
+        nameProduct: input,
+        category: "",
+      })
+    );
     setInput("");
     // eslint-disable-next-line react/prop-types
     props.reset();
   };
 
   const onSuggest = (name) => {
-    dispatch(getAllProducts(1, null, null, name));
+    dispatch(
+      getProductByFilter({ ...products_controllers, nameProduct: input })
+    );
+    dispatch(
+      action_products_controllers({
+        ...products_controllers,
+        nameProduct: input,
+      })
+    );
     dispatch(saveName(name));
     setSuggestions([]);
     setInput("");

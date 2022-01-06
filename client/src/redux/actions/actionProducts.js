@@ -1,8 +1,6 @@
 import axios from "axios";
 
 import {
-  GET_PRODUCT_BY_NAME,
-  GET_ALL_PRODUCTS,
   POST_PRODUCT,
   SET_PRODUCT_DETAIL,
   URL_BASE,
@@ -17,10 +15,11 @@ import {
   GET_ACCESORIES,
   GET_PRODUCTS_BY_FILTERS,
   GET_ALL_PRODUCTS_NAMES,
+  PRODUCTS_CONTROLLER,
 } from "../constants/index";
 import { actionGenerator, reqGetAxios } from "./metodos";
 
-export const getProductByName = (name) => {
+/* export const getProductByName = (name) => {
   return async function (dispatch) {
     try {
       const product = await axios.get(
@@ -112,7 +111,7 @@ export const getAllProducts = (numPage, category, order, nameProduct) => {
       }
     }
   };
-};
+}; */
 
 export const postProducts = (payload) => {
   return async function () {
@@ -264,18 +263,28 @@ export const getProductByFilter = (payload) => {
       accessories,
       order,
       typeOrder,
+      nameProduct,
+      page,
     } = payload;
     try {
       let products;
-      if (category.length === 0) {
+      if (category && nameProduct.length == 0) {
         products = await axios.get(
-          `${URL_BASE}/products/pro?order=${order}&typeOrder=${typeOrder}&ram=${ram}&catSpecifict=${accessories}&storage=${storage}&opeSystem=${opeSystem}&processor=${processor}&display=${display}&typeScreen=${typeScreen}&resolution=${resolution}&sizeScreen=${sizeScreen}`
+          `${URL_BASE}/products/pro?&order=${order}&typeOrder=${typeOrder}&Pcategory=${category}&ram=${ram}&catSpecifict=${accessories}&storage=${storage}&opeSystem=${opeSystem}&processor=${processor}&display=${display}&typeScreen=${typeScreen}&resolution=${resolution}&sizeScreen=${sizeScreen}&page=${page}`
         );
-      } else {
+        console.log("if uno", products);
+      }
+      if (!category && nameProduct.length == 0) {
         products = await axios.get(
-          `${URL_BASE}/products/pro?order=${order}&typeOrder=${typeOrder}&Pcategory=${category}&ram=${ram}&catSpecifict=${accessories}&storage=${storage}&opeSystem=${opeSystem}&processor=${processor}&display=${display}&typeScreen=${typeScreen}&resolution=${resolution}&sizeScreen=${sizeScreen}`
+          `${URL_BASE}/products/pro?order=${order}&typeOrder=${typeOrder}&page=${page}`
         );
-        console.log(payload);
+        console.log("if dos", products);
+      }
+      if (!category && nameProduct.length > 0) {
+        products = await axios.get(
+          `${URL_BASE}/products/pro?NProduct=${nameProduct}&order=${order}&typeOrder=${typeOrder}&page=${page}`
+        );
+        console.log("if tres", products);
       }
 
       dispatch({
@@ -308,12 +317,17 @@ export const getProductsNames = () => {
 
 export const get_accesories = () => {
   return async (dispatch) => {
-    let accesories = await axios.get(
-      "http://localhost:3001/categories/accesory"
-    );
+    let accesories = await axios.get(`${URL_BASE}/categories/accesory`);
     dispatch({
       type: GET_ACCESORIES,
       payload: accesories.data,
     });
+  };
+};
+
+export const action_products_controllers = (payload) => {
+  return {
+    type: PRODUCTS_CONTROLLER,
+    payload,
   };
 };

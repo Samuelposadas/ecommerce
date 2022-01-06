@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import ItemList from "../../Components/ItemList/ItemList.jsx";
-import { getAllProducts } from "../../redux/actions/actionProducts";
+import { getProductByFilter } from "../../redux/actions/actionProducts";
 import { StyledAdminProducts } from "./styled.jsx";
 import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
 import { Link } from "react-router-dom";
@@ -9,9 +9,12 @@ import { Link } from "react-router-dom";
 export default function AdminProducts() {
   const dispatch = useDispatch();
   const allProducts = useSelector((state) => state.products.allProducts);
+  const product_controllers = useSelector(
+    (state) => state.products.productsControllers
+  );
 
   useEffect(() => {
-    dispatch(getAllProducts(1));
+    dispatch(getProductByFilter(product_controllers));
   }, []);
 
   const columns = [
