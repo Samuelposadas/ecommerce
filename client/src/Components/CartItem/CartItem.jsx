@@ -13,7 +13,7 @@ const CartItem = ({ img, name, salePrice, id, quantity, discount, stock }) => {
   };
   const [input, setInput] = useState(quantity);
   const handleChange = (e) => {
-    if (e.target.value <= stock) {
+    if (e.target.value <= stock && e.target.value >= 0) {
       setInput(e.target.value);
       dispatch(editQuantity(e.target.value, id));
     } else return;
