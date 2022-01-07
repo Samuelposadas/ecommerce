@@ -9,90 +9,6 @@ const {
   Specifict_Category,
 } = require("../db/db");
 
-const getProductsAll = async (req, res) => {
-  let { category, orderPrice, page, nameproduct } = req.query;
-  console.log("Hola1");
-  //variable para mandar a paginar
-  let resultData;
-
-  //Valores por defecto si no vienen por query
-  page = page ? page : 1;
-  orderPrice = orderPrice ? orderPrice : "ASC";
-
-  const PRODUCTS_PER_PAGE = 12;
-
-  if (category) {
-    try {
-      const products = await Product.findAll({
-        attributes: { exclude: ["id_Supplier"] },
-        include: [
-          { model: Category },
-          { model: Supplier, attributes: ["name"] },
-        ],
-        order: [["salePrice", orderPrice]],
-      });
-
-      //Filtrado de productos por ID de la categoría
-      const productsByCategory = products.filter((product) => {
-        if (product.Categories.length) {
-          for (let i = 0; i < product.Categories.length; i++) {
-            if (product.Categories[i].id === +category) {
-              return product;
-            }
-          }
-        }
-      });
-      resultData = [...productsByCategory];
-    } catch (error) {
-      console.log(error);
-    }
-  } else if (nameproduct) {
-    try {
-      const condition = {
-        where: { name: { [Op.iLike]: `%${nameproduct}%` } },
-        attributes: { exclude: ["id_Supplier"] },
-        include: [
-          { model: Category },
-          { model: Supplier, attributes: ["name"] },
-        ],
-        order: [["salePrice", orderPrice]],
-      };
-      const products = await Product.findAll(condition);
-      // res.json(products.length ? products : { message: "No products found" });
-      resultData = [...products];
-    } catch (error) {
-      console.log(error);
-    }
-  } else if (!nameproduct && !category) {
-    try {
-      //Datos con todas las categorías
-      const dataProducts = await Product.findAll({
-        attributes: { exclude: ["id_Supplier"] },
-        include: [
-          { model: Category },
-          { model: Supplier, attributes: ["name"] },
-        ],
-        order: [["salePrice", orderPrice]],
-      });
-      resultData = [...dataProducts];
-    } catch (error) {
-      console.log(error);
-    }
-  }
-
-  //Código de paginado
-  const result = resultData.slice(
-    PRODUCTS_PER_PAGE * (page - 1),
-    PRODUCTS_PER_PAGE * (page - 1) + PRODUCTS_PER_PAGE
-  );
-
-  res.json({
-    count: resultData.length,
-    totalPages: Math.ceil(resultData.length / PRODUCTS_PER_PAGE),
-    products: result,
-  });
-};
-
 const newgetProductsAll = async (req, res) => {
   let {
     Pcategory,
@@ -520,7 +436,6 @@ const getAllProducts = async (req, res) => {
 };
 
 module.exports = {
-  getProductsAll,
   findProductById,
   searchProducts,
   createProduct,

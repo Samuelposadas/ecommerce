@@ -1,7 +1,6 @@
 const express = require("express");
 const router = express.Router();
 const {
-  getProductsAll,
   findProductById,
   searchProducts,
   createProduct,
@@ -12,9 +11,8 @@ const {
   getAllProducts,
 } = require("../controllers/products");
 
-router.route("/").get(getProductsAll);
+router.route("/").get(newgetProductsAll);
 router.route("/all").get(getAllProducts);
-router.route("/pro").get(newgetProductsAll);
 router.route("/search").get(searchProducts);
 router.route("/create").post(createProduct);
 router.route("/update/:id").put(updateProduct);

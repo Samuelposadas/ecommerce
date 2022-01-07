@@ -153,19 +153,19 @@ export const getProductByFilter = (payload) => {
       let products;
       if (category && nameProduct.length == 0) {
         products = await axios.get(
-          `${URL_BASE}/products/pro?&order=${order}&typeOrder=${typeOrder}&Pcategory=${category}&ram=${ram}&catSpecifict=${accessories}&storage=${storage}&opeSystem=${opeSystem}&processor=${processor}&display=${display}&typeScreen=${typeScreen}&resolution=${resolution}&sizeScreen=${sizeScreen}&page=${page}`
+          `${URL_BASE}/products?&order=${order}&typeOrder=${typeOrder}&Pcategory=${category}&ram=${ram}&catSpecifict=${accessories}&storage=${storage}&opeSystem=${opeSystem}&processor=${processor}&display=${display}&typeScreen=${typeScreen}&resolution=${resolution}&sizeScreen=${sizeScreen}&page=${page}`
         );
         console.log("if uno", products);
       }
       if (!category && nameProduct.length == 0) {
         products = await axios.get(
-          `${URL_BASE}/products/pro?order=${order}&typeOrder=${typeOrder}&page=${page}`
+          `${URL_BASE}/products?order=${order}&typeOrder=${typeOrder}&page=${page}`
         );
         console.log("if dos", products);
       }
       if (!category && nameProduct.length > 0) {
         products = await axios.get(
-          `${URL_BASE}/products/pro?NProduct=${nameProduct}&order=${order}&typeOrder=${typeOrder}&page=${page}`
+          `${URL_BASE}/products?NProduct=${nameProduct}&order=${order}&typeOrder=${typeOrder}&page=${page}`
         );
         console.log("if tres", products);
       }
