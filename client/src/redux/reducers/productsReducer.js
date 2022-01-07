@@ -1,18 +1,13 @@
 /* eslint-disable */
 
 import {
-  GET_PRODUCT_BY_NAME,
-  GET_ALL_PRODUCTS,
   SET_PRODUCT_DETAIL,
   POST_PRODUCT,
   GET_SUPPLIERS,
   GET_ALL_CATEGORIES,
   TOTAL_PAGES,
   GET_CATEGORIES,
-  GET_CATEGORY,
-  ORDER,
   GET_PRODUCTS_DEFAULT,
-  SAVENAME,
   GET_PRODUCTS_BY_FILTERS,
   GET_ALL_PRODUCTS_NAMES,
   GET_ACCESORIES,
@@ -33,9 +28,6 @@ const initialState = {
   allSuppliers: [],
 
   totalPages: 1,
-  category: "",
-  order: "",
-  nameProduct: "",
 
   productsControllers: {
     ram: false,
@@ -47,7 +39,7 @@ const initialState = {
     resolution: false,
     sizeScreen: false,
     accessories: false,
-    category: "",
+    category: false,
     nameProduct: "",
     order: "ASC",
     typeOrder: "salePrice",
@@ -57,17 +49,6 @@ const initialState = {
 
 export const reducer = (state = initialState, { type, payload }) => {
   switch (type) {
-    case GET_PRODUCT_BY_NAME:
-      return {
-        ...state,
-        allProducts: payload.products,
-        totalPages: payload.totalPages,
-      };
-    case GET_ALL_PRODUCTS:
-      return {
-        ...state,
-        allProducts: payload,
-      };
     case SET_PRODUCT_DETAIL:
       return {
         ...state,
@@ -84,17 +65,6 @@ export const reducer = (state = initialState, { type, payload }) => {
       return {
         ...state,
         allCategories: payload,
-      };
-    case GET_CATEGORY:
-      return {
-        ...state,
-        category: payload,
-        nameProduct: "",
-      };
-    case ORDER:
-      return {
-        ...state,
-        order: payload,
       };
 
     case POST_PRODUCT:
@@ -120,12 +90,7 @@ export const reducer = (state = initialState, { type, payload }) => {
         category: "",
         nameProduct: "",
       };
-    case SAVENAME:
-      return {
-        ...state,
-        nameProduct: payload,
-        category: "",
-      };
+
     case PRODUCTS_CONTROLLER:
       return {
         ...state,

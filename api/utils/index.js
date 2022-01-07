@@ -54,6 +54,7 @@ const incomeProductDB = async () => {
 const incomeCategory = async () => {
   categories.forEach(async (category) => {
     await Category.create({
+      id: category.id,
       name: category.name,
     });
   });

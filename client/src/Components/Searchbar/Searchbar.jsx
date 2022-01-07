@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from "react-redux";
 import {
   action_products_controllers,
   getProductByFilter,
-  saveName,
 } from "../../redux/actions/actionProducts";
 import {
   InputStyled,
@@ -87,7 +86,7 @@ const Searchbar = (props) => {
     props.reset();
   };
 
-  const onSuggest = (name) => {
+  const onSuggest = () => {
     dispatch(
       getProductByFilter({ ...products_controllers, nameProduct: input })
     );
@@ -97,7 +96,7 @@ const Searchbar = (props) => {
         nameProduct: input,
       })
     );
-    dispatch(saveName(name));
+
     setSuggestions([]);
     setInput("");
   };
