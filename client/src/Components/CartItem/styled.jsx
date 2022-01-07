@@ -14,7 +14,7 @@ export const Container = styled.div`
   }
   input {
     height: 20px;
-    width: 30px;
+    width: 40px;
     color: #636060e2;
     grid-column-start: 2;
     grid-column-end: 2;

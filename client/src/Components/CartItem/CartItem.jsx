@@ -5,7 +5,7 @@ import { toast, Toaster } from "react-hot-toast";
 import { FaRegTrashAlt } from "react-icons/fa";
 import { Container } from "./styled.jsx";
 
-const CartItem = ({ img, name, salePrice, id, quantity, discount }) => {
+const CartItem = ({ img, name, salePrice, id, quantity, discount, stock }) => {
   const dispatch = useDispatch();
   const deleteItem = (id) => {
     dispatch(removeFromCart(id));
@@ -13,14 +13,22 @@ const CartItem = ({ img, name, salePrice, id, quantity, discount }) => {
   };
   const [input, setInput] = useState(quantity);
   const handleChange = (e) => {
-    setInput(e.target.value);
-    dispatch(editQuantity(e.target.value, id));
+    if (e.target.value <= stock && e.target.value >= 0) {
+      setInput(e.target.value);
+      dispatch(editQuantity(e.target.value, id));
+    } else return;
   };
   return (
     <Container>
       <img src={img}></img>
       <p>{name}</p>
-      <input value={input} min="1" type="number" onChange={handleChange} />
+      <input
+        value={input}
+        min="1"
+        type="number"
+        max={stock}
+        onChange={handleChange}
+      />
       <FaRegTrashAlt onClick={() => deleteItem(id)}></FaRegTrashAlt>
       {discount ? (
         <h3>{salePrice - (salePrice * discount) / 100} USD</h3>
