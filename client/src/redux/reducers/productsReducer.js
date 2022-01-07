@@ -39,7 +39,7 @@ const initialState = {
     resolution: false,
     sizeScreen: false,
     accessories: false,
-    category: "",
+    category: false,
     nameProduct: "",
     order: "ASC",
     typeOrder: "salePrice",
