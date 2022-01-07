@@ -43,6 +43,7 @@ const Navbar = () => {
         accessories: false,
       })
     );
+    setCategory(false);
   };
 
   const categories = useSelector((state) => state.products.allCategories);
