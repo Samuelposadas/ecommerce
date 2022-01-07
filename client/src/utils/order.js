@@ -1,7 +1,7 @@
 import axios from "axios";
 import { URL_BASE } from "../redux/constants";
 
-export const placeOrder = async (products, adress, userId) => {
+export const placeOrder = async (products, adress, userId, province) => {
   let date = new Date();
   let hours;
   let minutes;
@@ -24,9 +24,37 @@ export const placeOrder = async (products, adress, userId) => {
       adress,
       hour,
       userId,
+      province,
     });
     console.log(data);
   } catch (e) {
     console.log(e);
   }
 };
+
+export const provinces = [
+  "Buenos Aires",
+  "Capital Federal",
+  "Catamarca",
+  "Chaco",
+  "Chubut",
+  "Córdoba",
+  "Corrientes",
+  "Entre Ríos",
+  "Formosa",
+  "Jujuy",
+  "La Pampa",
+  "La Rioja",
+  "Mendoza",
+  "Misiones",
+  "Neuquén",
+  "Río Negro",
+  "Salta",
+  "San Juan",
+  "San Luis",
+  "Santa Cruz",
+  "Santa Fe",
+  "Santiago del Estero",
+  "Tierra del Fuego",
+  "Tucumán",
+];
