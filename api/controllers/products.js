@@ -308,42 +308,66 @@ const searchProducts = async (req, res) => {
 };
 
 const createProduct = async (req, res) => {
-  console.log(req.body);
   const {
     name,
     description,
     salePrice,
     purchasePrice,
     img,
-    rating,
     stock,
     discount,
-    categories,
+    category,
     supplier,
+    subcategory,
+    specCategory,
   } = req.body;
+
   try {
-    const [product, created] = await Product.findOrCreate({
-      where: { name },
-      defaults: {
-        description,
-        salePrice,
-        img,
-        purchasePrice,
-        rating,
-        stock,
-        discount,
+    const findCate = await Category.findByPk(category);
+
+    const dataProduct = {
+      name,
+      description,
+      salePrice,
+      stock,
+      img,
+      discount,
+      purchasePrice,
+      id_Supplier: supplier,
+      id_Category: category,
+      id_SpeCategory: findCate.name == "Accessory" ? specCategory : null,
+    };
+
+    const [prod, createPro] = await Product.findOrCreate({
+      where: {
+        name: dataProduct.name,
       },
+      defaults: dataProduct,
     });
-    if (created) {
-      product.addCategories(categories);
-      product.setSupplier(supplier);
-      res.json(product);
+
+    if (createPro) {
+      if (findCate.name !== "Accessory") {
+        prod.createSubCategory({
+          ram: subcategory.ram ? subcategory.ram : null,
+          storage: subcategory.storage ? subcategory.storage : null,
+          processor: subcategory.processor ? subcategory.processor : null,
+          sizeScreen: subcategory.sizeScreen ? subcategory.sizeScreen : null,
+          display: subcategory.display ? subcategory.display : 0,
+          opeSystem: subcategory.opeSystem ? subcategory.opeSystem : null,
+          resolution:
+            subcategory.resolution !== "false" ? subcategory.resolution : null,
+          typeScreen:
+            subcategory.typeScreen !== "false" ? subcategory.typeScreen : null,
+        });
+        res.send("Product add success");
+      } else {
+        res.send("Product add success");
+      }
     } else {
-      res.send("this product is already created");
+      res.send("Product is already exist");
     }
   } catch (error) {
-    console.error(error);
-    res.status(500).send(error);
+    console.log(error);
   }
 };
 
