@@ -10,6 +10,7 @@ const modelOrder = require("../models/Order");
 const modelOrderDetail = require("../models/Order_Detail");
 const modelComment = require("../models/Comment");
 const modelTypeOrder = require("../models/Type_Order");
+const modelUsuario = require("../models/usuario");
 
 const modelBrands = require("../models/Brands");
 const modelSubCategories = require("../models/SubCategory");
@@ -68,6 +69,7 @@ modelSubCategories(sequelize);
 
 modelSpecifict_Category(sequelize);
 
+modelUsuario(sequelize);
 // En sequelize.models están todos los modelos importados como propiedades
 // Para relacionarlos hacemos un destructuring
 
@@ -85,6 +87,7 @@ const {
   SubCategory,
   Specifict_Category,
   Type_User,
+  Usuario,
 } = sequelize.models;
 
 // Aca vendrian las relaciones
@@ -104,6 +107,9 @@ Order_Detail.belongsTo(Order, { foreignKey: "id_Order" });
 
 Type_User.hasMany(User, { foreignKey: "id_Type_User" });
 User.belongsTo(Type_User, { foreignKey: "id_Type_User" });
+
+Type_User.hasMany(Usuario, { foreignKey: "id_Type_usuario" });
+Usuario.belongsTo(Type_User, { foreignKey: "id_Type_usuario" });
 
 //Creando la tabla Favorites
 Product.belongsToMany(User, {
