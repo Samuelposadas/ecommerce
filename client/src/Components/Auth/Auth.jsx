@@ -5,11 +5,11 @@ import { AiOutlineUser } from "react-icons/ai";
 
 const Auth = () => {
   const { logout, loginWithRedirect, isAuthenticated, user } = useAuth0();
+
   return (
     <Container>
       {isAuthenticated && (
         <Container>
-          {/* <h3>{user.name}</h3> */}
           <img src={user.picture} />
         </Container>
       )}
