@@ -1,9 +1,9 @@
 const { Order, Order_Detail, User } = require("../db/db");
 
 const createOrder = async (req, res) => {
-  const { date, adress, products, hour, userId } = req.body;
+  const { date, adress, products, hour, userId, province } = req.body;
   try {
-    const order = await Order.create({ date, adress, hour });
+    const order = await Order.create({ date, adress, hour, province });
     for (let i = 0; i < products.length; i++) {
       const product = products[i];
       const { quantity, salePrice, name, id, discount } = product;
