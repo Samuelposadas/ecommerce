@@ -44,7 +44,15 @@ const Login = () => {
   };
   const googleId = process.env.REACT_CLIENT_ID_GOOGLE;
   const responseGoogle = (response) => {
-    console.log(response);
+    const loginUser = async () => {
+      const token = await axios.post("http://localhost:3001/usuario/signup", {
+        email: response.profileObj.email,
+        username: response.profileObj.name,
+        password: response.profileObj.googleId,
+      });
+      console.log(token.data);
+    };
+    loginUser();
   };
   const navigate = useNavigate();
 
