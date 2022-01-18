@@ -1,24 +1,43 @@
-import React from "react";
-import { useAuth0 } from "@auth0/auth0-react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 import { Container } from "./styled.jsx";
 import { AiOutlineUser } from "react-icons/ai";
 
 const Auth = () => {
-  const { logout, loginWithRedirect, isAuthenticated, user } = useAuth0();
-
+  const navigate = useNavigate();
+  const token = window.localStorage.getItem("Authorization");
+  const login = () => {
+    if (!token) {
+      navigate("/login");
+    }
+  };
+  const [navUser, setNavUser] = useState(false);
   return (
-    <Container>
-      {isAuthenticated && (
-        <Container>
-          <img src={user.picture} />
-        </Container>
-      )}
-      {isAuthenticated ? (
-        <AiOutlineUser onClick={logout}></AiOutlineUser>
+    <>
+      {token ? (
+        <>
+          <AiOutlineUser onClick={() => setNavUser((prev) => !prev)} />
+        </>
       ) : (
-        <AiOutlineUser onClick={loginWithRedirect}></AiOutlineUser>
+        <AiOutlineUser onClick={() => login()} />
       )}
-    </Container>
+      {navUser ? (
+        <Container>
+          <button onClick={() => navigate("/profile")}>Profile</button>
+          <button>Shopping</button>
+          <button
+            onClick={() => {
+              window.localStorage.removeItem("Authorization");
+              setNavUser((prev) => !prev);
+              navigate("/");
+            }}
+          >
+            Logout
+          </button>
+        </Container>
+      ) : null}
+    </>
   );
 };
 

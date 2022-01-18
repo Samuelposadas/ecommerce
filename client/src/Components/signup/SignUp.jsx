@@ -29,19 +29,23 @@ const SignUp = () => {
       return;
     }
     async function token() {
-      const token = await axios.post("http://localhost:3001/usuario/signup", {
-        email: input.email,
-        username: input.username,
-        password: input.password,
-      });
-
-      window.localStorage.setItem(
-        "Authorization",
-        `Bearer ${token.data.token}`
+      const { data } = await axios.post(
+        "http://localhost:3001/usuario/signup",
+        {
+          email: input.email,
+          username: input.username,
+          password: input.password,
+        }
       );
+
+      window.localStorage.setItem("Authorization", `Bearer ${data.token}`);
+      setTimeout(() => {
+        window.localStorage.removeItem("Authorization");
+        alert("session expired");
+      }, data.expiresIn * 1000);
+      return navigate("/");
     }
     token();
-    navigate("/");
   };
 
   return (
