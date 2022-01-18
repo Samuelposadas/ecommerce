@@ -26,6 +26,7 @@ export const Menu = styled.ul`
   color: #e9e0e0ee;
   display: grid;
   grid-template-columns: repeat(9, minmax(10px, auto));
+  grid-template-rows: 50px 150px;
   grid-gap: 1rem;
   justify-items: center;
   align-items: center;

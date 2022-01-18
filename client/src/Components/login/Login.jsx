@@ -19,38 +19,44 @@ const Login = () => {
 
   const loginSubmit = (e) => {
     e.preventDefault();
-    async function token() {
-      const token = await axios.post("http://localhost:3001/usuario/login", {
+    async function getToken() {
+      const { data } = await axios.post("http://localhost:3001/usuario/login", {
         email: input.email,
         password: input.password,
       });
-      if (token.data.token) {
-        window.localStorage.setItem(
-          "Authorization",
-          `Bearer ${token.data.token}`
-        );
-
-        const user = await axios.get("http://localhost:3001/usuario/profile", {
-          headers: { Authorization: window.localStorage.Authorization },
-        });
-        console.log(user.data);
+      if (data.token) {
+        console.log(data);
+        window.localStorage.setItem("Authorization", `Bearer ${data.token}`);
+        setTimeout(() => {
+          window.localStorage.removeItem("Authorization");
+          alert("session expired");
+        }, data.expiresIn * 1000);
+        navigate("/");
       } else {
         alert(token.data);
         setInput({ email: "", password: "" });
       }
     }
-    token();
-    navigate("/login");
+    getToken();
   };
-  const googleId = process.env.REACT_CLIENT_ID_GOOGLE;
+
   const responseGoogle = (response) => {
     const loginUser = async () => {
-      const token = await axios.post("http://localhost:3001/usuario/signup", {
-        email: response.profileObj.email,
-        username: response.profileObj.name,
-        password: response.profileObj.googleId,
-      });
-      console.log(token.data);
+      const { data } = await axios.post(
+        "http://localhost:3001/usuario/signup",
+        {
+          email: response.profileObj.email,
+          username: response.profileObj.name,
+          password: response.profileObj.googleId,
+        }
+      );
+      console.log(data);
+      window.localStorage.setItem("Authorization", `Bearer ${data.token}`);
+      setTimeout(() => {
+        window.localStorage.removeItem("Authorization");
+        alert("session expired");
+      }, data.expiresIn * 1000);
+      return navigate("/");
     };
     loginUser();
   };

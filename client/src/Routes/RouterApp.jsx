@@ -23,6 +23,7 @@ import Landing from "../Pages/Landing/Landing.jsx";
 import Order from "../Pages/Order/Order.js";
 import Login from "../Components/login/Login.jsx";
 import SignUp from "../Components/signup/SignUp.jsx";
+import Profile from "../Pages/profile/Profile..jsx";
 
 const RouterApp = () => {
   return (
@@ -47,6 +48,7 @@ const RouterApp = () => {
         <Route path="/order" element={<Order />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
+        <Route path="/profile" element={<Profile />} />
       </Routes>
     </BrowserRouter>
   );

@@ -1,3 +1,4 @@
+/* eslint-disable */
 const { Usuario } = require("../db/db");
 
 const jwt = require("jsonwebtoken");
@@ -5,31 +6,42 @@ const secret = process.env.SECRET;
 const bycrypt = require("bcrypt");
 
 const createAndLogin = async (req, res) => {
-  const { email, username, password } = req.body;
-  const passwordHash = await bycrypt.hash(password, 10);
-  const [user, created] = await Usuario.findOrCreate({
-    where: { email },
-    defaults: { username, password: passwordHash },
-  });
+  try {
+    const { email, username, password } = req.body;
+    const passwordHash = await bycrypt.hash(password, 10);
+    const [user, created] = await Usuario.findOrCreate({
+      where: { email },
+      defaults: { username, password: passwordHash },
+    });
+    await user.setType_User(1);
 
-  if (created) {
-    login(req, res);
-  } else {
-    login(req, res);
+    if (created) {
+      login(req, res);
+    } else {
+      login(req, res);
+    }
+  } catch (error) {
+    console.log(error);
   }
 };
 const login = async (req, res) => {
-  const { email, password } = req.body;
-  const user = await Usuario.findOne({ where: { email } });
-  let token;
-  if (user) {
-    const passwordCompare = await bycrypt.compare(password, user.password);
-    if (passwordCompare) {
-      token = jwt.sign({ user }, secret, { expiresIn: 60 * 60 });
+  try {
+    const { email, password } = req.body;
+    const expiresIn = 60 * 60;
+    const user = await Usuario.findOne({ where: { email } });
+    let token;
+    if (user) {
+      const passwordCompare = await bycrypt.compare(password, user.password);
+      if (passwordCompare) {
+        token = jwt.sign({ user }, secret, { expiresIn: expiresIn });
+      }
+      console.log(token);
+      res.json({ token, expiresIn });
+    } else {
+      res.send("Incorrect user or password");
     }
-    res.json({ token });
-  } else {
-    res.send("usuario o contraseña incorrecta");
+  } catch (e) {
+    console.log(e);
   }
 };
 
@@ -38,37 +50,45 @@ const verifyTokens = (req, res, next) => {
 
   if (typeof bearerHeaders !== "undefined") {
     const token = bearerHeaders.split(" ")[1];
-    req.token = token;
-    next();
+    jwt.verify(token, secret, (error, authData) => {
+      if (error) {
+        console.log("entro en el error");
+        return res.sendStatus(403);
+      } else {
+        console.log("entro en el req.user");
+        req.user = authData.user.id;
+        next();
+      }
+    });
   } else {
-    res.sendStatus(403);
+    return res.sendStatus(403);
   }
 };
 
-const verifyUser = (req, res) => {
-  jwt.verify(req.token, secret, (error, authData) => {
-    if (error) {
-      res.sendStatus(403);
-    } else {
-      req.user = authData.user;
-    }
-  });
-};
-
 const profile = async (req, res) => {
-  verifyUser(req, res);
+  try {
+    console.log("entro a profile");
+    if (req.user) {
+      const user = await Usuario.findOne({
+        where: { id: req.user },
+        attributes: { exclude: ["id", "password"] },
+      });
 
-  const user = req.user;
-
-  res.json(user.username);
+      res.json(user);
+    }
+  } catch (error) {
+    console.log(error);
+  }
 };
 
 const addOrUpdateAddress = async (req, res) => {
   try {
-    verifyUser(req, res);
     const { address } = req.body;
 
-    const user = await Usuario.findOne({ where: { email: req.user.email } });
+    const user = await Usuario.findOne({
+      where: { id: req.user },
+      attributes: { exclude: ["id", "password"] },
+    });
 
     await user.update({ address });
 
