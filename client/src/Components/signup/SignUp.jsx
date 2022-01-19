@@ -4,6 +4,17 @@ import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
+// style
+import {
+  Content,
+  Container,
+  FormLogin,
+  LabelLogin,
+  InputLogin,
+  Welcome,
+  ButtonLogin,
+} from "../login/styleLogin";
+
 const SignUp = () => {
   const [input, setInput] = useState({
     email: "",
@@ -49,44 +60,47 @@ const SignUp = () => {
   };
 
   return (
-    <div>
-      <form onSubmit={RegisterSubmit}>
-        <div>
-          <label>Email: </label>
-          <input
-            type="email"
-            value={input.email}
-            onChange={handleInput}
-            name="email"
-            placeholder="Enter your email..."
-          />
-        </div>
-        <div>
-          <label>Username: </label>
-          <input
-            value={input.username}
-            onChange={handleInput}
-            type="text"
-            name="username"
-            placeholder="Enter your username..."
-          />
-        </div>
-        <div>
-          <label>Password: </label>
-          <input
-            value={input.password}
-            onChange={handleInput}
-            type="password"
-            name="password"
-            placeholder="Enter your password..."
-          />
-        </div>
-        <div>
-          <button>Sign up</button>
-        </div>
-      </form>
-      <div></div>
-    </div>
+    <Container>
+      <Welcome>Welcome!</Welcome>
+      <Content>
+        <FormLogin margin={"20px"} onSubmit={RegisterSubmit}>
+          <div>
+            <LabelLogin>Email: </LabelLogin>
+            <InputLogin
+              type="email"
+              value={input.email}
+              onChange={handleInput}
+              name="email"
+              placeholder="Enter your email..."
+            />
+          </div>
+          <div>
+            <LabelLogin>Username: </LabelLogin>
+            <InputLogin
+              value={input.username}
+              onChange={handleInput}
+              type="text"
+              name="username"
+              placeholder="Enter your username..."
+            />
+          </div>
+          <div>
+            <LabelLogin>Password: </LabelLogin>
+            <InputLogin
+              value={input.password}
+              onChange={handleInput}
+              type="password"
+              name="password"
+              placeholder="Enter your password..."
+            />
+          </div>
+          <div>
+            <ButtonLogin>Sign up</ButtonLogin>
+          </div>
+        </FormLogin>
+        <div></div>
+      </Content>
+    </Container>
   );
 };
 
